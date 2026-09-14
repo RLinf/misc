@@ -465,8 +465,8 @@
         "zh": "RPent 规划模型 · 每个配置 100 回合"
       },
       "scope": {
-        "en": "RPent planners · 100 episodes each",
-        "zh": "RPent 规划模型 · 每个配置 100 回合"
+        "en": "Paper reference methods and RPent; trial counts follow each source",
+        "zh": "论文参考方法与 RPent；回合数沿用各来源"
       },
       "table_section": {
         "en": "Standard LIBERO",
@@ -479,10 +479,20 @@
       "record_ids": [
         "standard-spatial--gpt-5-5-xhigh",
         "standard-spatial--opus-4-8-max",
-        "standard-spatial--gpt-6-astra-low"
+        "standard-spatial--gpt-6-astra-low",
+        "standard-spatial--openvla",
+        "standard-spatial--nora",
+        "standard-spatial--pi0",
+        "standard-spatial--pi-rlinf",
+        "standard-spatial--atomvla"
       ],
       "chart_record_ids": [
-        "standard-spatial--opus-4-8-max"
+        "standard-spatial--opus-4-8-max",
+        "standard-spatial--openvla",
+        "standard-spatial--nora",
+        "standard-spatial--pi0",
+        "standard-spatial--pi-rlinf",
+        "standard-spatial--atomvla"
       ],
       "source_ids": [
         "paper-table-2"
@@ -510,8 +520,8 @@
         "zh": "RPent 规划模型 · 每个配置 100 回合"
       },
       "scope": {
-        "en": "RPent planners · 100 episodes each",
-        "zh": "RPent 规划模型 · 每个配置 100 回合"
+        "en": "Paper reference methods and RPent; trial counts follow each source",
+        "zh": "论文参考方法与 RPent；回合数沿用各来源"
       },
       "table_section": {
         "en": "Standard LIBERO",
@@ -524,10 +534,20 @@
       "record_ids": [
         "standard-object--gpt-5-5-xhigh",
         "standard-object--opus-4-8-max",
-        "standard-object--gpt-6-astra-low"
+        "standard-object--gpt-6-astra-low",
+        "standard-object--openvla",
+        "standard-object--nora",
+        "standard-object--pi0",
+        "standard-object--pi-rlinf",
+        "standard-object--atomvla"
       ],
       "chart_record_ids": [
-        "standard-object--opus-4-8-max"
+        "standard-object--opus-4-8-max",
+        "standard-object--openvla",
+        "standard-object--nora",
+        "standard-object--pi0",
+        "standard-object--pi-rlinf",
+        "standard-object--atomvla"
       ],
       "source_ids": [
         "paper-table-2"
@@ -555,8 +575,8 @@
         "zh": "RPent 规划模型 · 每个配置 100 回合"
       },
       "scope": {
-        "en": "RPent planners · 100 episodes each",
-        "zh": "RPent 规划模型 · 每个配置 100 回合"
+        "en": "Paper reference methods and RPent; trial counts follow each source",
+        "zh": "论文参考方法与 RPent；回合数沿用各来源"
       },
       "table_section": {
         "en": "Standard LIBERO",
@@ -569,10 +589,20 @@
       "record_ids": [
         "standard-goal--gpt-5-5-xhigh",
         "standard-goal--opus-4-8-max",
-        "standard-goal--gpt-6-astra-low"
+        "standard-goal--gpt-6-astra-low",
+        "standard-goal--openvla",
+        "standard-goal--nora",
+        "standard-goal--pi0",
+        "standard-goal--pi-rlinf",
+        "standard-goal--atomvla"
       ],
       "chart_record_ids": [
-        "standard-goal--opus-4-8-max"
+        "standard-goal--opus-4-8-max",
+        "standard-goal--openvla",
+        "standard-goal--nora",
+        "standard-goal--pi0",
+        "standard-goal--pi-rlinf",
+        "standard-goal--atomvla"
       ],
       "source_ids": [
         "paper-table-2"
@@ -600,8 +630,8 @@
         "zh": "RPent 规划模型 · 每个配置 100 回合"
       },
       "scope": {
-        "en": "RPent planners · 100 episodes each",
-        "zh": "RPent 规划模型 · 每个配置 100 回合"
+        "en": "Paper reference methods and RPent; trial counts follow each source",
+        "zh": "论文参考方法与 RPent；回合数沿用各来源"
       },
       "table_section": {
         "en": "Standard LIBERO",
@@ -614,10 +644,20 @@
       "record_ids": [
         "standard-long--gpt-5-5-xhigh",
         "standard-long--opus-4-8-max",
-        "standard-long--gpt-6-astra-low"
+        "standard-long--gpt-6-astra-low",
+        "standard-long--openvla",
+        "standard-long--nora",
+        "standard-long--pi0",
+        "standard-long--pi-rlinf",
+        "standard-long--atomvla"
       ],
       "chart_record_ids": [
-        "standard-long--opus-4-8-max"
+        "standard-long--opus-4-8-max",
+        "standard-long--openvla",
+        "standard-long--nora",
+        "standard-long--pi0",
+        "standard-long--pi-rlinf",
+        "standard-long--atomvla"
       ],
       "source_ids": [
         "paper-table-2"
@@ -712,8 +752,8 @@
         "zh": "RPent 规划模型 · 每个配置 100 回合"
       },
       "scope": {
-        "en": "RPent planners · 100 episodes each",
-        "zh": "RPent 规划模型 · 每个配置 100 回合"
+        "en": "Paper reference methods and RPent; trial counts follow each source",
+        "zh": "论文参考方法与 RPent；回合数沿用各来源"
       },
       "table_section": {
         "en": "LIBERO-PRO",
@@ -726,12 +766,32 @@
       "record_ids": [
         "spatial-task--gpt-5-5-xhigh",
         "spatial-task--opus-4-8-max",
-        "spatial-task--gpt-6-astra-low"
+        "spatial-task--gpt-6-astra-low",
+        "spatial-task--openvla",
+        "spatial-task--pi0",
+        "spatial-task--pi0-5",
+        "spatial-task--molmoact",
+        "spatial-task--nora",
+        "spatial-task--x-vla",
+        "spatial-task--atomvla",
+        "spatial-task--cap-x",
+        "spatial-task--rats",
+        "spatial-task--pi-rlinf"
       ],
       "chart_record_ids": [
         "spatial-task--gpt-5-5-xhigh",
         "spatial-task--opus-4-8-max",
-        "spatial-task--gpt-6-astra-low"
+        "spatial-task--gpt-6-astra-low",
+        "spatial-task--openvla",
+        "spatial-task--pi0",
+        "spatial-task--pi0-5",
+        "spatial-task--molmoact",
+        "spatial-task--nora",
+        "spatial-task--x-vla",
+        "spatial-task--atomvla",
+        "spatial-task--cap-x",
+        "spatial-task--rats",
+        "spatial-task--pi-rlinf"
       ],
       "source_ids": [
         "paper-table-3",
@@ -760,8 +820,8 @@
         "zh": "RPent 规划模型 · 每个配置 100 回合"
       },
       "scope": {
-        "en": "RPent planners · 100 episodes each",
-        "zh": "RPent 规划模型 · 每个配置 100 回合"
+        "en": "Paper reference methods and RPent; trial counts follow each source",
+        "zh": "论文参考方法与 RPent；回合数沿用各来源"
       },
       "table_section": {
         "en": "LIBERO-PRO",
@@ -774,12 +834,32 @@
       "record_ids": [
         "spatial-swap--gpt-5-5-xhigh",
         "spatial-swap--opus-4-8-max",
-        "spatial-swap--gpt-6-astra-low"
+        "spatial-swap--gpt-6-astra-low",
+        "spatial-swap--openvla",
+        "spatial-swap--pi0",
+        "spatial-swap--pi0-5",
+        "spatial-swap--molmoact",
+        "spatial-swap--nora",
+        "spatial-swap--x-vla",
+        "spatial-swap--atomvla",
+        "spatial-swap--cap-x",
+        "spatial-swap--rats",
+        "spatial-swap--pi-rlinf"
       ],
       "chart_record_ids": [
         "spatial-swap--gpt-5-5-xhigh",
         "spatial-swap--opus-4-8-max",
-        "spatial-swap--gpt-6-astra-low"
+        "spatial-swap--gpt-6-astra-low",
+        "spatial-swap--openvla",
+        "spatial-swap--pi0",
+        "spatial-swap--pi0-5",
+        "spatial-swap--molmoact",
+        "spatial-swap--nora",
+        "spatial-swap--x-vla",
+        "spatial-swap--atomvla",
+        "spatial-swap--cap-x",
+        "spatial-swap--rats",
+        "spatial-swap--pi-rlinf"
       ],
       "source_ids": [
         "paper-table-3",
@@ -808,8 +888,8 @@
         "zh": "RPent 规划模型 · 每个配置 100 回合"
       },
       "scope": {
-        "en": "RPent planners · 100 episodes each",
-        "zh": "RPent 规划模型 · 每个配置 100 回合"
+        "en": "Paper reference methods and RPent; trial counts follow each source",
+        "zh": "论文参考方法与 RPent；回合数沿用各来源"
       },
       "table_section": {
         "en": "LIBERO-PRO",
@@ -822,12 +902,32 @@
       "record_ids": [
         "object-task--gpt-5-5-xhigh",
         "object-task--opus-4-8-max",
-        "object-task--gpt-6-astra-low"
+        "object-task--gpt-6-astra-low",
+        "object-task--openvla",
+        "object-task--pi0",
+        "object-task--pi0-5",
+        "object-task--molmoact",
+        "object-task--nora",
+        "object-task--x-vla",
+        "object-task--atomvla",
+        "object-task--cap-x",
+        "object-task--rats",
+        "object-task--pi-rlinf"
       ],
       "chart_record_ids": [
         "object-task--gpt-5-5-xhigh",
         "object-task--opus-4-8-max",
-        "object-task--gpt-6-astra-low"
+        "object-task--gpt-6-astra-low",
+        "object-task--openvla",
+        "object-task--pi0",
+        "object-task--pi0-5",
+        "object-task--molmoact",
+        "object-task--nora",
+        "object-task--x-vla",
+        "object-task--atomvla",
+        "object-task--cap-x",
+        "object-task--rats",
+        "object-task--pi-rlinf"
       ],
       "source_ids": [
         "paper-table-3",
@@ -856,8 +956,8 @@
         "zh": "RPent 规划模型 · 每个配置 100 回合"
       },
       "scope": {
-        "en": "RPent planners · 100 episodes each",
-        "zh": "RPent 规划模型 · 每个配置 100 回合"
+        "en": "Paper reference methods and RPent; trial counts follow each source",
+        "zh": "论文参考方法与 RPent；回合数沿用各来源"
       },
       "table_section": {
         "en": "LIBERO-PRO",
@@ -870,12 +970,32 @@
       "record_ids": [
         "object-swap--gpt-5-5-xhigh",
         "object-swap--opus-4-8-max",
-        "object-swap--gpt-6-astra-low"
+        "object-swap--gpt-6-astra-low",
+        "object-swap--openvla",
+        "object-swap--pi0",
+        "object-swap--pi0-5",
+        "object-swap--molmoact",
+        "object-swap--nora",
+        "object-swap--x-vla",
+        "object-swap--atomvla",
+        "object-swap--cap-x",
+        "object-swap--rats",
+        "object-swap--pi-rlinf"
       ],
       "chart_record_ids": [
         "object-swap--gpt-5-5-xhigh",
         "object-swap--opus-4-8-max",
-        "object-swap--gpt-6-astra-low"
+        "object-swap--gpt-6-astra-low",
+        "object-swap--openvla",
+        "object-swap--pi0",
+        "object-swap--pi0-5",
+        "object-swap--molmoact",
+        "object-swap--nora",
+        "object-swap--x-vla",
+        "object-swap--atomvla",
+        "object-swap--cap-x",
+        "object-swap--rats",
+        "object-swap--pi-rlinf"
       ],
       "source_ids": [
         "paper-table-3",
@@ -904,8 +1024,8 @@
         "zh": "RPent 规划模型 · 每个配置 100 回合"
       },
       "scope": {
-        "en": "RPent planners · 100 episodes each",
-        "zh": "RPent 规划模型 · 每个配置 100 回合"
+        "en": "Paper reference methods and RPent; trial counts follow each source",
+        "zh": "论文参考方法与 RPent；回合数沿用各来源"
       },
       "table_section": {
         "en": "LIBERO-PRO",
@@ -918,11 +1038,31 @@
       "record_ids": [
         "goal-task--gpt-5-5-xhigh",
         "goal-task--opus-4-8-max",
-        "goal-task--gpt-6-astra-low"
+        "goal-task--gpt-6-astra-low",
+        "goal-task--openvla",
+        "goal-task--pi0",
+        "goal-task--pi0-5",
+        "goal-task--molmoact",
+        "goal-task--nora",
+        "goal-task--x-vla",
+        "goal-task--atomvla",
+        "goal-task--cap-x",
+        "goal-task--rats",
+        "goal-task--pi-rlinf"
       ],
       "chart_record_ids": [
         "goal-task--gpt-5-5-xhigh",
-        "goal-task--opus-4-8-max"
+        "goal-task--opus-4-8-max",
+        "goal-task--openvla",
+        "goal-task--pi0",
+        "goal-task--pi0-5",
+        "goal-task--molmoact",
+        "goal-task--nora",
+        "goal-task--x-vla",
+        "goal-task--atomvla",
+        "goal-task--cap-x",
+        "goal-task--rats",
+        "goal-task--pi-rlinf"
       ],
       "source_ids": [
         "paper-table-3"
@@ -950,8 +1090,8 @@
         "zh": "RPent 规划模型 · 每个配置 100 回合"
       },
       "scope": {
-        "en": "RPent planners · 100 episodes each",
-        "zh": "RPent 规划模型 · 每个配置 100 回合"
+        "en": "Paper reference methods and RPent; trial counts follow each source",
+        "zh": "论文参考方法与 RPent；回合数沿用各来源"
       },
       "table_section": {
         "en": "LIBERO-PRO",
@@ -964,11 +1104,31 @@
       "record_ids": [
         "goal-swap--gpt-5-5-xhigh",
         "goal-swap--opus-4-8-max",
-        "goal-swap--gpt-6-astra-low"
+        "goal-swap--gpt-6-astra-low",
+        "goal-swap--openvla",
+        "goal-swap--pi0",
+        "goal-swap--pi0-5",
+        "goal-swap--molmoact",
+        "goal-swap--nora",
+        "goal-swap--x-vla",
+        "goal-swap--atomvla",
+        "goal-swap--cap-x",
+        "goal-swap--rats",
+        "goal-swap--pi-rlinf"
       ],
       "chart_record_ids": [
         "goal-swap--gpt-5-5-xhigh",
-        "goal-swap--opus-4-8-max"
+        "goal-swap--opus-4-8-max",
+        "goal-swap--openvla",
+        "goal-swap--pi0",
+        "goal-swap--pi0-5",
+        "goal-swap--molmoact",
+        "goal-swap--nora",
+        "goal-swap--x-vla",
+        "goal-swap--atomvla",
+        "goal-swap--cap-x",
+        "goal-swap--rats",
+        "goal-swap--pi-rlinf"
       ],
       "source_ids": [
         "paper-table-3"
@@ -996,8 +1156,8 @@
         "zh": "RPent 规划模型 · 每个配置 100 回合"
       },
       "scope": {
-        "en": "RPent planners · 100 episodes each",
-        "zh": "RPent 规划模型 · 每个配置 100 回合"
+        "en": "Paper reference methods and RPent; trial counts follow each source",
+        "zh": "论文参考方法与 RPent；回合数沿用各来源"
       },
       "table_section": {
         "en": "LIBERO-PRO",
@@ -1010,12 +1170,30 @@
       "record_ids": [
         "long-task--gpt-5-5-xhigh",
         "long-task--opus-4-8-max",
-        "long-task--gpt-6-astra-low"
+        "long-task--gpt-6-astra-low",
+        "long-task--openvla",
+        "long-task--pi0",
+        "long-task--pi0-5",
+        "long-task--molmoact",
+        "long-task--nora",
+        "long-task--x-vla",
+        "long-task--atomvla",
+        "long-task--cap-x",
+        "long-task--rats",
+        "long-task--pi-rlinf"
       ],
       "chart_record_ids": [
         "long-task--gpt-6-astra-low",
         "long-task--opus-4-8-max",
-        "long-task--gpt-5-5-xhigh"
+        "long-task--gpt-5-5-xhigh",
+        "long-task--openvla",
+        "long-task--pi0",
+        "long-task--pi0-5",
+        "long-task--molmoact",
+        "long-task--nora",
+        "long-task--x-vla",
+        "long-task--atomvla",
+        "long-task--pi-rlinf"
       ],
       "source_ids": [
         "paper-table-3",
@@ -1049,8 +1227,8 @@
         "zh": "RPent 规划模型 · 每个配置 100 回合"
       },
       "scope": {
-        "en": "RPent planners · 100 episodes each",
-        "zh": "RPent 规划模型 · 每个配置 100 回合"
+        "en": "Paper reference methods and RPent; trial counts follow each source",
+        "zh": "论文参考方法与 RPent；回合数沿用各来源"
       },
       "table_section": {
         "en": "LIBERO-PRO",
@@ -1063,12 +1241,30 @@
       "record_ids": [
         "long-swap--gpt-5-5-xhigh",
         "long-swap--opus-4-8-max",
-        "long-swap--gpt-6-astra-low"
+        "long-swap--gpt-6-astra-low",
+        "long-swap--openvla",
+        "long-swap--pi0",
+        "long-swap--pi0-5",
+        "long-swap--molmoact",
+        "long-swap--nora",
+        "long-swap--x-vla",
+        "long-swap--atomvla",
+        "long-swap--cap-x",
+        "long-swap--rats",
+        "long-swap--pi-rlinf"
       ],
       "chart_record_ids": [
         "long-swap--gpt-6-astra-low",
         "long-swap--opus-4-8-max",
-        "long-swap--gpt-5-5-xhigh"
+        "long-swap--gpt-5-5-xhigh",
+        "long-swap--openvla",
+        "long-swap--pi0",
+        "long-swap--pi0-5",
+        "long-swap--molmoact",
+        "long-swap--nora",
+        "long-swap--x-vla",
+        "long-swap--atomvla",
+        "long-swap--pi-rlinf"
       ],
       "source_ids": [
         "paper-table-3",
@@ -1284,11 +1480,19 @@
       "record_ids": [
         "robocasa-atomic-seen--gpt-5-5-xhigh",
         "robocasa-atomic-seen--opus-4-8-max",
-        "robocasa-atomic-seen--gpt-6-astra-low"
+        "robocasa-atomic-seen--gpt-6-astra-low",
+        "robocasa-atomic-seen--rldx-1",
+        "robocasa-atomic-seen--worlddreamer",
+        "robocasa-atomic-seen--pi0-5",
+        "robocasa-atomic-seen--pi0"
       ],
       "chart_record_ids": [
         "robocasa-atomic-seen--gpt-5-5-xhigh",
-        "robocasa-atomic-seen--opus-4-8-max"
+        "robocasa-atomic-seen--opus-4-8-max",
+        "robocasa-atomic-seen--rldx-1",
+        "robocasa-atomic-seen--worlddreamer",
+        "robocasa-atomic-seen--pi0-5",
+        "robocasa-atomic-seen--pi0"
       ],
       "source_ids": [
         "paper-table-4"
@@ -1330,11 +1534,19 @@
       "record_ids": [
         "robocasa-composite-seen--gpt-5-5-xhigh",
         "robocasa-composite-seen--opus-4-8-max",
-        "robocasa-composite-seen--gpt-6-astra-low"
+        "robocasa-composite-seen--gpt-6-astra-low",
+        "robocasa-composite-seen--rldx-1",
+        "robocasa-composite-seen--worlddreamer",
+        "robocasa-composite-seen--pi0-5",
+        "robocasa-composite-seen--pi0"
       ],
       "chart_record_ids": [
         "robocasa-composite-seen--gpt-5-5-xhigh",
-        "robocasa-composite-seen--opus-4-8-max"
+        "robocasa-composite-seen--opus-4-8-max",
+        "robocasa-composite-seen--rldx-1",
+        "robocasa-composite-seen--worlddreamer",
+        "robocasa-composite-seen--pi0-5",
+        "robocasa-composite-seen--pi0"
       ],
       "source_ids": [
         "paper-table-4"
@@ -1376,11 +1588,19 @@
       "record_ids": [
         "robocasa-composite-unseen--gpt-5-5-xhigh",
         "robocasa-composite-unseen--opus-4-8-max",
-        "robocasa-composite-unseen--gpt-6-astra-low"
+        "robocasa-composite-unseen--gpt-6-astra-low",
+        "robocasa-composite-unseen--rldx-1",
+        "robocasa-composite-unseen--worlddreamer",
+        "robocasa-composite-unseen--pi0-5",
+        "robocasa-composite-unseen--pi0"
       ],
       "chart_record_ids": [
         "robocasa-composite-unseen--gpt-5-5-xhigh",
-        "robocasa-composite-unseen--opus-4-8-max"
+        "robocasa-composite-unseen--opus-4-8-max",
+        "robocasa-composite-unseen--rldx-1",
+        "robocasa-composite-unseen--worlddreamer",
+        "robocasa-composite-unseen--pi0-5",
+        "robocasa-composite-unseen--pi0"
       ],
       "source_ids": [
         "paper-table-4"
@@ -2810,6 +3030,1462 @@
         "en": "Goal Swap",
         "zh": "Goal Swap"
       }
+    },
+    {
+      "id": "standard-spatial--openvla",
+      "view_id": "standard-spatial",
+      "configuration_id": "openvla",
+      "status": "reported",
+      "rate": "84.7",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-object--openvla",
+      "view_id": "standard-object",
+      "configuration_id": "openvla",
+      "status": "reported",
+      "rate": "88.4",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-goal--openvla",
+      "view_id": "standard-goal",
+      "configuration_id": "openvla",
+      "status": "reported",
+      "rate": "79.2",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-long--openvla",
+      "view_id": "standard-long",
+      "configuration_id": "openvla",
+      "status": "reported",
+      "rate": "53.7",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-spatial--nora",
+      "view_id": "standard-spatial",
+      "configuration_id": "nora",
+      "status": "reported",
+      "rate": "85.6",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-object--nora",
+      "view_id": "standard-object",
+      "configuration_id": "nora",
+      "status": "reported",
+      "rate": "89.4",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-goal--nora",
+      "view_id": "standard-goal",
+      "configuration_id": "nora",
+      "status": "reported",
+      "rate": "80.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-long--nora",
+      "view_id": "standard-long",
+      "configuration_id": "nora",
+      "status": "reported",
+      "rate": "63.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-spatial--pi0",
+      "view_id": "standard-spatial",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "96.8",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-object--pi0",
+      "view_id": "standard-object",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "98.8",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-goal--pi0",
+      "view_id": "standard-goal",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "95.8",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-long--pi0",
+      "view_id": "standard-long",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "85.2",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-spatial--pi-rlinf",
+      "view_id": "standard-spatial",
+      "configuration_id": "pi-rlinf",
+      "status": "reported",
+      "rate": "99.0",
+      "successes": null,
+      "episodes": 100,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-object--pi-rlinf",
+      "view_id": "standard-object",
+      "configuration_id": "pi-rlinf",
+      "status": "reported",
+      "rate": "96.0",
+      "successes": null,
+      "episodes": 100,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-goal--pi-rlinf",
+      "view_id": "standard-goal",
+      "configuration_id": "pi-rlinf",
+      "status": "reported",
+      "rate": "97.0",
+      "successes": null,
+      "episodes": 100,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-long--pi-rlinf",
+      "view_id": "standard-long",
+      "configuration_id": "pi-rlinf",
+      "status": "reported",
+      "rate": "89.0",
+      "successes": null,
+      "episodes": 100,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-spatial--atomvla",
+      "view_id": "standard-spatial",
+      "configuration_id": "atomvla",
+      "status": "reported",
+      "rate": "96.4",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-object--atomvla",
+      "view_id": "standard-object",
+      "configuration_id": "atomvla",
+      "status": "reported",
+      "rate": "99.6",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-goal--atomvla",
+      "view_id": "standard-goal",
+      "configuration_id": "atomvla",
+      "status": "reported",
+      "rate": "97.6",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "standard-long--atomvla",
+      "view_id": "standard-long",
+      "configuration_id": "atomvla",
+      "status": "reported",
+      "rate": "94.4",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-2"
+      ],
+      "protocol_id": "external-standard"
+    },
+    {
+      "id": "spatial-task--openvla",
+      "view_id": "spatial-task",
+      "configuration_id": "openvla",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-swap--openvla",
+      "view_id": "spatial-swap",
+      "configuration_id": "openvla",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-task--openvla",
+      "view_id": "object-task",
+      "configuration_id": "openvla",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-swap--openvla",
+      "view_id": "object-swap",
+      "configuration_id": "openvla",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-task--openvla",
+      "view_id": "goal-task",
+      "configuration_id": "openvla",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-swap--openvla",
+      "view_id": "goal-swap",
+      "configuration_id": "openvla",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-task--openvla",
+      "view_id": "long-task",
+      "configuration_id": "openvla",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-swap--openvla",
+      "view_id": "long-swap",
+      "configuration_id": "openvla",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-task--pi0",
+      "view_id": "spatial-task",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-swap--pi0",
+      "view_id": "spatial-swap",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-task--pi0",
+      "view_id": "object-task",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-swap--pi0",
+      "view_id": "object-swap",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "2.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-task--pi0",
+      "view_id": "goal-task",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-swap--pi0",
+      "view_id": "goal-swap",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-task--pi0",
+      "view_id": "long-task",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-swap--pi0",
+      "view_id": "long-swap",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-task--pi0-5",
+      "view_id": "spatial-task",
+      "configuration_id": "pi0-5",
+      "status": "reported",
+      "rate": "1.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-swap--pi0-5",
+      "view_id": "spatial-swap",
+      "configuration_id": "pi0-5",
+      "status": "reported",
+      "rate": "20.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-task--pi0-5",
+      "view_id": "object-task",
+      "configuration_id": "pi0-5",
+      "status": "reported",
+      "rate": "1.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-swap--pi0-5",
+      "view_id": "object-swap",
+      "configuration_id": "pi0-5",
+      "status": "reported",
+      "rate": "17.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-task--pi0-5",
+      "view_id": "goal-task",
+      "configuration_id": "pi0-5",
+      "status": "reported",
+      "rate": "2.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-swap--pi0-5",
+      "view_id": "goal-swap",
+      "configuration_id": "pi0-5",
+      "status": "reported",
+      "rate": "38.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-task--pi0-5",
+      "view_id": "long-task",
+      "configuration_id": "pi0-5",
+      "status": "reported",
+      "rate": "1.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-swap--pi0-5",
+      "view_id": "long-swap",
+      "configuration_id": "pi0-5",
+      "status": "reported",
+      "rate": "8.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-task--molmoact",
+      "view_id": "spatial-task",
+      "configuration_id": "molmoact",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-swap--molmoact",
+      "view_id": "spatial-swap",
+      "configuration_id": "molmoact",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-task--molmoact",
+      "view_id": "object-task",
+      "configuration_id": "molmoact",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-swap--molmoact",
+      "view_id": "object-swap",
+      "configuration_id": "molmoact",
+      "status": "reported",
+      "rate": "6.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-task--molmoact",
+      "view_id": "goal-task",
+      "configuration_id": "molmoact",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-swap--molmoact",
+      "view_id": "goal-swap",
+      "configuration_id": "molmoact",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-task--molmoact",
+      "view_id": "long-task",
+      "configuration_id": "molmoact",
+      "status": "reported",
+      "rate": "6.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-swap--molmoact",
+      "view_id": "long-swap",
+      "configuration_id": "molmoact",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-task--nora",
+      "view_id": "spatial-task",
+      "configuration_id": "nora",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-swap--nora",
+      "view_id": "spatial-swap",
+      "configuration_id": "nora",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-task--nora",
+      "view_id": "object-task",
+      "configuration_id": "nora",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-swap--nora",
+      "view_id": "object-swap",
+      "configuration_id": "nora",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-task--nora",
+      "view_id": "goal-task",
+      "configuration_id": "nora",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-swap--nora",
+      "view_id": "goal-swap",
+      "configuration_id": "nora",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-task--nora",
+      "view_id": "long-task",
+      "configuration_id": "nora",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-swap--nora",
+      "view_id": "long-swap",
+      "configuration_id": "nora",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-task--x-vla",
+      "view_id": "spatial-task",
+      "configuration_id": "x-vla",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-swap--x-vla",
+      "view_id": "spatial-swap",
+      "configuration_id": "x-vla",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-task--x-vla",
+      "view_id": "object-task",
+      "configuration_id": "x-vla",
+      "status": "reported",
+      "rate": "8.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-swap--x-vla",
+      "view_id": "object-swap",
+      "configuration_id": "x-vla",
+      "status": "reported",
+      "rate": "2.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-task--x-vla",
+      "view_id": "goal-task",
+      "configuration_id": "x-vla",
+      "status": "reported",
+      "rate": "9.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-swap--x-vla",
+      "view_id": "goal-swap",
+      "configuration_id": "x-vla",
+      "status": "reported",
+      "rate": "1.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-task--x-vla",
+      "view_id": "long-task",
+      "configuration_id": "x-vla",
+      "status": "reported",
+      "rate": "10.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-swap--x-vla",
+      "view_id": "long-swap",
+      "configuration_id": "x-vla",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-task--atomvla",
+      "view_id": "spatial-task",
+      "configuration_id": "atomvla",
+      "status": "reported",
+      "rate": "1.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-swap--atomvla",
+      "view_id": "spatial-swap",
+      "configuration_id": "atomvla",
+      "status": "reported",
+      "rate": "16.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-task--atomvla",
+      "view_id": "object-task",
+      "configuration_id": "atomvla",
+      "status": "reported",
+      "rate": "0.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-swap--atomvla",
+      "view_id": "object-swap",
+      "configuration_id": "atomvla",
+      "status": "reported",
+      "rate": "10.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-task--atomvla",
+      "view_id": "goal-task",
+      "configuration_id": "atomvla",
+      "status": "reported",
+      "rate": "11.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-swap--atomvla",
+      "view_id": "goal-swap",
+      "configuration_id": "atomvla",
+      "status": "reported",
+      "rate": "2.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-task--atomvla",
+      "view_id": "long-task",
+      "configuration_id": "atomvla",
+      "status": "reported",
+      "rate": "9.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-swap--atomvla",
+      "view_id": "long-swap",
+      "configuration_id": "atomvla",
+      "status": "reported",
+      "rate": "1.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-task--cap-x",
+      "view_id": "spatial-task",
+      "configuration_id": "cap-x",
+      "status": "reported",
+      "rate": "14.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-swap--cap-x",
+      "view_id": "spatial-swap",
+      "configuration_id": "cap-x",
+      "status": "reported",
+      "rate": "12.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-task--cap-x",
+      "view_id": "object-task",
+      "configuration_id": "cap-x",
+      "status": "reported",
+      "rate": "18.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-swap--cap-x",
+      "view_id": "object-swap",
+      "configuration_id": "cap-x",
+      "status": "reported",
+      "rate": "22.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-task--cap-x",
+      "view_id": "goal-task",
+      "configuration_id": "cap-x",
+      "status": "reported",
+      "rate": "17.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-swap--cap-x",
+      "view_id": "goal-swap",
+      "configuration_id": "cap-x",
+      "status": "reported",
+      "rate": "26.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-task--cap-x",
+      "view_id": "long-task",
+      "configuration_id": "cap-x",
+      "status": "not_reported",
+      "rate": null,
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-swap--cap-x",
+      "view_id": "long-swap",
+      "configuration_id": "cap-x",
+      "status": "not_reported",
+      "rate": null,
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-task--rats",
+      "view_id": "spatial-task",
+      "configuration_id": "rats",
+      "status": "reported",
+      "rate": "31.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-swap--rats",
+      "view_id": "spatial-swap",
+      "configuration_id": "rats",
+      "status": "reported",
+      "rate": "29.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-task--rats",
+      "view_id": "object-task",
+      "configuration_id": "rats",
+      "status": "reported",
+      "rate": "63.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-swap--rats",
+      "view_id": "object-swap",
+      "configuration_id": "rats",
+      "status": "reported",
+      "rate": "61.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-task--rats",
+      "view_id": "goal-task",
+      "configuration_id": "rats",
+      "status": "reported",
+      "rate": "36.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-swap--rats",
+      "view_id": "goal-swap",
+      "configuration_id": "rats",
+      "status": "reported",
+      "rate": "43.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-task--rats",
+      "view_id": "long-task",
+      "configuration_id": "rats",
+      "status": "not_reported",
+      "rate": null,
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-swap--rats",
+      "view_id": "long-swap",
+      "configuration_id": "rats",
+      "status": "not_reported",
+      "rate": null,
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-task--pi-rlinf",
+      "view_id": "spatial-task",
+      "configuration_id": "pi-rlinf",
+      "status": "reported",
+      "rate": "42.0",
+      "successes": null,
+      "episodes": 100,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "spatial-swap--pi-rlinf",
+      "view_id": "spatial-swap",
+      "configuration_id": "pi-rlinf",
+      "status": "reported",
+      "rate": "59.0",
+      "successes": null,
+      "episodes": 100,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-task--pi-rlinf",
+      "view_id": "object-task",
+      "configuration_id": "pi-rlinf",
+      "status": "reported",
+      "rate": "71.0",
+      "successes": null,
+      "episodes": 100,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "object-swap--pi-rlinf",
+      "view_id": "object-swap",
+      "configuration_id": "pi-rlinf",
+      "status": "reported",
+      "rate": "78.0",
+      "successes": null,
+      "episodes": 100,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-task--pi-rlinf",
+      "view_id": "goal-task",
+      "configuration_id": "pi-rlinf",
+      "status": "reported",
+      "rate": "45.0",
+      "successes": null,
+      "episodes": 100,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "goal-swap--pi-rlinf",
+      "view_id": "goal-swap",
+      "configuration_id": "pi-rlinf",
+      "status": "reported",
+      "rate": "42.0",
+      "successes": null,
+      "episodes": 100,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-task--pi-rlinf",
+      "view_id": "long-task",
+      "configuration_id": "pi-rlinf",
+      "status": "reported",
+      "rate": "49.0",
+      "successes": null,
+      "episodes": 100,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "long-swap--pi-rlinf",
+      "view_id": "long-swap",
+      "configuration_id": "pi-rlinf",
+      "status": "reported",
+      "rate": "14.0",
+      "successes": null,
+      "episodes": 100,
+      "source_ids": [
+        "paper-table-3"
+      ],
+      "protocol_id": "external-pro"
+    },
+    {
+      "id": "robocasa-atomic-seen--rldx-1",
+      "view_id": "robocasa-atomic-seen",
+      "configuration_id": "rldx-1",
+      "status": "reported",
+      "rate": "60.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-4"
+      ],
+      "protocol_id": "external-robocasa"
+    },
+    {
+      "id": "robocasa-composite-seen--rldx-1",
+      "view_id": "robocasa-composite-seen",
+      "configuration_id": "rldx-1",
+      "status": "reported",
+      "rate": "21.3",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-4"
+      ],
+      "protocol_id": "external-robocasa"
+    },
+    {
+      "id": "robocasa-composite-unseen--rldx-1",
+      "view_id": "robocasa-composite-unseen",
+      "configuration_id": "rldx-1",
+      "status": "reported",
+      "rate": "5.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-4"
+      ],
+      "protocol_id": "external-robocasa"
+    },
+    {
+      "id": "robocasa-atomic-seen--worlddreamer",
+      "view_id": "robocasa-atomic-seen",
+      "configuration_id": "worlddreamer",
+      "status": "reported",
+      "rate": "66.3",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-4"
+      ],
+      "protocol_id": "external-robocasa"
+    },
+    {
+      "id": "robocasa-composite-seen--worlddreamer",
+      "view_id": "robocasa-composite-seen",
+      "configuration_id": "worlddreamer",
+      "status": "reported",
+      "rate": "26.7",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-4"
+      ],
+      "protocol_id": "external-robocasa"
+    },
+    {
+      "id": "robocasa-composite-unseen--worlddreamer",
+      "view_id": "robocasa-composite-unseen",
+      "configuration_id": "worlddreamer",
+      "status": "reported",
+      "rate": "9.0",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-4"
+      ],
+      "protocol_id": "external-robocasa"
+    },
+    {
+      "id": "robocasa-atomic-seen--pi0-5",
+      "view_id": "robocasa-atomic-seen",
+      "configuration_id": "pi0-5",
+      "status": "reported",
+      "rate": "39.6",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-4"
+      ],
+      "protocol_id": "external-robocasa"
+    },
+    {
+      "id": "robocasa-composite-seen--pi0-5",
+      "view_id": "robocasa-composite-seen",
+      "configuration_id": "pi0-5",
+      "status": "reported",
+      "rate": "7.1",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-4"
+      ],
+      "protocol_id": "external-robocasa"
+    },
+    {
+      "id": "robocasa-composite-unseen--pi0-5",
+      "view_id": "robocasa-composite-unseen",
+      "configuration_id": "pi0-5",
+      "status": "reported",
+      "rate": "1.2",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-4"
+      ],
+      "protocol_id": "external-robocasa"
+    },
+    {
+      "id": "robocasa-atomic-seen--pi0",
+      "view_id": "robocasa-atomic-seen",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "34.6",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-4"
+      ],
+      "protocol_id": "external-robocasa"
+    },
+    {
+      "id": "robocasa-composite-seen--pi0",
+      "view_id": "robocasa-composite-seen",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "6.1",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-4"
+      ],
+      "protocol_id": "external-robocasa"
+    },
+    {
+      "id": "robocasa-composite-unseen--pi0",
+      "view_id": "robocasa-composite-unseen",
+      "configuration_id": "pi0",
+      "status": "reported",
+      "rate": "1.1",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "paper-table-4"
+      ],
+      "protocol_id": "external-robocasa"
     }
   ],
   "tables": [
@@ -3123,12 +4799,140 @@
       "snapshot_id": "libero-pro-astra-20260914",
       "configuration_id": "gpt-6-astra-low",
       "verified_at": "2026-09-14T14:00:55Z",
-      "completed": 619,
-      "planned": 800,
-      "successes": 564,
-      "failures": 55,
-      "remaining": 181,
+      "publication_scope": "Six completed suites only",
+      "completed": 600,
+      "planned": 600,
+      "successes": 554,
+      "failures": 46,
+      "remaining": 0,
       "overall_rate": null
     }
-  ]
+  ],
+  "task_results": [
+    {
+      "view_id": "zero-shot-goal-swap",
+      "configuration_id": "cap-x",
+      "rates": [
+        "0.0",
+        "4.0",
+        "0.0",
+        "36.0",
+        "22.0",
+        "60.0",
+        "4.0",
+        "2.0",
+        "62.0",
+        "66.0"
+      ],
+      "task_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "source_ids": [
+        "paper-table-5"
+      ]
+    },
+    {
+      "view_id": "zero-shot-goal-swap",
+      "configuration_id": "opus-4-8-max",
+      "rates": [
+        "0.0",
+        "10.0",
+        "0.0",
+        "20.0",
+        "90.0",
+        "0.0",
+        "10.0",
+        "80.0",
+        "100.0",
+        "0.0"
+      ],
+      "task_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "source_ids": [
+        "paper-table-5"
+      ]
+    },
+    {
+      "view_id": "zero-shot-goal-task",
+      "configuration_id": "cap-x",
+      "rates": [
+        "0.0",
+        "0.0",
+        "10.0",
+        "38.0",
+        "12.0",
+        "4.0",
+        "34.0",
+        "12.0",
+        "40.0",
+        "18.0"
+      ],
+      "task_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "source_ids": [
+        "paper-table-5"
+      ]
+    },
+    {
+      "view_id": "zero-shot-goal-task",
+      "configuration_id": "opus-4-8-max",
+      "rates": [
+        "10.0",
+        "100.0",
+        "90.0",
+        "100.0",
+        "20.0",
+        "80.0",
+        "90.0",
+        "100.0",
+        "100.0",
+        "100.0"
+      ],
+      "task_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "source_ids": [
+        "paper-table-5"
+      ]
+    }
+  ],
+  "paper_revision": "2607.08448v4"
 }
