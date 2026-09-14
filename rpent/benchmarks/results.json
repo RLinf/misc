@@ -276,7 +276,9 @@
         "zh": "GPT-6 Astra Long 评测"
       },
       "url": "https://github.com/RLinf/RPent/commit/014a0fa97f69c991ee5e0f62f14e1d6f89c3dcd7",
-      "anchor": "benchmark-source-r1"
+      "anchor": "benchmark-source-r1",
+      "result_snapshot": "astra-pro-20260914.json",
+      "verified_at": "2026-09-14T14:00:55Z"
     },
     {
       "id": "astra-pro-remaining-20260913",
@@ -285,7 +287,9 @@
         "zh": "GPT-6 Astra 补充评测"
       },
       "url": "https://github.com/RLinf/RPent/commit/014a0fa97f69c991ee5e0f62f14e1d6f89c3dcd7",
-      "anchor": "benchmark-source-astra-pro"
+      "anchor": "benchmark-source-astra-pro",
+      "result_snapshot": "astra-pro-20260914.json",
+      "verified_at": "2026-09-14T14:00:55Z"
     }
   ],
   "protocols": [
@@ -1787,7 +1791,8 @@
       "source_ids": [
         "astra-pro-remaining-20260913"
       ],
-      "protocol_id": "rpent-pro-astra-remaining"
+      "protocol_id": "rpent-pro-astra-remaining",
+      "progress_snapshot": "astra-pro-20260914.json"
     },
     {
       "id": "spatial-swap--gpt-5-5-xhigh",
@@ -1826,7 +1831,8 @@
       "source_ids": [
         "astra-pro-remaining-20260913"
       ],
-      "protocol_id": "rpent-pro-astra-remaining"
+      "protocol_id": "rpent-pro-astra-remaining",
+      "progress_snapshot": "astra-pro-20260914.json"
     },
     {
       "id": "object-task--gpt-5-5-xhigh",
@@ -1865,7 +1871,8 @@
       "source_ids": [
         "astra-pro-remaining-20260913"
       ],
-      "protocol_id": "rpent-pro-astra-remaining"
+      "protocol_id": "rpent-pro-astra-remaining",
+      "progress_snapshot": "astra-pro-20260914.json"
     },
     {
       "id": "object-swap--gpt-5-5-xhigh",
@@ -1904,7 +1911,8 @@
       "source_ids": [
         "astra-pro-remaining-20260913"
       ],
-      "protocol_id": "rpent-pro-astra-remaining"
+      "protocol_id": "rpent-pro-astra-remaining",
+      "progress_snapshot": "astra-pro-20260914.json"
     },
     {
       "id": "goal-task--gpt-5-5-xhigh",
@@ -1943,7 +1951,8 @@
       "source_ids": [
         "paper-table-3"
       ],
-      "protocol_id": "rpent-pro"
+      "protocol_id": "rpent-pro",
+      "progress_snapshot": "astra-pro-20260914.json"
     },
     {
       "id": "goal-swap--gpt-5-5-xhigh",
@@ -1982,7 +1991,8 @@
       "source_ids": [
         "paper-table-3"
       ],
-      "protocol_id": "rpent-pro"
+      "protocol_id": "rpent-pro",
+      "progress_snapshot": "astra-pro-20260914.json"
     },
     {
       "id": "long-task--gpt-5-5-xhigh",
@@ -2021,7 +2031,8 @@
       "source_ids": [
         "astra-long-20260907"
       ],
-      "protocol_id": "rpent-pro-astra-long"
+      "protocol_id": "rpent-pro-astra-long",
+      "progress_snapshot": "astra-pro-20260914.json"
     },
     {
       "id": "long-swap--gpt-5-5-xhigh",
@@ -2060,7 +2071,8 @@
       "source_ids": [
         "astra-long-20260907"
       ],
-      "protocol_id": "rpent-pro-astra-long"
+      "protocol_id": "rpent-pro-astra-long",
+      "progress_snapshot": "astra-pro-20260914.json"
     },
     {
       "id": "libero-pro--gpt-5-5-xhigh",
@@ -3104,5 +3116,19 @@
     "long-task",
     "long-swap"
   ],
-  "checked_at": "2026-09-13"
+  "checked_at": "2026-09-14",
+  "evaluation_progress": [
+    {
+      "snapshot": "astra-pro-20260914.json",
+      "snapshot_id": "libero-pro-astra-20260914",
+      "configuration_id": "gpt-6-astra-low",
+      "verified_at": "2026-09-14T14:00:55Z",
+      "completed": 619,
+      "planned": 800,
+      "successes": 564,
+      "failures": 55,
+      "remaining": 181,
+      "overall_rate": null
+    }
+  ]
 }
