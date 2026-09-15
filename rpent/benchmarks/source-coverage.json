@@ -1,0 +1,142 @@
+{
+  "checked_at": "2026-09-15",
+  "paper_revision": "2607.08448v4",
+  "repository_revision": "43f32aa08cba07bd4d49a4bfa5eba4ef633e9b92",
+  "input_hashes": {
+    "data/prior-results.json": "46100782cc296f14bcf5dd9370f3a9dbcdfbd1e6896f0d0022dc2a97c4ebc8b1",
+    "data/astra-pro-20260914.json": "90feb71cccfba8af18291ef2057ad71b03cd606bd146012dba2de25ec4f9b709",
+    "data/astra-pro-20260915.json": "914a5cc35c1504846881b8e3dc8ae31bd55f31d2caca143d94f3ec17df31bfc9",
+    "data/additions.json": "793ee90c2c08e23e09cff89321b1ea4a0dff3e6b34168ea46f18b96da4183922",
+    "data/approved-updates.json": "2c4fca8c78dd9901654573ae23c22e70a95b5177af78413f93fc2ab6ff8faf55"
+  },
+  "coverage": [
+    {
+      "source_id": "paper-table-2",
+      "description": {
+        "en": "Standard LIBERO · all 30 scores",
+        "zh": "标准 LIBERO · 全部 30 项数值"
+      },
+      "section": "standard-libero"
+    },
+    {
+      "source_id": "paper-table-3",
+      "description": {
+        "en": "LIBERO-PRO · 102 displayed scores; four missing Long cells",
+        "zh": "LIBERO-PRO · 展示 102 项数值；4 项缺失 Long"
+      },
+      "section": "libero-pro"
+    },
+    {
+      "source_id": "paper-table-4",
+      "description": {
+        "en": "RoboCasa · all 24 scores",
+        "zh": "RoboCasa · 全部 24 项数值"
+      },
+      "section": "robocasa"
+    },
+    {
+      "source_id": "paper-table-5",
+      "description": {
+        "en": "Zero-shot Goal · 40 task scores + 4 means",
+        "zh": "Goal 零样本 · 40 项任务成绩与 4 项均值"
+      },
+      "section": "libero-pro-zero-shot"
+    },
+    {
+      "source_id": "paper-table-6",
+      "description": {
+        "en": "RoboTwin · all 6 scores",
+        "zh": "RoboTwin · 全部 6 项数值"
+      },
+      "section": "robotwin"
+    },
+    {
+      "source_id": "astra-pro-remaining-20260913",
+      "description": {
+        "en": "Eight completed suites · 80 tasks · 800 outcomes",
+        "zh": "8 个已完成套件 · 80 个任务 · 800 个结果"
+      },
+      "section": "libero-pro"
+    },
+    {
+      "source_id": "contributor-20260915",
+      "description": {
+        "en": "Five new Overall scores; no sub-suite scores inferred",
+        "zh": "5 项新增 Overall；不推断子套件成绩"
+      },
+      "section": "libero-pro"
+    },
+    {
+      "source_id": "repo-task-card",
+      "description": {
+        "en": "Two Object aggregate scores, 200 episodes per method",
+        "zh": "两项 Object 汇总成绩，每方法 200 回合"
+      },
+      "section": "task-card-object"
+    },
+    {
+      "source_id": "contributor-confirmed-20260915",
+      "description": {
+        "en": "Confirmed model settings and two full RoboTwin C2R results",
+        "zh": "确认的模型配置与两项完整 RoboTwin C2R 成绩"
+      },
+      "section": "robotwin"
+    },
+    {
+      "source_id": "repo-robotwin",
+      "description": {
+        "en": "58.0% with explicit 145/250; additional source, not a duplicate ranking row",
+        "zh": "58.0% 与明确的 145/250，补充来源、不重复排名"
+      },
+      "section": "robotwin"
+    },
+    {
+      "source_id": "repo-robocasa",
+      "description": {
+        "en": "50 task aggregates + 4 split/Overall scores",
+        "zh": "50 任务汇总与 4 项 split/Overall 成绩"
+      },
+      "section": "robocasa-reproduction"
+    },
+    {
+      "source_id": "repo-robocasa-v3",
+      "description": {
+        "en": "Four earlier reference values, separately labeled",
+        "zh": "4 项早期参考值，分别标注"
+      },
+      "section": "robocasa-reproduction"
+    },
+    {
+      "source_id": "paper-figure-4",
+      "description": {
+        "en": "Three original invocation curves; no digitized points",
+        "zh": "3 幅原始调用次数曲线；不估读点值"
+      },
+      "section": "analysis"
+    },
+    {
+      "source_id": "paper-figure-6",
+      "description": {
+        "en": "Original completion attribution figure",
+        "zh": "原始完成归因图"
+      },
+      "section": "analysis"
+    },
+    {
+      "source_id": "paper-table-18",
+      "description": {
+        "en": "All primitive counts and reported shares",
+        "zh": "全部 primitive 次数及报告占比"
+      },
+      "section": "analysis"
+    },
+    {
+      "source_id": "paper-table-19",
+      "description": {
+        "en": "All class-level counts and reported shares",
+        "zh": "全部类别次数及报告占比"
+      },
+      "section": "analysis"
+    }
+  ]
+}

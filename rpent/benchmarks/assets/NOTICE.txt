@@ -1,0 +1,30 @@
+RPent logo
+Source: https://github.com/RLinf/misc/blob/main/pic/rpent_logo.png
+Brand artwork belongs to the RPent project. Used to identify RPent.
+
+Paper analysis figures
+Source: Harness VLA, arXiv:2607.08448v4, Zhang et al. (2026).
+https://arxiv.org/html/2607.08448v4#S3.F4
+https://arxiv.org/html/2607.08448v4#S3.F6
+License: Creative Commons Attribution 4.0 (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+Files: invocations-libero.png, invocations-robocasa.png,
+invocations-robotwin.png, completion-attribution.png.
+Images are unmodified originals; their display size is responsive.
+
+Ellipsis icon
+Source: https://github.com/lucide-icons/lucide/blob/main/icons/ellipsis.svg
+License: ISC. See LUCIDE-LICENSE.
+
+Visual design reference
+https://anonymous-report-421.github.io/public-website/?lang=en&view=1
+Only the leaderboard layout was used as a reference. Its JavaScript bundle,
+fonts, brand artwork and experimental results are not redistributed here.
+Method marks: original project/provider marks are used only for identification,
+without implying endorsement. Sources and SHA-256 values are recorded in
+data/method-assets.json. RPent symbol display uses a CSS viewport over the
+unchanged official wordmark, not a redrawn or modified trademark. Claude and
+OpenAI icons identify providers/planners, not an inferred model version.
+Unverified project marks use neutral Lucide pictograms, explicitly identified
+as such; these are not presented as official logos. Lucide uses the ISC license
+included in LUCIDE-LICENSE. All trademarks remain their respective owners'.

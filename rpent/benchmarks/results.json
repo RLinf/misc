@@ -1,5 +1,10 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "checked_at": "2026-09-15",
+  "paper_revision": "2607.08448v4",
+  "repository_revision": "43f32aa08cba07bd4d49a4bfa5eba4ef633e9b92",
+  "prior_media_revision": "e858f627dbcc1b35440c3cb5ecaaefd016eb8680",
+  "prior_docs_revision": "cde9ce1c11014cb51a5833d0d0db741d34d37cfc",
   "configurations": [
     {
       "id": "gpt-5-5-xhigh",
@@ -159,293 +164,78 @@
       "reasoning": null,
       "effort": null,
       "metadata_status": "not_applicable"
-    }
-  ],
-  "benchmarks": [
-    {
-      "id": "standard-libero",
-      "title": {
-        "en": "Standard LIBERO",
-        "zh": "Standard LIBERO"
-      },
-      "label": {
-        "en": "Standard LIBERO",
-        "zh": "Standard LIBERO"
-      }
     },
     {
-      "id": "libero-pro",
-      "title": {
-        "en": "LIBERO-PRO",
-        "zh": "LIBERO-PRO"
-      },
-      "label": {
-        "en": "LIBERO-PRO",
-        "zh": "LIBERO-PRO"
-      }
+      "id": "opus-4-7-reported",
+      "kind": "rpent",
+      "backend": "Claude Code",
+      "model": "Opus 4.7",
+      "reasoning": null,
+      "effort": null
     },
     {
-      "id": "libero-pro-zero-shot",
-      "title": {
-        "en": "LIBERO-PRO Goal zero-shot",
-        "zh": "LIBERO-PRO Goal 零样本"
-      },
-      "label": {
-        "en": "LIBERO-PRO Goal zero-shot",
-        "zh": "LIBERO-PRO Goal 零样本"
-      }
+      "id": "gpt-5-6-reported",
+      "kind": "rpent",
+      "backend": "Codex",
+      "model": "GPT-5.6",
+      "reasoning": true,
+      "effort": "xhigh"
     },
     {
-      "id": "robocasa",
-      "title": {
-        "en": "RoboCasa365 Target50",
-        "zh": "RoboCasa365 Target50"
-      },
-      "label": {
-        "en": "RoboCasa365 Target50",
-        "zh": "RoboCasa365 Target50"
-      }
+      "id": "gpt-5-6-no-reasoning",
+      "kind": "rpent",
+      "backend": "Codex",
+      "model": "GPT-5.6",
+      "reasoning": false,
+      "effort": null
     },
     {
-      "id": "robotwin",
-      "title": {
-        "en": "RoboTwin C2R",
-        "zh": "RoboTwin C2R"
-      },
-      "label": {
-        "en": "RoboTwin C2R",
-        "zh": "RoboTwin C2R"
-      }
-    }
-  ],
-  "sources": [
-    {
-      "id": "paper-table-2",
-      "label": {
-        "en": "Table 2",
-        "zh": "表 2"
-      },
-      "url": "https://arxiv.org/html/2607.08448v4#S3.T2",
-      "anchor": "benchmark-source-p2",
-      "table_number": 2
+      "id": "task-card-molmo-reported",
+      "kind": "rpent",
+      "backend": "Task card",
+      "model": "Molmo",
+      "reasoning": null,
+      "effort": null
     },
     {
-      "id": "paper-table-3",
-      "label": {
-        "en": "Table 3",
-        "zh": "表 3"
-      },
-      "url": "https://arxiv.org/html/2607.08448v4#S3.T3",
-      "anchor": "benchmark-source-p3",
-      "table_number": 3
+      "id": "qwen-reported",
+      "kind": "rpent",
+      "backend": null,
+      "model": "Qwen",
+      "reasoning": null,
+      "effort": null
     },
     {
-      "id": "paper-table-4",
-      "label": {
-        "en": "Table 4",
-        "zh": "表 4"
-      },
-      "url": "https://arxiv.org/html/2607.08448v4#S3.T4",
-      "anchor": "benchmark-source-p4",
-      "table_number": 4
+      "id": "task-card-object-repo",
+      "kind": "rpent",
+      "backend": "Task card",
+      "model": null,
+      "reasoning": null,
+      "effort": null
     },
     {
-      "id": "paper-table-5",
-      "label": {
-        "en": "Table 5",
-        "zh": "表 5"
-      },
-      "url": "https://arxiv.org/html/2607.08448v4#S3.T5",
-      "anchor": "benchmark-source-p5",
-      "table_number": 5
+      "id": "codex-object-repo",
+      "kind": "rpent",
+      "backend": "Codex",
+      "model": null,
+      "reasoning": false,
+      "effort": null
     },
     {
-      "id": "paper-table-6",
-      "label": {
-        "en": "Table 6",
-        "zh": "表 6"
-      },
-      "url": "https://arxiv.org/html/2607.08448v4#S3.T6",
-      "anchor": "benchmark-source-p6",
-      "table_number": 6
+      "id": "codex-reproduction-repo",
+      "kind": "rpent",
+      "backend": "Codex",
+      "model": "GPT-5.6",
+      "reasoning": true,
+      "effort": "xhigh"
     },
     {
-      "id": "astra-long-20260907",
-      "label": {
-        "en": "GPT-6 Astra Long evaluation",
-        "zh": "GPT-6 Astra Long 评测"
-      },
-      "url": "https://github.com/RLinf/RPent/commit/014a0fa97f69c991ee5e0f62f14e1d6f89c3dcd7",
-      "anchor": "benchmark-source-r1",
-      "result_snapshot": "astra-pro-20260914.json",
-      "verified_at": "2026-09-14T14:00:55Z"
-    },
-    {
-      "id": "astra-pro-remaining-20260913",
-      "label": {
-        "en": "GPT-6 Astra supplementary evaluation",
-        "zh": "GPT-6 Astra 补充评测"
-      },
-      "url": "https://github.com/RLinf/RPent/commit/014a0fa97f69c991ee5e0f62f14e1d6f89c3dcd7",
-      "anchor": "benchmark-source-astra-pro",
-      "result_snapshot": "astra-pro-20260914.json",
-      "verified_at": "2026-09-14T14:00:55Z"
-    }
-  ],
-  "protocols": [
-    {
-      "id": "rpent-standard",
-      "label": {
-        "en": "Original LIBERO; four suites, 100 episodes each; frozen RLinf π0.5 policy.",
-        "zh": "原始 LIBERO；四套件，每套 100 回合；冻结 RLinf π0.5 策略。"
-      },
-      "description": {
-        "en": "Original LIBERO; four suites, 100 episodes each; frozen RLinf π0.5 policy.",
-        "zh": "原始 LIBERO；四套件，每套 100 回合；冻结 RLinf π0.5 策略。"
-      }
-    },
-    {
-      "id": "rpent-pro",
-      "label": {
-        "en": "LIBERO-PRO with target-setting memory; eight Task/Swap items, 100 episodes each.",
-        "zh": "使用目标设置记忆的 LIBERO-PRO；八个 Task/Swap 分项，每项 100 回合。"
-      },
-      "description": {
-        "en": "LIBERO-PRO with target-setting memory; eight Task/Swap items, 100 episodes each.",
-        "zh": "使用目标设置记忆的 LIBERO-PRO；八个 Task/Swap 分项，每项 100 回合。"
-      }
-    },
-    {
-      "id": "rpent-pro-astra-long",
-      "label": {
-        "en": "Long campaign 20260907, runtime 014a0fa; seed-0 memory frozen before evaluation on seeds 1–10; 5000-second planner limit and 10000 environment steps.",
-        "zh": "Long 实验 20260907，运行版本 014a0fa；seed 0 构建并冻结记忆，seed 1–10 评测；规划器时限 5000 秒，环境上限 10000 步。"
-      },
-      "description": {
-        "en": "Long campaign 20260907, runtime 014a0fa; seed-0 memory frozen before evaluation on seeds 1–10; 5000-second planner limit and 10000 environment steps.",
-        "zh": "Long 实验 20260907，运行版本 014a0fa；seed 0 构建并冻结记忆，seed 1–10 评测；规划器时限 5000 秒，环境上限 10000 步。"
-      }
-    },
-    {
-      "id": "rpent-zero-shot",
-      "label": {
-        "en": "Goal Task/Swap without target-setting Task Specific Memory and Global Memory; 100 episodes each.",
-        "zh": "Goal Task/Swap 不使用目标设置 Task Specific Memory 和 Global Memory；每项 100 回合。"
-      },
-      "description": {
-        "en": "Goal Task/Swap without target-setting Task Specific Memory and Global Memory; 100 episodes each.",
-        "zh": "Goal Task/Swap 不使用目标设置 Task Specific Memory 和 Global Memory；每项 100 回合。"
-      }
-    },
-    {
-      "id": "rpent-robocasa",
-      "label": {
-        "en": "Target50: 18 atomic tasks × 10 seeds, 16 seen and 16 unseen composite tasks × 5 seeds; Overall weights 50 tasks equally.",
-        "zh": "Target50：18 个原子任务各 10 seeds，16 个已见与 16 个未见复合任务各 5 seeds；总体为 50 个任务均权。"
-      },
-      "description": {
-        "en": "Target50: 18 atomic tasks × 10 seeds, 16 seen and 16 unseen composite tasks × 5 seeds; Overall weights 50 tasks equally.",
-        "zh": "Target50：18 个原子任务各 10 seeds，16 个已见与 16 个未见复合任务各 5 seeds；总体为 50 个任务均权。"
-      }
-    },
-    {
-      "id": "rpent-robotwin",
-      "label": {
-        "en": "50 tasks × 5 expert-verified randomized seeds; memory from demo_clean transfers to demo_randomized.",
-        "zh": "50 个任务各 5 个专家验证随机 seeds；记忆从 demo_clean 迁移至 demo_randomized。"
-      },
-      "description": {
-        "en": "50 tasks × 5 expert-verified randomized seeds; memory from demo_clean transfers to demo_randomized.",
-        "zh": "50 个任务各 5 个专家验证随机 seeds；记忆从 demo_clean 迁移至 demo_randomized。"
-      }
-    },
-    {
-      "id": "external-standard",
-      "label": {
-        "en": "Four standard suites; sample counts follow each external report.",
-        "zh": "四个标准套件；样本量沿用各外部报告。"
-      },
-      "description": {
-        "en": "Four standard suites; sample counts follow each external report.",
-        "zh": "四个标准套件；样本量沿用各外部报告。"
-      }
-    },
-    {
-      "id": "external-pro",
-      "label": {
-        "en": "Eight LIBERO-PRO Task/Swap items; sample counts follow each external report.",
-        "zh": "八个 LIBERO-PRO Task/Swap 分项；样本量沿用各外部报告。"
-      },
-      "description": {
-        "en": "Eight LIBERO-PRO Task/Swap items; sample counts follow each external report.",
-        "zh": "八个 LIBERO-PRO Task/Swap 分项；样本量沿用各外部报告。"
-      }
-    },
-    {
-      "id": "external-pro-six",
-      "label": {
-        "en": "Six Spatial/Object/Goal Task/Swap items only; excludes Long.",
-        "zh": "仅六个 Spatial/Object/Goal Task/Swap 分项，不含 Long。"
-      },
-      "description": {
-        "en": "Six Spatial/Object/Goal Task/Swap items only; excludes Long.",
-        "zh": "仅六个 Spatial/Object/Goal Task/Swap 分项，不含 Long。"
-      }
-    },
-    {
-      "id": "external-zero-shot",
-      "label": {
-        "en": "Goal ablation without target-setting memory; sample counts follow the external report.",
-        "zh": "无目标设置记忆的 Goal 消融；样本量沿用外部报告。"
-      },
-      "description": {
-        "en": "Goal ablation without target-setting memory; sample counts follow the external report.",
-        "zh": "无目标设置记忆的 Goal 消融；样本量沿用外部报告。"
-      }
-    },
-    {
-      "id": "external-robocasa",
-      "label": {
-        "en": "All Target50 splits, with task-weighted aggregation reported by the source.",
-        "zh": "Target50 全部划分，保留来源报告的任务均权聚合。"
-      },
-      "description": {
-        "en": "All Target50 splits, with task-weighted aggregation reported by the source.",
-        "zh": "Target50 全部划分，保留来源报告的任务均权聚合。"
-      }
-    },
-    {
-      "id": "external-robotwin",
-      "label": {
-        "en": "Clean-to-randomized transfer; sample counts follow each external report.",
-        "zh": "从干净设置到随机设置迁移；样本量沿用各外部报告。"
-      },
-      "description": {
-        "en": "Clean-to-randomized transfer; sample counts follow each external report.",
-        "zh": "从干净设置到随机设置迁移；样本量沿用各外部报告。"
-      }
-    },
-    {
-      "id": "rpent-pro-astra-remaining",
-      "label": {
-        "en": "Supplementary PRO evaluation with frozen memory",
-        "zh": "使用冻结记忆的补充 PRO 评测"
-      },
-      "description": {
-        "en": "Spatial/Object/Goal Task and Swap; each item has 10 tasks × seeds 1–10. Seed-0 task memories are merged and frozen before evaluation.",
-        "zh": "Spatial/Object/Goal Task 与 Swap；每项 10 个任务，各使用 seed 1–10。Seed 0 任务记忆经合并冻结后开始评测。"
-      }
-    },
-    {
-      "id": "rpent-pro-astra-mixed-batches",
-      "label": {
-        "en": "Eight-item PRO Overall across separately frozen batches",
-        "zh": "分别冻结记忆的批次覆盖八项 PRO 总体"
-      },
-      "description": {
-        "en": "800 episodes: 200 Long and 600 Spatial/Object/Goal episodes. Each batch uses its own pre-frozen memory corpus; all eight items have 100 episodes.",
-        "zh": "800 回合：Long 200 回合，Spatial/Object/Goal 600 回合。各批次使用对应的预先冻结记忆库；八个分项均为 100 回合。"
-      }
+      "id": "codex-reference-v3",
+      "kind": "rpent",
+      "backend": "Codex",
+      "model": "GPT-5.5",
+      "reasoning": true,
+      "effort": "xhigh"
     }
   ],
   "views": [
@@ -486,14 +276,6 @@
         "standard-spatial--pi-rlinf",
         "standard-spatial--atomvla"
       ],
-      "chart_record_ids": [
-        "standard-spatial--opus-4-8-max",
-        "standard-spatial--openvla",
-        "standard-spatial--nora",
-        "standard-spatial--pi0",
-        "standard-spatial--pi-rlinf",
-        "standard-spatial--atomvla"
-      ],
       "source_ids": [
         "paper-table-2"
       ],
@@ -501,7 +283,6 @@
         "en": "Table 2",
         "zh": "表 2"
       },
-      "asset_slug": "standard-spatial",
       "axis_max": 100
     },
     {
@@ -541,14 +322,6 @@
         "standard-object--pi-rlinf",
         "standard-object--atomvla"
       ],
-      "chart_record_ids": [
-        "standard-object--opus-4-8-max",
-        "standard-object--openvla",
-        "standard-object--nora",
-        "standard-object--pi0",
-        "standard-object--pi-rlinf",
-        "standard-object--atomvla"
-      ],
       "source_ids": [
         "paper-table-2"
       ],
@@ -556,7 +329,6 @@
         "en": "Table 2",
         "zh": "表 2"
       },
-      "asset_slug": "standard-object",
       "axis_max": 100
     },
     {
@@ -596,14 +368,6 @@
         "standard-goal--pi-rlinf",
         "standard-goal--atomvla"
       ],
-      "chart_record_ids": [
-        "standard-goal--opus-4-8-max",
-        "standard-goal--openvla",
-        "standard-goal--nora",
-        "standard-goal--pi0",
-        "standard-goal--pi-rlinf",
-        "standard-goal--atomvla"
-      ],
       "source_ids": [
         "paper-table-2"
       ],
@@ -611,7 +375,6 @@
         "en": "Table 2",
         "zh": "表 2"
       },
-      "asset_slug": "standard-goal",
       "axis_max": 100
     },
     {
@@ -651,14 +414,6 @@
         "standard-long--pi-rlinf",
         "standard-long--atomvla"
       ],
-      "chart_record_ids": [
-        "standard-long--opus-4-8-max",
-        "standard-long--openvla",
-        "standard-long--nora",
-        "standard-long--pi0",
-        "standard-long--pi-rlinf",
-        "standard-long--atomvla"
-      ],
       "source_ids": [
         "paper-table-2"
       ],
@@ -666,7 +421,6 @@
         "en": "Table 2",
         "zh": "表 2"
       },
-      "asset_slug": "standard-long",
       "axis_max": 100
     },
     {
@@ -706,13 +460,6 @@
         "standard-libero--pi-rlinf",
         "standard-libero--atomvla"
       ],
-      "chart_record_ids": [
-        "standard-libero--atomvla",
-        "standard-libero--opus-4-8-max",
-        "standard-libero--pi-rlinf",
-        "standard-libero--pi0",
-        "standard-libero--openvla"
-      ],
       "source_ids": [
         "paper-table-2"
       ],
@@ -720,14 +467,6 @@
         "en": "Table 2",
         "zh": "表 2"
       },
-      "asset_slug": "standard-libero",
-      "overview_record_ids": [
-        "standard-libero--atomvla",
-        "standard-libero--opus-4-8-max",
-        "standard-libero--pi-rlinf",
-        "standard-libero--pi0",
-        "standard-libero--openvla"
-      ],
       "axis_max": 100,
       "aggregate_of": [
         "standard-spatial",
@@ -778,30 +517,15 @@
         "spatial-task--rats",
         "spatial-task--pi-rlinf"
       ],
-      "chart_record_ids": [
-        "spatial-task--gpt-5-5-xhigh",
-        "spatial-task--opus-4-8-max",
-        "spatial-task--gpt-6-astra-low",
-        "spatial-task--openvla",
-        "spatial-task--pi0",
-        "spatial-task--pi0-5",
-        "spatial-task--molmoact",
-        "spatial-task--nora",
-        "spatial-task--x-vla",
-        "spatial-task--atomvla",
-        "spatial-task--cap-x",
-        "spatial-task--rats",
-        "spatial-task--pi-rlinf"
-      ],
       "source_ids": [
         "paper-table-3",
-        "astra-pro-remaining-20260913"
+        "astra-pro-remaining-20260913",
+        "contributor-confirmed-20260915"
       ],
       "source_note": {
         "en": "Table 3 · Astra evaluation",
         "zh": "表 3 · Astra 评测"
       },
-      "asset_slug": "spatial-task",
       "axis_max": 100
     },
     {
@@ -846,30 +570,15 @@
         "spatial-swap--rats",
         "spatial-swap--pi-rlinf"
       ],
-      "chart_record_ids": [
-        "spatial-swap--gpt-5-5-xhigh",
-        "spatial-swap--opus-4-8-max",
-        "spatial-swap--gpt-6-astra-low",
-        "spatial-swap--openvla",
-        "spatial-swap--pi0",
-        "spatial-swap--pi0-5",
-        "spatial-swap--molmoact",
-        "spatial-swap--nora",
-        "spatial-swap--x-vla",
-        "spatial-swap--atomvla",
-        "spatial-swap--cap-x",
-        "spatial-swap--rats",
-        "spatial-swap--pi-rlinf"
-      ],
       "source_ids": [
         "paper-table-3",
-        "astra-pro-remaining-20260913"
+        "astra-pro-remaining-20260913",
+        "contributor-confirmed-20260915"
       ],
       "source_note": {
         "en": "Table 3 · Astra evaluation",
         "zh": "表 3 · Astra 评测"
       },
-      "asset_slug": "spatial-swap",
       "axis_max": 100
     },
     {
@@ -914,30 +623,15 @@
         "object-task--rats",
         "object-task--pi-rlinf"
       ],
-      "chart_record_ids": [
-        "object-task--gpt-5-5-xhigh",
-        "object-task--opus-4-8-max",
-        "object-task--gpt-6-astra-low",
-        "object-task--openvla",
-        "object-task--pi0",
-        "object-task--pi0-5",
-        "object-task--molmoact",
-        "object-task--nora",
-        "object-task--x-vla",
-        "object-task--atomvla",
-        "object-task--cap-x",
-        "object-task--rats",
-        "object-task--pi-rlinf"
-      ],
       "source_ids": [
         "paper-table-3",
-        "astra-pro-remaining-20260913"
+        "astra-pro-remaining-20260913",
+        "contributor-confirmed-20260915"
       ],
       "source_note": {
         "en": "Table 3 · Astra evaluation",
         "zh": "表 3 · Astra 评测"
       },
-      "asset_slug": "object-task",
       "axis_max": 100
     },
     {
@@ -982,30 +676,15 @@
         "object-swap--rats",
         "object-swap--pi-rlinf"
       ],
-      "chart_record_ids": [
-        "object-swap--gpt-5-5-xhigh",
-        "object-swap--opus-4-8-max",
-        "object-swap--gpt-6-astra-low",
-        "object-swap--openvla",
-        "object-swap--pi0",
-        "object-swap--pi0-5",
-        "object-swap--molmoact",
-        "object-swap--nora",
-        "object-swap--x-vla",
-        "object-swap--atomvla",
-        "object-swap--cap-x",
-        "object-swap--rats",
-        "object-swap--pi-rlinf"
-      ],
       "source_ids": [
         "paper-table-3",
-        "astra-pro-remaining-20260913"
+        "astra-pro-remaining-20260913",
+        "contributor-confirmed-20260915"
       ],
       "source_note": {
         "en": "Table 3 · Astra evaluation",
         "zh": "表 3 · Astra 评测"
       },
-      "asset_slug": "object-swap",
       "axis_max": 100
     },
     {
@@ -1050,29 +729,16 @@
         "goal-task--rats",
         "goal-task--pi-rlinf"
       ],
-      "chart_record_ids": [
-        "goal-task--gpt-5-5-xhigh",
-        "goal-task--opus-4-8-max",
-        "goal-task--openvla",
-        "goal-task--pi0",
-        "goal-task--pi0-5",
-        "goal-task--molmoact",
-        "goal-task--nora",
-        "goal-task--x-vla",
-        "goal-task--atomvla",
-        "goal-task--cap-x",
-        "goal-task--rats",
-        "goal-task--pi-rlinf"
-      ],
       "source_ids": [
-        "paper-table-3"
+        "paper-table-3",
+        "astra-pro-remaining-20260913",
+        "contributor-confirmed-20260915"
       ],
       "source_note": {
         "en": "Table 3",
         "zh": "表 3"
       },
-      "asset_slug": "goal-task",
-      "axis_max": 90
+      "axis_max": 100
     },
     {
       "id": "goal-swap",
@@ -1116,29 +782,16 @@
         "goal-swap--rats",
         "goal-swap--pi-rlinf"
       ],
-      "chart_record_ids": [
-        "goal-swap--gpt-5-5-xhigh",
-        "goal-swap--opus-4-8-max",
-        "goal-swap--openvla",
-        "goal-swap--pi0",
-        "goal-swap--pi0-5",
-        "goal-swap--molmoact",
-        "goal-swap--nora",
-        "goal-swap--x-vla",
-        "goal-swap--atomvla",
-        "goal-swap--cap-x",
-        "goal-swap--rats",
-        "goal-swap--pi-rlinf"
-      ],
       "source_ids": [
-        "paper-table-3"
+        "paper-table-3",
+        "astra-pro-remaining-20260913",
+        "contributor-confirmed-20260915"
       ],
       "source_note": {
         "en": "Table 3",
         "zh": "表 3"
       },
-      "asset_slug": "goal-swap",
-      "axis_max": 90
+      "axis_max": 100
     },
     {
       "id": "long-task",
@@ -1182,34 +835,16 @@
         "long-task--rats",
         "long-task--pi-rlinf"
       ],
-      "chart_record_ids": [
-        "long-task--gpt-6-astra-low",
-        "long-task--opus-4-8-max",
-        "long-task--gpt-5-5-xhigh",
-        "long-task--openvla",
-        "long-task--pi0",
-        "long-task--pi0-5",
-        "long-task--molmoact",
-        "long-task--nora",
-        "long-task--x-vla",
-        "long-task--atomvla",
-        "long-task--pi-rlinf"
-      ],
       "source_ids": [
         "paper-table-3",
-        "astra-long-20260907"
+        "astra-long-20260907",
+        "contributor-confirmed-20260915"
       ],
       "source_note": {
         "en": "Table 3 · Astra evaluation",
         "zh": "表 3 · Astra 评测"
       },
-      "asset_slug": "long-task",
-      "overview_record_ids": [
-        "long-task--gpt-6-astra-low",
-        "long-task--opus-4-8-max",
-        "long-task--gpt-5-5-xhigh"
-      ],
-      "axis_max": 90
+      "axis_max": 100
     },
     {
       "id": "long-swap",
@@ -1253,34 +888,16 @@
         "long-swap--rats",
         "long-swap--pi-rlinf"
       ],
-      "chart_record_ids": [
-        "long-swap--gpt-6-astra-low",
-        "long-swap--opus-4-8-max",
-        "long-swap--gpt-5-5-xhigh",
-        "long-swap--openvla",
-        "long-swap--pi0",
-        "long-swap--pi0-5",
-        "long-swap--molmoact",
-        "long-swap--nora",
-        "long-swap--x-vla",
-        "long-swap--atomvla",
-        "long-swap--pi-rlinf"
-      ],
       "source_ids": [
         "paper-table-3",
-        "astra-long-20260907"
+        "astra-long-20260907",
+        "contributor-confirmed-20260915"
       ],
       "source_note": {
         "en": "Table 3 · Astra evaluation",
         "zh": "表 3 · Astra 评测"
       },
-      "asset_slug": "long-swap",
-      "overview_record_ids": [
-        "long-swap--gpt-6-astra-low",
-        "long-swap--opus-4-8-max",
-        "long-swap--gpt-5-5-xhigh"
-      ],
-      "axis_max": 80
+      "axis_max": 100
     },
     {
       "id": "libero-pro",
@@ -1320,31 +937,25 @@
         "libero-pro--nora",
         "libero-pro--x-vla",
         "libero-pro--atomvla",
-        "libero-pro--pi-rlinf"
-      ],
-      "chart_record_ids": [
-        "libero-pro--opus-4-8-max",
-        "libero-pro--gpt-5-5-xhigh",
         "libero-pro--pi-rlinf",
-        "libero-pro--pi0-5",
-        "libero-pro--atomvla"
+        "libero-pro--opus-4-7-reported",
+        "libero-pro--gpt-5-6-reported",
+        "libero-pro--gpt-5-6-no-reasoning",
+        "libero-pro--task-card-molmo-reported",
+        "libero-pro--qwen-reported"
       ],
       "source_ids": [
-        "paper-table-3"
+        "paper-table-3",
+        "astra-long-20260907",
+        "astra-pro-remaining-20260913",
+        "contributor-confirmed-20260915",
+        "contributor-20260915"
       ],
       "source_note": {
         "en": "Table 3",
         "zh": "表 3"
       },
-      "asset_slug": "libero-pro",
-      "overview_record_ids": [
-        "libero-pro--opus-4-8-max",
-        "libero-pro--gpt-5-5-xhigh",
-        "libero-pro--pi-rlinf",
-        "libero-pro--pi0-5",
-        "libero-pro--atomvla"
-      ],
-      "axis_max": 90,
+      "axis_max": 100,
       "aggregate_of": [
         "spatial-task",
         "spatial-swap",
@@ -1389,10 +1000,6 @@
         "zero-shot-goal-task--gpt-6-astra-low",
         "zero-shot-goal-task--cap-x"
       ],
-      "chart_record_ids": [
-        "zero-shot-goal-task--opus-4-8-max",
-        "zero-shot-goal-task--cap-x"
-      ],
       "source_ids": [
         "paper-table-5"
       ],
@@ -1400,8 +1007,7 @@
         "en": "Table 5",
         "zh": "表 5"
       },
-      "asset_slug": "zero-shot-goal-task",
-      "axis_max": 80
+      "axis_max": 100
     },
     {
       "id": "zero-shot-goal-swap",
@@ -1436,10 +1042,6 @@
         "zero-shot-goal-swap--gpt-6-astra-low",
         "zero-shot-goal-swap--cap-x"
       ],
-      "chart_record_ids": [
-        "zero-shot-goal-swap--opus-4-8-max",
-        "zero-shot-goal-swap--cap-x"
-      ],
       "source_ids": [
         "paper-table-5"
       ],
@@ -1447,8 +1049,7 @@
         "en": "Table 5",
         "zh": "表 5"
       },
-      "asset_slug": "zero-shot-goal-swap",
-      "axis_max": 40
+      "axis_max": 100
     },
     {
       "id": "robocasa-atomic-seen",
@@ -1466,8 +1067,8 @@
         "zh": "18 个任务 · 180 回合"
       },
       "scope": {
-        "en": "18 tasks · 180 episodes",
-        "zh": "18 个任务 · 180 回合"
+        "en": "RPent: Target50; external baselines: source-reported scope",
+        "zh": "RPent：Target50；外部基线：原报告口径"
       },
       "table_section": {
         "en": "RoboCasa365 Target50",
@@ -1486,14 +1087,6 @@
         "robocasa-atomic-seen--pi0-5",
         "robocasa-atomic-seen--pi0"
       ],
-      "chart_record_ids": [
-        "robocasa-atomic-seen--gpt-5-5-xhigh",
-        "robocasa-atomic-seen--opus-4-8-max",
-        "robocasa-atomic-seen--rldx-1",
-        "robocasa-atomic-seen--worlddreamer",
-        "robocasa-atomic-seen--pi0-5",
-        "robocasa-atomic-seen--pi0"
-      ],
       "source_ids": [
         "paper-table-4"
       ],
@@ -1501,7 +1094,6 @@
         "en": "Table 4",
         "zh": "表 4"
       },
-      "asset_slug": "robocasa-atomic-seen",
       "axis_max": 100
     },
     {
@@ -1520,8 +1112,8 @@
         "zh": "16 个任务 · 80 回合"
       },
       "scope": {
-        "en": "16 tasks · 80 episodes",
-        "zh": "16 个任务 · 80 回合"
+        "en": "RPent: Target50; external baselines: source-reported scope",
+        "zh": "RPent：Target50；外部基线：原报告口径"
       },
       "table_section": {
         "en": "RoboCasa365 Target50",
@@ -1540,14 +1132,6 @@
         "robocasa-composite-seen--pi0-5",
         "robocasa-composite-seen--pi0"
       ],
-      "chart_record_ids": [
-        "robocasa-composite-seen--gpt-5-5-xhigh",
-        "robocasa-composite-seen--opus-4-8-max",
-        "robocasa-composite-seen--rldx-1",
-        "robocasa-composite-seen--worlddreamer",
-        "robocasa-composite-seen--pi0-5",
-        "robocasa-composite-seen--pi0"
-      ],
       "source_ids": [
         "paper-table-4"
       ],
@@ -1555,8 +1139,7 @@
         "en": "Table 4",
         "zh": "表 4"
       },
-      "asset_slug": "robocasa-composite-seen",
-      "axis_max": 70
+      "axis_max": 100
     },
     {
       "id": "robocasa-composite-unseen",
@@ -1574,8 +1157,8 @@
         "zh": "16 个任务 · 80 回合"
       },
       "scope": {
-        "en": "16 tasks · 80 episodes",
-        "zh": "16 个任务 · 80 回合"
+        "en": "RPent: Target50; external baselines: source-reported scope",
+        "zh": "RPent：Target50；外部基线：原报告口径"
       },
       "table_section": {
         "en": "RoboCasa365 Target50",
@@ -1594,14 +1177,6 @@
         "robocasa-composite-unseen--pi0-5",
         "robocasa-composite-unseen--pi0"
       ],
-      "chart_record_ids": [
-        "robocasa-composite-unseen--gpt-5-5-xhigh",
-        "robocasa-composite-unseen--opus-4-8-max",
-        "robocasa-composite-unseen--rldx-1",
-        "robocasa-composite-unseen--worlddreamer",
-        "robocasa-composite-unseen--pi0-5",
-        "robocasa-composite-unseen--pi0"
-      ],
       "source_ids": [
         "paper-table-4"
       ],
@@ -1609,8 +1184,7 @@
         "en": "Table 4",
         "zh": "表 4"
       },
-      "asset_slug": "robocasa-composite-unseen",
-      "axis_max": 20
+      "axis_max": 100
     },
     {
       "id": "robocasa",
@@ -1620,16 +1194,16 @@
         "zh": "RoboCasa365 Target50"
       },
       "label": {
-        "en": "Overall (task-weighted)",
-        "zh": "总体（任务均权）"
+        "en": "Overall (source-reported)",
+        "zh": "总体（原报告口径）"
       },
       "subtitle": {
         "en": "Overall · 50 tasks, equally weighted",
         "zh": "总体 · 50 个任务均权"
       },
       "scope": {
-        "en": "Overall · 50 tasks, equally weighted",
-        "zh": "总体 · 50 个任务均权"
+        "en": "RPent: Target50; external baselines: source-reported scope",
+        "zh": "RPent：Target50；外部基线：原报告口径"
       },
       "table_section": {
         "en": "RoboCasa365 Target50",
@@ -1642,35 +1216,23 @@
       "record_ids": [
         "robocasa--gpt-5-5-xhigh",
         "robocasa--opus-4-8-max",
-        "robocasa--gpt-6-astra-low",
         "robocasa--rldx-1",
         "robocasa--worlddreamer",
         "robocasa--pi0-5",
-        "robocasa--pi0"
-      ],
-      "chart_record_ids": [
-        "robocasa--gpt-5-5-xhigh",
-        "robocasa--opus-4-8-max",
-        "robocasa--worlddreamer",
-        "robocasa--rldx-1",
-        "robocasa--pi0-5"
+        "robocasa--pi0",
+        "robocasa--gpt-6-astra-reported",
+        "robocasa--gpt-5-6-no-reasoning"
       ],
       "source_ids": [
-        "paper-table-4"
+        "paper-table-4",
+        "contributor-20260915",
+        "contributor-confirmed-20260915"
       ],
       "source_note": {
         "en": "Table 4",
         "zh": "表 4"
       },
-      "asset_slug": "robocasa",
-      "overview_record_ids": [
-        "robocasa--gpt-5-5-xhigh",
-        "robocasa--opus-4-8-max",
-        "robocasa--worlddreamer",
-        "robocasa--rldx-1",
-        "robocasa--pi0-5"
-      ],
-      "axis_max": 60
+      "axis_max": 100
     },
     {
       "id": "robotwin",
@@ -1706,76 +1268,150 @@
         "robotwin--gr00t-n1-7",
         "robotwin--pi0-5",
         "robotwin--starvla",
-        "robotwin--lingbot-vla"
-      ],
-      "chart_record_ids": [
-        "robotwin--opus-4-8-max",
-        "robotwin--gpt-5-5-xhigh",
         "robotwin--lingbot-vla",
-        "robotwin--pi0-5",
-        "robotwin--gr00t-n1-7"
+        "robotwin--gpt-5-6-reported"
       ],
       "source_ids": [
-        "paper-table-6"
+        "paper-table-6",
+        "repo-robotwin",
+        "contributor-confirmed-20260915"
       ],
       "source_note": {
         "en": "Table 6",
         "zh": "表 6"
       },
-      "asset_slug": "robotwin",
-      "overview_record_ids": [
-        "robotwin--opus-4-8-max",
-        "robotwin--gpt-5-5-xhigh",
-        "robotwin--lingbot-vla",
-        "robotwin--pi0-5",
-        "robotwin--gr00t-n1-7"
-      ],
-      "axis_max": 60
+      "axis_max": 100
     },
     {
-      "id": "libero-pro-six-non-long",
-      "benchmark_id": "libero-pro",
+      "id": "task-card-object",
+      "benchmark_id": "task-card-object",
       "title": {
-        "en": "LIBERO-PRO · six non-Long items",
-        "zh": "LIBERO-PRO · 六个非 Long 分项"
+        "en": "Object · Task + Swap",
+        "zh": "Object · Task + Swap"
       },
       "label": {
-        "en": "Six non-Long items",
-        "zh": "六个非 Long 分项"
-      },
-      "subtitle": {
-        "en": "Spatial/Object/Goal only · external reports",
-        "zh": "仅 Spatial/Object/Goal · 外部报告"
+        "en": "Object · Task + Swap",
+        "zh": "Object · Task + Swap"
       },
       "scope": {
-        "en": "Spatial/Object/Goal only · external reports",
-        "zh": "仅 Spatial/Object/Goal · 外部报告"
+        "en": "20 tasks · 200 episodes · two Object suites",
+        "zh": "20 个任务 · 200 回合 · 两个 Object 套件"
       },
-      "table_section": {
-        "en": "LIBERO-PRO",
-        "zh": "LIBERO-PRO"
-      },
-      "table_row": {
-        "en": "Six non-Long cells",
-        "zh": "六个非 Long 单元"
-      },
-      "record_ids": [
-        "libero-pro-six-non-long--cap-x",
-        "libero-pro-six-non-long--rats"
-      ],
-      "chart_record_ids": [
-        "libero-pro-six-non-long--cap-x",
-        "libero-pro-six-non-long--rats"
-      ],
       "source_ids": [
-        "paper-table-3"
+        "repo-task-card"
       ],
-      "source_note": {
-        "en": "Table 3",
-        "zh": "表 3"
+      "record_ids": [
+        "task-card-object--task-card-object-repo",
+        "task-card-object--codex-object-repo"
+      ],
+      "axis_max": 100
+    },
+    {
+      "id": "reproduction-atomic",
+      "benchmark_id": "robocasa-reproduction",
+      "title": {
+        "en": "Atomic",
+        "zh": "Atomic"
       },
-      "asset_slug": "libero-pro-six-non-long",
-      "axis_max": 50
+      "label": {
+        "en": "Atomic",
+        "zh": "Atomic"
+      },
+      "scope": {
+        "en": "180 episodes · repository report",
+        "zh": "180 回合 · 仓库报告"
+      },
+      "source_ids": [
+        "repo-robocasa",
+        "contributor-confirmed-20260915",
+        "repo-robocasa-v3"
+      ],
+      "record_ids": [
+        "reproduction-atomic--codex-reproduction-repo",
+        "reproduction-atomic--codex-reference-v3"
+      ],
+      "axis_max": 100
+    },
+    {
+      "id": "reproduction-seen",
+      "benchmark_id": "robocasa-reproduction",
+      "title": {
+        "en": "Composite-Seen",
+        "zh": "Composite-Seen"
+      },
+      "label": {
+        "en": "Composite-Seen",
+        "zh": "Composite-Seen"
+      },
+      "scope": {
+        "en": "80 episodes · repository report",
+        "zh": "80 回合 · 仓库报告"
+      },
+      "source_ids": [
+        "repo-robocasa",
+        "contributor-confirmed-20260915",
+        "repo-robocasa-v3"
+      ],
+      "record_ids": [
+        "reproduction-seen--codex-reproduction-repo",
+        "reproduction-seen--codex-reference-v3"
+      ],
+      "axis_max": 100
+    },
+    {
+      "id": "reproduction-unseen",
+      "benchmark_id": "robocasa-reproduction",
+      "title": {
+        "en": "Composite-Unseen",
+        "zh": "Composite-Unseen"
+      },
+      "label": {
+        "en": "Composite-Unseen",
+        "zh": "Composite-Unseen"
+      },
+      "scope": {
+        "en": "80 episodes · repository report",
+        "zh": "80 回合 · 仓库报告"
+      },
+      "source_ids": [
+        "repo-robocasa",
+        "contributor-confirmed-20260915",
+        "repo-robocasa-v3"
+      ],
+      "record_ids": [
+        "reproduction-unseen--codex-reproduction-repo",
+        "reproduction-unseen--codex-reference-v3"
+      ],
+      "axis_max": 100
+    },
+    {
+      "id": "reproduction-overall",
+      "benchmark_id": "robocasa-reproduction",
+      "title": {
+        "en": "Overall",
+        "zh": "总体"
+      },
+      "label": {
+        "en": "Overall",
+        "zh": "总体"
+      },
+      "scope": {
+        "en": "50 tasks equally weighted · 340 episodes",
+        "zh": "50 个任务等权 · 340 回合"
+      },
+      "source_ids": [
+        "repo-robocasa",
+        "contributor-confirmed-20260915",
+        "repo-robocasa-v3",
+        "contributor-20260915",
+        "contributor-confirmed-20260915"
+      ],
+      "record_ids": [
+        "reproduction-overall--codex-reproduction-repo",
+        "reproduction-overall--codex-reference-v3",
+        "robocasa--gpt-6-astra-reported"
+      ],
+      "axis_max": 100
     }
   ],
   "results": [
@@ -2009,10 +1645,11 @@
       "successes": 100,
       "episodes": 100,
       "source_ids": [
-        "astra-pro-remaining-20260913"
+        "astra-pro-remaining-20260913",
+        "contributor-confirmed-20260915"
       ],
       "protocol_id": "rpent-pro-astra-remaining",
-      "progress_snapshot": "astra-pro-20260914.json"
+      "progress_snapshot": "astra-pro-20260915.json"
     },
     {
       "id": "spatial-swap--gpt-5-5-xhigh",
@@ -2049,10 +1686,11 @@
       "successes": 98,
       "episodes": 100,
       "source_ids": [
-        "astra-pro-remaining-20260913"
+        "astra-pro-remaining-20260913",
+        "contributor-confirmed-20260915"
       ],
       "protocol_id": "rpent-pro-astra-remaining",
-      "progress_snapshot": "astra-pro-20260914.json"
+      "progress_snapshot": "astra-pro-20260915.json"
     },
     {
       "id": "object-task--gpt-5-5-xhigh",
@@ -2089,10 +1727,11 @@
       "successes": 100,
       "episodes": 100,
       "source_ids": [
-        "astra-pro-remaining-20260913"
+        "astra-pro-remaining-20260913",
+        "contributor-confirmed-20260915"
       ],
       "protocol_id": "rpent-pro-astra-remaining",
-      "progress_snapshot": "astra-pro-20260914.json"
+      "progress_snapshot": "astra-pro-20260915.json"
     },
     {
       "id": "object-swap--gpt-5-5-xhigh",
@@ -2129,10 +1768,11 @@
       "successes": 99,
       "episodes": 100,
       "source_ids": [
-        "astra-pro-remaining-20260913"
+        "astra-pro-remaining-20260913",
+        "contributor-confirmed-20260915"
       ],
       "protocol_id": "rpent-pro-astra-remaining",
-      "progress_snapshot": "astra-pro-20260914.json"
+      "progress_snapshot": "astra-pro-20260915.json"
     },
     {
       "id": "goal-task--gpt-5-5-xhigh",
@@ -2164,15 +1804,17 @@
       "id": "goal-task--gpt-6-astra-low",
       "view_id": "goal-task",
       "configuration_id": "gpt-6-astra-low",
-      "status": "not_reported",
-      "rate": null,
-      "successes": null,
-      "episodes": null,
+      "status": "reported",
+      "rate": "88",
+      "successes": 88,
+      "episodes": 100,
       "source_ids": [
-        "paper-table-3"
+        "astra-pro-remaining-20260913",
+        "contributor-confirmed-20260915"
       ],
-      "protocol_id": "rpent-pro",
-      "progress_snapshot": "astra-pro-20260914.json"
+      "protocol_id": "rpent-pro-astra-remaining",
+      "progress_snapshot": "astra-pro-20260915.json",
+      "new_result": true
     },
     {
       "id": "goal-swap--gpt-5-5-xhigh",
@@ -2204,15 +1846,17 @@
       "id": "goal-swap--gpt-6-astra-low",
       "view_id": "goal-swap",
       "configuration_id": "gpt-6-astra-low",
-      "status": "not_reported",
-      "rate": null,
-      "successes": null,
-      "episodes": null,
+      "status": "reported",
+      "rate": "99",
+      "successes": 99,
+      "episodes": 100,
       "source_ids": [
-        "paper-table-3"
+        "astra-pro-remaining-20260913",
+        "contributor-confirmed-20260915"
       ],
-      "protocol_id": "rpent-pro",
-      "progress_snapshot": "astra-pro-20260914.json"
+      "protocol_id": "rpent-pro-astra-remaining",
+      "progress_snapshot": "astra-pro-20260915.json",
+      "new_result": true
     },
     {
       "id": "long-task--gpt-5-5-xhigh",
@@ -2249,10 +1893,11 @@
       "successes": 85,
       "episodes": 100,
       "source_ids": [
-        "astra-long-20260907"
+        "astra-long-20260907",
+        "contributor-confirmed-20260915"
       ],
       "protocol_id": "rpent-pro-astra-long",
-      "progress_snapshot": "astra-pro-20260914.json"
+      "progress_snapshot": "astra-pro-20260915.json"
     },
     {
       "id": "long-swap--gpt-5-5-xhigh",
@@ -2289,10 +1934,11 @@
       "successes": 72,
       "episodes": 100,
       "source_ids": [
-        "astra-long-20260907"
+        "astra-long-20260907",
+        "contributor-confirmed-20260915"
       ],
       "protocol_id": "rpent-pro-astra-long",
-      "progress_snapshot": "astra-pro-20260914.json"
+      "progress_snapshot": "astra-pro-20260915.json"
     },
     {
       "id": "libero-pro--gpt-5-5-xhigh",
@@ -2324,14 +1970,18 @@
       "id": "libero-pro--gpt-6-astra-low",
       "view_id": "libero-pro",
       "configuration_id": "gpt-6-astra-low",
-      "status": "not_reported",
-      "rate": null,
-      "successes": null,
-      "episodes": null,
+      "status": "reported",
+      "rate": "92.63",
+      "successes": 741,
+      "episodes": 800,
       "source_ids": [
-        "paper-table-3"
+        "astra-long-20260907",
+        "astra-pro-remaining-20260913",
+        "contributor-confirmed-20260915"
       ],
-      "protocol_id": "rpent-pro"
+      "protocol_id": "rpent-pro-astra-mixed-batches",
+      "progress_snapshot": "astra-pro-20260915.json",
+      "new_result": true
     },
     {
       "id": "zero-shot-goal-task--gpt-5-5-xhigh",
@@ -2555,28 +2205,16 @@
       "protocol_id": "rpent-robocasa"
     },
     {
-      "id": "robocasa--gpt-6-astra-low",
-      "view_id": "robocasa",
-      "configuration_id": "gpt-6-astra-low",
-      "status": "not_reported",
-      "rate": null,
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-4"
-      ],
-      "protocol_id": "rpent-robocasa"
-    },
-    {
       "id": "robotwin--gpt-5-5-xhigh",
       "view_id": "robotwin",
       "configuration_id": "gpt-5-5-xhigh",
       "status": "reported",
       "rate": "58.0",
-      "successes": null,
+      "successes": 145,
       "episodes": 250,
       "source_ids": [
-        "paper-table-6"
+        "paper-table-6",
+        "repo-robotwin"
       ],
       "protocol_id": "rpent-robotwin"
     },
@@ -2597,14 +2235,15 @@
       "id": "robotwin--gpt-6-astra-low",
       "view_id": "robotwin",
       "configuration_id": "gpt-6-astra-low",
-      "status": "not_reported",
-      "rate": null,
+      "status": "reported",
+      "rate": "72.00",
       "successes": null,
-      "episodes": null,
+      "episodes": 250,
       "source_ids": [
-        "paper-table-6"
+        "contributor-confirmed-20260915"
       ],
-      "protocol_id": "rpent-robotwin"
+      "protocol_id": "contributor-robotwin",
+      "new_result": true
     },
     {
       "id": "standard-libero--openvla",
@@ -2825,40 +2464,6 @@
       "coverage": {
         "en": "Eight Task/Swap cells",
         "zh": "八个 Task/Swap 单元"
-      }
-    },
-    {
-      "id": "libero-pro-six-non-long--cap-x",
-      "view_id": "libero-pro-six-non-long",
-      "configuration_id": "cap-x",
-      "status": "reported",
-      "rate": "18.2",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro-six",
-      "coverage": {
-        "en": "Six non-Long cells",
-        "zh": "六个非 Long 单元"
-      }
-    },
-    {
-      "id": "libero-pro-six-non-long--rats",
-      "view_id": "libero-pro-six-non-long",
-      "configuration_id": "rats",
-      "status": "reported",
-      "rate": "43.8",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro-six",
-      "coverage": {
-        "en": "Six non-Long cells",
-        "zh": "六个非 Long 单元"
       }
     },
     {
@@ -4486,326 +4091,666 @@
         "paper-table-4"
       ],
       "protocol_id": "external-robocasa"
-    }
-  ],
-  "tables": [
-    {
-      "id": "configurations",
-      "kind": "configurations",
-      "title": {
-        "en": "RPent planner configurations",
-        "zh": "RPent 规划模型配置"
-      },
-      "headers": {
-        "en": [
-          "Backend",
-          "Model",
-          "Reasoning",
-          "Effort"
-        ],
-        "zh": [
-          "后端",
-          "模型",
-          "Reasoning",
-          "Effort"
-        ]
-      },
-      "widths": [
-        25,
-        30,
-        25,
-        20
-      ]
     },
     {
-      "id": "standard-libero",
-      "kind": "main",
-      "title": {
-        "en": "RPent success rates",
-        "zh": "RPent 成功率"
-      },
-      "headers": {
-        "en": "Evaluation item",
-        "zh": "评测项"
-      },
-      "view_ids": [
-        "standard-spatial",
-        "standard-object",
-        "standard-goal",
-        "standard-long",
-        "standard-libero"
-      ]
-    },
-    {
-      "id": "libero-pro",
-      "kind": "main",
-      "title": {
-        "en": "RPent success rates",
-        "zh": "RPent 成功率"
-      },
-      "headers": {
-        "en": "Evaluation item",
-        "zh": "评测项"
-      },
-      "view_ids": [
-        "spatial-task",
-        "spatial-swap",
-        "object-task",
-        "object-swap",
-        "goal-task",
-        "goal-swap",
-        "long-task",
-        "long-swap",
-        "libero-pro"
-      ]
-    },
-    {
-      "id": "libero-pro-zero-shot",
-      "kind": "main",
-      "title": {
-        "en": "RPent success rates",
-        "zh": "RPent 成功率"
-      },
-      "headers": {
-        "en": "Evaluation item",
-        "zh": "评测项"
-      },
-      "view_ids": [
-        "zero-shot-goal-task",
-        "zero-shot-goal-swap"
-      ]
-    },
-    {
-      "id": "robocasa",
-      "kind": "main",
-      "title": {
-        "en": "RPent success rates",
-        "zh": "RPent 成功率"
-      },
-      "headers": {
-        "en": "Evaluation item",
-        "zh": "评测项"
-      },
-      "view_ids": [
-        "robocasa-atomic-seen",
-        "robocasa-composite-seen",
-        "robocasa-composite-unseen",
-        "robocasa"
-      ]
-    },
-    {
-      "id": "robotwin",
-      "kind": "main",
-      "title": {
-        "en": "RPent success rates",
-        "zh": "RPent 成功率"
-      },
-      "headers": {
-        "en": "Evaluation item",
-        "zh": "评测项"
-      },
-      "view_ids": [
-        "robotwin"
-      ]
-    },
-    {
-      "id": "baseline-standard-libero",
-      "kind": "baseline",
-      "title": {
-        "en": "Reference methods",
-        "zh": "参考方法"
-      },
-      "headers": {
-        "en": [
-          "Method",
-          "Coverage",
-          "Success rate",
-          "Source"
-        ],
-        "zh": [
-          "方法",
-          "覆盖范围",
-          "成功率",
-          "来源"
-        ]
-      },
-      "widths": [
-        24,
-        36,
-        20,
-        20
+      "id": "libero-pro--opus-4-7-reported",
+      "view_id": "libero-pro",
+      "configuration_id": "opus-4-7-reported",
+      "status": "reported",
+      "rate": "82.50",
+      "successes": null,
+      "episodes": 800,
+      "source_ids": [
+        "contributor-20260915"
       ],
-      "record_ids": [
-        "standard-libero--openvla",
-        "standard-libero--nora",
-        "standard-libero--pi0",
-        "standard-libero--pi-rlinf",
-        "standard-libero--atomvla"
-      ]
+      "protocol_id": "contributor-pro-eight",
+      "new_result": true
     },
     {
-      "id": "baseline-libero-pro",
-      "kind": "baseline",
-      "title": {
-        "en": "Reference methods",
-        "zh": "参考方法"
-      },
-      "headers": {
-        "en": [
-          "Method",
-          "Coverage",
-          "Success rate",
-          "Source"
-        ],
-        "zh": [
-          "方法",
-          "覆盖范围",
-          "成功率",
-          "来源"
-        ]
-      },
-      "widths": [
-        24,
-        36,
-        20,
-        20
+      "id": "libero-pro--gpt-5-6-reported",
+      "view_id": "libero-pro",
+      "configuration_id": "gpt-5-6-reported",
+      "status": "reported",
+      "rate": "78.50",
+      "successes": null,
+      "episodes": 800,
+      "source_ids": [
+        "contributor-20260915",
+        "contributor-confirmed-20260915"
       ],
-      "record_ids": [
-        "libero-pro--openvla",
-        "libero-pro--pi0",
-        "libero-pro--pi0-5",
-        "libero-pro--molmoact",
-        "libero-pro--nora",
-        "libero-pro--x-vla",
-        "libero-pro--atomvla",
-        "libero-pro--pi-rlinf",
-        "libero-pro-six-non-long--cap-x",
-        "libero-pro-six-non-long--rats"
-      ]
+      "protocol_id": "contributor-pro-eight",
+      "new_result": true
     },
     {
-      "id": "baseline-robocasa",
-      "kind": "baseline",
-      "title": {
-        "en": "Reference methods",
-        "zh": "参考方法"
-      },
-      "headers": {
-        "en": [
-          "Method",
-          "Coverage",
-          "Success rate",
-          "Source"
-        ],
-        "zh": [
-          "方法",
-          "覆盖范围",
-          "成功率",
-          "来源"
-        ]
-      },
-      "widths": [
-        24,
-        36,
-        20,
-        20
+      "id": "libero-pro--gpt-5-6-no-reasoning",
+      "view_id": "libero-pro",
+      "configuration_id": "gpt-5-6-no-reasoning",
+      "status": "reported",
+      "rate": "62.50",
+      "successes": null,
+      "episodes": 800,
+      "source_ids": [
+        "contributor-20260915"
       ],
-      "record_ids": [
-        "robocasa--rldx-1",
-        "robocasa--worlddreamer",
-        "robocasa--pi0-5",
-        "robocasa--pi0"
-      ]
+      "protocol_id": "contributor-pro-eight",
+      "new_result": true
     },
     {
-      "id": "baseline-robotwin",
-      "kind": "baseline",
-      "title": {
-        "en": "Reference methods",
-        "zh": "参考方法"
-      },
-      "headers": {
-        "en": [
-          "Method",
-          "Coverage",
-          "Success rate",
-          "Source"
-        ],
-        "zh": [
-          "方法",
-          "覆盖范围",
-          "成功率",
-          "来源"
-        ]
-      },
-      "widths": [
-        24,
-        36,
-        20,
-        20
+      "id": "libero-pro--task-card-molmo-reported",
+      "view_id": "libero-pro",
+      "configuration_id": "task-card-molmo-reported",
+      "status": "reported",
+      "rate": "72.63",
+      "successes": null,
+      "episodes": 800,
+      "source_ids": [
+        "contributor-20260915"
       ],
-      "record_ids": [
-        "robotwin--gr00t-n1-7",
-        "robotwin--pi0-5",
-        "robotwin--starvla",
-        "robotwin--lingbot-vla"
-      ]
+      "protocol_id": "contributor-pro-eight",
+      "new_result": true
     },
     {
-      "id": "baseline-libero-pro-zero-shot",
-      "kind": "baseline",
-      "title": {
-        "en": "Reference methods",
-        "zh": "参考方法"
-      },
-      "headers": {
-        "en": [
-          "Method",
-          "Coverage",
-          "Success rate",
-          "Source"
-        ],
-        "zh": [
-          "方法",
-          "覆盖范围",
-          "成功率",
-          "来源"
-        ]
-      },
-      "widths": [
-        24,
-        36,
-        20,
-        20
-      ],
-      "record_ids": [
-        "zero-shot-goal-task--cap-x",
-        "zero-shot-goal-swap--cap-x"
-      ]
-    }
-  ],
-  "overview_views": [
-    "standard-libero",
-    "libero-pro",
-    "robocasa",
-    "robotwin",
-    "long-task",
-    "long-swap"
-  ],
-  "checked_at": "2026-09-14",
-  "evaluation_progress": [
-    {
-      "snapshot": "astra-pro-20260914.json",
-      "snapshot_id": "libero-pro-astra-20260914",
+      "id": "robocasa--gpt-6-astra-reported",
+      "view_id": "robocasa",
       "configuration_id": "gpt-6-astra-low",
-      "verified_at": "2026-09-14T14:00:55Z",
-      "publication_scope": "Six completed suites only",
-      "completed": 600,
-      "planned": 600,
-      "successes": 554,
-      "failures": 46,
-      "remaining": 0,
-      "overall_rate": null
+      "status": "reported",
+      "rate": "59.20",
+      "successes": null,
+      "episodes": 340,
+      "source_ids": [
+        "contributor-20260915",
+        "contributor-confirmed-20260915"
+      ],
+      "protocol_id": "contributor-target50",
+      "new_result": true
+    },
+    {
+      "id": "libero-pro--qwen-reported",
+      "view_id": "libero-pro",
+      "configuration_id": "qwen-reported",
+      "status": "not_reported",
+      "rate": null,
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "contributor-20260915"
+      ],
+      "protocol_id": "contributor-pro-eight",
+      "new_result": false
+    },
+    {
+      "id": "robocasa--gpt-5-6-no-reasoning",
+      "view_id": "robocasa",
+      "configuration_id": "gpt-5-6-no-reasoning",
+      "status": "not_reported",
+      "rate": null,
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "contributor-20260915"
+      ],
+      "protocol_id": "contributor-target50",
+      "new_result": false
+    },
+    {
+      "id": "task-card-object--task-card-object-repo",
+      "view_id": "task-card-object",
+      "configuration_id": "task-card-object-repo",
+      "status": "reported",
+      "rate": "89.5",
+      "successes": 179,
+      "episodes": 200,
+      "source_ids": [
+        "repo-task-card"
+      ],
+      "protocol_id": "repo-task-card-object"
+    },
+    {
+      "id": "task-card-object--codex-object-repo",
+      "view_id": "task-card-object",
+      "configuration_id": "codex-object-repo",
+      "status": "reported",
+      "rate": "93.0",
+      "successes": 186,
+      "episodes": 200,
+      "source_ids": [
+        "repo-task-card"
+      ],
+      "protocol_id": "repo-task-card-object"
+    },
+    {
+      "id": "reproduction-atomic--codex-reproduction-repo",
+      "view_id": "reproduction-atomic",
+      "configuration_id": "codex-reproduction-repo",
+      "status": "reported",
+      "rate": "90.56",
+      "successes": 163,
+      "episodes": 180,
+      "source_ids": [
+        "repo-robocasa",
+        "contributor-confirmed-20260915"
+      ],
+      "protocol_id": "repo-target50",
+      "batch": {
+        "en": "Repository reproduction",
+        "zh": "仓库复现"
+      }
+    },
+    {
+      "id": "reproduction-atomic--codex-reference-v3",
+      "view_id": "reproduction-atomic",
+      "configuration_id": "codex-reference-v3",
+      "status": "reported",
+      "rate": "91.67",
+      "successes": 165,
+      "episodes": 180,
+      "source_ids": [
+        "repo-robocasa-v3",
+        "contributor-confirmed-20260915"
+      ],
+      "protocol_id": "repo-target50-reference",
+      "batch": {
+        "en": "Earlier reference",
+        "zh": "早期参考"
+      }
+    },
+    {
+      "id": "reproduction-seen--codex-reproduction-repo",
+      "view_id": "reproduction-seen",
+      "configuration_id": "codex-reproduction-repo",
+      "status": "reported",
+      "rate": "61.25",
+      "successes": 49,
+      "episodes": 80,
+      "source_ids": [
+        "repo-robocasa",
+        "contributor-confirmed-20260915"
+      ],
+      "protocol_id": "repo-target50",
+      "batch": {
+        "en": "Repository reproduction",
+        "zh": "仓库复现"
+      }
+    },
+    {
+      "id": "reproduction-seen--codex-reference-v3",
+      "view_id": "reproduction-seen",
+      "configuration_id": "codex-reference-v3",
+      "status": "reported",
+      "rate": "56.25",
+      "successes": 45,
+      "episodes": 80,
+      "source_ids": [
+        "repo-robocasa-v3",
+        "contributor-confirmed-20260915"
+      ],
+      "protocol_id": "repo-target50-reference",
+      "batch": {
+        "en": "Earlier reference",
+        "zh": "早期参考"
+      }
+    },
+    {
+      "id": "reproduction-unseen--codex-reproduction-repo",
+      "view_id": "reproduction-unseen",
+      "configuration_id": "codex-reproduction-repo",
+      "status": "reported",
+      "rate": "15.00",
+      "successes": 12,
+      "episodes": 80,
+      "source_ids": [
+        "repo-robocasa",
+        "contributor-confirmed-20260915"
+      ],
+      "protocol_id": "repo-target50",
+      "batch": {
+        "en": "Repository reproduction",
+        "zh": "仓库复现"
+      }
+    },
+    {
+      "id": "reproduction-unseen--codex-reference-v3",
+      "view_id": "reproduction-unseen",
+      "configuration_id": "codex-reference-v3",
+      "status": "reported",
+      "rate": "13.75",
+      "successes": 11,
+      "episodes": 80,
+      "source_ids": [
+        "repo-robocasa-v3",
+        "contributor-confirmed-20260915"
+      ],
+      "protocol_id": "repo-target50-reference",
+      "batch": {
+        "en": "Earlier reference",
+        "zh": "早期参考"
+      }
+    },
+    {
+      "id": "reproduction-overall--codex-reproduction-repo",
+      "view_id": "reproduction-overall",
+      "configuration_id": "codex-reproduction-repo",
+      "status": "reported",
+      "rate": "57.00",
+      "successes": null,
+      "episodes": 340,
+      "source_ids": [
+        "repo-robocasa",
+        "contributor-confirmed-20260915"
+      ],
+      "protocol_id": "repo-target50",
+      "batch": {
+        "en": "Repository reproduction",
+        "zh": "仓库复现"
+      }
+    },
+    {
+      "id": "reproduction-overall--codex-reference-v3",
+      "view_id": "reproduction-overall",
+      "configuration_id": "codex-reference-v3",
+      "status": "reported",
+      "rate": "55.40",
+      "successes": null,
+      "episodes": 340,
+      "source_ids": [
+        "repo-robocasa-v3",
+        "contributor-confirmed-20260915"
+      ],
+      "protocol_id": "repo-target50-reference",
+      "batch": {
+        "en": "Earlier reference",
+        "zh": "早期参考"
+      }
+    },
+    {
+      "id": "robotwin--gpt-5-6-reported",
+      "view_id": "robotwin",
+      "configuration_id": "gpt-5-6-reported",
+      "status": "reported",
+      "rate": "61.20",
+      "successes": null,
+      "episodes": 250,
+      "source_ids": [
+        "contributor-confirmed-20260915"
+      ],
+      "protocol_id": "contributor-robotwin",
+      "new_result": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "paper-table-2",
+      "label": {
+        "en": "Table 2",
+        "zh": "表 2"
+      },
+      "url": "https://arxiv.org/html/2607.08448v4#S3.T2",
+      "anchor": "benchmark-source-p2",
+      "table_number": 2
+    },
+    {
+      "id": "paper-table-3",
+      "label": {
+        "en": "Table 3",
+        "zh": "表 3"
+      },
+      "url": "https://arxiv.org/html/2607.08448v4#S3.T3",
+      "anchor": "benchmark-source-p3",
+      "table_number": 3
+    },
+    {
+      "id": "paper-table-4",
+      "label": {
+        "en": "Table 4",
+        "zh": "表 4"
+      },
+      "url": "https://arxiv.org/html/2607.08448v4#S3.T4",
+      "anchor": "benchmark-source-p4",
+      "table_number": 4
+    },
+    {
+      "id": "paper-table-5",
+      "label": {
+        "en": "Table 5",
+        "zh": "表 5"
+      },
+      "url": "https://arxiv.org/html/2607.08448v4#S3.T5",
+      "anchor": "benchmark-source-p5",
+      "table_number": 5
+    },
+    {
+      "id": "paper-table-6",
+      "label": {
+        "en": "Table 6",
+        "zh": "表 6"
+      },
+      "url": "https://arxiv.org/html/2607.08448v4#S3.T6",
+      "anchor": "benchmark-source-p6",
+      "table_number": 6
+    },
+    {
+      "id": "astra-long-20260907",
+      "label": {
+        "en": "GPT-6 Astra Long evaluation",
+        "zh": "GPT-6 Astra Long 评测"
+      },
+      "url": "astra-pro-20260915.json",
+      "anchor": "benchmark-source-r1",
+      "result_snapshot": "astra-pro-20260914.json",
+      "verified_at": "2026-09-14T14:00:55Z"
+    },
+    {
+      "id": "astra-pro-remaining-20260913",
+      "label": {
+        "en": "GPT-6 Astra supplementary evaluation",
+        "zh": "GPT-6 Astra 补充评测"
+      },
+      "url": "astra-pro-20260915.json",
+      "anchor": "benchmark-source-astra-pro",
+      "result_snapshot": "astra-pro-20260914.json",
+      "verified_at": "2026-09-14T14:00:55Z"
+    },
+    {
+      "id": "contributor-20260915",
+      "label": {
+        "en": "New evaluation · 15 Sep 2026",
+        "zh": "新增实验 · 2026-09-15"
+      },
+      "url": null,
+      "description": {
+        "en": "Contributor-provided result image; scopes explicitly confirmed by the contributor. LIBERO-PRO: full eight-suite exploration and evaluation per model. RoboCasa: all 340 episodes, 50-task-weighted Overall. Individual outcomes and unreported model settings are not supplied.",
+        "zh": "用户提供的结果图片，统计口径已明确确认：LIBERO-PRO 各模型完整八套件探索与测试；RoboCasa 全量 340 回合、50 任务等权 Overall。未提供逐回合结果及部分模型参数。"
+      }
+    },
+    {
+      "id": "repo-task-card",
+      "label": {
+        "en": "RPent · Task Card evaluation",
+        "zh": "RPent · Task Card 评测"
+      },
+      "url": "https://github.com/RLinf/RPent/blob/43f32aa08cba07bd4d49a4bfa5eba4ef633e9b92/docs/source-en/rst_source/usage/task_card.rst",
+      "description": {
+        "en": "Object Task and Swap, 20 tasks × 10 seeds. Aggregate counts are explicit; model versions are not specified for this evaluation. Distinct from the new eight-suite Molmo report.",
+        "zh": "Object Task 与 Swap，20 个任务各 10 seeds。原文提供汇总成功数，未指定本次评测的模型版本；与新增八套件 Molmo 结果分开。"
+      }
+    },
+    {
+      "id": "repo-robotwin",
+      "label": {
+        "en": "RPent · RoboTwin reproduction",
+        "zh": "RPent · RoboTwin 复现"
+      },
+      "url": "https://github.com/RLinf/RPent/blob/43f32aa08cba07bd4d49a4bfa5eba4ef633e9b92/docs/source-en/rst_source/usage/robotwin.rst",
+      "description": {
+        "en": "The repository also reports Codex / GPT-5.5 xhigh at 58.0%, with explicit counts 145/250. Both published sources are attached to this result; no per-cell identity is asserted.",
+        "zh": "仓库同样报告 Codex / GPT-5.5 xhigh 的 58.0%，并明确提供 145/250。该条成绩同时附上两个公开来源，不声称已核对逐回合一致性。"
+      }
+    },
+    {
+      "id": "repo-robocasa",
+      "label": {
+        "en": "RPent · Target50 reproduction",
+        "zh": "RPent · Target50 复现"
+      },
+      "url": "https://github.com/RLinf/RPent/blob/43f32aa08cba07bd4d49a4bfa5eba4ef633e9b92/robots/robocasa/eval/target50_codex_results.md",
+      "description": {
+        "en": "Published 50-task aggregate record, not a per-cell trace. Kept separate from the paper v4 experiment.",
+        "zh": "已公开的 50 任务汇总记录，不是逐回合轨迹。与论文 v4 实验分别保留。"
+      }
+    },
+    {
+      "id": "repo-robocasa-v3",
+      "label": {
+        "en": "RPent · earlier reference column",
+        "zh": "RPent · 早期参考列"
+      },
+      "url": "https://github.com/RLinf/RPent/blob/43f32aa08cba07bd4d49a4bfa5eba4ef633e9b92/docs/source-en/rst_source/usage/robocasa.rst",
+      "description": {
+        "en": "Earlier reference counts retained in the repository documentation, distinguished from paper v4 and the repository reproduction.",
+        "zh": "仓库文档保留的早期参考计数，与论文 v4 和仓库复现分别标注。"
+      }
+    },
+    {
+      "id": "paper-figure-4",
+      "label": {
+        "en": "Paper · Figure 4",
+        "zh": "论文 · 图 4"
+      },
+      "url": "https://arxiv.org/html/2607.08448v4#S3.F4"
+    },
+    {
+      "id": "paper-figure-6",
+      "label": {
+        "en": "Paper · Figure 6",
+        "zh": "论文 · 图 6"
+      },
+      "url": "https://arxiv.org/html/2607.08448v4#S3.F6"
+    },
+    {
+      "id": "paper-table-18",
+      "label": {
+        "en": "Paper · Table 18",
+        "zh": "论文 · 表 18"
+      },
+      "url": "https://arxiv.org/html/2607.08448v4#A6.T18"
+    },
+    {
+      "id": "paper-table-19",
+      "label": {
+        "en": "Paper · Table 19",
+        "zh": "论文 · 表 19"
+      },
+      "url": "https://arxiv.org/html/2607.08448v4#A6.T19"
+    },
+    {
+      "id": "contributor-confirmed-20260915",
+      "label": {
+        "en": "Contributor-confirmed settings and RoboTwin results",
+        "zh": "用户确认的配置与 RoboTwin 成绩"
+      },
+      "url": null,
+      "description": {
+        "en": "GPT-5.6 reasoning evaluations use xhigh; GPT-6 Astra uses low with reasoning. The 62.50% no-reasoning control remains unchanged. RoboTwin C2R reports 61.20% and 72.00%, each over 250 episodes; exact success counts and task outcomes are not supplied. RoboCasa reproduction model labels were confirmed by the contributor.",
+        "zh": "GPT-5.6 推理实验使用 xhigh，GPT-6 Astra 使用 low 并开启 reasoning；62.50% 无推理对照保持不变。RoboTwin C2R 新成绩为 61.20% 与 72.00%，各 250 回合；未提供精确成功次数和逐任务结果。RoboCasa 复现实验模型标签由用户确认。"
+      }
+    }
+  ],
+  "protocols": [
+    {
+      "id": "rpent-standard",
+      "label": {
+        "en": "Original LIBERO; four suites, 100 episodes each; frozen RLinf π0.5 policy.",
+        "zh": "原始 LIBERO；四套件，每套 100 回合；冻结 RLinf π0.5 策略。"
+      },
+      "description": {
+        "en": "Original LIBERO; four suites, 100 episodes each; frozen RLinf π0.5 policy.",
+        "zh": "原始 LIBERO；四套件，每套 100 回合；冻结 RLinf π0.5 策略。"
+      }
+    },
+    {
+      "id": "rpent-pro",
+      "label": {
+        "en": "LIBERO-PRO with target-setting memory; eight Task/Swap items, 100 episodes each.",
+        "zh": "使用目标设置记忆的 LIBERO-PRO；八个 Task/Swap 分项，每项 100 回合。"
+      },
+      "description": {
+        "en": "LIBERO-PRO with target-setting memory; eight Task/Swap items, 100 episodes each.",
+        "zh": "使用目标设置记忆的 LIBERO-PRO；八个 Task/Swap 分项，每项 100 回合。"
+      }
+    },
+    {
+      "id": "rpent-pro-astra-long",
+      "label": {
+        "en": "Astra Long evaluation",
+        "zh": "Astra Long 评测"
+      },
+      "description": {
+        "en": "Long evaluation; seed-0 memory frozen before seeds 1–10. Runtime 014a0fa. This batch is distinct from the Spatial/Object/Goal evaluation.",
+        "zh": "Long 评测；seed-0 记忆冻结后测试 seed 1–10。运行版本 014a0fa，与 Spatial/Object/Goal 评测属于不同批次。"
+      }
+    },
+    {
+      "id": "rpent-zero-shot",
+      "label": {
+        "en": "Goal Task/Swap without target-setting Task Specific Memory and Global Memory; 100 episodes each.",
+        "zh": "Goal Task/Swap 不使用目标设置 Task Specific Memory 和 Global Memory；每项 100 回合。"
+      },
+      "description": {
+        "en": "Goal Task/Swap without target-setting Task Specific Memory and Global Memory; 100 episodes each.",
+        "zh": "Goal Task/Swap 不使用目标设置 Task Specific Memory 和 Global Memory；每项 100 回合。"
+      }
+    },
+    {
+      "id": "rpent-robocasa",
+      "label": {
+        "en": "Target50: 18 atomic tasks × 10 seeds, 16 seen and 16 unseen composite tasks × 5 seeds; Overall weights 50 tasks equally.",
+        "zh": "Target50：18 个原子任务各 10 seeds，16 个已见与 16 个未见复合任务各 5 seeds；总体为 50 个任务均权。"
+      },
+      "description": {
+        "en": "Target50: 18 atomic tasks × 10 seeds, 16 seen and 16 unseen composite tasks × 5 seeds; Overall weights 50 tasks equally.",
+        "zh": "Target50：18 个原子任务各 10 seeds，16 个已见与 16 个未见复合任务各 5 seeds；总体为 50 个任务均权。"
+      }
+    },
+    {
+      "id": "rpent-robotwin",
+      "label": {
+        "en": "50 tasks × 5 expert-verified randomized seeds; memory from demo_clean transfers to demo_randomized.",
+        "zh": "50 个任务各 5 个专家验证随机 seeds；记忆从 demo_clean 迁移至 demo_randomized。"
+      },
+      "description": {
+        "en": "50 tasks × 5 expert-verified randomized seeds; memory from demo_clean transfers to demo_randomized.",
+        "zh": "50 个任务各 5 个专家验证随机 seeds；记忆从 demo_clean 迁移至 demo_randomized。"
+      }
+    },
+    {
+      "id": "external-standard",
+      "label": {
+        "en": "Four standard suites; sample counts follow each external report.",
+        "zh": "四个标准套件；样本量沿用各外部报告。"
+      },
+      "description": {
+        "en": "Four standard suites; sample counts follow each external report.",
+        "zh": "四个标准套件；样本量沿用各外部报告。"
+      }
+    },
+    {
+      "id": "external-pro",
+      "label": {
+        "en": "Eight LIBERO-PRO Task/Swap items; sample counts follow each external report.",
+        "zh": "八个 LIBERO-PRO Task/Swap 分项；样本量沿用各外部报告。"
+      },
+      "description": {
+        "en": "Eight LIBERO-PRO Task/Swap items; sample counts follow each external report.",
+        "zh": "八个 LIBERO-PRO Task/Swap 分项；样本量沿用各外部报告。"
+      }
+    },
+    {
+      "id": "external-pro-six",
+      "label": {
+        "en": "Six Spatial/Object/Goal Task/Swap items only; excludes Long.",
+        "zh": "仅六个 Spatial/Object/Goal Task/Swap 分项，不含 Long。"
+      },
+      "description": {
+        "en": "Six Spatial/Object/Goal Task/Swap items only; excludes Long.",
+        "zh": "仅六个 Spatial/Object/Goal Task/Swap 分项，不含 Long。"
+      }
+    },
+    {
+      "id": "external-zero-shot",
+      "label": {
+        "en": "Goal ablation without target-setting memory; sample counts follow the external report.",
+        "zh": "无目标设置记忆的 Goal 消融；样本量沿用外部报告。"
+      },
+      "description": {
+        "en": "Goal ablation without target-setting memory; sample counts follow the external report.",
+        "zh": "无目标设置记忆的 Goal 消融；样本量沿用外部报告。"
+      }
+    },
+    {
+      "id": "external-robocasa",
+      "label": {
+        "en": "Table 4 reported baseline values. RLDX-1 is the direct frozen-policy baseline under the paper protocol; other baseline rows come from prior papers. Identical task coverage and aggregation are not established for those prior reports.",
+        "zh": "表 4 报告的基线数值。RLDX-1 为论文协议下直接评测的冻结策略，其他基线取自先前论文；未确认这些外部报告具有相同任务范围及聚合方式。"
+      },
+      "description": {
+        "en": "Table 4 reported baseline values. RLDX-1 is the direct frozen-policy baseline under the paper protocol; other baseline rows come from prior papers. Identical task coverage and aggregation are not established for those prior reports.",
+        "zh": "表 4 报告的基线数值。RLDX-1 为论文协议下直接评测的冻结策略，其他基线取自先前论文；未确认这些外部报告具有相同任务范围及聚合方式。"
+      }
+    },
+    {
+      "id": "external-robotwin",
+      "label": {
+        "en": "Clean-to-randomized transfer; sample counts follow each external report.",
+        "zh": "从干净设置到随机设置迁移；样本量沿用各外部报告。"
+      },
+      "description": {
+        "en": "Clean-to-randomized transfer; sample counts follow each external report.",
+        "zh": "从干净设置到随机设置迁移；样本量沿用各外部报告。"
+      }
+    },
+    {
+      "id": "rpent-pro-astra-remaining",
+      "label": {
+        "en": "Supplementary PRO evaluation with frozen memory",
+        "zh": "使用冻结记忆的补充 PRO 评测"
+      },
+      "description": {
+        "en": "Spatial/Object/Goal Task and Swap; each item has 10 tasks × seeds 1–10. Seed-0 task memories are merged and frozen before evaluation.",
+        "zh": "Spatial/Object/Goal Task 与 Swap；每项 10 个任务，各使用 seed 1–10。Seed 0 任务记忆经合并冻结后开始评测。"
+      }
+    },
+    {
+      "id": "rpent-pro-astra-mixed-batches",
+      "label": {
+        "en": "Eight-item PRO Overall across separately frozen batches",
+        "zh": "分别冻结记忆的批次覆盖八项 PRO 总体"
+      },
+      "description": {
+        "en": "800 episodes: 200 Long and 600 Spatial/Object/Goal episodes. Each batch uses its own pre-frozen memory corpus; all eight items have 100 episodes.",
+        "zh": "800 回合：Long 200 回合，Spatial/Object/Goal 600 回合。各批次使用对应的预先冻结记忆库；八个分项均为 100 回合。"
+      }
+    },
+    {
+      "id": "contributor-pro-eight",
+      "description": {
+        "en": "Eight LIBERO-PRO suites. Each model completed its own exploration and full evaluation. Counts and sub-suite scores are not inferred from the reported Overall.",
+        "zh": "完整 LIBERO-PRO 八套件，各模型独立完成探索与全量测试。不从 Overall 反推成功次数或子套件成绩。"
+      }
+    },
+    {
+      "id": "contributor-target50",
+      "description": {
+        "en": "Full Target50 evaluation: 340 episodes; Overall averages 50 tasks equally. GPT-6 Astra uses low effort with reasoning enabled. Split scores and success counts are not supplied.",
+        "zh": "Target50 全量 340 回合，Overall 对 50 个任务等权。GPT-6 Astra 使用 low effort 并开启 reasoning；未提供 split 成绩及成功次数。"
+      }
+    },
+    {
+      "id": "repo-task-card-object",
+      "description": {
+        "en": "Object Task + Object Swap; 200 episodes, 20 tasks. Task Card 179/200; Codex without reasoning 186/200. This is not the eight-suite Overall.",
+        "zh": "Object Task + Object Swap；20 任务、200 回合。Task Card 179/200；Codex 无推理 186/200。不是八套件 Overall。"
+      }
+    },
+    {
+      "id": "repo-target50",
+      "description": {
+        "en": "Target50 repository reproduction: 18 Atomic tasks × 10 seeds; 16 Seen and 16 Unseen tasks × 5 seeds. Overall is task-weighted.",
+        "zh": "Target50 仓库复现：18 个 Atomic 任务各 10 seeds，16 个 Seen 与 16 个 Unseen 任务各 5 seeds。Overall 按任务等权。"
+      }
+    },
+    {
+      "id": "repo-target50-reference",
+      "description": {
+        "en": "Earlier reference column from the repository, not the v4 paper experiment. Split counts and task-weighted Overall are retained verbatim.",
+        "zh": "仓库中的早期参考列，不是 v4 论文实验。保留原有 split 计数和任务等权 Overall。"
+      }
+    },
+    {
+      "id": "contributor-robotwin",
+      "description": {
+        "en": "RoboTwin C2R: 50 tasks × 5 seeds, 250 episodes per configuration. GPT-5.6 xhigh with reasoning and GPT-6 Astra low with reasoning. No success counts are inferred from percentages.",
+        "zh": "RoboTwin C2R：50 任务各 5 seeds，每配置 250 回合。GPT-5.6 xhigh 开启推理，GPT-6 Astra low 开启推理，不从百分比反推成功次数。"
+      }
     }
   ],
   "task_results": [
@@ -4934,5 +4879,2757 @@
       ]
     }
   ],
-  "paper_revision": "2607.08448v4"
+  "analysis": {
+    "environments": [
+      "LIBERO",
+      "RoboTwin C2R",
+      "RoboCasa365"
+    ],
+    "rows": [
+      {
+        "name": "MOVE_TO",
+        "kind": "analytic",
+        "counts": [
+          6263,
+          685,
+          3004
+        ],
+        "percentages": [
+          "61.8",
+          "40.9",
+          "38.7"
+        ]
+      },
+      {
+        "name": "MOVE_POSE",
+        "kind": "analytic",
+        "counts": [
+          203,
+          null,
+          null
+        ],
+        "percentages": [
+          "2.0",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "NAVIGATE_TO",
+        "kind": "analytic",
+        "counts": [
+          null,
+          null,
+          701
+        ],
+        "percentages": [
+          null,
+          null,
+          "9.0"
+        ]
+      },
+      {
+        "name": "ROTATE_WRIST",
+        "kind": "analytic",
+        "counts": [
+          44,
+          1,
+          null
+        ],
+        "percentages": [
+          "0.4",
+          "0.1",
+          null
+        ]
+      },
+      {
+        "name": "ROTATE_PITCH",
+        "kind": "analytic",
+        "counts": [
+          58,
+          null,
+          66
+        ],
+        "percentages": [
+          "0.6",
+          null,
+          "0.8"
+        ]
+      },
+      {
+        "name": "SET_GRIPPER",
+        "kind": "analytic",
+        "counts": [
+          1137,
+          71,
+          371
+        ],
+        "percentages": [
+          "11.2",
+          "4.2",
+          "4.8"
+        ]
+      },
+      {
+        "name": "RELEASE",
+        "kind": "analytic",
+        "counts": [
+          831,
+          124,
+          76
+        ],
+        "percentages": [
+          "8.2",
+          "7.4",
+          "1.0"
+        ]
+      },
+      {
+        "name": "MOVE_BASE",
+        "kind": "analytic",
+        "counts": [
+          null,
+          null,
+          808
+        ],
+        "percentages": [
+          null,
+          null,
+          "10.4"
+        ]
+      },
+      {
+        "name": "VLA_ACT",
+        "kind": "vla",
+        "counts": [
+          1598,
+          794,
+          2746
+        ],
+        "percentages": [
+          "15.8",
+          "47.4",
+          "35.3"
+        ]
+      }
+    ],
+    "totals": [
+      10134,
+      1675,
+      7772
+    ],
+    "classes": [
+      {
+        "name": "Analytic",
+        "counts": [
+          8536,
+          881,
+          5026
+        ],
+        "percentages": [
+          "84.2",
+          "52.6",
+          "64.7"
+        ]
+      },
+      {
+        "name": "VLA",
+        "counts": [
+          1598,
+          794,
+          2746
+        ],
+        "percentages": [
+          "15.8",
+          "47.4",
+          "35.3"
+        ]
+      }
+    ]
+  },
+  "astra": {
+    "completed": 800,
+    "successes": 741,
+    "failures": 59,
+    "overall_rate": "92.63",
+    "source_report_sha256": "627d6d8a95fb1e10357961694867cd0bf0a2aa9011c96c8a33504b904cb96c80",
+    "runtime_revision": "014a0fa97f69c991ee5e0f62f14e1d6f89c3dcd7",
+    "evaluation_seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "suites": [
+      {
+        "view_id": "spatial-task",
+        "suite": "Spatial Task",
+        "dataset": "libero_spatial_task",
+        "completed": 100,
+        "planned": 100,
+        "successes": 100,
+        "failures": 0,
+        "remaining": 0,
+        "rate": "100.00",
+        "status": "complete",
+        "tasks": [
+          {
+            "task_id": 0,
+            "task_language": "Pick the akita black bowl not between the plate and the ramekin and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 1,
+            "task_language": "Pick the akita black bowl next to the cookie box and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 2,
+            "task_language": "Pick the akita black bowl next to the plate and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 3,
+            "task_language": "Pick the akita black bowl on the top of the cabinet and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 4,
+            "task_language": "Pick the akita black bowl on the top of the wooden cabinet and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 5,
+            "task_language": "Pick the akita black bowl on the cookie box and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 6,
+            "task_language": "Pick the akita black bowl on the stove and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 7,
+            "task_language": "Pick the akita black bowl on the top of the cabinet and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 8,
+            "task_language": "Pick the akita black bowl next to the ramekin and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 9,
+            "task_language": "Pick the akita black bowl on the stove and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        ]
+      },
+      {
+        "view_id": "spatial-swap",
+        "suite": "Spatial Swap",
+        "dataset": "libero_spatial_swap",
+        "completed": 100,
+        "planned": 100,
+        "successes": 98,
+        "failures": 2,
+        "remaining": 0,
+        "rate": "98.00",
+        "status": "complete",
+        "tasks": [
+          {
+            "task_id": 0,
+            "task_language": "Pick the akita black bowl between the plate and the ramekin and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 1,
+            "task_language": "Pick the akita black bowl next to the ramekin and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 2,
+            "task_language": "Pick the akita black bowl from table center and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 3,
+            "task_language": "Pick the akita black bowl on the cookies box and place it on the plate",
+            "seed_outcomes": [
+              true,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 4,
+            "task_language": "Pick the akita black bowl in the top layer of the wooden cabinet and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 5,
+            "task_language": "Pick the akita black bowl on the ramekin and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 6,
+            "task_language": "Pick the akita black bowl next to the cookies box and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 7,
+            "task_language": "Pick the akita black bowl on the stove and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 8,
+            "task_language": "Pick the akita black bowl next to the plate and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 9,
+            "task_language": "Pick the akita black bowl on the wooden cabinet and place it on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        ]
+      },
+      {
+        "view_id": "object-task",
+        "suite": "Object Task",
+        "dataset": "libero_object_task",
+        "completed": 100,
+        "planned": 100,
+        "successes": 100,
+        "failures": 0,
+        "remaining": 0,
+        "rate": "100.00",
+        "status": "complete",
+        "tasks": [
+          {
+            "task_id": 0,
+            "task_language": "Pick the cream cheese and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 1,
+            "task_language": "Pick the alphabet soup and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 2,
+            "task_language": "Pick the tomato sauce and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 3,
+            "task_language": "Pick the ketchup and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 4,
+            "task_language": "Pick the milk and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 5,
+            "task_language": "Pick the bbq sauce and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 6,
+            "task_language": "Pick the orange juice and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 7,
+            "task_language": "Pick the butter and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 8,
+            "task_language": "Pick the salad dressing and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 9,
+            "task_language": "Pick the chocolate pudding and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        ]
+      },
+      {
+        "view_id": "object-swap",
+        "suite": "Object Swap",
+        "dataset": "libero_object_swap",
+        "completed": 100,
+        "planned": 100,
+        "successes": 99,
+        "failures": 1,
+        "remaining": 0,
+        "rate": "99.00",
+        "status": "complete",
+        "tasks": [
+          {
+            "task_id": 0,
+            "task_language": "Pick the alphabet soup and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 1,
+            "task_language": "Pick the cream cheese and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 2,
+            "task_language": "Pick the salad dressing and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 3,
+            "task_language": "Pick the bbq sauce and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 4,
+            "task_language": "Pick the ketchup and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true
+            ]
+          },
+          {
+            "task_id": 5,
+            "task_language": "Pick the tomato sauce and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 6,
+            "task_language": "Pick the butter and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 7,
+            "task_language": "Pick the milk and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 8,
+            "task_language": "Pick the chocolate pudding and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 9,
+            "task_language": "Pick the orange juice and place it in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        ]
+      },
+      {
+        "view_id": "goal-task",
+        "suite": "Goal Task",
+        "dataset": "libero_goal_task",
+        "completed": 100,
+        "planned": 100,
+        "successes": 88,
+        "failures": 12,
+        "remaining": 0,
+        "rate": "88.00",
+        "status": "complete",
+        "tasks": [
+          {
+            "task_id": 0,
+            "task_language": "open the bottom drawer of the cabinet",
+            "seed_outcomes": [
+              false,
+              false,
+              false,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": 1,
+            "task_language": "Put the plate on the stove",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 2,
+            "task_language": "put the wine bottle in the bowl",
+            "seed_outcomes": [
+              false,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 3,
+            "task_language": "Open the top layer of the drawer and put the cream cheese inside",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 4,
+            "task_language": "Put the plate on the top of the drawer",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 5,
+            "task_language": "Push the cream cheese to the front of the stove",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 6,
+            "task_language": "put the wine bottle in the bowl",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 7,
+            "task_language": "Turn off the stove",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 8,
+            "task_language": "Put the wine bottle on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 9,
+            "task_language": "Put the cream cheese on the rack",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        ]
+      },
+      {
+        "view_id": "goal-swap",
+        "suite": "Goal Swap",
+        "dataset": "libero_goal_swap",
+        "completed": 100,
+        "planned": 100,
+        "successes": 99,
+        "failures": 1,
+        "remaining": 0,
+        "rate": "99.00",
+        "status": "complete",
+        "tasks": [
+          {
+            "task_id": 0,
+            "task_language": "Open the middle layer of the drawer",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 1,
+            "task_language": "Put the bowl on the stove",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 2,
+            "task_language": "Put the wine bottle on the top of the drawer",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 3,
+            "task_language": "Open the top layer of the drawer and put the bowl inside",
+            "seed_outcomes": [
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 4,
+            "task_language": "Put the bowl on the top of the drawer",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 5,
+            "task_language": "Push the plate to the front of the stove",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 6,
+            "task_language": "Put the cream cheese on the bowl",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 7,
+            "task_language": "Turn on the stove",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 8,
+            "task_language": "Put the bowl on the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 9,
+            "task_language": "Put the wine bottle on the rack",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        ]
+      },
+      {
+        "view_id": "long-task",
+        "suite": "Long Task",
+        "dataset": "libero_10_task",
+        "completed": 100,
+        "planned": 100,
+        "successes": 85,
+        "failures": 15,
+        "remaining": 0,
+        "rate": "85.00",
+        "status": "complete",
+        "tasks": [
+          {
+            "task_id": 0,
+            "task_language": "put both the cream cheese and the tomato sauce in the basket",
+            "seed_outcomes": [
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true
+            ]
+          },
+          {
+            "task_id": 1,
+            "task_language": "put both the alphabet soup and the butter in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 2,
+            "task_language": "turn on the stove and put the pan on it",
+            "seed_outcomes": [
+              true,
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 3,
+            "task_language": "put the bottle in the bottom drawer of the cabinet and close it",
+            "seed_outcomes": [
+              false,
+              true,
+              false,
+              false,
+              true,
+              false,
+              true,
+              true,
+              true,
+              false
+            ]
+          },
+          {
+            "task_id": 4,
+            "task_language": "put the yellow and white mug on the left plate and put the white mug on the right plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 5,
+            "task_language": "pick up the cup and place it in the back compartment of the caddy",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 6,
+            "task_language": "put the red mug on the plate and put the chocolate pudding to the right of the plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 7,
+            "task_language": "put both the ketchup and the cream cheese box in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 8,
+            "task_language": "put the left moka pot on the stove",
+            "seed_outcomes": [
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 9,
+            "task_language": "put the white mug in the microwave and close it",
+            "seed_outcomes": [
+              true,
+              false,
+              true,
+              true,
+              false,
+              false,
+              true,
+              true,
+              false,
+              false
+            ]
+          }
+        ]
+      },
+      {
+        "view_id": "long-swap",
+        "suite": "Long Swap",
+        "dataset": "libero_10_swap",
+        "completed": 100,
+        "planned": 100,
+        "successes": 72,
+        "failures": 28,
+        "remaining": 0,
+        "rate": "72.00",
+        "status": "complete",
+        "tasks": [
+          {
+            "task_id": 0,
+            "task_language": "put both the alphabet soup and the tomato sauce in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 1,
+            "task_language": "put both the cream cheese box and the butter in the basket",
+            "seed_outcomes": [
+              false,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              false,
+              true
+            ]
+          },
+          {
+            "task_id": 2,
+            "task_language": "turn on the stove and put the moka pot on it",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 3,
+            "task_language": "put the black bowl in the bottom drawer of the cabinet and close it",
+            "seed_outcomes": [
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 4,
+            "task_language": "put the white mug on the left plate and put the yellow and white mug on the right plate",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 5,
+            "task_language": "pick up the book and place it in the back compartment of the caddy",
+            "seed_outcomes": [
+              true,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false
+            ]
+          },
+          {
+            "task_id": 6,
+            "task_language": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+            "seed_outcomes": [
+              false,
+              true,
+              false,
+              true,
+              false,
+              true,
+              true,
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": 7,
+            "task_language": "put both the alphabet soup and the cream cheese box in the basket",
+            "seed_outcomes": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "task_id": 8,
+            "task_language": "put both moka pots on the stove",
+            "seed_outcomes": [
+              true,
+              true,
+              false,
+              true,
+              false,
+              true,
+              true,
+              false,
+              true,
+              false
+            ]
+          },
+          {
+            "task_id": 9,
+            "task_language": "put the yellow and white mug in the microwave and close it",
+            "seed_outcomes": [
+              false,
+              false,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        ]
+      }
+    ],
+    "memory_batches": [
+      {
+        "campaign_id": "libero_long_gpt6_astra_20260907",
+        "suites": [
+          "long-task",
+          "long-swap"
+        ]
+      },
+      {
+        "campaign_id": "libero_pro_remaining_gpt6_astra_20260913",
+        "suites": [
+          "spatial-task",
+          "spatial-swap",
+          "object-task",
+          "object-swap",
+          "goal-task",
+          "goal-swap"
+        ],
+        "manifest_sha256": "f08702d7c13d9b40a3127b64765ad4d336d022be028396d5f873d7fc4c4c4928"
+      }
+    ]
+  },
+  "result_annotations": {},
+  "robocasa_tasks": [
+    {
+      "id": 1,
+      "split": "Atomic",
+      "task": "CloseBlenderLid",
+      "successes": 5,
+      "episodes": 10
+    },
+    {
+      "id": 2,
+      "split": "Atomic",
+      "task": "CloseFridge",
+      "successes": 8,
+      "episodes": 10
+    },
+    {
+      "id": 3,
+      "split": "Atomic",
+      "task": "CloseToasterOvenDoor",
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "id": 4,
+      "split": "Atomic",
+      "task": "CoffeeSetupMug",
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "id": 5,
+      "split": "Atomic",
+      "task": "NavigateKitchen",
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "id": 6,
+      "split": "Atomic",
+      "task": "OpenCabinet",
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "id": 7,
+      "split": "Atomic",
+      "task": "OpenDrawer",
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "id": 8,
+      "split": "Atomic",
+      "task": "OpenStandMixerHead",
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "id": 9,
+      "split": "Atomic",
+      "task": "PickPlaceCounterToCabinet",
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "id": 10,
+      "split": "Atomic",
+      "task": "PickPlaceCounterToStove",
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "id": 11,
+      "split": "Atomic",
+      "task": "PickPlaceDrawerToCounter",
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "id": 12,
+      "split": "Atomic",
+      "task": "PickPlaceSinkToCounter",
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "id": 13,
+      "split": "Atomic",
+      "task": "PickPlaceToasterToCounter",
+      "successes": 8,
+      "episodes": 10
+    },
+    {
+      "id": 14,
+      "split": "Atomic",
+      "task": "SlideDishwasherRack",
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "id": 15,
+      "split": "Atomic",
+      "task": "TurnOffStove",
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "id": 16,
+      "split": "Atomic",
+      "task": "TurnOnElectricKettle",
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "id": 17,
+      "split": "Atomic",
+      "task": "TurnOnMicrowave",
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "id": 18,
+      "split": "Atomic",
+      "task": "TurnOnSinkFaucet",
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "id": 19,
+      "split": "Composite-Seen",
+      "task": "ScrubCuttingBoard",
+      "successes": 5,
+      "episodes": 5
+    },
+    {
+      "id": 20,
+      "split": "Composite-Seen",
+      "task": "StackBowlsCabinet",
+      "successes": 5,
+      "episodes": 5
+    },
+    {
+      "id": 21,
+      "split": "Composite-Seen",
+      "task": "WashLettuce",
+      "successes": 4,
+      "episodes": 5
+    },
+    {
+      "id": 22,
+      "split": "Composite-Seen",
+      "task": "RinseSinkBasin",
+      "successes": 5,
+      "episodes": 5
+    },
+    {
+      "id": 23,
+      "split": "Composite-Seen",
+      "task": "PreSoakPan",
+      "successes": 2,
+      "episodes": 5
+    },
+    {
+      "id": 24,
+      "split": "Composite-Seen",
+      "task": "StirVegetables",
+      "successes": 2,
+      "episodes": 5
+    },
+    {
+      "id": 25,
+      "split": "Composite-Seen",
+      "task": "LoadDishwasher",
+      "successes": 2,
+      "episodes": 5
+    },
+    {
+      "id": 26,
+      "split": "Composite-Seen",
+      "task": "SteamInMicrowave",
+      "successes": 3,
+      "episodes": 5
+    },
+    {
+      "id": 27,
+      "split": "Composite-Seen",
+      "task": "SetUpCuttingStation",
+      "successes": 1,
+      "episodes": 5
+    },
+    {
+      "id": 28,
+      "split": "Composite-Seen",
+      "task": "GetToastedBread",
+      "successes": 1,
+      "episodes": 5
+    },
+    {
+      "id": 29,
+      "split": "Composite-Seen",
+      "task": "DeliverStraw",
+      "successes": 0,
+      "episodes": 5
+    },
+    {
+      "id": 30,
+      "split": "Composite-Seen",
+      "task": "KettleBoiling",
+      "successes": 3,
+      "episodes": 5
+    },
+    {
+      "id": 31,
+      "split": "Composite-Seen",
+      "task": "PrepareCoffee",
+      "successes": 5,
+      "episodes": 5
+    },
+    {
+      "id": 32,
+      "split": "Composite-Seen",
+      "task": "StoreLeftoversInBowl",
+      "successes": 4,
+      "episodes": 5
+    },
+    {
+      "id": 33,
+      "split": "Composite-Seen",
+      "task": "SearingMeat",
+      "successes": 4,
+      "episodes": 5
+    },
+    {
+      "id": 34,
+      "split": "Composite-Seen",
+      "task": "PackIdenticalLunches",
+      "successes": 3,
+      "episodes": 5
+    },
+    {
+      "id": 35,
+      "split": "Composite-Unseen",
+      "task": "ArrangeBreadBasket",
+      "successes": 1,
+      "episodes": 5
+    },
+    {
+      "id": 36,
+      "split": "Composite-Unseen",
+      "task": "ArrangeTea",
+      "successes": 1,
+      "episodes": 5
+    },
+    {
+      "id": 37,
+      "split": "Composite-Unseen",
+      "task": "BreadSelection",
+      "successes": 1,
+      "episodes": 5
+    },
+    {
+      "id": 38,
+      "split": "Composite-Unseen",
+      "task": "CategorizeCondiments",
+      "successes": 2,
+      "episodes": 5
+    },
+    {
+      "id": 39,
+      "split": "Composite-Unseen",
+      "task": "CuttingToolSelection",
+      "successes": 1,
+      "episodes": 5
+    },
+    {
+      "id": 40,
+      "split": "Composite-Unseen",
+      "task": "GarnishPancake",
+      "successes": 0,
+      "episodes": 5
+    },
+    {
+      "id": 41,
+      "split": "Composite-Unseen",
+      "task": "GatherTableware",
+      "successes": 1,
+      "episodes": 5
+    },
+    {
+      "id": 42,
+      "split": "Composite-Unseen",
+      "task": "HeatKebabSandwich",
+      "successes": 0,
+      "episodes": 5
+    },
+    {
+      "id": 43,
+      "split": "Composite-Unseen",
+      "task": "MakeIceLemonade",
+      "successes": 1,
+      "episodes": 5
+    },
+    {
+      "id": 44,
+      "split": "Composite-Unseen",
+      "task": "PanTransfer",
+      "successes": 0,
+      "episodes": 5
+    },
+    {
+      "id": 45,
+      "split": "Composite-Unseen",
+      "task": "PortionHotDogs",
+      "successes": 1,
+      "episodes": 5
+    },
+    {
+      "id": 46,
+      "split": "Composite-Unseen",
+      "task": "RecycleBottlesByType",
+      "successes": 1,
+      "episodes": 5
+    },
+    {
+      "id": 47,
+      "split": "Composite-Unseen",
+      "task": "SeparateFreezerRack",
+      "successes": 0,
+      "episodes": 5
+    },
+    {
+      "id": 48,
+      "split": "Composite-Unseen",
+      "task": "WaffleReheat",
+      "successes": 1,
+      "episodes": 5
+    },
+    {
+      "id": 49,
+      "split": "Composite-Unseen",
+      "task": "WashFruitColander",
+      "successes": 1,
+      "episodes": 5
+    },
+    {
+      "id": 50,
+      "split": "Composite-Unseen",
+      "task": "WeighIngredients",
+      "successes": 0,
+      "episodes": 5
+    }
+  ],
+  "sections": [
+    {
+      "id": "libero-pro",
+      "name": "LIBERO-PRO",
+      "suffix": {
+        "en": "Instruction & layout perturbations",
+        "zh": "指令与布局扰动"
+      },
+      "default_view": "libero-pro",
+      "views": [
+        "libero-pro",
+        "spatial-task",
+        "spatial-swap",
+        "object-task",
+        "object-swap",
+        "goal-task",
+        "goal-swap",
+        "long-task",
+        "long-swap"
+      ],
+      "note": {
+        "en": "Eight-suite Overall uses all Task/Swap items. New model reports use model-specific exploration and evaluation. Cap-X and RATS retain their reported sub-suite scores; missing Long results and eight-suite Overall are not reconstructed.",
+        "zh": "八套件 Overall 包含全部 Task/Swap 分项。新增模型分别探索与测试。Cap-X、RATS 保留已报告分项，不推算缺失的 Long 成绩或八套件 Overall。"
+      }
+    },
+    {
+      "id": "standard-libero",
+      "name": "LIBERO",
+      "suffix": {
+        "en": "Standard manipulation",
+        "zh": "标准操作评测"
+      },
+      "default_view": "standard-libero",
+      "views": [
+        "standard-libero",
+        "standard-spatial",
+        "standard-object",
+        "standard-goal",
+        "standard-long"
+      ],
+      "note": {
+        "en": "Original, unperturbed LIBERO. External methods retain the precision and evaluation scope of their paper reports.",
+        "zh": "原始、无扰动 LIBERO。外部方法保留原论文的精度和评测范围。"
+      }
+    },
+    {
+      "id": "robocasa",
+      "name": "RoboCasa365",
+      "suffix": "Target50",
+      "default_view": "robocasa",
+      "views": [
+        "robocasa",
+        "robocasa-atomic-seen",
+        "robocasa-composite-seen",
+        "robocasa-composite-unseen"
+      ],
+      "note": {
+        "en": "RPent Overall weights 50 tasks equally, not episodes. GPT-6 Astra: all 340 episodes, Overall only. External baseline numbers are quoted from Table 4, not asserted to use identical Target50 coverage. The repository reproduction remains separate below.",
+        "zh": "RPent Overall 对 50 个任务等权，不是按回合汇总。GPT-6 Astra 已完成 340 回合，仅提供 Overall。外部基线按表 4 引用，不声称采用相同 Target50 范围。仓库复现仍在下方独立保留。"
+      }
+    },
+    {
+      "id": "robotwin",
+      "name": "RoboTwin",
+      "suffix": "Clean → Randomized",
+      "default_view": "robotwin",
+      "views": [
+        "robotwin"
+      ],
+      "note": {
+        "en": "50 bimanual tasks × 5 randomized seeds for RPent. Clean-setting memory transfers without randomized-setting exploration. External rows retain their source evaluation scope.",
+        "zh": "RPent：50 个双臂任务，各 5 个随机 seeds。干净设置记忆直接迁移，不在随机设置中探索。外部方法保留其来源口径。"
+      }
+    },
+    {
+      "id": "libero-pro-zero-shot",
+      "name": "LIBERO-PRO",
+      "suffix": {
+        "en": "Goal · zero-shot",
+        "zh": "Goal · 零样本"
+      },
+      "default_view": "zero-shot-goal-task",
+      "views": [
+        "zero-shot-goal-task",
+        "zero-shot-goal-swap"
+      ],
+      "note": {
+        "en": "No target-setting Task Specific Memory or Global Memory. This ablation is separate from the memory-assisted eight-suite evaluation. Per-task results from Table 5 are included below.",
+        "zh": "不使用目标设置的 Task Specific Memory 或 Global Memory。此消融与有记忆的八套件评测分开展示，下方包含表 5 的逐任务成绩。"
+      }
+    },
+    {
+      "id": "task-card-object",
+      "name": "Task Card",
+      "suffix": {
+        "en": "Object · repository evaluation",
+        "zh": "Object · 仓库评测"
+      },
+      "default_view": "task-card-object",
+      "views": [
+        "task-card-object"
+      ],
+      "note": {
+        "en": "Object Task and Swap only. This 200-episode report is distinct from the Task card / Molmo eight-suite 72.63% result.",
+        "zh": "仅 Object Task 与 Swap，此 200 回合报告不同于 Task card / Molmo 八套件 72.63%。"
+      }
+    },
+    {
+      "id": "robocasa-reproduction",
+      "name": "RoboCasa365",
+      "suffix": {
+        "en": "Repository reproduction",
+        "zh": "仓库复现"
+      },
+      "default_view": "reproduction-overall",
+      "views": [
+        "reproduction-overall",
+        "reproduction-atomic",
+        "reproduction-seen",
+        "reproduction-unseen"
+      ],
+      "note": {
+        "en": "GPT-5.6 xhigh with reasoning: 163/180 Atomic, 49/80 Seen, 12/80 Unseen; task-weighted Overall 57.00%. Earlier GPT-5.5 xhigh with reasoning: 55.40%, separate from paper v4 at 57.1%. GPT-6 Astra low with reasoning: 59.20%, the same evaluation shown in the main chart. The 50 task aggregates below belong only to the 57.00% evaluation.",
+        "zh": "GPT-5.6 xhigh 开启推理：Atomic 163/180、Seen 49/80、Unseen 12/80，任务等权 Overall 57.00%。早期 GPT-5.5 xhigh 开启推理为 55.40%，与论文 v4 的 57.1% 分开。GPT-6 Astra low 开启推理为 59.20%，与主榜为同一实验。下方 50 任务汇总仅属于 57.00% 这次实验。"
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "source_id": "paper-table-2",
+      "description": {
+        "en": "Standard LIBERO · all 30 scores",
+        "zh": "标准 LIBERO · 全部 30 项数值"
+      },
+      "section": "standard-libero"
+    },
+    {
+      "source_id": "paper-table-3",
+      "description": {
+        "en": "LIBERO-PRO · 102 displayed scores; four missing Long cells",
+        "zh": "LIBERO-PRO · 展示 102 项数值；4 项缺失 Long"
+      },
+      "section": "libero-pro"
+    },
+    {
+      "source_id": "paper-table-4",
+      "description": {
+        "en": "RoboCasa · all 24 scores",
+        "zh": "RoboCasa · 全部 24 项数值"
+      },
+      "section": "robocasa"
+    },
+    {
+      "source_id": "paper-table-5",
+      "description": {
+        "en": "Zero-shot Goal · 40 task scores + 4 means",
+        "zh": "Goal 零样本 · 40 项任务成绩与 4 项均值"
+      },
+      "section": "libero-pro-zero-shot"
+    },
+    {
+      "source_id": "paper-table-6",
+      "description": {
+        "en": "RoboTwin · all 6 scores",
+        "zh": "RoboTwin · 全部 6 项数值"
+      },
+      "section": "robotwin"
+    },
+    {
+      "source_id": "astra-pro-remaining-20260913",
+      "description": {
+        "en": "Eight completed suites · 80 tasks · 800 outcomes",
+        "zh": "8 个已完成套件 · 80 个任务 · 800 个结果"
+      },
+      "section": "libero-pro"
+    },
+    {
+      "source_id": "contributor-20260915",
+      "description": {
+        "en": "Five new Overall scores; no sub-suite scores inferred",
+        "zh": "5 项新增 Overall；不推断子套件成绩"
+      },
+      "section": "libero-pro"
+    },
+    {
+      "source_id": "repo-task-card",
+      "description": {
+        "en": "Two Object aggregate scores, 200 episodes per method",
+        "zh": "两项 Object 汇总成绩，每方法 200 回合"
+      },
+      "section": "task-card-object"
+    },
+    {
+      "source_id": "contributor-confirmed-20260915",
+      "description": {
+        "en": "Confirmed model settings and two full RoboTwin C2R results",
+        "zh": "确认的模型配置与两项完整 RoboTwin C2R 成绩"
+      },
+      "section": "robotwin"
+    },
+    {
+      "source_id": "repo-robotwin",
+      "description": {
+        "en": "58.0% with explicit 145/250; additional source, not a duplicate ranking row",
+        "zh": "58.0% 与明确的 145/250，补充来源、不重复排名"
+      },
+      "section": "robotwin"
+    },
+    {
+      "source_id": "repo-robocasa",
+      "description": {
+        "en": "50 task aggregates + 4 split/Overall scores",
+        "zh": "50 任务汇总与 4 项 split/Overall 成绩"
+      },
+      "section": "robocasa-reproduction"
+    },
+    {
+      "source_id": "repo-robocasa-v3",
+      "description": {
+        "en": "Four earlier reference values, separately labeled",
+        "zh": "4 项早期参考值，分别标注"
+      },
+      "section": "robocasa-reproduction"
+    },
+    {
+      "source_id": "paper-figure-4",
+      "description": {
+        "en": "Three original invocation curves; no digitized points",
+        "zh": "3 幅原始调用次数曲线；不估读点值"
+      },
+      "section": "analysis"
+    },
+    {
+      "source_id": "paper-figure-6",
+      "description": {
+        "en": "Original completion attribution figure",
+        "zh": "原始完成归因图"
+      },
+      "section": "analysis"
+    },
+    {
+      "source_id": "paper-table-18",
+      "description": {
+        "en": "All primitive counts and reported shares",
+        "zh": "全部 primitive 次数及报告占比"
+      },
+      "section": "analysis"
+    },
+    {
+      "source_id": "paper-table-19",
+      "description": {
+        "en": "All class-level counts and reported shares",
+        "zh": "全部类别次数及报告占比"
+      },
+      "section": "analysis"
+    }
+  ],
+  "input_hashes": {
+    "data/prior-results.json": "46100782cc296f14bcf5dd9370f3a9dbcdfbd1e6896f0d0022dc2a97c4ebc8b1",
+    "data/astra-pro-20260914.json": "90feb71cccfba8af18291ef2057ad71b03cd606bd146012dba2de25ec4f9b709",
+    "data/astra-pro-20260915.json": "914a5cc35c1504846881b8e3dc8ae31bd55f31d2caca143d94f3ec17df31bfc9",
+    "data/additions.json": "793ee90c2c08e23e09cff89321b1ea4a0dff3e6b34168ea46f18b96da4183922",
+    "data/approved-updates.json": "2c4fca8c78dd9901654573ae23c22e70a95b5177af78413f93fc2ab6ff8faf55"
+  },
+  "method_assets": [
+    {
+      "file": "rpent-logo.png",
+      "label": "RPent",
+      "source": "https://raw.githubusercontent.com/RLinf/misc/e858f627dbcc1b35440c3cb5ecaaefd016eb8680/pic/rpent_logo.png",
+      "page": "https://github.com/RLinf/RPent",
+      "kind": "project",
+      "display": "Symbol viewport from the unchanged official wordmark",
+      "sha256": "b9f6c0c0fffc20357343cb748cda3fde4b9535a4b8d986142a219fe6b669eb3a"
+    },
+    {
+      "file": "openai.ico",
+      "label": "OpenAI",
+      "source": "https://cdn.oaistatic.com/assets/favicon-eex17e9e.ico",
+      "page": "https://chatgpt.com/",
+      "kind": "provider",
+      "sha256": "def0730c050afcd86acd21bd1edf54f0ee3638c9e642f0e4107f7d666bc292a9"
+    },
+    {
+      "file": "claude.png",
+      "label": "Claude",
+      "source": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png?w=32&h=32",
+      "page": "https://claude.com/",
+      "kind": "provider",
+      "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6"
+    },
+    {
+      "file": "pi.jpg",
+      "label": "Physical Intelligence",
+      "source": "https://raw.githubusercontent.com/RLinf/misc/e858f627dbcc1b35440c3cb5ecaaefd016eb8680/pic/pi0_icon.jpg",
+      "page": "https://www.pi.website/",
+      "kind": "provider",
+      "sha256": "c6590f7cca01aa02c632ec588ae3610d35f8188d647a12acc11b4a89698e7309"
+    },
+    {
+      "file": "rlinf.svg",
+      "label": "RLinf",
+      "source": "https://raw.githubusercontent.com/RLinf/misc/e858f627dbcc1b35440c3cb5ecaaefd016eb8680/pic/logo_white.svg",
+      "page": "https://github.com/RLinf/RLinf",
+      "kind": "provider",
+      "sha256": "7bc80d34790865211195425f6fba57c24701e5c03a291a0bb8b918f294104e2a"
+    },
+    {
+      "file": "nvidia.svg",
+      "label": "NVIDIA",
+      "source": "https://raw.githubusercontent.com/RLinf/misc/e858f627dbcc1b35440c3cb5ecaaefd016eb8680/pic/adoption_logos/NVIDIA_logo.svg",
+      "page": "https://github.com/NVIDIA/Isaac-GR00T",
+      "kind": "provider",
+      "sha256": "bb0f6d477d9acbc982070ac20332cd774015062ebd049c0814f7371c63d12a81"
+    },
+    {
+      "file": "capx-dark.png",
+      "label": "CaP-X",
+      "source": "https://capgym.github.io/assets/favicon-dark.png",
+      "page": "https://capgym.github.io/",
+      "kind": "project",
+      "sha256": "b00fdf0ec382e103a8dbebb577125e189e26772562fc8e592db90a5cc3121112"
+    },
+    {
+      "file": "rats.png",
+      "label": "RATS",
+      "source": "https://playful-rats.github.io/assets/images/rats-logo.png",
+      "page": "https://playful-rats.github.io/",
+      "kind": "project",
+      "sha256": "cb4dc329e415963bc9fcacf45b52ea761ae301750538f59ad881649fcbbe0a69"
+    },
+    {
+      "file": "ai2.png",
+      "label": "Ai2",
+      "source": "https://github.com/allenai.png?size=64",
+      "page": "https://allenai.org/molmo",
+      "kind": "provider",
+      "sha256": "d4d2d7da51c84c4bbd93223e6bcfd20c62b1994b82acef60298ec0deb2d6417e"
+    },
+    {
+      "file": "brain-circuit.svg",
+      "label": "brain-circuit",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/0.468.0/icons/brain-circuit.svg",
+      "page": "https://lucide.dev/",
+      "kind": "neutral",
+      "sha256": "a338cb589935721dc00da71ea7d7457ab7fbb85cff90a62cc3ac6b2ebc68cd82"
+    },
+    {
+      "file": "atom.svg",
+      "label": "atom",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/0.468.0/icons/atom.svg",
+      "page": "https://lucide.dev/",
+      "kind": "neutral",
+      "sha256": "9ac2f48402368cb4e4db5c59371698a86f35598c8b8076411bfdfdd63550ffd8"
+    },
+    {
+      "file": "boxes.svg",
+      "label": "boxes",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/0.468.0/icons/boxes.svg",
+      "page": "https://lucide.dev/",
+      "kind": "neutral",
+      "sha256": "7e301f6c38337389f5a96675d14cb9d8ef8a613329e99c3dfcf7c635bdd1faae"
+    },
+    {
+      "file": "workflow.svg",
+      "label": "workflow",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/0.468.0/icons/workflow.svg",
+      "page": "https://lucide.dev/",
+      "kind": "neutral",
+      "sha256": "ae99ea8f56a2835a2cca35b2fbb57643ab73443610970dba23e24bd9df75cfec"
+    },
+    {
+      "file": "globe.svg",
+      "label": "globe",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/0.468.0/icons/globe.svg",
+      "page": "https://lucide.dev/",
+      "kind": "neutral",
+      "sha256": "82c6b8fa0b8e8d775ec9becd86f74a4e50bff7bee4c81f7362de45348504f14d"
+    },
+    {
+      "file": "star.svg",
+      "label": "star",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/0.468.0/icons/star.svg",
+      "page": "https://lucide.dev/",
+      "kind": "neutral",
+      "sha256": "c59da86b889569387db28e69ad00a89f96af22863ad9eea9aa12c4876a14338c"
+    },
+    {
+      "file": "scan.svg",
+      "label": "scan",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/0.468.0/icons/scan.svg",
+      "page": "https://lucide.dev/",
+      "kind": "neutral",
+      "sha256": "c77f0e634b2451a14a262a59b61d75bbcea3994b16eeba1f5753e86b33282a4d"
+    },
+    {
+      "file": "layers-2.svg",
+      "label": "layers-2",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/0.468.0/icons/layers-2.svg",
+      "page": "https://lucide.dev/",
+      "kind": "neutral",
+      "sha256": "2fb9f11b92b06fedd9190c16d9781d4a34bb2151050ff1e0a484a411b4e18c03"
+    },
+    {
+      "file": "download.svg",
+      "label": "download",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/0.468.0/icons/download.svg",
+      "page": "https://lucide.dev/",
+      "kind": "neutral",
+      "sha256": "21ee20839a201a74e612aafe7eaaf56f6ddc095c74aa5fcbb252c51f74a7535c"
+    },
+    {
+      "file": "bot.svg",
+      "label": "bot",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/0.468.0/icons/bot.svg",
+      "page": "https://lucide.dev/",
+      "kind": "neutral",
+      "sha256": "e46fe72fc5b33d7a17b0112df85da9ded851860312e8353f4fe23d87a4ce77f5"
+    },
+    {
+      "file": "arrow-down.svg",
+      "label": "arrow-down",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/0.468.0/icons/arrow-down.svg",
+      "page": "https://lucide.dev/",
+      "kind": "neutral",
+      "sha256": "2b641c7a59d39450edfed72067fcc9940a1a316a737346af23b4b9103c0689f2"
+    }
+  ],
+  "method_icons": {
+    "gpt-5-5-xhigh": [
+      {
+        "file": "rpent-logo.png",
+        "label": "RPent",
+        "crop": true
+      },
+      {
+        "file": "openai.ico",
+        "label": "OpenAI / Codex",
+        "crop": false
+      }
+    ],
+    "opus-4-8-max": [
+      {
+        "file": "rpent-logo.png",
+        "label": "RPent",
+        "crop": true
+      },
+      {
+        "file": "claude.png",
+        "label": "Claude",
+        "crop": false
+      }
+    ],
+    "gpt-6-astra-low": [
+      {
+        "file": "rpent-logo.png",
+        "label": "RPent",
+        "crop": true
+      },
+      {
+        "file": "openai.ico",
+        "label": "OpenAI / Codex",
+        "crop": false
+      }
+    ],
+    "openvla": [
+      {
+        "file": "bot.svg",
+        "label": "OpenVLA",
+        "crop": false
+      }
+    ],
+    "nora": [
+      {
+        "file": "brain-circuit.svg",
+        "label": "NORA",
+        "crop": false
+      }
+    ],
+    "pi0": [
+      {
+        "file": "pi.jpg",
+        "label": "Physical Intelligence",
+        "crop": false
+      }
+    ],
+    "pi-rlinf": [
+      {
+        "file": "rlinf.svg",
+        "label": "RLinf",
+        "crop": false
+      }
+    ],
+    "atomvla": [
+      {
+        "file": "atom.svg",
+        "label": "AtomVLA",
+        "crop": false
+      }
+    ],
+    "pi0-5": [
+      {
+        "file": "pi.jpg",
+        "label": "Physical Intelligence",
+        "crop": false
+      }
+    ],
+    "molmoact": [
+      {
+        "file": "ai2.png",
+        "label": "Ai2 / MolmoAct",
+        "crop": false
+      }
+    ],
+    "x-vla": [
+      {
+        "file": "boxes.svg",
+        "label": "X-VLA",
+        "crop": false
+      }
+    ],
+    "cap-x": [
+      {
+        "file": "capx-dark.png",
+        "label": "CaP-X",
+        "crop": false
+      }
+    ],
+    "rats": [
+      {
+        "file": "rats.png",
+        "label": "RATS",
+        "crop": false
+      }
+    ],
+    "rldx-1": [
+      {
+        "file": "workflow.svg",
+        "label": "RLDX-1",
+        "crop": false
+      }
+    ],
+    "worlddreamer": [
+      {
+        "file": "globe.svg",
+        "label": "WorldDreamer",
+        "crop": false
+      }
+    ],
+    "gr00t-n1-7": [
+      {
+        "file": "nvidia.svg",
+        "label": "NVIDIA / GR00T",
+        "crop": false
+      }
+    ],
+    "starvla": [
+      {
+        "file": "star.svg",
+        "label": "StarVLA",
+        "crop": false
+      }
+    ],
+    "lingbot-vla": [
+      {
+        "file": "scan.svg",
+        "label": "LingBot-VLA",
+        "crop": false
+      }
+    ],
+    "opus-4-7-reported": [
+      {
+        "file": "rpent-logo.png",
+        "label": "RPent",
+        "crop": true
+      },
+      {
+        "file": "claude.png",
+        "label": "Claude",
+        "crop": false
+      }
+    ],
+    "gpt-5-6-reported": [
+      {
+        "file": "rpent-logo.png",
+        "label": "RPent",
+        "crop": true
+      },
+      {
+        "file": "openai.ico",
+        "label": "OpenAI / Codex",
+        "crop": false
+      }
+    ],
+    "gpt-5-6-no-reasoning": [
+      {
+        "file": "rpent-logo.png",
+        "label": "RPent",
+        "crop": true
+      },
+      {
+        "file": "openai.ico",
+        "label": "OpenAI / Codex",
+        "crop": false
+      }
+    ],
+    "task-card-molmo-reported": [
+      {
+        "file": "rpent-logo.png",
+        "label": "RPent",
+        "crop": true
+      },
+      {
+        "file": "ai2.png",
+        "label": "Ai2 / Molmo",
+        "crop": false
+      }
+    ],
+    "qwen-reported": [
+      {
+        "file": "rpent-logo.png",
+        "label": "RPent",
+        "crop": true
+      }
+    ],
+    "task-card-object-repo": [
+      {
+        "file": "rpent-logo.png",
+        "label": "RPent",
+        "crop": true
+      }
+    ],
+    "codex-object-repo": [
+      {
+        "file": "rpent-logo.png",
+        "label": "RPent",
+        "crop": true
+      },
+      {
+        "file": "openai.ico",
+        "label": "OpenAI / Codex",
+        "crop": false
+      }
+    ],
+    "codex-reproduction-repo": [
+      {
+        "file": "rpent-logo.png",
+        "label": "RPent",
+        "crop": true
+      },
+      {
+        "file": "openai.ico",
+        "label": "OpenAI / Codex",
+        "crop": false
+      }
+    ],
+    "codex-reference-v3": [
+      {
+        "file": "rpent-logo.png",
+        "label": "RPent",
+        "crop": true
+      },
+      {
+        "file": "openai.ico",
+        "label": "OpenAI / Codex",
+        "crop": false
+      }
+    ]
+  },
+  "assets": [
+    "rpent-logo.png",
+    "ellipsis.svg",
+    "invocations-libero.png",
+    "invocations-robocasa.png",
+    "invocations-robotwin.png",
+    "completion-attribution.png",
+    "openai.ico",
+    "claude.png",
+    "pi.jpg",
+    "rlinf.svg",
+    "nvidia.svg",
+    "capx-dark.png",
+    "rats.png",
+    "ai2.png",
+    "brain-circuit.svg",
+    "atom.svg",
+    "boxes.svg",
+    "workflow.svg",
+    "globe.svg",
+    "star.svg",
+    "scan.svg",
+    "layers-2.svg",
+    "download.svg",
+    "bot.svg",
+    "arrow-down.svg"
+  ],
+  "asset_manifest": [
+    {
+      "file": "assets/rpent-logo.png",
+      "sha256": "b9f6c0c0fffc20357343cb748cda3fde4b9535a4b8d986142a219fe6b669eb3a"
+    },
+    {
+      "file": "assets/ellipsis.svg",
+      "sha256": "4f495cc72013ffdfec677f03b33a150f7b4dd741979283fd6853a09024bca112"
+    },
+    {
+      "file": "assets/invocations-libero.png",
+      "sha256": "27c62ce207c503c2d94d34c007e82cce777d290d6fefd7ab47cfe1b4def9591a"
+    },
+    {
+      "file": "assets/invocations-robocasa.png",
+      "sha256": "88ae42bd526f63e871ee467a396a08d41e254fa53c79e12f2dfc6e1afe29d7e8"
+    },
+    {
+      "file": "assets/invocations-robotwin.png",
+      "sha256": "ae724cccf33af6077399a17be799ccacf96e3b8a492103c011135df52c140867"
+    },
+    {
+      "file": "assets/completion-attribution.png",
+      "sha256": "a62e98e9f560c828b7cad8f170b20ad516929c9b567be48cd28a98bc4e93b037"
+    },
+    {
+      "file": "assets/openai.ico",
+      "sha256": "def0730c050afcd86acd21bd1edf54f0ee3638c9e642f0e4107f7d666bc292a9"
+    },
+    {
+      "file": "assets/claude.png",
+      "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6"
+    },
+    {
+      "file": "assets/pi.jpg",
+      "sha256": "c6590f7cca01aa02c632ec588ae3610d35f8188d647a12acc11b4a89698e7309"
+    },
+    {
+      "file": "assets/rlinf.svg",
+      "sha256": "7bc80d34790865211195425f6fba57c24701e5c03a291a0bb8b918f294104e2a"
+    },
+    {
+      "file": "assets/nvidia.svg",
+      "sha256": "bb0f6d477d9acbc982070ac20332cd774015062ebd049c0814f7371c63d12a81"
+    },
+    {
+      "file": "assets/capx-dark.png",
+      "sha256": "b00fdf0ec382e103a8dbebb577125e189e26772562fc8e592db90a5cc3121112"
+    },
+    {
+      "file": "assets/rats.png",
+      "sha256": "cb4dc329e415963bc9fcacf45b52ea761ae301750538f59ad881649fcbbe0a69"
+    },
+    {
+      "file": "assets/ai2.png",
+      "sha256": "d4d2d7da51c84c4bbd93223e6bcfd20c62b1994b82acef60298ec0deb2d6417e"
+    },
+    {
+      "file": "assets/brain-circuit.svg",
+      "sha256": "a338cb589935721dc00da71ea7d7457ab7fbb85cff90a62cc3ac6b2ebc68cd82"
+    },
+    {
+      "file": "assets/atom.svg",
+      "sha256": "9ac2f48402368cb4e4db5c59371698a86f35598c8b8076411bfdfdd63550ffd8"
+    },
+    {
+      "file": "assets/boxes.svg",
+      "sha256": "7e301f6c38337389f5a96675d14cb9d8ef8a613329e99c3dfcf7c635bdd1faae"
+    },
+    {
+      "file": "assets/workflow.svg",
+      "sha256": "ae99ea8f56a2835a2cca35b2fbb57643ab73443610970dba23e24bd9df75cfec"
+    },
+    {
+      "file": "assets/globe.svg",
+      "sha256": "82c6b8fa0b8e8d775ec9becd86f74a4e50bff7bee4c81f7362de45348504f14d"
+    },
+    {
+      "file": "assets/star.svg",
+      "sha256": "c59da86b889569387db28e69ad00a89f96af22863ad9eea9aa12c4876a14338c"
+    },
+    {
+      "file": "assets/scan.svg",
+      "sha256": "c77f0e634b2451a14a262a59b61d75bbcea3994b16eeba1f5753e86b33282a4d"
+    },
+    {
+      "file": "assets/layers-2.svg",
+      "sha256": "2fb9f11b92b06fedd9190c16d9781d4a34bb2151050ff1e0a484a411b4e18c03"
+    },
+    {
+      "file": "assets/download.svg",
+      "sha256": "21ee20839a201a74e612aafe7eaaf56f6ddc095c74aa5fcbb252c51f74a7535c"
+    },
+    {
+      "file": "assets/bot.svg",
+      "sha256": "e46fe72fc5b33d7a17b0112df85da9ded851860312e8353f4fe23d87a4ce77f5"
+    },
+    {
+      "file": "assets/arrow-down.svg",
+      "sha256": "2b641c7a59d39450edfed72067fcc9940a1a316a737346af23b4b9103c0689f2"
+    }
+  ]
 }
