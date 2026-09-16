@@ -55,6 +55,16 @@
   const tr = value => value && typeof value === 'object' ? value[lang] ?? value.en : value;
   const h = value => String(value ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
   const asset = name => window.RPENT_ASSETS?.[name] ?? (options.assetBase?new URL(`assets/${name}`,options.assetBase).href:`assets/${name}`);
+  // jsDelivr can reject uncached images from large repositories.
+  document.addEventListener('error', event => {
+    const img = event.target;
+    if (img.tagName !== 'IMG') return;
+    const url = new URL(img.src);
+    const match = url.pathname.match(/^\/gh\/RLinf\/misc@([a-f0-9]{40})\/(rpent\/benchmarks\/assets\/.+)$/);
+    if (url.hostname === 'cdn.jsdelivr.net' && match) {
+      img.src = `https://raw.githubusercontent.com/RLinf/misc/${match[1]}/${match[2]}`;
+    }
+  }, true);
   function label(r) {
     const c=configs.get(r.configuration_id);
     if (c.display_name) return c.display_name;
