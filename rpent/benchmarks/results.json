@@ -13,10 +13,10 @@
       "effort": "xhigh"
     },
     {
-      "id": "opus-4-8-max",
+      "id": "opus-4-7-max",
       "kind": "rpent",
       "backend": "Claude Code",
-      "model": "Opus-4.8",
+      "model": "Opus-4.7",
       "reasoning": true,
       "effort": "max"
     },
@@ -172,22 +172,6 @@
       "effort": null
     },
     {
-      "id": "gpt-5-6-reported",
-      "kind": "rpent",
-      "backend": "Codex",
-      "model": "GPT-5.6",
-      "reasoning": true,
-      "effort": "xhigh"
-    },
-    {
-      "id": "gpt-5-6-no-reasoning",
-      "kind": "rpent",
-      "backend": "Codex",
-      "model": "GPT-5.6",
-      "reasoning": false,
-      "effort": null
-    },
-    {
       "id": "task-card-molmo-reported",
       "kind": "rpent",
       "backend": "Task card",
@@ -210,14 +194,6 @@
       "model": null,
       "reasoning": false,
       "effort": null
-    },
-    {
-      "id": "gpt-5-5-xhigh-robotwin-20260915",
-      "kind": "rpent",
-      "backend": "Codex",
-      "model": "GPT-5.5",
-      "reasoning": true,
-      "effort": "xhigh"
     }
   ],
   "views": [
@@ -229,7 +205,7 @@
         "zh": "Spatial"
       },
       "record_ids": [
-        "standard-spatial--opus-4-8-max",
+        "standard-spatial--opus-4-7-max",
         "standard-spatial--openvla",
         "standard-spatial--nora",
         "standard-spatial--pi0",
@@ -245,7 +221,7 @@
         "zh": "Object"
       },
       "record_ids": [
-        "standard-object--opus-4-8-max",
+        "standard-object--opus-4-7-max",
         "standard-object--openvla",
         "standard-object--nora",
         "standard-object--pi0",
@@ -261,7 +237,7 @@
         "zh": "Goal"
       },
       "record_ids": [
-        "standard-goal--opus-4-8-max",
+        "standard-goal--opus-4-7-max",
         "standard-goal--openvla",
         "standard-goal--nora",
         "standard-goal--pi0",
@@ -277,7 +253,7 @@
         "zh": "Long"
       },
       "record_ids": [
-        "standard-long--opus-4-8-max",
+        "standard-long--opus-4-7-max",
         "standard-long--openvla",
         "standard-long--nora",
         "standard-long--pi0",
@@ -293,7 +269,7 @@
         "zh": "总体"
       },
       "record_ids": [
-        "standard-libero--opus-4-8-max",
+        "standard-libero--opus-4-7-max",
         "standard-libero--openvla",
         "standard-libero--nora",
         "standard-libero--pi0",
@@ -310,7 +286,6 @@
       },
       "record_ids": [
         "spatial-task--gpt-5-5-xhigh",
-        "spatial-task--opus-4-8-max",
         "spatial-task--gpt-6-astra-low",
         "spatial-task--openvla",
         "spatial-task--pi0",
@@ -333,7 +308,6 @@
       },
       "record_ids": [
         "spatial-swap--gpt-5-5-xhigh",
-        "spatial-swap--opus-4-8-max",
         "spatial-swap--gpt-6-astra-low",
         "spatial-swap--openvla",
         "spatial-swap--pi0",
@@ -356,7 +330,6 @@
       },
       "record_ids": [
         "object-task--gpt-5-5-xhigh",
-        "object-task--opus-4-8-max",
         "object-task--gpt-6-astra-low",
         "object-task--openvla",
         "object-task--pi0",
@@ -379,7 +352,6 @@
       },
       "record_ids": [
         "object-swap--gpt-5-5-xhigh",
-        "object-swap--opus-4-8-max",
         "object-swap--gpt-6-astra-low",
         "object-swap--openvla",
         "object-swap--pi0",
@@ -402,7 +374,6 @@
       },
       "record_ids": [
         "goal-task--gpt-5-5-xhigh",
-        "goal-task--opus-4-8-max",
         "goal-task--gpt-6-astra-low",
         "goal-task--openvla",
         "goal-task--pi0",
@@ -425,7 +396,6 @@
       },
       "record_ids": [
         "goal-swap--gpt-5-5-xhigh",
-        "goal-swap--opus-4-8-max",
         "goal-swap--gpt-6-astra-low",
         "goal-swap--openvla",
         "goal-swap--pi0",
@@ -448,7 +418,6 @@
       },
       "record_ids": [
         "long-task--gpt-5-5-xhigh",
-        "long-task--opus-4-8-max",
         "long-task--gpt-6-astra-low",
         "long-task--openvla",
         "long-task--pi0",
@@ -469,7 +438,6 @@
       },
       "record_ids": [
         "long-swap--gpt-5-5-xhigh",
-        "long-swap--opus-4-8-max",
         "long-swap--gpt-6-astra-low",
         "long-swap--openvla",
         "long-swap--pi0",
@@ -490,7 +458,6 @@
       },
       "record_ids": [
         "libero-pro--gpt-5-5-xhigh",
-        "libero-pro--opus-4-8-max",
         "libero-pro--gpt-6-astra-low",
         "libero-pro--openvla",
         "libero-pro--pi0",
@@ -501,8 +468,6 @@
         "libero-pro--atomvla",
         "libero-pro--pi-rlinf",
         "libero-pro--opus-4-7-reported",
-        "libero-pro--gpt-5-6-reported",
-        "libero-pro--gpt-5-6-no-reasoning",
         "libero-pro--task-card-molmo-reported"
       ]
     },
@@ -515,7 +480,7 @@
       },
       "record_ids": [
         "robocasa-atomic-seen--gpt-5-5-xhigh",
-        "robocasa-atomic-seen--opus-4-8-max",
+        "robocasa-atomic-seen--opus-4-7-max",
         "robocasa-atomic-seen--rldx-1",
         "robocasa-atomic-seen--worlddreamer",
         "robocasa-atomic-seen--pi0-5",
@@ -531,7 +496,7 @@
       },
       "record_ids": [
         "robocasa-composite-seen--gpt-5-5-xhigh",
-        "robocasa-composite-seen--opus-4-8-max",
+        "robocasa-composite-seen--opus-4-7-max",
         "robocasa-composite-seen--rldx-1",
         "robocasa-composite-seen--worlddreamer",
         "robocasa-composite-seen--pi0-5",
@@ -547,7 +512,7 @@
       },
       "record_ids": [
         "robocasa-composite-unseen--gpt-5-5-xhigh",
-        "robocasa-composite-unseen--opus-4-8-max",
+        "robocasa-composite-unseen--opus-4-7-max",
         "robocasa-composite-unseen--rldx-1",
         "robocasa-composite-unseen--worlddreamer",
         "robocasa-composite-unseen--pi0-5",
@@ -563,7 +528,7 @@
       },
       "record_ids": [
         "robocasa--gpt-5-5-xhigh",
-        "robocasa--opus-4-8-max",
+        "robocasa--opus-4-7-max",
         "robocasa--rldx-1",
         "robocasa--worlddreamer",
         "robocasa--pi0-5",
@@ -579,14 +544,12 @@
         "zh": "C2R"
       },
       "record_ids": [
-        "robotwin--opus-4-8-max",
-        "robotwin--gpt-6-astra-low",
+        "robotwin--opus-4-7-max",
         "robotwin--gr00t-n1-7",
         "robotwin--pi0-5",
         "robotwin--starvla",
         "robotwin--lingbot-vla",
-        "robotwin--gpt-5-6-reported",
-        "robotwin--gpt-5-5-xhigh-robotwin-20260915"
+        "robotwin--gpt-5-5-xhigh"
       ]
     },
     {
@@ -604,67 +567,72 @@
   ],
   "results": [
     {
-      "id": "standard-spatial--opus-4-8-max",
+      "id": "standard-spatial--opus-4-7-max",
       "view_id": "standard-spatial",
-      "configuration_id": "opus-4-8-max",
+      "configuration_id": "opus-4-7-max",
       "status": "reported",
       "rate": "97.0",
       "successes": null,
       "episodes": 100,
       "source_ids": [
-        "paper-table-2"
+        "paper-table-2",
+        "contributor-correction-20260916"
       ],
       "protocol_id": "rpent-standard"
     },
     {
-      "id": "standard-object--opus-4-8-max",
+      "id": "standard-object--opus-4-7-max",
       "view_id": "standard-object",
-      "configuration_id": "opus-4-8-max",
+      "configuration_id": "opus-4-7-max",
       "status": "reported",
       "rate": "100.0",
       "successes": null,
       "episodes": 100,
       "source_ids": [
-        "paper-table-2"
+        "paper-table-2",
+        "contributor-correction-20260916"
       ],
       "protocol_id": "rpent-standard"
     },
     {
-      "id": "standard-goal--opus-4-8-max",
+      "id": "standard-goal--opus-4-7-max",
       "view_id": "standard-goal",
-      "configuration_id": "opus-4-8-max",
+      "configuration_id": "opus-4-7-max",
       "status": "reported",
       "rate": "94.0",
       "successes": null,
       "episodes": 100,
       "source_ids": [
-        "paper-table-2"
+        "paper-table-2",
+        "contributor-correction-20260916"
       ],
       "protocol_id": "rpent-standard"
     },
     {
-      "id": "standard-long--opus-4-8-max",
+      "id": "standard-long--opus-4-7-max",
       "view_id": "standard-long",
-      "configuration_id": "opus-4-8-max",
+      "configuration_id": "opus-4-7-max",
       "status": "reported",
       "rate": "93.0",
       "successes": null,
       "episodes": 100,
       "source_ids": [
-        "paper-table-2"
+        "paper-table-2",
+        "contributor-correction-20260916"
       ],
       "protocol_id": "rpent-standard"
     },
     {
-      "id": "standard-libero--opus-4-8-max",
+      "id": "standard-libero--opus-4-7-max",
       "view_id": "standard-libero",
-      "configuration_id": "opus-4-8-max",
+      "configuration_id": "opus-4-7-max",
       "status": "reported",
       "rate": "96.0",
       "successes": 384,
       "episodes": 400,
       "source_ids": [
-        "paper-table-2"
+        "paper-table-2",
+        "contributor-correction-20260916"
       ],
       "protocol_id": "rpent-standard"
     },
@@ -674,19 +642,6 @@
       "configuration_id": "gpt-5-5-xhigh",
       "status": "reported",
       "rate": "81.0",
-      "successes": null,
-      "episodes": 100,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "rpent-pro"
-    },
-    {
-      "id": "spatial-task--opus-4-8-max",
-      "view_id": "spatial-task",
-      "configuration_id": "opus-4-8-max",
-      "status": "reported",
-      "rate": "94.0",
       "successes": null,
       "episodes": 100,
       "source_ids": [
@@ -722,19 +677,6 @@
       "protocol_id": "rpent-pro"
     },
     {
-      "id": "spatial-swap--opus-4-8-max",
-      "view_id": "spatial-swap",
-      "configuration_id": "opus-4-8-max",
-      "status": "reported",
-      "rate": "80.0",
-      "successes": null,
-      "episodes": 100,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "rpent-pro"
-    },
-    {
       "id": "spatial-swap--gpt-6-astra-low",
       "view_id": "spatial-swap",
       "configuration_id": "gpt-6-astra-low",
@@ -754,19 +696,6 @@
       "configuration_id": "gpt-5-5-xhigh",
       "status": "reported",
       "rate": "94.0",
-      "successes": null,
-      "episodes": 100,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "rpent-pro"
-    },
-    {
-      "id": "object-task--opus-4-8-max",
-      "view_id": "object-task",
-      "configuration_id": "opus-4-8-max",
-      "status": "reported",
-      "rate": "88.0",
       "successes": null,
       "episodes": 100,
       "source_ids": [
@@ -802,19 +731,6 @@
       "protocol_id": "rpent-pro"
     },
     {
-      "id": "object-swap--opus-4-8-max",
-      "view_id": "object-swap",
-      "configuration_id": "opus-4-8-max",
-      "status": "reported",
-      "rate": "90.0",
-      "successes": null,
-      "episodes": 100,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "rpent-pro"
-    },
-    {
       "id": "object-swap--gpt-6-astra-low",
       "view_id": "object-swap",
       "configuration_id": "gpt-6-astra-low",
@@ -834,19 +750,6 @@
       "configuration_id": "gpt-5-5-xhigh",
       "status": "reported",
       "rate": "75.0",
-      "successes": null,
-      "episodes": 100,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "rpent-pro"
-    },
-    {
-      "id": "goal-task--opus-4-8-max",
-      "view_id": "goal-task",
-      "configuration_id": "opus-4-8-max",
-      "status": "reported",
-      "rate": "87.0",
       "successes": null,
       "episodes": 100,
       "source_ids": [
@@ -882,19 +785,6 @@
       "protocol_id": "rpent-pro"
     },
     {
-      "id": "goal-swap--opus-4-8-max",
-      "view_id": "goal-swap",
-      "configuration_id": "opus-4-8-max",
-      "status": "reported",
-      "rate": "87.0",
-      "successes": null,
-      "episodes": 100,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "rpent-pro"
-    },
-    {
       "id": "goal-swap--gpt-6-astra-low",
       "view_id": "goal-swap",
       "configuration_id": "gpt-6-astra-low",
@@ -914,19 +804,6 @@
       "configuration_id": "gpt-5-5-xhigh",
       "status": "reported",
       "rate": "52.0",
-      "successes": null,
-      "episodes": 100,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "rpent-pro"
-    },
-    {
-      "id": "long-task--opus-4-8-max",
-      "view_id": "long-task",
-      "configuration_id": "opus-4-8-max",
-      "status": "reported",
-      "rate": "71.0",
       "successes": null,
       "episodes": 100,
       "source_ids": [
@@ -962,19 +839,6 @@
       "protocol_id": "rpent-pro"
     },
     {
-      "id": "long-swap--opus-4-8-max",
-      "view_id": "long-swap",
-      "configuration_id": "opus-4-8-max",
-      "status": "reported",
-      "rate": "62.0",
-      "successes": null,
-      "episodes": 100,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "rpent-pro"
-    },
-    {
       "id": "long-swap--gpt-6-astra-low",
       "view_id": "long-swap",
       "configuration_id": "gpt-6-astra-low",
@@ -994,19 +858,6 @@
       "configuration_id": "gpt-5-5-xhigh",
       "status": "reported",
       "rate": "72.1",
-      "successes": null,
-      "episodes": 800,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "rpent-pro"
-    },
-    {
-      "id": "libero-pro--opus-4-8-max",
-      "view_id": "libero-pro",
-      "configuration_id": "opus-4-8-max",
-      "status": "reported",
-      "rate": "82.4",
       "successes": null,
       "episodes": 800,
       "source_ids": [
@@ -1043,15 +894,16 @@
       "protocol_id": "rpent-robocasa"
     },
     {
-      "id": "robocasa-atomic-seen--opus-4-8-max",
+      "id": "robocasa-atomic-seen--opus-4-7-max",
       "view_id": "robocasa-atomic-seen",
-      "configuration_id": "opus-4-8-max",
+      "configuration_id": "opus-4-7-max",
       "status": "reported",
       "rate": "79.4",
       "successes": null,
       "episodes": 180,
       "source_ids": [
-        "paper-table-4"
+        "paper-table-4",
+        "contributor-correction-20260916"
       ],
       "protocol_id": "rpent-robocasa"
     },
@@ -1069,15 +921,16 @@
       "protocol_id": "rpent-robocasa"
     },
     {
-      "id": "robocasa-composite-seen--opus-4-8-max",
+      "id": "robocasa-composite-seen--opus-4-7-max",
       "view_id": "robocasa-composite-seen",
-      "configuration_id": "opus-4-8-max",
+      "configuration_id": "opus-4-7-max",
       "status": "reported",
       "rate": "47.5",
       "successes": null,
       "episodes": 80,
       "source_ids": [
-        "paper-table-4"
+        "paper-table-4",
+        "contributor-correction-20260916"
       ],
       "protocol_id": "rpent-robocasa"
     },
@@ -1095,15 +948,16 @@
       "protocol_id": "rpent-robocasa"
     },
     {
-      "id": "robocasa-composite-unseen--opus-4-8-max",
+      "id": "robocasa-composite-unseen--opus-4-7-max",
       "view_id": "robocasa-composite-unseen",
-      "configuration_id": "opus-4-8-max",
+      "configuration_id": "opus-4-7-max",
       "status": "reported",
       "rate": "15.0",
       "successes": null,
       "episodes": 80,
       "source_ids": [
-        "paper-table-4"
+        "paper-table-4",
+        "contributor-correction-20260916"
       ],
       "protocol_id": "rpent-robocasa"
     },
@@ -1121,44 +975,32 @@
       "protocol_id": "rpent-robocasa"
     },
     {
-      "id": "robocasa--opus-4-8-max",
+      "id": "robocasa--opus-4-7-max",
       "view_id": "robocasa",
-      "configuration_id": "opus-4-8-max",
+      "configuration_id": "opus-4-7-max",
       "status": "reported",
       "rate": "48.6",
       "successes": null,
       "episodes": 340,
       "source_ids": [
-        "paper-table-4"
+        "paper-table-4",
+        "contributor-correction-20260916"
       ],
       "protocol_id": "rpent-robocasa"
     },
     {
-      "id": "robotwin--opus-4-8-max",
+      "id": "robotwin--opus-4-7-max",
       "view_id": "robotwin",
-      "configuration_id": "opus-4-8-max",
+      "configuration_id": "opus-4-7-max",
       "status": "reported",
       "rate": "58.4",
       "successes": null,
       "episodes": 250,
       "source_ids": [
-        "paper-table-6"
+        "paper-table-6",
+        "contributor-correction-20260916"
       ],
       "protocol_id": "rpent-robotwin"
-    },
-    {
-      "id": "robotwin--gpt-6-astra-low",
-      "view_id": "robotwin",
-      "configuration_id": "gpt-6-astra-low",
-      "status": "reported",
-      "rate": "72.00",
-      "successes": null,
-      "episodes": 250,
-      "source_ids": [
-        "contributor-robotwin-20260915",
-        "contributor-settings-20260915"
-      ],
-      "protocol_id": "contributor-robotwin"
     },
     {
       "id": "standard-libero--openvla",
@@ -2842,38 +2684,11 @@
       "view_id": "libero-pro",
       "configuration_id": "opus-4-7-reported",
       "status": "reported",
-      "rate": "82.50",
+      "rate": "82.4",
       "successes": null,
       "episodes": 800,
       "source_ids": [
-        "contributor-20260915"
-      ],
-      "protocol_id": "contributor-pro-eight"
-    },
-    {
-      "id": "libero-pro--gpt-5-6-reported",
-      "view_id": "libero-pro",
-      "configuration_id": "gpt-5-6-reported",
-      "status": "reported",
-      "rate": "78.50",
-      "successes": null,
-      "episodes": 800,
-      "source_ids": [
-        "contributor-20260915",
-        "contributor-settings-20260915"
-      ],
-      "protocol_id": "contributor-pro-eight"
-    },
-    {
-      "id": "libero-pro--gpt-5-6-no-reasoning",
-      "view_id": "libero-pro",
-      "configuration_id": "gpt-5-6-no-reasoning",
-      "status": "reported",
-      "rate": "62.50",
-      "successes": null,
-      "episodes": 800,
-      "source_ids": [
-        "contributor-20260915"
+        "contributor-correction-20260916"
       ],
       "protocol_id": "contributor-pro-eight"
     },
@@ -2931,33 +2746,18 @@
       "protocol_id": "repo-task-card-object"
     },
     {
-      "id": "robotwin--gpt-5-6-reported",
+      "id": "robotwin--gpt-5-5-xhigh",
       "view_id": "robotwin",
-      "configuration_id": "gpt-5-6-reported",
+      "configuration_id": "gpt-5-5-xhigh",
       "status": "reported",
-      "rate": "61.20",
-      "successes": null,
+      "rate": "58.0",
+      "successes": 145,
       "episodes": 250,
       "source_ids": [
-        "contributor-robotwin-20260915",
-        "contributor-settings-20260915"
+        "paper-table-6",
+        "contributor-correction-20260916"
       ],
-      "protocol_id": "contributor-robotwin"
-    },
-    {
-      "id": "robotwin--gpt-5-5-xhigh-robotwin-20260915",
-      "view_id": "robotwin",
-      "configuration_id": "gpt-5-5-xhigh-robotwin-20260915",
-      "status": "reported",
-      "rate": "62.4",
-      "successes": 156,
-      "episodes": 250,
-      "source_ids": [
-        "repo-robotwin-20260915"
-      ],
-      "protocol_id": "repo-robotwin-20260915",
-      "task_failures": 58,
-      "episode_timeouts": 36
+      "protocol_id": "rpent-robotwin"
     }
   ],
   "sources": [
@@ -2972,10 +2772,6 @@
     {
       "id": "paper-table-4",
       "url": "https://arxiv.org/html/2607.08448v4#S3.T4"
-    },
-    {
-      "id": "paper-table-5",
-      "url": "https://arxiv.org/html/2607.08448v4#S3.T5"
     },
     {
       "id": "paper-table-6",
@@ -3002,12 +2798,9 @@
       "kind": "contributor-confirmed"
     },
     {
-      "id": "contributor-robotwin-20260915",
-      "kind": "contributor-confirmed"
-    },
-    {
-      "id": "repo-robotwin-20260915",
-      "url": "https://github.com/RLinf/RPent/blob/849143bf740a562367345cec0de9ef4657dafd73/docs/source-en/rst_source/usage/robotwin.rst"
+      "id": "contributor-correction-20260916",
+      "kind": "contributor-confirmed",
+      "note": "Corrected model labels and aggregate scores; removed requested configurations. No missing suite scores inferred."
     }
   ],
   "astra": {
@@ -3297,18 +3090,6 @@
         "crop": false
       }
     ],
-    "opus-4-8-max": [
-      {
-        "file": "rpent-logo.png",
-        "label": "RPent",
-        "crop": true
-      },
-      {
-        "file": "claude.png",
-        "label": "Claude",
-        "crop": false
-      }
-    ],
     "gpt-6-astra-low": [
       {
         "file": "rpent-logo.png",
@@ -3372,30 +3153,6 @@
         "crop": false
       }
     ],
-    "gpt-5-6-reported": [
-      {
-        "file": "rpent-logo.png",
-        "label": "RPent",
-        "crop": true
-      },
-      {
-        "file": "openai.ico",
-        "label": "OpenAI / Codex",
-        "crop": false
-      }
-    ],
-    "gpt-5-6-no-reasoning": [
-      {
-        "file": "rpent-logo.png",
-        "label": "RPent",
-        "crop": true
-      },
-      {
-        "file": "openai.ico",
-        "label": "OpenAI / Codex",
-        "crop": false
-      }
-    ],
     "task-card-molmo-reported": [
       {
         "file": "rpent-logo.png",
@@ -3427,15 +3184,15 @@
         "crop": false
       }
     ],
-    "gpt-5-5-xhigh-robotwin-20260915": [
+    "opus-4-7-max": [
       {
         "file": "rpent-logo.png",
         "label": "RPent",
         "crop": true
       },
       {
-        "file": "openai.ico",
-        "label": "OpenAI / Codex",
+        "file": "claude.png",
+        "label": "Claude",
         "crop": false
       }
     ]
