@@ -19,17 +19,17 @@
     rows.sort((a,b)=>{
       const av=valueOf(a.cells[column]),bv=valueOf(b.cells[column]);
       return av===null ? bv===null?collator.compare(a.dataset.sortId,b.dataset.sortId):1
-        : bv===null?-1:bv-av||collator.compare(a.dataset.sortId,b.dataset.sortId);
+        : bv===null?-1:(column===state.idColumn?av-bv:bv-av)||collator.compare(a.dataset.sortId,b.dataset.sortId);
     });
     const total=table.tBodies[0].querySelector('[data-total]');
     rows.forEach(row=>table.tBodies[0].insertBefore(row,total));
     state.headers.forEach((th,i)=>{
-      if(state.columns.includes(i))th.setAttribute('aria-sort',i===column?'descending':'none');
+      if(state.columns.includes(i))th.setAttribute('aria-sort',i===column?(column===state.idColumn?'ascending':'descending'):'none');
     });
     const maximum=rows.length?valueOf(rows[0].cells[column]):null;
     for(const row of rows){
       for(const cell of row.cells)cell.classList.remove('metric-best');
-      if(maximum!==null&&valueOf(row.cells[column])===maximum)row.cells[column].classList.add('metric-best');
+      if(column!==state.idColumn&&maximum!==null&&valueOf(row.cells[column])===maximum)row.cells[column].classList.add('metric-best');
     }
   }
   function exportTable(table) {
@@ -45,22 +45,23 @@
     scope.querySelectorAll('table:not(.coverage)').forEach((table,index)=>{
       if(table._rpentSort||!table.tHead||!table.tBodies[0])return;
       const headers=[...table.tHead.rows[0].cells];
-      const candidates=headers.map((th,i)=>({th,i})).filter(({th,i})=>i>0&&!/^(ID|#|s\d+)$/i.test(th.textContent.trim())&&[...table.tBodies[0].rows].some(r=>valueOf(r.cells[i])!==null));
+      const idColumn=headers.findIndex(th=>/^(ID|#)$/i.test(th.textContent.trim()));
+      const candidates=headers.map((th,i)=>({th,i})).filter(({th,i})=>(i>0||i===idColumn)&&!/^s\d+$/i.test(th.textContent.trim())&&[...table.tBodies[0].rows].some(r=>valueOf(r.cells[i])!==null));
       if(!candidates.length)return;
       const columns=candidates.map(x=>x.i);
-      const preferred=candidates.find(({th})=>/Overall|总体/i.test(th.textContent))
+      const preferred=candidates.find(({i})=>i===idColumn) ?? candidates.find(({th})=>/Overall|总体/i.test(th.textContent))
         ?? candidates.find(({th})=>/Mean|均值|Success rate|成功率/i.test(th.textContent)) ?? candidates[0];
       const key=table.dataset.sortKey??(options.key??scope.id??'results')+'-'+index;
       [...table.tBodies[0].rows].forEach((row,i)=>{
         row.dataset.sortId??=row.dataset.method??row.dataset.tableRecord??row.dataset.astraTask??row.dataset.roboTask??row.dataset.paperTasks??row.cells[0].textContent.trim()+'-'+i;
         if(/^(Total|合计)$/i.test(row.cells[0].textContent.trim()))row.dataset.total='true';
       });
-      table._rpentSort={key,columns,headers,column:preferred.i};
+      table._rpentSort={key,columns,headers,idColumn,column:preferred.i};
       headers.forEach((th,i)=>{
         th.dataset.label=th.textContent.trim();
         if(!columns.includes(i))return;
         const button=document.createElement('button');button.type='button';button.className='sort-heading';
-        button.textContent=th.dataset.label;button.title=(zh?'按此列降序：':'Sort descending: ')+th.dataset.label;
+        button.textContent=th.dataset.label;button.title=(i===idColumn?(zh?'按任务 ID 升序：':'Sort task ID ascending: '):(zh?'按此列降序：':'Sort descending: '))+th.dataset.label;
         const img=document.createElement('img');img.src=options.icon;img.alt='';img.width=12;img.height=12;
         button.append(img);button.addEventListener('click',()=>sort(table,i));th.replaceChildren(button);
       });
