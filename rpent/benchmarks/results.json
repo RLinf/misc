@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "checked_at": "2026-09-15",
+  "checked_at": "2026-09-16",
   "paper_revision": "2607.08448v4",
   "repository_revision": "43f32aa08cba07bd4d49a4bfa5eba4ef633e9b92",
   "configurations": [
@@ -179,7 +179,7 @@
       "reasoning": null,
       "effort": null,
       "display_name": "RPent Flash Mode",
-      "perception_model": "Molmo"
+      "perception_model": "Molmo2-8B"
     },
     {
       "id": "xiaomi-robotics-1",
@@ -189,6 +189,14 @@
       "reasoning": null,
       "effort": null,
       "metadata_status": "not_applicable"
+    },
+    {
+      "id": "aspire",
+      "kind": "external",
+      "backend": null,
+      "model": "ASPIRE",
+      "reasoning": null,
+      "effort": null
     }
   ],
   "views": [
@@ -282,16 +290,15 @@
       "record_ids": [
         "spatial-task--gpt-5-5-xhigh",
         "spatial-task--gpt-6-astra-low",
-        "spatial-task--openvla",
         "spatial-task--pi0",
         "spatial-task--pi0-5",
         "spatial-task--molmoact",
-        "spatial-task--nora",
         "spatial-task--x-vla",
         "spatial-task--atomvla",
         "spatial-task--cap-x",
         "spatial-task--rats",
-        "spatial-task--pi-rlinf"
+        "spatial-task--pi-rlinf",
+        "spatial-task--aspire"
       ]
     },
     {
@@ -304,16 +311,15 @@
       "record_ids": [
         "spatial-swap--gpt-5-5-xhigh",
         "spatial-swap--gpt-6-astra-low",
-        "spatial-swap--openvla",
         "spatial-swap--pi0",
         "spatial-swap--pi0-5",
         "spatial-swap--molmoact",
-        "spatial-swap--nora",
         "spatial-swap--x-vla",
         "spatial-swap--atomvla",
         "spatial-swap--cap-x",
         "spatial-swap--rats",
-        "spatial-swap--pi-rlinf"
+        "spatial-swap--pi-rlinf",
+        "spatial-swap--aspire"
       ]
     },
     {
@@ -326,16 +332,15 @@
       "record_ids": [
         "object-task--gpt-5-5-xhigh",
         "object-task--gpt-6-astra-low",
-        "object-task--openvla",
         "object-task--pi0",
         "object-task--pi0-5",
         "object-task--molmoact",
-        "object-task--nora",
         "object-task--x-vla",
         "object-task--atomvla",
         "object-task--cap-x",
         "object-task--rats",
-        "object-task--pi-rlinf"
+        "object-task--pi-rlinf",
+        "object-task--aspire"
       ]
     },
     {
@@ -348,16 +353,15 @@
       "record_ids": [
         "object-swap--gpt-5-5-xhigh",
         "object-swap--gpt-6-astra-low",
-        "object-swap--openvla",
         "object-swap--pi0",
         "object-swap--pi0-5",
         "object-swap--molmoact",
-        "object-swap--nora",
         "object-swap--x-vla",
         "object-swap--atomvla",
         "object-swap--cap-x",
         "object-swap--rats",
-        "object-swap--pi-rlinf"
+        "object-swap--pi-rlinf",
+        "object-swap--aspire"
       ]
     },
     {
@@ -370,16 +374,15 @@
       "record_ids": [
         "goal-task--gpt-5-5-xhigh",
         "goal-task--gpt-6-astra-low",
-        "goal-task--openvla",
         "goal-task--pi0",
         "goal-task--pi0-5",
         "goal-task--molmoact",
-        "goal-task--nora",
         "goal-task--x-vla",
         "goal-task--atomvla",
         "goal-task--cap-x",
         "goal-task--rats",
-        "goal-task--pi-rlinf"
+        "goal-task--pi-rlinf",
+        "goal-task--aspire"
       ]
     },
     {
@@ -392,16 +395,15 @@
       "record_ids": [
         "goal-swap--gpt-5-5-xhigh",
         "goal-swap--gpt-6-astra-low",
-        "goal-swap--openvla",
         "goal-swap--pi0",
         "goal-swap--pi0-5",
         "goal-swap--molmoact",
-        "goal-swap--nora",
         "goal-swap--x-vla",
         "goal-swap--atomvla",
         "goal-swap--cap-x",
         "goal-swap--rats",
-        "goal-swap--pi-rlinf"
+        "goal-swap--pi-rlinf",
+        "goal-swap--aspire"
       ]
     },
     {
@@ -414,14 +416,13 @@
       "record_ids": [
         "long-task--gpt-5-5-xhigh",
         "long-task--gpt-6-astra-low",
-        "long-task--openvla",
         "long-task--pi0",
         "long-task--pi0-5",
         "long-task--molmoact",
-        "long-task--nora",
         "long-task--x-vla",
         "long-task--atomvla",
-        "long-task--pi-rlinf"
+        "long-task--pi-rlinf",
+        "long-task--aspire"
       ]
     },
     {
@@ -434,14 +435,13 @@
       "record_ids": [
         "long-swap--gpt-5-5-xhigh",
         "long-swap--gpt-6-astra-low",
-        "long-swap--openvla",
         "long-swap--pi0",
         "long-swap--pi0-5",
         "long-swap--molmoact",
-        "long-swap--nora",
         "long-swap--x-vla",
         "long-swap--atomvla",
-        "long-swap--pi-rlinf"
+        "long-swap--pi-rlinf",
+        "long-swap--aspire"
       ]
     },
     {
@@ -454,11 +454,9 @@
       "record_ids": [
         "libero-pro--gpt-5-5-xhigh",
         "libero-pro--gpt-6-astra-low",
-        "libero-pro--openvla",
         "libero-pro--pi0",
         "libero-pro--pi0-5",
         "libero-pro--molmoact",
-        "libero-pro--nora",
         "libero-pro--x-vla",
         "libero-pro--atomvla",
         "libero-pro--pi-rlinf",
@@ -1055,19 +1053,6 @@
       "protocol_id": "external-standard"
     },
     {
-      "id": "libero-pro--openvla",
-      "view_id": "libero-pro",
-      "configuration_id": "openvla",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
       "id": "libero-pro--pi0",
       "view_id": "libero-pro",
       "configuration_id": "pi0",
@@ -1099,19 +1084,6 @@
       "configuration_id": "molmoact",
       "status": "reported",
       "rate": "1.5",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "libero-pro--nora",
-      "view_id": "libero-pro",
-      "configuration_id": "nora",
-      "status": "reported",
-      "rate": "0.0",
       "successes": null,
       "episodes": null,
       "source_ids": [
@@ -1523,110 +1495,6 @@
       "protocol_id": "external-standard"
     },
     {
-      "id": "spatial-task--openvla",
-      "view_id": "spatial-task",
-      "configuration_id": "openvla",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "spatial-swap--openvla",
-      "view_id": "spatial-swap",
-      "configuration_id": "openvla",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "object-task--openvla",
-      "view_id": "object-task",
-      "configuration_id": "openvla",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "object-swap--openvla",
-      "view_id": "object-swap",
-      "configuration_id": "openvla",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "goal-task--openvla",
-      "view_id": "goal-task",
-      "configuration_id": "openvla",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "goal-swap--openvla",
-      "view_id": "goal-swap",
-      "configuration_id": "openvla",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "long-task--openvla",
-      "view_id": "long-task",
-      "configuration_id": "openvla",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "long-swap--openvla",
-      "view_id": "long-swap",
-      "configuration_id": "openvla",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
       "id": "spatial-task--pi0",
       "view_id": "spatial-task",
       "configuration_id": "pi0",
@@ -1929,110 +1797,6 @@
       "id": "long-swap--molmoact",
       "view_id": "long-swap",
       "configuration_id": "molmoact",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "spatial-task--nora",
-      "view_id": "spatial-task",
-      "configuration_id": "nora",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "spatial-swap--nora",
-      "view_id": "spatial-swap",
-      "configuration_id": "nora",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "object-task--nora",
-      "view_id": "object-task",
-      "configuration_id": "nora",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "object-swap--nora",
-      "view_id": "object-swap",
-      "configuration_id": "nora",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "goal-task--nora",
-      "view_id": "goal-task",
-      "configuration_id": "nora",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "goal-swap--nora",
-      "view_id": "goal-swap",
-      "configuration_id": "nora",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "long-task--nora",
-      "view_id": "long-task",
-      "configuration_id": "nora",
-      "status": "reported",
-      "rate": "0.0",
-      "successes": null,
-      "episodes": null,
-      "source_ids": [
-        "paper-table-3"
-      ],
-      "protocol_id": "external-pro"
-    },
-    {
-      "id": "long-swap--nora",
-      "view_id": "long-swap",
-      "configuration_id": "nora",
       "status": "reported",
       "rate": "0.0",
       "successes": null,
@@ -2776,6 +2540,118 @@
         "xiaomi-paper-v2-table-3"
       ],
       "protocol_id": "xiaomi-official-robocasa365"
+    },
+    {
+      "id": "spatial-task--aspire",
+      "view_id": "spatial-task",
+      "configuration_id": "aspire",
+      "status": "reported",
+      "rate": "60.0",
+      "successes": null,
+      "episodes": 500,
+      "source_ids": [
+        "aspire-table-2"
+      ],
+      "protocol_id": "aspire-held-out-50-seeds"
+    },
+    {
+      "id": "spatial-swap--aspire",
+      "view_id": "spatial-swap",
+      "configuration_id": "aspire",
+      "status": "reported",
+      "rate": "51.0",
+      "successes": null,
+      "episodes": 500,
+      "source_ids": [
+        "aspire-table-2"
+      ],
+      "protocol_id": "aspire-held-out-50-seeds"
+    },
+    {
+      "id": "object-task--aspire",
+      "view_id": "object-task",
+      "configuration_id": "aspire",
+      "status": "reported",
+      "rate": "95.0",
+      "successes": null,
+      "episodes": 500,
+      "source_ids": [
+        "aspire-table-2"
+      ],
+      "protocol_id": "aspire-held-out-50-seeds"
+    },
+    {
+      "id": "object-swap--aspire",
+      "view_id": "object-swap",
+      "configuration_id": "aspire",
+      "status": "reported",
+      "rate": "98.0",
+      "successes": null,
+      "episodes": 500,
+      "source_ids": [
+        "aspire-table-2"
+      ],
+      "protocol_id": "aspire-held-out-50-seeds"
+    },
+    {
+      "id": "goal-task--aspire",
+      "view_id": "goal-task",
+      "configuration_id": "aspire",
+      "status": "reported",
+      "rate": "45.0",
+      "successes": null,
+      "episodes": 500,
+      "source_ids": [
+        "aspire-table-2"
+      ],
+      "protocol_id": "aspire-held-out-50-seeds"
+    },
+    {
+      "id": "goal-swap--aspire",
+      "view_id": "goal-swap",
+      "configuration_id": "aspire",
+      "status": "reported",
+      "rate": "81.0",
+      "successes": null,
+      "episodes": 500,
+      "source_ids": [
+        "aspire-table-2"
+      ],
+      "protocol_id": "aspire-held-out-50-seeds"
+    },
+    {
+      "id": "long-task--aspire",
+      "view_id": "long-task",
+      "configuration_id": "aspire",
+      "status": "reported",
+      "rate": "38.3",
+      "successes": null,
+      "episodes": 500,
+      "source_ids": [
+        "aspire-table-5"
+      ],
+      "protocol_id": "aspire-libero90-zero-shot",
+      "evaluation_note": {
+        "en": "Long zero-shot transfer (LIBERO-90 library)",
+        "zh": "Long 零样本迁移（LIBERO-90 技能库）"
+      }
+    },
+    {
+      "id": "long-swap--aspire",
+      "view_id": "long-swap",
+      "configuration_id": "aspire",
+      "status": "reported",
+      "rate": "22.6",
+      "successes": null,
+      "episodes": 500,
+      "source_ids": [
+        "aspire-table-5"
+      ],
+      "protocol_id": "aspire-libero90-zero-shot",
+      "evaluation_note": {
+        "en": "Long zero-shot transfer (LIBERO-90 library)",
+        "zh": "Long 零样本迁移（LIBERO-90 技能库）"
+      }
     }
   ],
   "sources": [
@@ -2836,6 +2712,26 @@
     {
       "id": "xiaomi-paper-v2-table-3",
       "url": "https://arxiv.org/html/2607.15330v2#S3.T3"
+    },
+    {
+      "id": "aspire-table-2",
+      "url": "https://arxiv.org/html/2607.00272v1#A2.T2",
+      "note": "Table 2 main LIBERO-Pro results; Pos maps to Swap, Task maps to Task. Ten tasks and seeds 1-50 per suite. Published rounded rates are preserved, not converted to integer successes. Six-item Overall 72% is not an eight-suite Overall."
+    },
+    {
+      "id": "aspire-table-5",
+      "url": "https://arxiv.org/html/2607.00272v1#A3.T5",
+      "note": "Table 5, N=90 zero-shot library transfer: Task 0.383, Pos 0.226. A different evaluation regime from the six main suites; no combined Overall is inferred."
+    },
+    {
+      "id": "flash-published-family-counts",
+      "url": "https://github.com/RLinf/misc/blob/main/rpent/task_card/task_card_libero_pro_performance_time.png",
+      "note": "Exact printed titles: Spatial 149/200, Object 179/200, Goal 139/200, Long 114/200. Sum 581/800. No bar heights are digitized; Task/Swap component counts remain unknown."
+    },
+    {
+      "id": "molmo2-model-card",
+      "url": "https://huggingface.co/allenai/Molmo2-8B",
+      "note": "Official model identity and original project logo. RPent uses this model for visual localization only."
     }
   ],
   "astra": {
@@ -2986,7 +2882,49 @@
         "goal-swap",
         "long-task",
         "long-swap"
-      ]
+      ],
+      "notes": {
+        "en": "ASPIRE: six main-suite scores; Long uses zero-shot transfer from LIBERO-90. No eight-suite Overall is reported. Flash Mode uses Molmo2-8B for visual localization, not planning.",
+        "zh": "ASPIRE：六项常规评测；Long 为 LIBERO-90 技能库零样本迁移，未报告八套件 Overall。Flash Mode 使用 Molmo2-8B 进行视觉定位，不用于规划。"
+      },
+      "family_summary": {
+        "title": {
+          "en": "RPent Flash Mode · Task + Swap totals",
+          "zh": "RPent Flash Mode · Task + Swap 汇总"
+        },
+        "note": {
+          "en": "Exact combined counts printed in the published figure; individual Task/Swap counts are not reported in text. These are not eight-suite component scores.",
+          "zh": "采用公开图中明确标注的合计次数；未按柱高估算各 Task/Swap 次数，不能将合计作为单个分项。"
+        },
+        "configuration_id": "rpent-flash-mode",
+        "source_id": "flash-published-family-counts",
+        "rows": [
+          {
+            "suite": "Spatial",
+            "successes": 149,
+            "episodes": 200,
+            "rate": "74.5"
+          },
+          {
+            "suite": "Object",
+            "successes": 179,
+            "episodes": 200,
+            "rate": "89.5"
+          },
+          {
+            "suite": "Goal",
+            "successes": 139,
+            "episodes": 200,
+            "rate": "69.5"
+          },
+          {
+            "suite": "Long",
+            "successes": 114,
+            "episodes": 200,
+            "rate": "57.0"
+          }
+        ]
+      }
     },
     {
       "id": "standard-libero",
@@ -3093,6 +3031,15 @@
       "page": "https://allenai.org/molmo",
       "kind": "provider",
       "sha256": "d4d2d7da51c84c4bbd93223e6bcfd20c62b1994b82acef60298ec0deb2d6417e"
+    },
+    {
+      "file": "molmo2.png",
+      "label": "Molmo2",
+      "source": "https://huggingface.co/allenai/Molmo2-8B/resolve/main/molmo_2_logo_RGB.png",
+      "page": "https://huggingface.co/allenai/Molmo2-8B",
+      "kind": "project",
+      "display": "Symbol viewport from the unchanged official Molmo2 wordmark",
+      "sha256": "eae441fb7cca5389e030cf2e39cdc16b725b70840cfc075e3982c64b81a11592"
     }
   ],
   "method_icons": {
@@ -3188,6 +3135,11 @@
         "file": "rpent-logo.png",
         "label": "RPent",
         "crop": true
+      },
+      {
+        "file": "molmo2.png",
+        "label": "Molmo2-8B · visual localization",
+        "symbol": "molmo2"
       }
     ]
   },
@@ -3201,6 +3153,7 @@
     "rats.png",
     "ai2.png",
     "download.svg",
-    "arrow-down.svg"
+    "arrow-down.svg",
+    "molmo2.png"
   ]
 }

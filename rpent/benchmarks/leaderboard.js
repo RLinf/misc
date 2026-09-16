@@ -64,6 +64,7 @@
   function detailLabel(r) {
     const c=configs.get(r.configuration_id);
     if(c.perception_model) return `${c.perception_model} · ${lang==='en'?'visual localization':'视觉定位'}`;
+    if(r.evaluation_note) return tr(r.evaluation_note);
     return [c.kind==='external'?null:c.backend, c.effort, c.reasoning===false?t('noReasoning'):c.reasoning===true?'reasoning':null,
       !c.model && c.kind!=='external'?t('modelUnknown'):null].filter(Boolean).join(' · ');
   }
@@ -85,7 +86,7 @@
   function methodIcons(configurationId) {
     const marks=d.method_icons[configurationId]??[];
     if(!marks.length)return '';
-    return `<span class="method-mark" aria-hidden="true">${marks.map(m=>`<span class="mark-image${m.crop?' symbol-crop':''}" title="${h(m.label)}"><img src="${asset(m.file)}" alt="" width="24" height="24"></span>`).join('')}</span>`;
+    return `<span class="method-mark" aria-hidden="true">${marks.map(m=>`<span class="mark-image${m.crop?' symbol-crop':''}${m.symbol==='molmo2'?' molmo-symbol':''}" title="${h(m.label)}"><img src="${asset(m.file)}" alt="" width="24" height="24"></span>`).join('')}</span>`;
   }
   function chart(view, kind='primary') {
     const rows=allRows(view).filter(r=>r.rate!==null);
@@ -99,9 +100,14 @@
       const sample=columns.flatMap(allRows).find(r=>r.configuration_id===c.id&&r.rate!==null);
       return `<tr data-method="${c.id}"><th scope="row"><div class="matrix-label">${methodIcons(c.id)}<span>${h(label(sample))}<small>${h(detailLabel(sample))}</small></span></div></th>${columns.map(v=>{
         const r=allRows(v).find(r=>r.configuration_id===c.id);
-        return `<td class="rate"${r?` data-matrix-record="${r.id}"`:''} title="${h(tr(v.label))}">${r?.rate!=null?r.rate+'%':`<span class="not-reported" aria-label="${t('unreported')}">—</span>`}</td>`;
+        return `<td class="rate"${r?` data-matrix-record="${r.id}"`:''} title="${h(tr(r?.evaluation_note)||tr(v.label))}">${r?.rate!=null?r.rate+'%':`<span class="not-reported" aria-label="${t('unreported')}">—</span>`}</td>`;
       }).join('')}</tr>`;
     }).join('')}</tbody></table></div></details>`;
+  }
+  function familySummary(s) {
+    const f=s.family_summary;
+    if(!f)return '';
+    return `<details class="comparison-matrix family-summary"><summary>${h(tr(f.title))}</summary><p>${h(tr(f.note))}</p><div class="table-wrap" tabindex="0"><table><thead><tr><th>${lang==='en'?'Suite (Task + Swap)':'套件（Task + Swap）'}</th><th>${lang==='en'?'Success / evaluated':'成功 / 总回合'}</th><th>${t('rate')}</th></tr></thead><tbody>${[...f.rows].sort((a,b)=>Number(b.rate)-Number(a.rate)).map(r=>`<tr><th scope="row">${h(r.suite)}</th><td>${r.successes}/${r.episodes}</td><td>${r.rate}%</td></tr>`).join('')}</tbody></table></div></details>`;
   }
   function sectionBody(s) {
     const view=views.get(selection.get(s.id));
@@ -109,7 +115,7 @@
   }
   function renderSection(s) {
     const element=document.getElementById('panel-'+s.id);
-    element.innerHTML=sectionBody(s);
+    element.innerHTML=sectionBody(s)+(s.notes?`<p class="scope-note">${h(tr(s.notes))}</p>`:'')+familySummary(s);
     setupTables(element,s.id);
   }
   function setupTables(element,key) {
@@ -124,11 +130,11 @@
     d.sections.forEach(renderSection);hideTooltip();
   }
   function downloadCSV(rows, name) {
-    const keys=['record_id','benchmark','view','method','model','planner','perception_model','reasoning','effort','success_rate_percent','successes','episodes','status'];
+    const keys=['record_id','benchmark','view','method','model','planner','perception_model','reasoning','effort','success_rate_percent','successes','episodes','status','evaluation_note'];
     const quote=x=>'"'+String(x??'').replaceAll('"','""')+'"';
     const body=[keys.join(','),...rows.map(r=>{
       const c=configs.get(r.configuration_id),v=views.get(r.view_id);
-      return [r.id,v.benchmark_id,r.view_id,label(r),c.model,c.backend,c.perception_model,c.reasoning,c.effort,r.rate,r.successes,r.episodes,r.status].map(quote).join(',');
+      return [r.id,v.benchmark_id,r.view_id,label(r),c.model,c.backend,c.perception_model,c.reasoning,c.effort,r.rate,r.successes,r.episodes,r.status,tr(r.evaluation_note)].map(quote).join(',');
     })].join('\r\n');
     const url=URL.createObjectURL(new Blob(['\uFEFF'+body],{type:'text/csv;charset=utf-8'}));
     const a=globalThis.document.createElement('a');a.href=url;a.download=name+'.csv';(document.body??document).append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);

@@ -38,5 +38,7 @@ footer{max-width:none;padding-left:max(var(--gutter),calc((100% - 1344px)/2));pa
 .benchmark-subsection{margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
 .benchmark-subsection .subsection-heading h3{font-size:20px}
 .method-mark:empty{display:none}
+.method-mark .molmo-symbol{justify-content:flex-start}.method-mark .molmo-symbol img{width:auto;height:24px;max-width:none;object-fit:initial;flex:none}.scope-note{font:14px/1.6 var(--serif);color:var(--muted);margin:14px 0}.family-summary table{font-size:16px}
+@media(max-width:700px){.method-mark .molmo-symbol img{height:20px}.family-summary table{font-size:14px}}
 .chart-tooltip{max-width:min(310px,calc(100vw - 16px))}
 @media(max-width:700px){.subsection-heading{display:block}.subsection-heading h3{font-size:19px}.subsection-heading p{margin-top:6px;font-size:13px}}

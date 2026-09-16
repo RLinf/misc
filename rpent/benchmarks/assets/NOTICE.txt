@@ -16,5 +16,8 @@ results.json (method_assets). RPent symbol display uses a CSS viewport over the
 unchanged official wordmark, not a redrawn or modified trademark. Claude and
 OpenAI icons identify providers/planners, not an inferred model version.
 Methods without verified project/provider marks are displayed without an icon.
+Molmo2 uses the unchanged logo from the official allenai/Molmo2-8B model card.
+Only its symbol is exposed using a CSS viewport; the source bitmap is unmodified.
+It identifies the visual-localization model, not a planning model.
 Lucide icons are used only for interface actions, not method identities. Lucide uses the ISC license
 included in LUCIDE-LICENSE. All trademarks remain their respective owners'.
