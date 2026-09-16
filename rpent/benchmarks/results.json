@@ -172,28 +172,23 @@
       "effort": null
     },
     {
-      "id": "task-card-molmo-reported",
+      "id": "rpent-flash-mode",
       "kind": "rpent",
-      "backend": "Task card",
-      "model": "Molmo",
-      "reasoning": null,
-      "effort": null
-    },
-    {
-      "id": "task-card-object-repo",
-      "kind": "rpent",
-      "backend": "Task card",
+      "backend": null,
       "model": null,
       "reasoning": null,
-      "effort": null
+      "effort": null,
+      "display_name": "RPent Flash Mode",
+      "perception_model": "Molmo"
     },
     {
-      "id": "codex-object-repo",
-      "kind": "rpent",
-      "backend": "Codex",
-      "model": null,
-      "reasoning": false,
-      "effort": null
+      "id": "xiaomi-robotics-1",
+      "kind": "external",
+      "backend": null,
+      "model": "Xiaomi-Robotics-1",
+      "reasoning": null,
+      "effort": null,
+      "metadata_status": "not_applicable"
     }
   ],
   "views": [
@@ -468,7 +463,7 @@
         "libero-pro--atomvla",
         "libero-pro--pi-rlinf",
         "libero-pro--opus-4-7-reported",
-        "libero-pro--task-card-molmo-reported"
+        "libero-pro--rpent-flash-mode"
       ]
     },
     {
@@ -484,7 +479,8 @@
         "robocasa-atomic-seen--rldx-1",
         "robocasa-atomic-seen--worlddreamer",
         "robocasa-atomic-seen--pi0-5",
-        "robocasa-atomic-seen--pi0"
+        "robocasa-atomic-seen--pi0",
+        "robocasa-atomic-seen--xiaomi-robotics-1"
       ]
     },
     {
@@ -500,7 +496,8 @@
         "robocasa-composite-seen--rldx-1",
         "robocasa-composite-seen--worlddreamer",
         "robocasa-composite-seen--pi0-5",
-        "robocasa-composite-seen--pi0"
+        "robocasa-composite-seen--pi0",
+        "robocasa-composite-seen--xiaomi-robotics-1"
       ]
     },
     {
@@ -516,7 +513,8 @@
         "robocasa-composite-unseen--rldx-1",
         "robocasa-composite-unseen--worlddreamer",
         "robocasa-composite-unseen--pi0-5",
-        "robocasa-composite-unseen--pi0"
+        "robocasa-composite-unseen--pi0",
+        "robocasa-composite-unseen--xiaomi-robotics-1"
       ]
     },
     {
@@ -533,7 +531,8 @@
         "robocasa--worlddreamer",
         "robocasa--pi0-5",
         "robocasa--pi0",
-        "robocasa--gpt-6-astra-reported"
+        "robocasa--gpt-6-astra-reported",
+        "robocasa--xiaomi-robotics-1"
       ]
     },
     {
@@ -550,18 +549,6 @@
         "robotwin--starvla",
         "robotwin--lingbot-vla",
         "robotwin--gpt-5-5-xhigh"
-      ]
-    },
-    {
-      "id": "task-card-object",
-      "benchmark_id": "task-card-object",
-      "label": {
-        "en": "Object · Task + Swap",
-        "zh": "Object · Task + Swap"
-      },
-      "record_ids": [
-        "task-card-object--task-card-object-repo",
-        "task-card-object--codex-object-repo"
       ]
     }
   ],
@@ -2693,17 +2680,17 @@
       "protocol_id": "contributor-pro-eight"
     },
     {
-      "id": "libero-pro--task-card-molmo-reported",
+      "id": "libero-pro--rpent-flash-mode",
       "view_id": "libero-pro",
-      "configuration_id": "task-card-molmo-reported",
+      "configuration_id": "rpent-flash-mode",
       "status": "reported",
       "rate": "72.63",
-      "successes": null,
+      "successes": 581,
       "episodes": 800,
       "source_ids": [
-        "contributor-20260915"
+        "repo-flash-mode-800"
       ],
-      "protocol_id": "contributor-pro-eight"
+      "protocol_id": "rpent-pro-flash-mode"
     },
     {
       "id": "robocasa--gpt-6-astra-reported",
@@ -2720,44 +2707,75 @@
       "protocol_id": "contributor-target50"
     },
     {
-      "id": "task-card-object--task-card-object-repo",
-      "view_id": "task-card-object",
-      "configuration_id": "task-card-object-repo",
-      "status": "reported",
-      "rate": "89.5",
-      "successes": 179,
-      "episodes": 200,
-      "source_ids": [
-        "repo-task-card"
-      ],
-      "protocol_id": "repo-task-card-object"
-    },
-    {
-      "id": "task-card-object--codex-object-repo",
-      "view_id": "task-card-object",
-      "configuration_id": "codex-object-repo",
-      "status": "reported",
-      "rate": "93.0",
-      "successes": 186,
-      "episodes": 200,
-      "source_ids": [
-        "repo-task-card"
-      ],
-      "protocol_id": "repo-task-card-object"
-    },
-    {
       "id": "robotwin--gpt-5-5-xhigh",
       "view_id": "robotwin",
       "configuration_id": "gpt-5-5-xhigh",
       "status": "reported",
-      "rate": "58.0",
-      "successes": 145,
+      "rate": "62.4",
+      "successes": 156,
       "episodes": 250,
       "source_ids": [
-        "paper-table-6",
-        "contributor-correction-20260916"
+        "repo-robotwin-20260915"
       ],
-      "protocol_id": "rpent-robotwin"
+      "protocol_id": "repo-robotwin-20260915",
+      "task_failures": 58,
+      "episode_timeouts": 36
+    },
+    {
+      "id": "robocasa--xiaomi-robotics-1",
+      "view_id": "robocasa",
+      "configuration_id": "xiaomi-robotics-1",
+      "status": "reported",
+      "rate": "57.4",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "xiaomi-official-robocasa365",
+        "xiaomi-paper-v2-table-3"
+      ],
+      "protocol_id": "xiaomi-official-robocasa365"
+    },
+    {
+      "id": "robocasa-atomic-seen--xiaomi-robotics-1",
+      "view_id": "robocasa-atomic-seen",
+      "configuration_id": "xiaomi-robotics-1",
+      "status": "reported",
+      "rate": "80.2",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "xiaomi-official-robocasa365",
+        "xiaomi-paper-v2-table-3"
+      ],
+      "protocol_id": "xiaomi-official-robocasa365"
+    },
+    {
+      "id": "robocasa-composite-seen--xiaomi-robotics-1",
+      "view_id": "robocasa-composite-seen",
+      "configuration_id": "xiaomi-robotics-1",
+      "status": "reported",
+      "rate": "57.1",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "xiaomi-official-robocasa365",
+        "xiaomi-paper-v2-table-3"
+      ],
+      "protocol_id": "xiaomi-official-robocasa365"
+    },
+    {
+      "id": "robocasa-composite-unseen--xiaomi-robotics-1",
+      "view_id": "robocasa-composite-unseen",
+      "configuration_id": "xiaomi-robotics-1",
+      "status": "reported",
+      "rate": "32.1",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "xiaomi-official-robocasa365",
+        "xiaomi-paper-v2-table-3"
+      ],
+      "protocol_id": "xiaomi-official-robocasa365"
     }
   ],
   "sources": [
@@ -2790,10 +2808,6 @@
       "kind": "contributor-confirmed"
     },
     {
-      "id": "repo-task-card",
-      "url": "https://github.com/RLinf/RPent/blob/43f32aa08cba07bd4d49a4bfa5eba4ef633e9b92/docs/source-en/rst_source/usage/task_card.rst"
-    },
-    {
       "id": "contributor-settings-20260915",
       "kind": "contributor-confirmed"
     },
@@ -2801,6 +2815,27 @@
       "id": "contributor-correction-20260916",
       "kind": "contributor-confirmed",
       "note": "Corrected model labels and aggregate scores; removed requested configurations. No missing suite scores inferred."
+    },
+    {
+      "id": "repo-flash-mode-800",
+      "url": "https://github.com/RLinf/RPent/blob/c19727c7bbdd277cd86a985aae3f2741ba01df7a/docs/source-en/rst_source/usage/task_card.rst",
+      "note": "581 successes across all 800 LIBERO-PRO cases; missing source traces count as failures. Molmo is used for visual localization, not planning."
+    },
+    {
+      "id": "repo-robotwin-20260915",
+      "url": "https://github.com/RLinf/RPent/blob/849143bf740a562367345cec0de9ef4657dafd73/docs/source-en/rst_source/usage/robotwin.rst"
+    },
+    {
+      "id": "xiaomi-official-robocasa365",
+      "url": "https://robocasa.ai/leaderboard.html",
+      "submission_url": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions_md/Xiaomi-Robotics_2026_07_08.md",
+      "checked_at": "2026-09-16",
+      "environment_split": "pretrain",
+      "note": "Published 50-task benchmark scores. Displayed alongside RPent by request; protocol equivalence has not been verified. Episode counts for this reported batch are unspecified here."
+    },
+    {
+      "id": "xiaomi-paper-v2-table-3",
+      "url": "https://arxiv.org/html/2607.15330v2#S3.T3"
     }
   ],
   "astra": {
@@ -2954,23 +2989,6 @@
       ]
     },
     {
-      "id": "task-card-object",
-      "name": "Task Card",
-      "heading": {
-        "en": "Task Card · Object",
-        "zh": "Task Card · Object"
-      },
-      "summary": {
-        "en": "Object Task / Swap · 200 episodes",
-        "zh": "Object Task / Swap · 200 回合"
-      },
-      "default_view": "task-card-object",
-      "views": [
-        "task-card-object"
-      ],
-      "parent": "libero-pro"
-    },
-    {
       "id": "standard-libero",
       "name": "LIBERO",
       "heading": {
@@ -2990,8 +3008,8 @@
       "id": "robocasa",
       "name": "RoboCasa365 · Target50",
       "heading": {
-        "en": "50 tasks · 340 episodes · task-weighted Overall",
-        "zh": "50 个任务 · 340 回合 · Overall 按任务等权"
+        "en": "50 tasks · task-weighted Overall",
+        "zh": "50 个任务 · Overall 按任务等权"
       },
       "default_view": "robocasa",
       "views": [
@@ -3153,37 +3171,6 @@
         "crop": false
       }
     ],
-    "task-card-molmo-reported": [
-      {
-        "file": "rpent-logo.png",
-        "label": "RPent",
-        "crop": true
-      },
-      {
-        "file": "ai2.png",
-        "label": "Ai2 / Molmo",
-        "crop": false
-      }
-    ],
-    "task-card-object-repo": [
-      {
-        "file": "rpent-logo.png",
-        "label": "RPent",
-        "crop": true
-      }
-    ],
-    "codex-object-repo": [
-      {
-        "file": "rpent-logo.png",
-        "label": "RPent",
-        "crop": true
-      },
-      {
-        "file": "openai.ico",
-        "label": "OpenAI / Codex",
-        "crop": false
-      }
-    ],
     "opus-4-7-max": [
       {
         "file": "rpent-logo.png",
@@ -3194,6 +3181,13 @@
         "file": "claude.png",
         "label": "Claude",
         "crop": false
+      }
+    ],
+    "rpent-flash-mode": [
+      {
+        "file": "rpent-logo.png",
+        "label": "RPent",
+        "crop": true
       }
     ]
   },

@@ -57,14 +57,15 @@
   const asset = name => window.RPENT_ASSETS?.[name] ?? (options.assetBase?new URL(`assets/${name}`,options.assetBase).href:`assets/${name}`);
   function label(r) {
     const c=configs.get(r.configuration_id);
+    if (c.display_name) return c.display_name;
     if (c.kind==='external') return c.model;
-    if(c.backend==='Task card') return c.model?`Task card / ${c.model}`:'Task Card';
     return c.model?`RPent / ${c.model}`:'RPent / '+c.backend;
   }
   function detailLabel(r) {
     const c=configs.get(r.configuration_id);
+    if(c.perception_model) return `${c.perception_model} · ${lang==='en'?'visual localization':'视觉定位'}`;
     return [c.kind==='external'?null:c.backend, c.effort, c.reasoning===false?t('noReasoning'):c.reasoning===true?'reasoning':null,
-      !c.model && c.kind!=='external'&&r.view_id!=='task-card-object'?t('modelUnknown'):null].filter(Boolean).join(' · ');
+      !c.model && c.kind!=='external'?t('modelUnknown'):null].filter(Boolean).join(' · ');
   }
   function color(r, view) {
     const c=configs.get(r.configuration_id);
@@ -79,7 +80,6 @@
     if(id==='standard-libero') return lang==='en'?'Mean Success Across Four Suites':'四套件平均成功率';
     if(id==='robocasa') return lang==='en'?'Target50 Overall':'Target50 总体成功率';
     if(id==='robotwin') return lang==='en'?'Clean-to-Randomized Success':'Clean-to-Randomized 成功率';
-    if(id==='task-card-object') return lang==='en'?'Success Across 200 Episodes':'200 回合成功率';
     return tr(views.get(id).label)+' · '+t('rate');
   }
   function methodIcons(configurationId) {
@@ -124,11 +124,11 @@
     d.sections.forEach(renderSection);hideTooltip();
   }
   function downloadCSV(rows, name) {
-    const keys=['record_id','benchmark','view','method','model','planner','reasoning','effort','success_rate_percent','successes','episodes','status'];
+    const keys=['record_id','benchmark','view','method','model','planner','perception_model','reasoning','effort','success_rate_percent','successes','episodes','status'];
     const quote=x=>'"'+String(x??'').replaceAll('"','""')+'"';
     const body=[keys.join(','),...rows.map(r=>{
       const c=configs.get(r.configuration_id),v=views.get(r.view_id);
-      return [r.id,v.benchmark_id,r.view_id,label(r),c.model,c.backend,c.reasoning,c.effort,r.rate,r.successes,r.episodes,r.status].map(quote).join(',');
+      return [r.id,v.benchmark_id,r.view_id,label(r),c.model,c.backend,c.perception_model,c.reasoning,c.effort,r.rate,r.successes,r.episodes,r.status].map(quote).join(',');
     })].join('\r\n');
     const url=URL.createObjectURL(new Blob(['\uFEFF'+body],{type:'text/csv;charset=utf-8'}));
     const a=globalThis.document.createElement('a');a.href=url;a.download=name+'.csv';(document.body??document).append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);
