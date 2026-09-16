@@ -99,11 +99,6 @@
     return `<details class="comparison-matrix" data-details="${s.id}"><summary>${t('allScores')} <span>${rows.length} ${lang==='en'?'configurations':'配置'}</span></summary><div class="table-wrap" tabindex="0" role="region" aria-label="${h(s.name+' '+t('allScores'))}"><table><thead><tr><th>${t('method')}</th>${columns.map(v=>`<th class="rate">${h(tr(v.label))}</th>`).join('')}</tr></thead><tbody>${rows.map(c=>{
       const sample=columns.flatMap(allRows).find(r=>r.configuration_id===c.id&&r.rate!==null);
       return `<tr data-method="${c.id}"><th scope="row"><div class="matrix-label">${methodIcons(c.id)}<span>${h(label(sample))}<small>${h(detailLabel(sample))}</small></span></div></th>${columns.map(v=>{
-        const combined=s.combined_scores?.find(g=>g.configuration_id===c.id&&g.view_ids.includes(v.id));
-        if(combined){
-          if(v.id!==combined.view_ids[0])return '';
-          return `<td class="rate combined-score" colspan="${combined.view_ids.length}" data-value="" data-combined-suite="${h(combined.suite)}">${combined.rate}% <small>Task + Swap ${lang==='en'?'combined':'合计'} · ${combined.successes}/${combined.episodes}</small></td>`;
-        }
         const r=allRows(v).find(r=>r.configuration_id===c.id);
         return `<td class="rate"${r?` data-matrix-record="${r.id}"`:''} title="${h(tr(r?.evaluation_note)||tr(v.label))}">${r?.rate!=null?r.rate+'%':`<span class="not-reported" aria-label="${t('unreported')}">—</span>`}</td>`;
       }).join('')}</tr>`;
