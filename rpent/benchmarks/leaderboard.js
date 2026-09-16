@@ -99,15 +99,15 @@
     return `<details class="comparison-matrix" data-details="${s.id}"><summary>${t('allScores')} <span>${rows.length} ${lang==='en'?'configurations':'配置'}</span></summary><div class="table-wrap" tabindex="0" role="region" aria-label="${h(s.name+' '+t('allScores'))}"><table><thead><tr><th>${t('method')}</th>${columns.map(v=>`<th class="rate">${h(tr(v.label))}</th>`).join('')}</tr></thead><tbody>${rows.map(c=>{
       const sample=columns.flatMap(allRows).find(r=>r.configuration_id===c.id&&r.rate!==null);
       return `<tr data-method="${c.id}"><th scope="row"><div class="matrix-label">${methodIcons(c.id)}<span>${h(label(sample))}<small>${h(detailLabel(sample))}</small></span></div></th>${columns.map(v=>{
+        const combined=s.combined_scores?.find(g=>g.configuration_id===c.id&&g.view_ids.includes(v.id));
+        if(combined){
+          if(v.id!==combined.view_ids[0])return '';
+          return `<td class="rate combined-score" colspan="${combined.view_ids.length}" data-value="" data-combined-suite="${h(combined.suite)}">${combined.rate}% <small>Task + Swap ${lang==='en'?'combined':'合计'} · ${combined.successes}/${combined.episodes}</small></td>`;
+        }
         const r=allRows(v).find(r=>r.configuration_id===c.id);
         return `<td class="rate"${r?` data-matrix-record="${r.id}"`:''} title="${h(tr(r?.evaluation_note)||tr(v.label))}">${r?.rate!=null?r.rate+'%':`<span class="not-reported" aria-label="${t('unreported')}">—</span>`}</td>`;
       }).join('')}</tr>`;
     }).join('')}</tbody></table></div></details>`;
-  }
-  function familySummary(s) {
-    const f=s.family_summary;
-    if(!f)return '';
-    return `<details class="comparison-matrix family-summary"><summary>${h(tr(f.title))}</summary><p>${h(tr(f.note))}</p><div class="table-wrap" tabindex="0"><table><thead><tr><th>${lang==='en'?'Suite (Task + Swap)':'套件（Task + Swap）'}</th><th>${lang==='en'?'Success / evaluated':'成功 / 总回合'}</th><th>${t('rate')}</th></tr></thead><tbody>${[...f.rows].sort((a,b)=>Number(b.rate)-Number(a.rate)).map(r=>`<tr><th scope="row">${h(r.suite)}</th><td>${r.successes}/${r.episodes}</td><td>${r.rate}%</td></tr>`).join('')}</tbody></table></div></details>`;
   }
   function sectionBody(s) {
     const view=views.get(selection.get(s.id));
@@ -115,7 +115,7 @@
   }
   function renderSection(s) {
     const element=document.getElementById('panel-'+s.id);
-    element.innerHTML=sectionBody(s)+(s.notes?`<p class="scope-note">${h(tr(s.notes))}</p>`:'')+familySummary(s);
+    element.innerHTML=sectionBody(s)+(s.notes?`<p class="scope-note">${h(tr(s.notes))}</p>`:'');
     setupTables(element,s.id);
   }
   function setupTables(element,key) {

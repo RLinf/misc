@@ -3,6 +3,15 @@
   'use strict';
   const saved = new Map();
   const collator = new Intl.Collator('en', {numeric:true});
+  // Logical columns retain their positions when one score spans Task and Swap.
+  const cellAt = (row, column) => {
+    let offset=0;
+    for(const cell of row.cells){
+      if(column<offset+cell.colSpan)return cell;
+      offset+=cell.colSpan;
+    }
+    return null;
+  };
   const valueOf = cell => {
     if (!cell) return null;
     if (cell.dataset.value !== undefined) return cell.dataset.value === '' ? null : Number(cell.dataset.value);
@@ -17,7 +26,7 @@
     state.column=column;saved.set(state.key,column);
     const rows=[...table.tBodies[0].rows].filter(row=>!row.dataset.total);
     rows.sort((a,b)=>{
-      const av=valueOf(a.cells[column]),bv=valueOf(b.cells[column]);
+      const av=valueOf(cellAt(a,column)),bv=valueOf(cellAt(b,column));
       return av===null ? bv===null?collator.compare(a.dataset.sortId,b.dataset.sortId):1
         : bv===null?-1:(column===state.idColumn?av-bv:bv-av)||collator.compare(a.dataset.sortId,b.dataset.sortId);
     });
@@ -26,16 +35,16 @@
     state.headers.forEach((th,i)=>{
       if(state.columns.includes(i))th.setAttribute('aria-sort',i===column?(column===state.idColumn?'ascending':'descending'):'none');
     });
-    const maximum=rows.length?valueOf(rows[0].cells[column]):null;
+    const maximum=rows.length?valueOf(cellAt(rows[0],column)):null;
     for(const row of rows){
       for(const cell of row.cells)cell.classList.remove('metric-best');
-      if(column!==state.idColumn&&maximum!==null&&valueOf(row.cells[column])===maximum)row.cells[column].classList.add('metric-best');
+      if(column!==state.idColumn&&maximum!==null&&valueOf(cellAt(row,column))===maximum)cellAt(row,column).classList.add('metric-best');
     }
   }
   function exportTable(table) {
     const quote=v=>'"'+String(v??'').replaceAll('"','""')+'"';
     const state=table._rpentSort;
-    const rows=[state.headers.map(th=>th.dataset.label),...[...table.tBodies[0].rows].map(row=>[...row.cells].map(cell=>cell.textContent.trim()==='—'?'':cell.textContent.trim()))];
+    const rows=[state.headers.map(th=>th.dataset.label),...[...table.tBodies[0].rows].map(row=>[...row.cells].flatMap(cell=>[cell.textContent.trim()==='—'?'':cell.textContent.trim(),...Array(cell.colSpan-1).fill('')]))];
     const url=URL.createObjectURL(new Blob(['\uFEFF'+rows.map(row=>row.map(quote).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'}));
     const a=document.createElement('a');a.href=url;a.download=state.key.replaceAll(/[^a-zA-Z0-9-]/g,'-')+'.csv';a.click();
     setTimeout(()=>URL.revokeObjectURL(url),3000);
@@ -46,7 +55,7 @@
       if(table._rpentSort||!table.tHead||!table.tBodies[0])return;
       const headers=[...table.tHead.rows[0].cells];
       const idColumn=headers.findIndex(th=>/^(ID|#)$/i.test(th.textContent.trim()));
-      const candidates=headers.map((th,i)=>({th,i})).filter(({th,i})=>(i>0||i===idColumn)&&!/^s\d+$/i.test(th.textContent.trim())&&[...table.tBodies[0].rows].some(r=>valueOf(r.cells[i])!==null));
+      const candidates=headers.map((th,i)=>({th,i})).filter(({th,i})=>(i>0||i===idColumn)&&!/^s\d+$/i.test(th.textContent.trim())&&[...table.tBodies[0].rows].some(r=>valueOf(cellAt(r,i))!==null));
       if(!candidates.length)return;
       const columns=candidates.map(x=>x.i);
       const preferred=candidates.find(({i})=>i===idColumn) ?? candidates.find(({th})=>/Overall|总体/i.test(th.textContent))
@@ -74,5 +83,5 @@
       }
     });
   }
-  window.RPentTables={setup,valueOf};
+  window.RPentTables={setup,valueOf,cellAt};
 })();

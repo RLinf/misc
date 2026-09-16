@@ -4,3 +4,5 @@
 #rpent-interactive-leaderboard{min-width:0;max-width:100%}
 .rpent-static-leaderboard table{width:100%;margin:1rem 0}
 .rpent-static-leaderboard th,.rpent-static-leaderboard td{padding:.5rem;border-bottom:1px solid #e5deef}
+.rpent-static-leaderboard .table-wrap{max-width:100%;overflow-x:auto}
+.rpent-static-leaderboard .table-wrap table{min-width:900px}

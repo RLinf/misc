@@ -461,7 +461,8 @@
         "libero-pro--atomvla",
         "libero-pro--pi-rlinf",
         "libero-pro--opus-4-7-reported",
-        "libero-pro--rpent-flash-mode"
+        "libero-pro--rpent-flash-mode",
+        "libero-pro--aspire"
       ]
     },
     {
@@ -2652,6 +2653,35 @@
         "en": "Long zero-shot transfer (LIBERO-90 library)",
         "zh": "Long 零样本迁移（LIBERO-90 技能库）"
       }
+    },
+    {
+      "id": "libero-pro--aspire",
+      "view_id": "libero-pro",
+      "configuration_id": "aspire",
+      "status": "derived",
+      "rate": "61.36",
+      "successes": null,
+      "episodes": null,
+      "source_ids": [
+        "aspire-table-2",
+        "aspire-table-5"
+      ],
+      "protocol_id": "aspire-eight-component-mean",
+      "derived_from": [
+        "spatial-task--aspire",
+        "spatial-swap--aspire",
+        "object-task--aspire",
+        "object-swap--aspire",
+        "goal-task--aspire",
+        "goal-swap--aspire",
+        "long-task--aspire",
+        "long-swap--aspire"
+      ],
+      "calculation": "Unweighted arithmetic mean of the eight displayed percentages; six main-suite and two Long zero-shot results.",
+      "evaluation_note": {
+        "en": "Eight-score arithmetic mean",
+        "zh": "八项算术平均"
+      }
     }
   ],
   "sources": [
@@ -2884,47 +2914,59 @@
         "long-swap"
       ],
       "notes": {
-        "en": "ASPIRE: six main-suite scores; Long uses zero-shot transfer from LIBERO-90. No eight-suite Overall is reported. Flash Mode uses Molmo2-8B for visual localization, not planning.",
-        "zh": "ASPIRE：六项常规评测；Long 为 LIBERO-90 技能库零样本迁移，未报告八套件 Overall。Flash Mode 使用 Molmo2-8B 进行视觉定位，不用于规划。"
+        "en": "ASPIRE: six main-suite evaluations; Long is zero-shot transfer from the LIBERO-90 skill library. Flash Mode merged cells show Task + Swap combined scores.",
+        "zh": "ASPIRE：六项常规评测；Long 为 LIBERO-90 技能库零样本迁移。Flash Mode 合并单元格为 Task + Swap 合计。"
       },
-      "family_summary": {
-        "title": {
-          "en": "RPent Flash Mode · Task + Swap totals",
-          "zh": "RPent Flash Mode · Task + Swap 汇总"
+      "combined_scores": [
+        {
+          "suite": "Spatial",
+          "successes": 149,
+          "episodes": 200,
+          "rate": "74.5",
+          "configuration_id": "rpent-flash-mode",
+          "view_ids": [
+            "spatial-task",
+            "spatial-swap"
+          ],
+          "source_id": "flash-published-family-counts"
         },
-        "note": {
-          "en": "Exact combined counts printed in the published figure; individual Task/Swap counts are not reported in text. These are not eight-suite component scores.",
-          "zh": "采用公开图中明确标注的合计次数；未按柱高估算各 Task/Swap 次数，不能将合计作为单个分项。"
+        {
+          "suite": "Object",
+          "successes": 179,
+          "episodes": 200,
+          "rate": "89.5",
+          "configuration_id": "rpent-flash-mode",
+          "view_ids": [
+            "object-task",
+            "object-swap"
+          ],
+          "source_id": "flash-published-family-counts"
         },
-        "configuration_id": "rpent-flash-mode",
-        "source_id": "flash-published-family-counts",
-        "rows": [
-          {
-            "suite": "Spatial",
-            "successes": 149,
-            "episodes": 200,
-            "rate": "74.5"
-          },
-          {
-            "suite": "Object",
-            "successes": 179,
-            "episodes": 200,
-            "rate": "89.5"
-          },
-          {
-            "suite": "Goal",
-            "successes": 139,
-            "episodes": 200,
-            "rate": "69.5"
-          },
-          {
-            "suite": "Long",
-            "successes": 114,
-            "episodes": 200,
-            "rate": "57.0"
-          }
-        ]
-      }
+        {
+          "suite": "Goal",
+          "successes": 139,
+          "episodes": 200,
+          "rate": "69.5",
+          "configuration_id": "rpent-flash-mode",
+          "view_ids": [
+            "goal-task",
+            "goal-swap"
+          ],
+          "source_id": "flash-published-family-counts"
+        },
+        {
+          "suite": "Long",
+          "successes": 114,
+          "episodes": 200,
+          "rate": "57.0",
+          "configuration_id": "rpent-flash-mode",
+          "view_ids": [
+            "long-task",
+            "long-swap"
+          ],
+          "source_id": "flash-published-family-counts"
+        }
+      ]
     },
     {
       "id": "standard-libero",
