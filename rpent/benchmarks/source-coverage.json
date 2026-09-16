@@ -75,10 +75,26 @@
       "section": "task-card-object"
     },
     {
-      "source_id": "contributor-confirmed-20260915",
+      "source_id": "contributor-settings-20260915",
       "description": {
-        "en": "Confirmed model settings and two full RoboTwin C2R results",
-        "zh": "确认的模型配置与两项完整 RoboTwin C2R 成绩"
+        "en": "Confirmed model settings, separate from result evidence",
+        "zh": "确认的模型配置，与成绩证据分开"
+      },
+      "section": "libero-pro"
+    },
+    {
+      "source_id": "contributor-robotwin-20260915",
+      "description": {
+        "en": "Two contributor RoboTwin C2R results",
+        "zh": "两项贡献者 RoboTwin C2R 成绩"
+      },
+      "section": "robotwin"
+    },
+    {
+      "source_id": "repo-robotwin-20260915",
+      "description": {
+        "en": "Latest repository reproduction: 156/250, 62.4%",
+        "zh": "最新仓库复现：156/250，62.4%"
       },
       "section": "robotwin"
     },

@@ -4,3 +4,5 @@
 .bd-article:has(#rpent-interactive-leaderboard) :is(h1,h2,h3,h4,table,code),
 .bd-article:has(#libero-pro-astra-results) :is(h1,h2,h3,h4,table,code){font-family:"Times New Roman","Noto Serif CJK SC",serif;letter-spacing:0}
 #rpent-interactive-leaderboard{min-width:0;max-width:100%}
+.bd-article img.rpent-paper-figure{display:block;width:520px;max-width:100%;height:auto;margin:1rem auto}
+.bd-article .rpent-demo-video{display:block;width:100%;max-width:960px;height:auto;margin:1rem auto}

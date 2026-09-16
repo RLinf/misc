@@ -236,6 +236,14 @@
       "model": "GPT-5.5",
       "reasoning": true,
       "effort": "xhigh"
+    },
+    {
+      "id": "gpt-5-5-xhigh-robotwin-20260915",
+      "kind": "rpent",
+      "backend": "Codex",
+      "model": "GPT-5.5",
+      "reasoning": true,
+      "effort": "xhigh"
     }
   ],
   "views": [
@@ -520,7 +528,7 @@
       "source_ids": [
         "paper-table-3",
         "astra-pro-remaining-20260913",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "source_note": {
         "en": "Table 3 · Astra evaluation",
@@ -573,7 +581,7 @@
       "source_ids": [
         "paper-table-3",
         "astra-pro-remaining-20260913",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "source_note": {
         "en": "Table 3 · Astra evaluation",
@@ -626,7 +634,7 @@
       "source_ids": [
         "paper-table-3",
         "astra-pro-remaining-20260913",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "source_note": {
         "en": "Table 3 · Astra evaluation",
@@ -679,7 +687,7 @@
       "source_ids": [
         "paper-table-3",
         "astra-pro-remaining-20260913",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "source_note": {
         "en": "Table 3 · Astra evaluation",
@@ -732,7 +740,7 @@
       "source_ids": [
         "paper-table-3",
         "astra-pro-remaining-20260913",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "source_note": {
         "en": "Table 3",
@@ -785,7 +793,7 @@
       "source_ids": [
         "paper-table-3",
         "astra-pro-remaining-20260913",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "source_note": {
         "en": "Table 3",
@@ -838,7 +846,7 @@
       "source_ids": [
         "paper-table-3",
         "astra-long-20260907",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "source_note": {
         "en": "Table 3 · Astra evaluation",
@@ -891,7 +899,7 @@
       "source_ids": [
         "paper-table-3",
         "astra-long-20260907",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "source_note": {
         "en": "Table 3 · Astra evaluation",
@@ -948,7 +956,7 @@
         "paper-table-3",
         "astra-long-20260907",
         "astra-pro-remaining-20260913",
-        "contributor-confirmed-20260915",
+        "contributor-settings-20260915",
         "contributor-20260915"
       ],
       "source_note": {
@@ -1226,7 +1234,7 @@
       "source_ids": [
         "paper-table-4",
         "contributor-20260915",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "source_note": {
         "en": "Table 4",
@@ -1269,12 +1277,15 @@
         "robotwin--pi0-5",
         "robotwin--starvla",
         "robotwin--lingbot-vla",
-        "robotwin--gpt-5-6-reported"
+        "robotwin--gpt-5-6-reported",
+        "robotwin--gpt-5-5-xhigh-robotwin-20260915"
       ],
       "source_ids": [
         "paper-table-6",
         "repo-robotwin",
-        "contributor-confirmed-20260915"
+        "contributor-robotwin-20260915",
+        "contributor-settings-20260915",
+        "repo-robotwin-20260915"
       ],
       "source_note": {
         "en": "Table 6",
@@ -1323,7 +1334,7 @@
       },
       "source_ids": [
         "repo-robocasa",
-        "contributor-confirmed-20260915",
+        "contributor-settings-20260915",
         "repo-robocasa-v3"
       ],
       "record_ids": [
@@ -1349,7 +1360,7 @@
       },
       "source_ids": [
         "repo-robocasa",
-        "contributor-confirmed-20260915",
+        "contributor-settings-20260915",
         "repo-robocasa-v3"
       ],
       "record_ids": [
@@ -1375,7 +1386,7 @@
       },
       "source_ids": [
         "repo-robocasa",
-        "contributor-confirmed-20260915",
+        "contributor-settings-20260915",
         "repo-robocasa-v3"
       ],
       "record_ids": [
@@ -1401,10 +1412,10 @@
       },
       "source_ids": [
         "repo-robocasa",
-        "contributor-confirmed-20260915",
+        "contributor-settings-20260915",
         "repo-robocasa-v3",
         "contributor-20260915",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "record_ids": [
         "reproduction-overall--codex-reproduction-repo",
@@ -1646,7 +1657,7 @@
       "episodes": 100,
       "source_ids": [
         "astra-pro-remaining-20260913",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "rpent-pro-astra-remaining",
       "progress_snapshot": "astra-pro-20260915.json"
@@ -1687,7 +1698,7 @@
       "episodes": 100,
       "source_ids": [
         "astra-pro-remaining-20260913",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "rpent-pro-astra-remaining",
       "progress_snapshot": "astra-pro-20260915.json"
@@ -1728,7 +1739,7 @@
       "episodes": 100,
       "source_ids": [
         "astra-pro-remaining-20260913",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "rpent-pro-astra-remaining",
       "progress_snapshot": "astra-pro-20260915.json"
@@ -1769,7 +1780,7 @@
       "episodes": 100,
       "source_ids": [
         "astra-pro-remaining-20260913",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "rpent-pro-astra-remaining",
       "progress_snapshot": "astra-pro-20260915.json"
@@ -1810,7 +1821,7 @@
       "episodes": 100,
       "source_ids": [
         "astra-pro-remaining-20260913",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "rpent-pro-astra-remaining",
       "progress_snapshot": "astra-pro-20260915.json",
@@ -1852,7 +1863,7 @@
       "episodes": 100,
       "source_ids": [
         "astra-pro-remaining-20260913",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "rpent-pro-astra-remaining",
       "progress_snapshot": "astra-pro-20260915.json",
@@ -1894,7 +1905,7 @@
       "episodes": 100,
       "source_ids": [
         "astra-long-20260907",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "rpent-pro-astra-long",
       "progress_snapshot": "astra-pro-20260915.json"
@@ -1935,7 +1946,7 @@
       "episodes": 100,
       "source_ids": [
         "astra-long-20260907",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "rpent-pro-astra-long",
       "progress_snapshot": "astra-pro-20260915.json"
@@ -1977,7 +1988,7 @@
       "source_ids": [
         "astra-long-20260907",
         "astra-pro-remaining-20260913",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "rpent-pro-astra-mixed-batches",
       "progress_snapshot": "astra-pro-20260915.json",
@@ -2216,7 +2227,11 @@
         "paper-table-6",
         "repo-robotwin"
       ],
-      "protocol_id": "rpent-robotwin"
+      "protocol_id": "rpent-robotwin",
+      "batch": {
+        "en": "Paper / earlier repository",
+        "zh": "论文 / 早期仓库"
+      }
     },
     {
       "id": "robotwin--opus-4-8-max",
@@ -2240,7 +2255,8 @@
       "successes": null,
       "episodes": 250,
       "source_ids": [
-        "contributor-confirmed-20260915"
+        "contributor-robotwin-20260915",
+        "contributor-settings-20260915"
       ],
       "protocol_id": "contributor-robotwin",
       "new_result": true
@@ -4116,7 +4132,7 @@
       "episodes": 800,
       "source_ids": [
         "contributor-20260915",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "contributor-pro-eight",
       "new_result": true
@@ -4159,7 +4175,7 @@
       "episodes": 340,
       "source_ids": [
         "contributor-20260915",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "contributor-target50",
       "new_result": true
@@ -4228,7 +4244,7 @@
       "episodes": 180,
       "source_ids": [
         "repo-robocasa",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "repo-target50",
       "batch": {
@@ -4246,7 +4262,7 @@
       "episodes": 180,
       "source_ids": [
         "repo-robocasa-v3",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "repo-target50-reference",
       "batch": {
@@ -4264,7 +4280,7 @@
       "episodes": 80,
       "source_ids": [
         "repo-robocasa",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "repo-target50",
       "batch": {
@@ -4282,7 +4298,7 @@
       "episodes": 80,
       "source_ids": [
         "repo-robocasa-v3",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "repo-target50-reference",
       "batch": {
@@ -4300,7 +4316,7 @@
       "episodes": 80,
       "source_ids": [
         "repo-robocasa",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "repo-target50",
       "batch": {
@@ -4318,7 +4334,7 @@
       "episodes": 80,
       "source_ids": [
         "repo-robocasa-v3",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "repo-target50-reference",
       "batch": {
@@ -4336,7 +4352,7 @@
       "episodes": 340,
       "source_ids": [
         "repo-robocasa",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "repo-target50",
       "batch": {
@@ -4354,7 +4370,7 @@
       "episodes": 340,
       "source_ids": [
         "repo-robocasa-v3",
-        "contributor-confirmed-20260915"
+        "contributor-settings-20260915"
       ],
       "protocol_id": "repo-target50-reference",
       "batch": {
@@ -4371,9 +4387,30 @@
       "successes": null,
       "episodes": 250,
       "source_ids": [
-        "contributor-confirmed-20260915"
+        "contributor-robotwin-20260915",
+        "contributor-settings-20260915"
       ],
       "protocol_id": "contributor-robotwin",
+      "new_result": true
+    },
+    {
+      "id": "robotwin--gpt-5-5-xhigh-robotwin-20260915",
+      "view_id": "robotwin",
+      "configuration_id": "gpt-5-5-xhigh-robotwin-20260915",
+      "status": "reported",
+      "rate": "62.4",
+      "successes": 156,
+      "episodes": 250,
+      "source_ids": [
+        "repo-robotwin-20260915"
+      ],
+      "protocol_id": "repo-robotwin-20260915",
+      "task_failures": 58,
+      "episode_timeouts": 36,
+      "batch": {
+        "en": "Repository · 15 Sep 2026",
+        "zh": "仓库 · 2026-09-15"
+      },
       "new_result": true
     }
   ],
@@ -4543,15 +4580,39 @@
       "url": "https://arxiv.org/html/2607.08448v4#A6.T19"
     },
     {
-      "id": "contributor-confirmed-20260915",
+      "id": "contributor-settings-20260915",
       "label": {
-        "en": "Contributor-confirmed settings and RoboTwin results",
-        "zh": "用户确认的配置与 RoboTwin 成绩"
+        "en": "Contributor-confirmed model settings",
+        "zh": "用户确认的模型配置"
       },
       "url": null,
       "description": {
-        "en": "GPT-5.6 reasoning evaluations use xhigh; GPT-6 Astra uses low with reasoning. The 62.50% no-reasoning control remains unchanged. RoboTwin C2R reports 61.20% and 72.00%, each over 250 episodes; exact success counts and task outcomes are not supplied. RoboCasa reproduction model labels were confirmed by the contributor.",
-        "zh": "GPT-5.6 推理实验使用 xhigh，GPT-6 Astra 使用 low 并开启 reasoning；62.50% 无推理对照保持不变。RoboTwin C2R 新成绩为 61.20% 与 72.00%，各 250 回合；未提供精确成功次数和逐任务结果。RoboCasa 复现实验模型标签由用户确认。"
+        "en": "Configuration evidence only: GPT-5.6 reasoning uses xhigh; GPT-6 Astra uses low with reasoning. The 62.50% no-reasoning control is unchanged. RoboCasa reproduction model labels were confirmed by the contributor. Result evidence is cited separately.",
+        "zh": "仅用于配置说明：GPT-5.6 推理使用 xhigh，GPT-6 Astra 使用 low 并开启 reasoning。62.50% 无推理对照不变，RoboCasa 复现实验模型标签由用户确认。成绩证据另行引用。"
+      }
+    },
+    {
+      "id": "contributor-robotwin-20260915",
+      "label": {
+        "en": "Contributor · RoboTwin C2R results",
+        "zh": "贡献者 · RoboTwin C2R 成绩"
+      },
+      "url": null,
+      "description": {
+        "en": "RoboTwin C2R: GPT-5.6 xhigh 61.20% and GPT-6 Astra low 72.00%, both with reasoning, 250 episodes each. Exact success counts and task outcomes were not supplied.",
+        "zh": "RoboTwin C2R：GPT-5.6 xhigh 为 61.20%，GPT-6 Astra low 为 72.00%，均开启推理，各 250 回合。未提供精确成功数和逐任务结果。"
+      }
+    },
+    {
+      "id": "repo-robotwin-20260915",
+      "label": {
+        "en": "RPent · RoboTwin reproduction, 15 Sep 2026",
+        "zh": "RPent · RoboTwin 复现，2026-09-15"
+      },
+      "url": "https://github.com/RLinf/RPent/blob/849143bf740a562367345cec0de9ef4657dafd73/docs/source-en/rst_source/usage/robotwin.rst",
+      "description": {
+        "en": "Main #179 reports GPT-5.5 xhigh: 156 successes, 58 task failures and 36 episode timeouts over 250 episodes (62.4%). Listed task/seed pairs bind the evaluation table task language. This batch is distinct from the paper and earlier 58.0% result.",
+        "zh": "Main #179 报告 GPT-5.5 xhigh：250 回合，156 成功、58 次任务失败、36 次超时，成功率 62.4%。表内 task/seed 绑定评测表的任务语言。与论文及早期 58.0% 分批保留。"
       }
     }
   ],
@@ -4750,6 +4811,13 @@
       "description": {
         "en": "RoboTwin C2R: 50 tasks × 5 seeds, 250 episodes per configuration. GPT-5.6 xhigh with reasoning and GPT-6 Astra low with reasoning. No success counts are inferred from percentages.",
         "zh": "RoboTwin C2R：50 任务各 5 seeds，每配置 250 回合。GPT-5.6 xhigh 开启推理，GPT-6 Astra low 开启推理，不从百分比反推成功次数。"
+      }
+    },
+    {
+      "id": "repo-robotwin-20260915",
+      "description": {
+        "en": "50 tasks, five verified expert seeds per task, 250 episodes. Evaluation-table task language is bound after scene reset; only final TASK_ENV.eval_success determines success. 4800-second planner limit and 10000 environment steps. Source: RPent #179.",
+        "zh": "50 任务，每任务 5 个 verified expert seeds，共 250 回合。场景 reset 后绑定评测表任务语言，只认最终 TASK_ENV.eval_success。Planner 时限 4800 秒，环境上限 10000 步。来源：RPent #179。"
       }
     }
   ],
@@ -7028,10 +7096,26 @@
       "section": "task-card-object"
     },
     {
-      "source_id": "contributor-confirmed-20260915",
+      "source_id": "contributor-settings-20260915",
       "description": {
-        "en": "Confirmed model settings and two full RoboTwin C2R results",
-        "zh": "确认的模型配置与两项完整 RoboTwin C2R 成绩"
+        "en": "Confirmed model settings, separate from result evidence",
+        "zh": "确认的模型配置，与成绩证据分开"
+      },
+      "section": "libero-pro"
+    },
+    {
+      "source_id": "contributor-robotwin-20260915",
+      "description": {
+        "en": "Two contributor RoboTwin C2R results",
+        "zh": "两项贡献者 RoboTwin C2R 成绩"
+      },
+      "section": "robotwin"
+    },
+    {
+      "source_id": "repo-robotwin-20260915",
+      "description": {
+        "en": "Latest repository reproduction: 156/250, 62.4%",
+        "zh": "最新仓库复现：156/250，62.4%"
       },
       "section": "robotwin"
     },
@@ -7491,6 +7575,18 @@
       }
     ],
     "codex-reference-v3": [
+      {
+        "file": "rpent-logo.png",
+        "label": "RPent",
+        "crop": true
+      },
+      {
+        "file": "openai.ico",
+        "label": "OpenAI / Codex",
+        "crop": false
+      }
+    ],
+    "gpt-5-5-xhigh-robotwin-20260915": [
       {
         "file": "rpent-logo.png",
         "label": "RPent",
