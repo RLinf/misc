@@ -1,13 +1,6 @@
-/* Only result-page content adopts the leaderboard typography. */
-.bd-article:has(#rpent-interactive-leaderboard),
-.bd-article:has(#libero-pro-astra-results){font-family:"Times New Roman","Noto Serif CJK SC",serif;min-width:0}
-.bd-article:has(#rpent-interactive-leaderboard) :is(h1,h2,h3,h4,table,code),
-.bd-article:has(#libero-pro-astra-results) :is(h1,h2,h3,h4,table,code){font-family:"Times New Roman","Noto Serif CJK SC",serif;letter-spacing:0}
+/* Only the leaderboard page adopts these styles. */
+.bd-article:has(#rpent-interactive-leaderboard){font-family:"Times New Roman","Noto Serif CJK SC",serif;min-width:0}
+.bd-article:has(#rpent-interactive-leaderboard) :is(h1,h2,h3,table){font-family:"Times New Roman","Noto Serif CJK SC",serif;letter-spacing:0}
 #rpent-interactive-leaderboard{min-width:0;max-width:100%}
-.bd-article img.rpent-paper-figure{display:block;width:520px;max-width:100%;height:auto;margin:1rem auto}
-.bd-article .rpent-paper-figures{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;align-items:start;margin:1rem 0}
-.bd-article .rpent-paper-figures>figure{min-width:0;max-width:100%;margin:0}
-.bd-article .rpent-paper-figures img.rpent-paper-figure{margin:0 auto}
-.bd-article .rpent-paper-figures figcaption{text-align:center;font:14px "Times New Roman","Noto Serif CJK SC",serif;margin-top:.5rem}
-@media(max-width:575.98px){.bd-article .rpent-paper-figures{grid-template-columns:minmax(0,1fr)}}
-.bd-article .rpent-demo-video{display:block;width:100%;max-width:960px;height:auto;margin:1rem auto}
+.rpent-static-leaderboard table{width:100%;margin:1rem 0}
+.rpent-static-leaderboard th,.rpent-static-leaderboard td{padding:.5rem;border-bottom:1px solid #e5deef}
