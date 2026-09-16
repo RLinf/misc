@@ -298,7 +298,8 @@
         "spatial-task--cap-x",
         "spatial-task--rats",
         "spatial-task--pi-rlinf",
-        "spatial-task--aspire"
+        "spatial-task--aspire",
+        "spatial-task--rpent-flash-mode"
       ]
     },
     {
@@ -319,7 +320,8 @@
         "spatial-swap--cap-x",
         "spatial-swap--rats",
         "spatial-swap--pi-rlinf",
-        "spatial-swap--aspire"
+        "spatial-swap--aspire",
+        "spatial-swap--rpent-flash-mode"
       ]
     },
     {
@@ -340,7 +342,8 @@
         "object-task--cap-x",
         "object-task--rats",
         "object-task--pi-rlinf",
-        "object-task--aspire"
+        "object-task--aspire",
+        "object-task--rpent-flash-mode"
       ]
     },
     {
@@ -361,7 +364,8 @@
         "object-swap--cap-x",
         "object-swap--rats",
         "object-swap--pi-rlinf",
-        "object-swap--aspire"
+        "object-swap--aspire",
+        "object-swap--rpent-flash-mode"
       ]
     },
     {
@@ -382,7 +386,8 @@
         "goal-task--cap-x",
         "goal-task--rats",
         "goal-task--pi-rlinf",
-        "goal-task--aspire"
+        "goal-task--aspire",
+        "goal-task--rpent-flash-mode"
       ]
     },
     {
@@ -403,7 +408,8 @@
         "goal-swap--cap-x",
         "goal-swap--rats",
         "goal-swap--pi-rlinf",
-        "goal-swap--aspire"
+        "goal-swap--aspire",
+        "goal-swap--rpent-flash-mode"
       ]
     },
     {
@@ -422,7 +428,8 @@
         "long-task--x-vla",
         "long-task--atomvla",
         "long-task--pi-rlinf",
-        "long-task--aspire"
+        "long-task--aspire",
+        "long-task--rpent-flash-mode"
       ]
     },
     {
@@ -441,7 +448,8 @@
         "long-swap--x-vla",
         "long-swap--atomvla",
         "long-swap--pi-rlinf",
-        "long-swap--aspire"
+        "long-swap--aspire",
+        "long-swap--rpent-flash-mode"
       ]
     },
     {
@@ -2453,7 +2461,8 @@
       "successes": 581,
       "episodes": 800,
       "source_ids": [
-        "repo-flash-mode-800"
+        "repo-flash-mode-800",
+        "flash-contributor-800-outcomes"
       ],
       "protocol_id": "rpent-pro-flash-mode"
     },
@@ -2682,6 +2691,110 @@
         "en": "Eight-score arithmetic mean",
         "zh": "八项算术平均"
       }
+    },
+    {
+      "id": "spatial-task--rpent-flash-mode",
+      "view_id": "spatial-task",
+      "configuration_id": "rpent-flash-mode",
+      "status": "reported",
+      "rate": "79.00",
+      "successes": 79,
+      "episodes": 100,
+      "source_ids": [
+        "flash-contributor-800-outcomes"
+      ],
+      "protocol_id": "rpent-pro-flash-mode"
+    },
+    {
+      "id": "spatial-swap--rpent-flash-mode",
+      "view_id": "spatial-swap",
+      "configuration_id": "rpent-flash-mode",
+      "status": "reported",
+      "rate": "70.00",
+      "successes": 70,
+      "episodes": 100,
+      "source_ids": [
+        "flash-contributor-800-outcomes"
+      ],
+      "protocol_id": "rpent-pro-flash-mode"
+    },
+    {
+      "id": "object-task--rpent-flash-mode",
+      "view_id": "object-task",
+      "configuration_id": "rpent-flash-mode",
+      "status": "reported",
+      "rate": "86.00",
+      "successes": 86,
+      "episodes": 100,
+      "source_ids": [
+        "flash-contributor-800-outcomes"
+      ],
+      "protocol_id": "rpent-pro-flash-mode"
+    },
+    {
+      "id": "object-swap--rpent-flash-mode",
+      "view_id": "object-swap",
+      "configuration_id": "rpent-flash-mode",
+      "status": "reported",
+      "rate": "93.00",
+      "successes": 93,
+      "episodes": 100,
+      "source_ids": [
+        "flash-contributor-800-outcomes"
+      ],
+      "protocol_id": "rpent-pro-flash-mode"
+    },
+    {
+      "id": "goal-task--rpent-flash-mode",
+      "view_id": "goal-task",
+      "configuration_id": "rpent-flash-mode",
+      "status": "reported",
+      "rate": "74.00",
+      "successes": 74,
+      "episodes": 100,
+      "source_ids": [
+        "flash-contributor-800-outcomes"
+      ],
+      "protocol_id": "rpent-pro-flash-mode"
+    },
+    {
+      "id": "goal-swap--rpent-flash-mode",
+      "view_id": "goal-swap",
+      "configuration_id": "rpent-flash-mode",
+      "status": "reported",
+      "rate": "65.00",
+      "successes": 65,
+      "episodes": 100,
+      "source_ids": [
+        "flash-contributor-800-outcomes"
+      ],
+      "protocol_id": "rpent-pro-flash-mode"
+    },
+    {
+      "id": "long-task--rpent-flash-mode",
+      "view_id": "long-task",
+      "configuration_id": "rpent-flash-mode",
+      "status": "reported",
+      "rate": "60.00",
+      "successes": 60,
+      "episodes": 100,
+      "source_ids": [
+        "flash-contributor-800-outcomes"
+      ],
+      "protocol_id": "rpent-pro-flash-mode"
+    },
+    {
+      "id": "long-swap--rpent-flash-mode",
+      "view_id": "long-swap",
+      "configuration_id": "rpent-flash-mode",
+      "status": "reported",
+      "rate": "54.00",
+      "successes": 54,
+      "episodes": 100,
+      "source_ids": [
+        "flash-contributor-800-outcomes"
+      ],
+      "protocol_id": "rpent-pro-flash-mode"
     }
   ],
   "sources": [
@@ -2756,12 +2869,95 @@
     {
       "id": "flash-published-family-counts",
       "url": "https://github.com/RLinf/misc/blob/main/rpent/task_card/task_card_libero_pro_performance_time.png",
-      "note": "Exact printed titles: Spatial 149/200, Object 179/200, Goal 139/200, Long 114/200. Sum 581/800. No bar heights are digitized; Task/Swap component counts remain unknown."
+      "note": "Exact printed titles: Spatial 149/200, Object 179/200, Goal 139/200, Long 114/200. Sum 581/800. Cross-check only; independent Task/Swap scores come from contributor outcome records, not digitized bar heights."
     },
     {
       "id": "molmo2-model-card",
       "url": "https://huggingface.co/allenai/Molmo2-8B",
       "note": "Official model identity and original project logo. RPent uses this model for visual localization only."
+    },
+    {
+      "id": "flash-contributor-800-outcomes",
+      "type": "contributor_archive",
+      "artifact": "task_card.zip",
+      "sha256": "a997e5a0f823abf2402e1374e22a068c43dfecc35a778a185d0274efd45e31e2",
+      "note": "Eight Task/Swap aggregates from 800 unique contributor result.json cases, checked against summary.json and published family totals. Each component includes all 100 expected cases (task IDs 0–9, seeds 0–9). The 20 no-card cases remain in the denominator and are not counted as successes.",
+      "aggregates": {
+        "spatial_task": {
+          "successes": 79,
+          "episodes": 100,
+          "outcomes": {
+            "success": 79,
+            "failure": 21
+          },
+          "rate": "79.00"
+        },
+        "spatial_swap": {
+          "successes": 70,
+          "episodes": 100,
+          "outcomes": {
+            "success": 70,
+            "failure": 30
+          },
+          "rate": "70.00"
+        },
+        "object_task": {
+          "successes": 86,
+          "episodes": 100,
+          "outcomes": {
+            "success": 86,
+            "failure": 14
+          },
+          "rate": "86.00"
+        },
+        "object_swap": {
+          "successes": 93,
+          "episodes": 100,
+          "outcomes": {
+            "success": 93,
+            "failure": 7
+          },
+          "rate": "93.00"
+        },
+        "goal_task": {
+          "successes": 74,
+          "episodes": 100,
+          "outcomes": {
+            "failure": 26,
+            "success": 74
+          },
+          "rate": "74.00"
+        },
+        "goal_swap": {
+          "successes": 65,
+          "episodes": 100,
+          "outcomes": {
+            "no_card": 10,
+            "failure": 25,
+            "success": 65
+          },
+          "rate": "65.00"
+        },
+        "long_task": {
+          "successes": 60,
+          "episodes": 100,
+          "outcomes": {
+            "success": 60,
+            "failure": 40
+          },
+          "rate": "60.00"
+        },
+        "long_swap": {
+          "successes": 54,
+          "episodes": 100,
+          "outcomes": {
+            "success": 54,
+            "failure": 36,
+            "no_card": 10
+          },
+          "rate": "54.00"
+        }
+      }
     }
   ],
   "astra": {
