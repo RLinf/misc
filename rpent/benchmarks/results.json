@@ -3110,8 +3110,8 @@
         "long-swap"
       ],
       "notes": {
-        "en": "ASPIRE: six main-suite evaluations; Long is zero-shot transfer from the LIBERO-90 skill library.",
-        "zh": "ASPIRE：六项常规评测；Long 为 LIBERO-90 技能库零样本迁移。"
+        "en": "ASPIRE: Long Task and Long Swap use zero-shot transfer from the LIBERO-90 skill library.",
+        "zh": "ASPIRE：Long Task 和 Long Swap 使用 LIBERO-90 技能库进行 zero-shot 迁移。"
       }
     },
     {
