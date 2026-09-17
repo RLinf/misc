@@ -16,9 +16,6 @@
       const root = detached.attachShadow({mode: 'open'});
       root.innerHTML = markup;
       root.querySelectorAll('img[src^="assets/"]').forEach(img => {img.src = new URL(img.getAttribute('src'), scriptBase);});
-      root.querySelectorAll('a[href^="docs-preview/"]').forEach(a => {
-        a.href = `https://rpent.readthedocs.io/${a.getAttribute('href').includes('/zh.')?'zh-cn':'en'}/latest/rst_source/benchmarks.html`;
-      });
       const style = document.createElement('link');
       style.rel = 'stylesheet';style.href = new URL('embed.css', scriptBase);
       const loaded = new Promise((resolve, reject) => {style.onload = resolve;style.onerror = reject;});
@@ -30,9 +27,9 @@
       host.dataset.loaded = 'true';
     } catch (error) {
       host.querySelectorAll(':scope > div:not(.rpent-static-leaderboard)').forEach(el => el.remove());
-      // Native RST tables and the fallback link remain available.
+      // The compact native summary stays readable when remote assets fail.
       host.dataset.loadError = 'true';
-      console.warn('RPent interactive results unavailable; use the native tables below.', error);
+      console.warn('RPent interactive results unavailable; showing the summary.', error);
     }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount, {once:true});
