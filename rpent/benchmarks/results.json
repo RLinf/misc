@@ -3184,6 +3184,10 @@
         "en": "Astra · low · reasoning: 92.63% (741/800)",
         "zh": "Astra · low · reasoning：92.63%（741/800）"
       },
+      "context": {
+        "en": "GPT-6 Astra: Long Task/Swap and the other six suites use separate memory-file snapshots frozen after their respective exploration phases, with no updates during evaluation. Overall combines two non-overlapping batches: Long 157/200 plus the other suites 584/600, giving 741/800 (92.63%); the 800 episodes do not share a single memory snapshot.",
+        "zh": "GPT-6 Astra：Long Task/Swap 与其余六套件使用各自探索后冻结的 memory 文件快照，评测期间不更新。Overall 合并两个不重叠批次：Long 157/200，加上其余套件 584/600，得到 741/800（92.63%）；并非全部回合共享同一份 memory 快照。"
+      },
       "default_view": "libero-pro",
       "views": [
         "libero-pro",

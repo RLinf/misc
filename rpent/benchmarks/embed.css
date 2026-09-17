@@ -38,6 +38,20 @@ footer{max-width:none;padding-left:max(var(--gutter),calc((100% - 1344px)/2));pa
 .benchmark-subsection{margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
 .benchmark-subsection .subsection-heading h3{font-size:20px}
 .scope-note{font:14px/1.6 var(--serif);color:var(--muted);margin:14px 0}
+/* The embedded host follows the documentation theme; standalone uses the OS preference. */
+:host([data-theme="dark"]){color-scheme:dark;--page:#17141f;--surface:#292536;--band:#201d2b;--ink:#f4f0fa;--muted:#c6bbd8;--line:#494052;--best:#be96e0;--astra:#be96e0;--link:#bca7ff;--link-hover:#dfcfff;--brand:#f4f0fa;--grid:#3f354e;--hover:#40334f80;--control-hover:#40334f;--control-border:#625773;--missing:#b9aecb}
+:host{background:var(--page,#fff)}
+a,.chart-tooltip .tip-value{color:var(--link,#2768d5)}a:hover{color:var(--link-hover,#15479c)}
+.brand{color:var(--brand,#202c3c)}
+select,.menu-options,.chart-tooltip,.skip-link{background:var(--surface,#fff)}
+select{border-color:var(--control-border,#cbd9ec)}
+.chart-tooltip{border-color:var(--control-border,#ded3ec)}
+.chart-grid i{background:var(--grid,#eae4f2)}
+.chart-row:hover,.chart-row:focus-visible,tbody tr:hover{background:var(--hover,#f1ebfa80)}
+.icon-button:hover{background:var(--control-hover,#e3ecfa)}
+.not-reported{color:var(--missing,#9aa8ba)}
+button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline-color:var(--link,#2768d5)}
+:host([data-theme="dark"]) .icon-button img,:host([data-theme="dark"]) .sort-heading img{filter:invert(1)}
 @media(max-width:700px){}
 .chart-tooltip{max-width:min(310px,calc(100vw - 16px))}
 @media(max-width:700px){.subsection-heading{display:block}.subsection-heading h3{font-size:19px}.subsection-heading p{margin-top:6px;font-size:13px}}

@@ -2,6 +2,18 @@
 (() => {
   'use strict';
   function mount(root, d, options={}) {
+  const pageDocument=globalThis.document;
+  const themeTarget=options.embedded?root.host:root.documentElement;
+  const systemTheme=window.matchMedia('(prefers-color-scheme: dark)');
+  const syncTheme=()=>{
+    const theme=options.embedded?pageDocument.documentElement.dataset.theme:null;
+    themeTarget.dataset.theme=theme==='dark'||theme==='light'?theme:systemTheme.matches?'dark':'light';
+  };
+  syncTheme();
+  systemTheme.addEventListener('change',syncTheme);
+  if(options.embedded){
+    new MutationObserver(syncTheme).observe(pageDocument.documentElement,{attributes:true,attributeFilter:['data-theme']});
+  }
   const document = root;
   const query = new URLSearchParams(location.search);
   let lang = options.language ?? (query.get('lang') === 'en' ? 'en' : 'zh');
@@ -118,7 +130,7 @@
   function renderSection(s) {
     const element=document.getElementById('panel-'+s.id);
     const note=tr(s.notes);
-    element.innerHTML=sectionBody(s)+(note?`<p class="scope-note">${h(note)}</p>`:'');
+    element.innerHTML=sectionBody(s)+(note?`<p class="scope-note">${h(note)}</p>`:'')+(s.context?`<p id="${s.id}-astra-memory" class="scope-note memory-context">${h(tr(s.context))}</p>`:'');
     setupTables(element,s.id);
   }
   function setupTables(element,key) {
@@ -194,6 +206,11 @@
   document.addEventListener('focusout',e=>{if(e.target.closest('.chart-row')){dismissedRecord=null;hideTooltip();}});
   window.addEventListener('scroll',hideTooltip,{passive:true});window.addEventListener('resize',hideTooltip);
   render();
+  if(options.embedded){
+    const scrollToAnchor=()=>document.getElementById(location.hash.slice(1))?.scrollIntoView();
+    window.addEventListener('hashchange',scrollToAnchor);
+    if(location.hash)requestAnimationFrame(scrollToAnchor);
+  }
   }
   window.RPentLeaderboard={mount};
   const data=document.getElementById('results-data');
