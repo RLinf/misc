@@ -3230,11 +3230,7 @@
         "robocasa-atomic-seen",
         "robocasa-composite-seen",
         "robocasa-composite-unseen"
-      ],
-      "notes": {
-        "en": "GPT-6 Astra: seeds 1–5 for each of the 50 tasks, 250 episodes in total.",
-        "zh": ""
-      }
+      ]
     },
     {
       "id": "robotwin",
