@@ -72,7 +72,7 @@
     const img = event.target;
     if (img.tagName !== 'IMG') return;
     const url = new URL(img.src);
-    const match = url.pathname.match(/^\/gh\/RLinf\/misc@([a-f0-9]{40})\/(rpent\/benchmarks\/assets\/.+)$/);
+    const match = url.pathname.match(/^\/gh\/RLinf\/misc@(main|[a-f0-9]{40})\/(rpent\/benchmarks\/assets\/.+)$/);
     if (url.hostname === 'cdn.jsdelivr.net' && match) {
       img.src = `https://raw.githubusercontent.com/RLinf/misc/${match[1]}/${match[2]}`;
     }
