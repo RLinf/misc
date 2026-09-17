@@ -46,7 +46,7 @@
   },
   "zh": {
     "paper": "论文",
-    "title": "RPent 排行榜",
+    "title": "RPent Leaderboard",
     "backTop": "返回顶部 ↑",
     "view": "评测范围",
     "rate": "成功率",
@@ -138,7 +138,7 @@
   }
   function render() {
     (options.embedded?document.host:document.documentElement).lang=lang==='en'?'en':'zh-CN';
-    if(!options.embedded)document.title=lang==='en'?'RPent Bench | Benchmark Results':'RPent Bench | 实验结果';
+    if(!options.embedded)document.title='RPent Leaderboard';
     document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
     const language=document.getElementById('language');language.textContent=lang==='en'?'中文':'English';language.lang=lang==='en'?'zh-CN':'en';language.setAttribute('aria-label',lang==='en'?'切换为中文':'Switch to English');
     document.getElementById('leaderboards').innerHTML=d.sections.filter(s=>!s.parent).map(s=>`<section id="${s.id}" class="benchmark-band"><div class="benchmark-shell"><h2 class="benchmark-wordmark">${h(s.name)}</h2><div id="panel-${s.id}"></div>${d.sections.filter(c=>c.parent===s.id).map(c=>`<section id="${c.id}" class="benchmark-subsection"><div id="panel-${c.id}"></div></section>`).join('')}</div></section>`).join('');
