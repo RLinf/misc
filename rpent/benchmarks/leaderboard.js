@@ -117,7 +117,8 @@
   }
   function renderSection(s) {
     const element=document.getElementById('panel-'+s.id);
-    element.innerHTML=sectionBody(s)+(s.notes?`<p class="scope-note">${h(tr(s.notes))}</p>`:'');
+    const note=tr(s.notes);
+    element.innerHTML=sectionBody(s)+(note?`<p class="scope-note">${h(note)}</p>`:'');
     setupTables(element,s.id);
   }
   function setupTables(element,key) {

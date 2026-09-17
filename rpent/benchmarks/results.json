@@ -3233,7 +3233,7 @@
       ],
       "notes": {
         "en": "GPT-6 Astra: seeds 1–5 for each of the 50 tasks, 250 episodes in total.",
-        "zh": "GPT-6 Astra：50 个任务各使用 seed 1–5，共 250 回合。"
+        "zh": ""
       }
     },
     {
