@@ -75,7 +75,8 @@
     const c=configs.get(r.configuration_id);
     if(c.perception_model) return `${c.perception_model} · ${lang==='en'?'visual localization':'视觉定位'}`;
     if(r.evaluation_note) return tr(r.evaluation_note);
-    return [c.kind==='external'?null:c.backend, c.effort, c.reasoning===false?t('noReasoning'):c.reasoning===true?'reasoning':null,
+    const reasoning=c.effort==='max'&&c.reasoning===true?['max.reasoning']:[c.effort,c.reasoning===false?t('noReasoning'):c.reasoning===true?'reasoning':null];
+    return [c.kind==='external'?null:c.backend, ...reasoning,
       !c.model && c.kind!=='external'?t('modelUnknown'):null].filter(Boolean).join(' · ');
   }
   function color(r, view) {
@@ -93,22 +94,17 @@
     if(id==='robotwin') return lang==='en'?'Clean-to-Randomized Success':'Clean-to-Randomized 成功率';
     return tr(views.get(id).label)+' · '+t('rate');
   }
-  function methodIcons(configurationId) {
-    const marks=d.method_icons[configurationId]??[];
-    if(!marks.length)return '';
-    return `<span class="method-mark" aria-hidden="true">${marks.map(m=>`<span class="mark-image${m.crop?' symbol-crop':''}${m.symbol==='molmo2'?' molmo-symbol':''}" title="${h(m.label)}"><img src="${asset(m.file)}" alt="" width="24" height="24"></span>`).join('')}</span>`;
-  }
   function chart(view, kind='primary') {
     const rows=allRows(view).filter(r=>r.rate!==null);
     return `<div class="chart ${kind}" aria-label="${h(headline(view.id))}"><div class="chart-grid" aria-hidden="true">${Array.from({length:6},()=>'<i></i>').join('')}</div><div class="chart-rows">${rows.map(r=>
-      `<div class="chart-row" tabindex="0" data-record="${r.id}" aria-label="${h(label(r)+', '+detailLabel(r)+', '+r.rate+'%, '+count(r))}"><div class="method-label">${methodIcons(r.configuration_id)}<span class="method-text"><span class="method-name">${h(label(r))}</span><span class="method-description">${h(detailLabel(r))}</span></span></div><div class="bar-track"><div class="bar${Number(r.rate)===0?' zero':''}" style="--value:${Number(r.rate)}%;--bar-color:${color(r,view)}"><span class="bar-value">${r.rate}%</span></div></div></div>`).join('')}</div><div class="axis" aria-hidden="true">${[0,20,40,60,80,100].map(x=>`<span>${x}</span>`).join('')}</div></div>`;
+      `<div class="chart-row" tabindex="0" data-record="${r.id}" aria-label="${h(label(r)+', '+detailLabel(r)+', '+r.rate+'%, '+count(r))}"><div class="method-label"><span class="method-text"><span class="method-name">${h(label(r))}</span><span class="method-description">${h(detailLabel(r))}</span></span></div><div class="bar-track"><div class="bar${Number(r.rate)===0?' zero':''}" style="--value:${Number(r.rate)}%;--bar-color:${color(r,view)}"><span class="bar-value">${r.rate}%</span></div></div></div>`).join('')}</div><div class="axis" aria-hidden="true">${[0,20,40,60,80,100].map(x=>`<span>${x}</span>`).join('')}</div></div>`;
   }
   function comparisonMatrix(s) {
     const columns=s.views.map(id=>views.get(id));
     const rows=d.configurations.filter(c=>columns.some(v=>v.record_ids.some(id=>records.get(id).configuration_id===c.id&&records.get(id).rate!==null)));
     return `<details class="comparison-matrix" data-details="${s.id}"><summary>${t('allScores')} <span>${rows.length} ${lang==='en'?'configurations':'配置'}</span></summary><div class="table-wrap" tabindex="0" role="region" aria-label="${h(s.name+' '+t('allScores'))}"><table><thead><tr><th>${t('method')}</th>${columns.map(v=>`<th class="rate">${h(tr(v.label))}</th>`).join('')}</tr></thead><tbody>${rows.map(c=>{
       const sample=columns.flatMap(allRows).find(r=>r.configuration_id===c.id&&r.rate!==null);
-      return `<tr data-method="${c.id}"><th scope="row"><div class="matrix-label">${methodIcons(c.id)}<span>${h(label(sample))}<small>${h(detailLabel(sample))}</small></span></div></th>${columns.map(v=>{
+      return `<tr data-method="${c.id}"><th scope="row"><div class="matrix-label"><span>${h(label(sample))}<small>${h(detailLabel(sample))}</small></span></div></th>${columns.map(v=>{
         const r=allRows(v).find(r=>r.configuration_id===c.id);
         return `<td class="rate"${r?` data-matrix-record="${r.id}"`:''} title="${h(tr(r?.evaluation_note)||tr(v.label))}">${r?.rate!=null?r.rate+'%':`<span class="not-reported" aria-label="${t('unreported')}">—</span>`}</td>`;
       }).join('')}</tr>`;

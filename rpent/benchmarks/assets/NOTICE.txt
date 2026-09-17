@@ -1,23 +1,10 @@
-RPent logo
-Source: https://github.com/RLinf/misc/blob/main/pic/rpent_logo.png
-Brand artwork belongs to the RPent project. Used to identify RPent.
-
-Ellipsis icon
-Source: https://github.com/lucide-icons/lucide/blob/main/icons/ellipsis.svg
+Interface icons: ellipsis, download and arrow-down
+Source: https://github.com/lucide-icons/lucide/tree/main/icons
 License: ISC. See LUCIDE-LICENSE.
 
 Visual design reference
 https://anonymous-report-421.github.io/public-website/?lang=en&view=1
 Only the leaderboard layout was used as a reference. Its JavaScript bundle,
 fonts, brand artwork and experimental results are not redistributed here.
-Method marks: original project/provider marks are used only for identification,
-without implying endorsement. Sources and SHA-256 values are recorded in
-results.json (method_assets). RPent symbol display uses a CSS viewport over the
-unchanged official wordmark, not a redrawn or modified trademark. Claude and
-OpenAI icons identify providers/planners, not an inferred model version.
-Methods without verified project/provider marks are displayed without an icon.
-Molmo2 uses the unchanged logo from the official allenai/Molmo2-8B model card.
-Only its symbol is exposed using a CSS viewport; the source bitmap is unmodified.
-It identifies the visual-localization model, not a planning model.
-Lucide icons are used only for interface actions, not method identities. Lucide uses the ISC license
-included in LUCIDE-LICENSE. All trademarks remain their respective owners'.
+Method identities are displayed as text only. Lucide icons are used only for
+interface actions, not method identities. See the included LUCIDE-LICENSE.

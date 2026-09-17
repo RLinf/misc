@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "checked_at": "2026-09-16",
+  "checked_at": "2026-09-17",
   "paper_revision": "2607.08448v4",
   "repository_revision": "43f32aa08cba07bd4d49a4bfa5eba4ef633e9b92",
   "configurations": [
@@ -167,9 +167,9 @@
       "id": "opus-4-7-reported",
       "kind": "rpent",
       "backend": "Claude Code",
-      "model": "Opus 4.7",
-      "reasoning": null,
-      "effort": null
+      "model": "Opus-4.7",
+      "reasoning": true,
+      "effort": "max"
     },
     {
       "id": "rpent-flash-mode",
@@ -2874,7 +2874,7 @@
     {
       "id": "molmo2-model-card",
       "url": "https://huggingface.co/allenai/Molmo2-8B",
-      "note": "Official model identity and original project logo. RPent uses this model for visual localization only."
+      "note": "Official model identity. RPent uses Molmo2-8B for visual localization only."
     },
     {
       "id": "flash-contributor-800-outcomes",
@@ -3162,186 +3162,9 @@
       ]
     }
   ],
-  "method_assets": [
-    {
-      "file": "rpent-logo.png",
-      "label": "RPent",
-      "source": "https://raw.githubusercontent.com/RLinf/misc/e858f627dbcc1b35440c3cb5ecaaefd016eb8680/pic/rpent_logo.png",
-      "page": "https://github.com/RLinf/RPent",
-      "kind": "project",
-      "display": "Symbol viewport from the unchanged official wordmark",
-      "sha256": "b9f6c0c0fffc20357343cb748cda3fde4b9535a4b8d986142a219fe6b669eb3a"
-    },
-    {
-      "file": "openai.ico",
-      "label": "OpenAI",
-      "source": "https://cdn.oaistatic.com/assets/favicon-eex17e9e.ico",
-      "page": "https://chatgpt.com/",
-      "kind": "provider",
-      "sha256": "def0730c050afcd86acd21bd1edf54f0ee3638c9e642f0e4107f7d666bc292a9"
-    },
-    {
-      "file": "claude.png",
-      "label": "Claude",
-      "source": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png?w=32&h=32",
-      "page": "https://claude.com/",
-      "kind": "provider",
-      "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6"
-    },
-    {
-      "file": "rlinf.svg",
-      "label": "RLinf",
-      "source": "https://raw.githubusercontent.com/RLinf/misc/e858f627dbcc1b35440c3cb5ecaaefd016eb8680/pic/logo_white.svg",
-      "page": "https://github.com/RLinf/RLinf",
-      "kind": "provider",
-      "sha256": "7bc80d34790865211195425f6fba57c24701e5c03a291a0bb8b918f294104e2a"
-    },
-    {
-      "file": "capx-dark.png",
-      "label": "CaP-X",
-      "source": "https://capgym.github.io/assets/favicon-dark.png",
-      "page": "https://capgym.github.io/",
-      "kind": "project",
-      "sha256": "b00fdf0ec382e103a8dbebb577125e189e26772562fc8e592db90a5cc3121112"
-    },
-    {
-      "file": "rats.png",
-      "label": "RATS",
-      "source": "https://playful-rats.github.io/assets/images/rats-logo.png",
-      "page": "https://playful-rats.github.io/",
-      "kind": "project",
-      "sha256": "cb4dc329e415963bc9fcacf45b52ea761ae301750538f59ad881649fcbbe0a69"
-    },
-    {
-      "file": "ai2.png",
-      "label": "Ai2",
-      "source": "https://github.com/allenai.png?size=64",
-      "page": "https://allenai.org/molmo",
-      "kind": "provider",
-      "sha256": "d4d2d7da51c84c4bbd93223e6bcfd20c62b1994b82acef60298ec0deb2d6417e"
-    },
-    {
-      "file": "molmo2.png",
-      "label": "Molmo2",
-      "source": "https://huggingface.co/allenai/Molmo2-8B/resolve/main/molmo_2_logo_RGB.png",
-      "page": "https://huggingface.co/allenai/Molmo2-8B",
-      "kind": "project",
-      "display": "Symbol viewport from the unchanged official Molmo2 wordmark",
-      "sha256": "eae441fb7cca5389e030cf2e39cdc16b725b70840cfc075e3982c64b81a11592"
-    }
-  ],
-  "method_icons": {
-    "gpt-5-5-xhigh": [
-      {
-        "file": "rpent-logo.png",
-        "label": "RPent",
-        "crop": true
-      },
-      {
-        "file": "openai.ico",
-        "label": "OpenAI / Codex",
-        "crop": false
-      }
-    ],
-    "gpt-6-astra-low": [
-      {
-        "file": "rpent-logo.png",
-        "label": "RPent",
-        "crop": true
-      },
-      {
-        "file": "openai.ico",
-        "label": "OpenAI / Codex",
-        "crop": false
-      }
-    ],
-    "openvla": [],
-    "nora": [],
-    "pi0": [],
-    "pi-rlinf": [
-      {
-        "file": "rlinf.svg",
-        "label": "RLinf",
-        "crop": false
-      }
-    ],
-    "atomvla": [],
-    "pi0-5": [],
-    "molmoact": [
-      {
-        "file": "ai2.png",
-        "label": "Ai2 / MolmoAct",
-        "crop": false
-      }
-    ],
-    "x-vla": [],
-    "cap-x": [
-      {
-        "file": "capx-dark.png",
-        "label": "CaP-X",
-        "crop": false
-      }
-    ],
-    "rats": [
-      {
-        "file": "rats.png",
-        "label": "RATS",
-        "crop": false
-      }
-    ],
-    "rldx-1": [],
-    "worlddreamer": [],
-    "gr00t-n1-7": [],
-    "starvla": [],
-    "lingbot-vla": [],
-    "opus-4-7-reported": [
-      {
-        "file": "rpent-logo.png",
-        "label": "RPent",
-        "crop": true
-      },
-      {
-        "file": "claude.png",
-        "label": "Claude",
-        "crop": false
-      }
-    ],
-    "opus-4-7-max": [
-      {
-        "file": "rpent-logo.png",
-        "label": "RPent",
-        "crop": true
-      },
-      {
-        "file": "claude.png",
-        "label": "Claude",
-        "crop": false
-      }
-    ],
-    "rpent-flash-mode": [
-      {
-        "file": "rpent-logo.png",
-        "label": "RPent",
-        "crop": true
-      },
-      {
-        "file": "molmo2.png",
-        "label": "Molmo2-8B · visual localization",
-        "symbol": "molmo2"
-      }
-    ]
-  },
   "assets": [
-    "rpent-logo.png",
     "ellipsis.svg",
-    "openai.ico",
-    "claude.png",
-    "rlinf.svg",
-    "capx-dark.png",
-    "rats.png",
-    "ai2.png",
     "download.svg",
-    "arrow-down.svg",
-    "molmo2.png"
+    "arrow-down.svg"
   ]
 }
