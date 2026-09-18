@@ -32,13 +32,12 @@
     "backTop": "Back to top ↑",
     "view": "Evaluation",
     "rate": "Success rate",
-    "method": "Method / model",
-    "configuration": "Model configuration",
+    "method": "Method",
     "meanTime": "Mean time / episode (s)",
     "outputTokens": "Total output tokens",
     "unreported": "Not reported",
     "modelUnknown": "Model not reported",
-    "noReasoning": "no reasoning",
+    "noReasoning": "no-reasoning",
     "table": "Results table",
     "download": "Download CSV",
     "print": "Print page",
@@ -53,13 +52,12 @@
     "backTop": "返回顶部 ↑",
     "view": "评测范围",
     "rate": "成功率",
-    "method": "方法 / 模型",
-    "configuration": "模型配置",
+    "method": "方法",
     "meanTime": "平均每回合耗时（秒）",
     "outputTokens": "总输出 token",
     "unreported": "未报告",
     "modelUnknown": "未报告模型",
-    "noReasoning": "无推理",
+    "noReasoning": "no-reasoning",
     "table": "结果明细表",
     "download": "下载 CSV",
     "print": "打印页面",
@@ -123,7 +121,7 @@
     const rows=d.configurations.filter(c=>columns.some(v=>v.record_ids.some(id=>records.get(id).configuration_id===c.id&&records.get(id).rate!==null)));
     return `<details class="comparison-matrix" data-details="${s.id}"><summary>${t('allScores')} <span>${rows.length} ${lang==='en'?'configurations':'配置'}</span></summary><div class="table-wrap" tabindex="0" role="region" aria-label="${h(s.name+' '+t('allScores'))}"><table><thead><tr><th>${t('method')}</th>${columns.map(v=>`<th class="rate">${h(tr(v.label))}</th>`).join('')}</tr></thead><tbody>${rows.map(c=>{
       const sample=columns.flatMap(allRows).find(r=>r.configuration_id===c.id&&r.rate!==null);
-      return `<tr data-method="${c.id}"><th scope="row"><div class="matrix-label"><span>${h(label(sample))}<small>${h(detailLabel(sample))}</small></span></div></th>${columns.map(v=>{
+      return `<tr data-method="${c.id}"><th scope="row"><div class="matrix-label"><span>${h(label(sample))}<small> ${h(detailLabel(sample))}</small></span></div></th>${columns.map(v=>{
         const r=allRows(v).find(r=>r.configuration_id===c.id);
         return `<td class="rate"${r?` data-matrix-record="${r.id}"`:''} title="${h(tr(r?.evaluation_note)||tr(v.label))}">${r?.rate!=null?r.rate+'%':`<span class="not-reported" aria-label="${t('unreported')}">—</span>`}</td>`;
       }).join('')}</tr>`;
@@ -147,10 +145,8 @@
     const groups=[['libero-pro','LIBERO-PRO'],['robocasa','RoboCasa365'],['robotwin','RoboTwin']];
     element.innerHTML=`<div class="section-inner"><h2>Time &amp; Token Costs</h2>${groups.map(([id,name])=>{
       const rows=d.cost_results.filter(r=>r.benchmark_id===id);
-      return `<section class="cost-group" data-cost-group="${id}"><h3>${name}</h3><div class="table-wrap" tabindex="0" role="region" aria-label="${name} Time &amp; Token Costs"><table data-sort-key="costs-${id}" data-sort-direction="ascending" data-highlight-best="false"><thead><tr><th>${t('configuration')}</th><th class="rate">${t('meanTime')}</th><th class="rate">${t('outputTokens')}</th></tr></thead><tbody>${rows.map(r=>{
-        const c=configs.get(r.configuration_id);
-        const name=c.perception_model?`${c.display_name} / ${c.perception_model}`:[c.model,c.effort,c.reasoning===false?t('noReasoning'):c.reasoning===true?'reasoning':null].filter(Boolean).join(' · ');
-        return `<tr data-cost-record="${r.id}" data-method="${c.id}"><td>${h(name)}</td><td class="rate" data-value="${r.mean_elapsed_seconds}">${r.mean_elapsed_seconds.toLocaleString('en-US')}</td><td class="rate" data-value="${r.total_output_tokens}">${r.total_output_tokens.toLocaleString('en-US')}</td></tr>`;
+      return `<section class="cost-group" data-cost-group="${id}"><h3>${name}</h3><div class="table-wrap" tabindex="0" role="region" aria-label="${name} Time &amp; Token Costs"><table data-sort-key="costs-${id}" data-sort-direction="ascending" data-highlight-best="false"><thead><tr><th>${t('method')}</th><th class="rate">${t('meanTime')}</th><th class="rate">${t('outputTokens')}</th></tr></thead><tbody>${rows.map(r=>{
+        return `<tr data-cost-record="${r.id}" data-method="${r.configuration_id}"><td><div class="matrix-label"><span>${h(label(r))}<small> ${h(detailLabel(r))}</small></span></div></td><td class="rate" data-value="${r.mean_elapsed_seconds}">${r.mean_elapsed_seconds.toLocaleString('en-US')}</td><td class="rate" data-value="${r.total_output_tokens}">${r.total_output_tokens.toLocaleString('en-US')}</td></tr>`;
       }).join('')}</tbody></table></div></section>`;
     }).join('')}</div>`;
     setupTables(element,'costs');

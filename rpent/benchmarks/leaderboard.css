@@ -26,6 +26,7 @@ body,button,select,input,textarea,table,code,pre,kbd{font-family:var(--serif)}
 @media(max-width:700px){.cost-group table{font-size:14px}.cost-section h2{font-size:23px}.cost-group h3{font-size:19px}}
 .comparison-matrix thead th{font-size:14px}
 .comparison-matrix .matrix-label small{font-size:12px}
+.cost-group .matrix-label{font-size:inherit}.cost-group .matrix-label small,.cost-method small{display:block;font-size:12px;margin-top:4px}
 footer{background:var(--band)}
 th[aria-sort=ascending]{color:var(--best)}th[aria-sort=ascending] img{opacity:1;transform:rotate(180deg)}
 footer{max-width:none;padding-left:max(var(--gutter),calc((100% - 1344px)/2));padding-right:max(var(--gutter),calc((100% - 1344px)/2))}

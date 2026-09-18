@@ -210,7 +210,7 @@
       "id": "gpt-5-6-xhigh",
       "kind": "rpent",
       "backend": "Codex",
-      "model": "GPT-5.6",
+      "model": "GPT-5.6 Sol",
       "reasoning": true,
       "effort": "xhigh"
     },
@@ -218,7 +218,7 @@
       "id": "gpt-5-6-no-reasoning",
       "kind": "rpent",
       "backend": "Codex",
-      "model": "GPT-5.6",
+      "model": "GPT-5.6 Sol",
       "reasoning": false,
       "effort": null
     }
