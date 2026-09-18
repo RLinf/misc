@@ -22,6 +22,8 @@ body,button,select,input,textarea,table,code,pre,kbd{font-family:var(--serif)}
 .legend .astra{background:var(--astra)}
 .comparison-matrix>summary{font-size:20px}
 .comparison-matrix table,.comparison-matrix .matrix-label{font-size:16px}
+.cost-section{background:var(--band);border-top:4px solid var(--best);padding:30px 0 24px}.cost-section h2{font-size:27px}.cost-group{margin-top:24px}.cost-group h3{font-size:21px}.cost-group table{font-size:16px;min-width:340px;table-layout:fixed}.cost-group th{font-size:14px;white-space:normal}.cost-group th:first-child{width:42%}.cost-group th,.cost-group td{padding:10px 8px}.cost-group td:first-child{overflow-wrap:anywhere}.cost-group .table-wrap{max-width:100%}th[aria-sort=ascending]{color:var(--best)}th[aria-sort=ascending] img{opacity:1;transform:rotate(180deg)}
+@media(max-width:700px){.cost-group table{font-size:14px}.cost-section h2{font-size:23px}.cost-group h3{font-size:19px}}
 .comparison-matrix thead th{font-size:14px}
 .comparison-matrix .matrix-label small{font-size:12px}
 footer{background:var(--band)}

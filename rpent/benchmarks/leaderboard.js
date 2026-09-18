@@ -33,6 +33,9 @@
     "view": "Evaluation",
     "rate": "Success rate",
     "method": "Method / model",
+    "configuration": "Model configuration",
+    "meanTime": "Mean time / episode (s)",
+    "outputTokens": "Total output tokens",
     "unreported": "Not reported",
     "modelUnknown": "Model not reported",
     "noReasoning": "no reasoning",
@@ -51,6 +54,9 @@
     "view": "评测范围",
     "rate": "成功率",
     "method": "方法 / 模型",
+    "configuration": "模型配置",
+    "meanTime": "平均每回合耗时（秒）",
+    "outputTokens": "总输出 token",
     "unreported": "未报告",
     "modelUnknown": "未报告模型",
     "noReasoning": "无推理",
@@ -136,13 +142,26 @@
   function setupTables(element,key) {
     window.RPentTables.setup(element,{key,language:lang,icon:asset('arrow-down.svg'),download:asset('download.svg')});
   }
+  function renderCosts() {
+    const element=document.getElementById('time-token-costs');
+    const groups=[['libero-pro','LIBERO-PRO'],['robocasa','RoboCasa365'],['robotwin','RoboTwin']];
+    element.innerHTML=`<div class="section-inner"><h2>Time &amp; Token Costs</h2>${groups.map(([id,name])=>{
+      const rows=d.cost_results.filter(r=>r.benchmark_id===id);
+      return `<section class="cost-group" data-cost-group="${id}"><h3>${name}</h3><div class="table-wrap" tabindex="0" role="region" aria-label="${name} Time &amp; Token Costs"><table data-sort-key="costs-${id}" data-sort-direction="ascending" data-highlight-best="false"><thead><tr><th>${t('configuration')}</th><th class="rate">${t('meanTime')}</th><th class="rate">${t('outputTokens')}</th></tr></thead><tbody>${rows.map(r=>{
+        const c=configs.get(r.configuration_id);
+        const name=c.perception_model?`${c.display_name} / ${c.perception_model}`:[c.model,c.effort,c.reasoning===false?t('noReasoning'):c.reasoning===true?'reasoning':null].filter(Boolean).join(' · ');
+        return `<tr data-cost-record="${r.id}" data-method="${c.id}"><td>${h(name)}</td><td class="rate" data-value="${r.mean_elapsed_seconds}">${r.mean_elapsed_seconds.toLocaleString('en-US')}</td><td class="rate" data-value="${r.total_output_tokens}">${r.total_output_tokens.toLocaleString('en-US')}</td></tr>`;
+      }).join('')}</tbody></table></div></section>`;
+    }).join('')}</div>`;
+    setupTables(element,'costs');
+  }
   function render() {
     (options.embedded?document.host:document.documentElement).lang=lang==='en'?'en':'zh-CN';
     if(!options.embedded)document.title='RPent Leaderboard';
     document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
     const language=document.getElementById('language');language.textContent=lang==='en'?'中文':'English';language.lang=lang==='en'?'zh-CN':'en';language.setAttribute('aria-label',lang==='en'?'切换为中文':'Switch to English');
     document.getElementById('leaderboards').innerHTML=d.sections.filter(s=>!s.parent).map(s=>`<section id="${s.id}" class="benchmark-band"><div class="benchmark-shell"><h2 class="benchmark-wordmark">${h(s.name)}</h2><div id="panel-${s.id}"></div>${d.sections.filter(c=>c.parent===s.id).map(c=>`<section id="${c.id}" class="benchmark-subsection"><div id="panel-${c.id}"></div></section>`).join('')}</div></section>`).join('');
-    d.sections.forEach(renderSection);hideTooltip();
+    d.sections.forEach(renderSection);renderCosts();hideTooltip();
   }
   function downloadCSV(rows, name) {
     const keys=['record_id','benchmark','view','method','model','planner','perception_model','reasoning','effort','success_rate_percent','successes','episodes','status','evaluation_note'];
