@@ -3413,6 +3413,13 @@
     "download.svg",
     "arrow-down.svg"
   ],
+  "cost_method_order": [
+    "gpt-6-astra-low",
+    "gpt-5-6-xhigh",
+    "gpt-5-6-no-reasoning",
+    "rpent-flash-mode",
+    "qwen3-6-27b-no-reasoning"
+  ],
   "cost_results": [
     {
       "id": "libero-pro--gpt-5-6-xhigh",

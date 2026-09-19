@@ -129,7 +129,7 @@
   }
   function sectionBody(s) {
     const view=views.get(selection.get(s.id));
-    return `<div class="subsection-heading"><h3>${h(tr(s.heading))}</h3>${s.summary?`<p>${h(tr(s.summary))}</p>`:''}</div><div class="chart-tools"><div class="view-controls"><label for="view-${s.id}">${t('view')}</label><select id="view-${s.id}" data-section="${s.id}" aria-label="${h(s.name+' '+t('view'))}">${s.views.map(id=>`<option value="${id}"${view.id===id?' selected':''}>${h(tr(views.get(id).label))}</option>`).join('')}</select></div><div class="chart-menu"><button type="button" class="icon-button" data-menu="${s.id}" aria-haspopup="menu" aria-expanded="false" aria-controls="menu-${s.id}" aria-label="${t('menu')}" title="${t('menu')}"><img src="${asset('ellipsis.svg')}" alt=""></button><div class="menu-options" id="menu-${s.id}" role="menu" hidden><button role="menuitem" data-action="csv" data-section="${s.id}">${t('download')}</button><button role="menuitem" data-action="table" data-section="${s.id}">${t('table')}</button><button role="menuitem" data-action="print">${t('print')}</button></div></div></div>${chart(view)}${comparisonMatrix(s)}`;
+    return `<div class="subsection-heading"><h4>${h(tr(s.heading))}</h4>${s.summary?`<p>${h(tr(s.summary))}</p>`:''}</div><div class="chart-tools"><div class="view-controls"><label for="view-${s.id}">${t('view')}</label><select id="view-${s.id}" data-section="${s.id}" aria-label="${h(s.name+' '+t('view'))}">${s.views.map(id=>`<option value="${id}"${view.id===id?' selected':''}>${h(tr(views.get(id).label))}</option>`).join('')}</select></div><div class="chart-menu"><button type="button" class="icon-button" data-menu="${s.id}" aria-haspopup="menu" aria-expanded="false" aria-controls="menu-${s.id}" aria-label="${t('menu')}" title="${t('menu')}"><img src="${asset('ellipsis.svg')}" alt=""></button><div class="menu-options" id="menu-${s.id}" role="menu" hidden><button role="menuitem" data-action="csv" data-section="${s.id}">${t('download')}</button><button role="menuitem" data-action="table" data-section="${s.id}">${t('table')}</button><button role="menuitem" data-action="print">${t('print')}</button></div></div></div>${chart(view)}${comparisonMatrix(s)}`;
   }
   function renderSection(s) {
     const element=document.getElementById('panel-'+s.id);
@@ -143,9 +143,10 @@
   function renderCosts() {
     const element=document.getElementById('time-token-costs');
     const groups=[['libero-pro','LIBERO-PRO'],['robocasa','RoboCasa365'],['robotwin','RoboTwin']];
-    element.innerHTML=`<div class="section-inner"><h2>Time &amp; Token Costs</h2>${groups.map(([id,name])=>{
-      const rows=d.cost_results.filter(r=>r.benchmark_id===id);
-      return `<section class="cost-group" data-cost-group="${id}"><h3>${name}</h3><div class="table-wrap" tabindex="0" role="region" aria-label="${name} Time &amp; Token Costs"><table data-sort-key="costs-${id}" data-sort-direction="ascending" data-highlight-best="false"><thead><tr><th>${t('method')}</th><th class="rate">${t('meanTime')}</th><th class="rate">${t('outputTokens')}</th></tr></thead><tbody>${rows.map(r=>{
+    const methodOrder=new Map(d.cost_method_order.map((id,i)=>[id,i]));
+    element.innerHTML=`<div class="section-inner"><h2 id="costs-heading">Time &amp; Token Costs</h2>${groups.map(([id,name])=>{
+      const rows=d.cost_results.filter(r=>r.benchmark_id===id).sort((a,b)=>(methodOrder.get(a.configuration_id)??Infinity)-(methodOrder.get(b.configuration_id)??Infinity)||a.id.localeCompare(b.id));
+      return `<section class="cost-group" data-cost-group="${id}"><h3>${name}</h3><div class="table-wrap" tabindex="0" role="region" aria-label="${name} Time &amp; Token Costs"><table data-sort-key="costs-${id}" data-sortable="false" data-highlight-best="false"><thead><tr><th>${t('method')}</th><th class="rate">${t('meanTime')}</th><th class="rate">${t('outputTokens')}</th></tr></thead><tbody>${rows.map(r=>{
         return `<tr data-cost-record="${r.id}" data-method="${r.configuration_id}"><td><div class="matrix-label"><span>${h(label(r))}<small> ${h(detailLabel(r))}</small></span></div></td><td class="rate" data-value="${r.mean_elapsed_seconds}">${r.mean_elapsed_seconds.toLocaleString('en-US')}</td><td class="rate" data-value="${r.total_output_tokens}">${r.total_output_tokens.toLocaleString('en-US')}</td></tr>`;
       }).join('')}</tbody></table></div></section>`;
     }).join('')}</div>`;
@@ -156,7 +157,7 @@
     if(!options.embedded)document.title='RPent Leaderboard';
     document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
     const language=document.getElementById('language');language.textContent=lang==='en'?'中文':'English';language.lang=lang==='en'?'zh-CN':'en';language.setAttribute('aria-label',lang==='en'?'切换为中文':'Switch to English');
-    document.getElementById('leaderboards').innerHTML=d.sections.filter(s=>!s.parent).map(s=>`<section id="${s.id}" class="benchmark-band"><div class="benchmark-shell"><h2 class="benchmark-wordmark">${h(s.name)}</h2><div id="panel-${s.id}"></div>${d.sections.filter(c=>c.parent===s.id).map(c=>`<section id="${c.id}" class="benchmark-subsection"><div id="panel-${c.id}"></div></section>`).join('')}</div></section>`).join('');
+    document.getElementById('leaderboards').innerHTML=d.sections.filter(s=>!s.parent).map(s=>`<section id="${s.id}" class="benchmark-band"><div class="benchmark-shell"><h3 class="benchmark-wordmark">${h(s.name)}</h3><div id="panel-${s.id}"></div>${d.sections.filter(c=>c.parent===s.id).map(c=>`<section id="${c.id}" class="benchmark-subsection"><div id="panel-${c.id}"></div></section>`).join('')}</div></section>`).join('');
     d.sections.forEach(renderSection);renderCosts();hideTooltip();
   }
   function downloadCSV(rows, name) {

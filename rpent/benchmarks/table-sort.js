@@ -58,16 +58,17 @@
         if(/^(Total|合计)$/i.test(row.cells[0].textContent.trim()))row.dataset.total='true';
       });
       const direction=table.dataset.sortDirection??'descending';
+      const sortable=table.dataset.sortable!=='false';
       table._rpentSort={key,columns,headers,idColumn,column:preferred.i,direction,highlightBest:table.dataset.highlightBest!=='false'};
       headers.forEach((th,i)=>{
         th.dataset.label=th.textContent.trim();
-        if(!columns.includes(i))return;
+        if(!sortable||!columns.includes(i))return;
         const button=document.createElement('button');button.type='button';button.className='sort-heading';
         button.textContent=th.dataset.label;button.title=(i===idColumn?(zh?'按任务 ID 升序：':'Sort task ID ascending: '):direction==='ascending'?(zh?'按此列升序：':'Sort ascending: '):(zh?'按此列降序：':'Sort descending: '))+th.dataset.label;
         const img=document.createElement('img');img.src=options.icon;img.alt='';img.width=12;img.height=12;
         button.append(img);button.addEventListener('click',()=>sort(table,i));th.replaceChildren(button);
       });
-      const savedColumn=saved.get(key);sort(table,columns.includes(savedColumn)?savedColumn:preferred.i);
+      if(sortable){const savedColumn=saved.get(key);sort(table,columns.includes(savedColumn)?savedColumn:preferred.i);}
       if(options.download){
         const button=document.createElement('button');button.type='button';button.className='table-download icon-button';
         button.title=zh?'下载当前排序 CSV':'Download sorted CSV';button.setAttribute('aria-label',button.title);

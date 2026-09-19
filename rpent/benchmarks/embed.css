@@ -37,9 +37,9 @@ footer{max-width:none;padding-left:max(var(--gutter),calc((100% - 1344px)/2));pa
 /* Evaluation modes share one benchmark band. */
 .benchmark-wordmark{max-width:none;margin-bottom:16px;color:var(--ink)}
 .subsection-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
-.subsection-heading h3{font-size:21px}.subsection-heading p{font-size:14px;color:var(--muted)}
+.subsection-heading h4{font:500 21px/1.55 var(--serif);margin:0}.subsection-heading p{font-size:14px;color:var(--muted)}
 .benchmark-subsection{margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
-.benchmark-subsection .subsection-heading h3{font-size:20px}
+.benchmark-subsection .subsection-heading h4{font-size:20px}
 .scope-note{font:14px/1.6 var(--serif);color:var(--muted);margin:14px 0}
 /* The embedded host follows the documentation theme; standalone uses the OS preference. */
 :host([data-theme="dark"]){color-scheme:dark;--page:#17141f;--surface:#292536;--band:#201d2b;--ink:#f4f0fa;--muted:#c6bbd8;--line:#494052;--best:#be96e0;--astra:#be96e0;--link:#bca7ff;--link-hover:#dfcfff;--brand:#f4f0fa;--grid:#3f354e;--hover:#40334f80;--control-hover:#40334f;--control-border:#625773;--missing:#b9aecb}
@@ -57,6 +57,8 @@ button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible,
 :host([data-theme="dark"]) .icon-button img,:host([data-theme="dark"]) .sort-heading img{filter:invert(1)}
 @media(max-width:700px){}
 .chart-tooltip{max-width:min(310px,calc(100vw - 16px))}
-@media(max-width:700px){.subsection-heading{display:block}.subsection-heading h3{font-size:19px}.subsection-heading p{margin-top:6px;font-size:13px}}
+@media(max-width:700px){.subsection-heading{display:block}.subsection-heading h4{font-size:19px}.subsection-heading p{margin-top:6px;font-size:13px}}
+.performance-section{background:var(--band)}.performance-heading{padding-top:26px;padding-bottom:8px}.performance-heading h2,.cost-section h2{font-size:32px}.performance-heading .bench-nav{margin-top:16px}#performance,#time-token-costs{scroll-margin-top:24px}
+@media(max-width:700px){.performance-heading h2,.cost-section h2{font-size:26px}}
 
 :host .page-header{padding-top:12px;scroll-margin-top:48px}:host .title-row{display:none}

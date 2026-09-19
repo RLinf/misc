@@ -1,6 +1,6 @@
 /* Only the leaderboard page adopts these styles. */
 .bd-article:has(#rpent-interactive-leaderboard){font-family:"Times New Roman","Noto Serif CJK SC",serif;min-width:0}
-.bd-article:has(#rpent-interactive-leaderboard) :is(h1,h2,h3,table){font-family:"Times New Roman","Noto Serif CJK SC",serif;letter-spacing:0}
+.bd-article:has(#rpent-interactive-leaderboard) :is(h1,h2,h3,h4,table){font-family:"Times New Roman","Noto Serif CJK SC",serif;letter-spacing:0}
 #rpent-interactive-leaderboard{min-width:0;max-width:100%}
 .rpent-static-leaderboard table{width:100%;margin:1rem 0}
 .rpent-static-leaderboard th,.rpent-static-leaderboard td{padding:.5rem;border-bottom:1px solid var(--rpent-fallback-border,#e5deef)}
