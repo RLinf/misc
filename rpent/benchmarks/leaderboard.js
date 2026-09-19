@@ -145,12 +145,12 @@
     const element=document.getElementById('time-token-costs');
     const groups=[['libero-pro','LIBERO-PRO'],['robocasa','RoboCasa365'],['robotwin','RoboTwin']];
     const methodOrder=new Map(d.cost_method_order.map((id,i)=>[id,i]));
-    element.innerHTML=`<div class="section-inner"><h2 id="costs-heading">Time &amp; Token Costs</h2>${groups.map(([id,name])=>{
+    element.innerHTML=`<div class="section-inner cost-heading"><h2 id="costs-heading">Time &amp; Token Costs</h2></div><nav class="module-nav section-inner" aria-label="Time &amp; Token Costs">${groups.map(([id,name])=>`<a href="#costs-${id}">${name}</a>`).join('')}</nav>${groups.map(([id,name])=>{
       const rows=d.cost_results.filter(r=>r.benchmark_id===id).sort((a,b)=>(methodOrder.get(a.configuration_id)??Infinity)-(methodOrder.get(b.configuration_id)??Infinity)||a.id.localeCompare(b.id));
-      return `<section id="costs-${id}" class="cost-group" data-cost-group="${id}"><details data-module="costs-${id}"${collapsedModules.has('costs-'+id)?'':' open'}><summary class="module-header"><h3>${name}</h3></summary><div class="module-content"><div class="table-wrap" tabindex="0" role="region" aria-label="${name} Time &amp; Token Costs"><table data-sort-key="costs-${id}" data-sortable="false" data-highlight-best="false"><thead><tr><th>${t('method')}</th><th class="rate">${t('meanTime')}</th><th class="rate">${t('outputTokens')}</th></tr></thead><tbody>${rows.map(r=>{
+      return `<section id="costs-${id}" class="cost-group" data-cost-group="${id}"><div class="section-inner"><details data-module="costs-${id}"${collapsedModules.has('costs-'+id)?'':' open'}><summary class="module-header"><h3>${name}</h3></summary><div class="module-content"><div class="table-wrap" tabindex="0" role="region" aria-label="${name} Time &amp; Token Costs"><table data-sort-key="costs-${id}" data-sortable="false" data-highlight-best="false"><thead><tr><th>${t('method')}</th><th class="rate">${t('meanTime')}</th><th class="rate">${t('outputTokens')}</th></tr></thead><tbody>${rows.map(r=>{
         return `<tr data-cost-record="${r.id}" data-method="${r.configuration_id}"><td><div class="matrix-label"><span>${h(label(r))}<small> ${h(detailLabel(r))}</small></span></div></td><td class="rate" data-value="${r.mean_elapsed_seconds}">${r.mean_elapsed_seconds.toLocaleString('en-US')}</td><td class="rate" data-value="${r.total_output_tokens}">${r.total_output_tokens.toLocaleString('en-US')}</td></tr>`;
-      }).join('')}</tbody></table></div></div></details></section>`;
-    }).join('')}</div>`;
+      }).join('')}</tbody></table></div></div></details></div></section>`;
+    }).join('')}`;
     setupTables(element,'costs');
   }
   function render() {
@@ -162,7 +162,7 @@
     document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
     const language=document.getElementById('language');language.textContent=lang==='en'?'中文':'English';language.lang=lang==='en'?'zh-CN':'en';language.setAttribute('aria-label',lang==='en'?'切换为中文':'Switch to English');
     document.getElementById('leaderboards').innerHTML=d.sections.filter(s=>!s.parent).map(s=>`<section id="${s.id}" class="benchmark-band"><div class="benchmark-shell"><details data-module="${s.id}"${collapsedModules.has(s.id)?'':' open'}><summary class="module-header"><h3 class="benchmark-wordmark">${h(s.name)}</h3></summary><div class="module-content"><div id="panel-${s.id}"></div>${d.sections.filter(c=>c.parent===s.id).map(c=>`<section id="${c.id}" class="benchmark-subsection"><div id="panel-${c.id}"></div></section>`).join('')}</div></details></div></section>`).join('');
-    d.sections.forEach(renderSection);renderCosts();hideTooltip();
+    d.sections.forEach(renderSection);renderCosts();observeNavigation();hideTooltip();
   }
   function downloadCSV(rows, name) {
     const keys=['record_id','benchmark','view','method','model','planner','perception_model','reasoning','effort','success_rate_percent','successes','episodes','status','evaluation_note'];
@@ -179,9 +179,17 @@
     document.querySelectorAll('[data-menu][aria-expanded="true"]').forEach(button=>{document.getElementById('menu-'+button.dataset.menu).hidden=true;button.setAttribute('aria-expanded','false');if(focus)button.focus();});
   }
   const tip=document.getElementById('chart-tooltip');
-  const moduleNav=document.querySelector('.module-nav');
-  const syncNavHeight=()=>themeTarget.style.setProperty('--module-nav-height',moduleNav.getBoundingClientRect().height+'px');
-  new ResizeObserver(syncNavHeight).observe(moduleNav);
+  const sectionNav=document.querySelector('.section-nav');
+  const syncNavHeight=()=>{
+    themeTarget.style.setProperty('--section-nav-height',sectionNav.getBoundingClientRect().height+'px');
+    document.querySelectorAll('.module-nav').forEach(nav=>nav.parentElement.style.setProperty('--module-nav-height',nav.getBoundingClientRect().height+'px'));
+  };
+  const navObserver=new ResizeObserver(syncNavHeight);
+  function observeNavigation(){
+    navObserver.disconnect();navObserver.observe(sectionNav);
+    document.querySelectorAll('.module-nav').forEach(nav=>navObserver.observe(nav));
+    syncNavHeight();
+  }
   function revealTarget(target) {
     if(target.matches('.benchmark-band,.cost-group')){
       const module=target.querySelector('details[data-module]');
@@ -199,6 +207,7 @@
     if(!module.open&&module.contains(document.activeElement)){
       requestAnimationFrame(()=>{
         const summary=module.querySelector('summary');
+        const moduleNav=module.closest('#performance,#time-token-costs').querySelector('.module-nav');
         if(summary.getBoundingClientRect().top<moduleNav.getBoundingClientRect().bottom)summary.scrollIntoView({block:'start'});
       });
     }
