@@ -15,9 +15,16 @@ html[data-theme="dark"] .rpent-static-leaderboard{--rpent-fallback-border:#49405
 .rpent-static-leaderboard [data-performance]>h2,.rpent-static-leaderboard .cost-section h2{font-size:36px;font-weight:700;line-height:1.25}
 .rpent-static-leaderboard .module-header h3{display:inline;font-size:26px;font-weight:500;line-height:1.3}
 .rpent-static-leaderboard [data-benchmark] h4{font-size:20px;font-weight:400;line-height:1.55}
-.rpent-static-leaderboard .module-header{cursor:pointer;padding:12px 0;list-style-position:inside}.rpent-static-leaderboard .module-header::marker{font-size:18px}
+.rpent-static-leaderboard .module-header{cursor:pointer;padding:12px 0;list-style-position:outside}.rpent-static-leaderboard .module-header::marker{font-size:18px}
 @media(max-width:700px){.rpent-static-leaderboard [data-performance]>h2,.rpent-static-leaderboard .cost-section h2{font-size:28px}.rpent-static-leaderboard .module-header h3{font-size:22px}.rpent-static-leaderboard [data-benchmark] h4{font-size:19px}}
 .rpent-static-leaderboard{--rpent-divider:#9464bf}.rpent-static-leaderboard .module-nav{display:flex;flex-wrap:wrap;gap:8px 24px;padding:12px 0;font-size:14px}.rpent-static-leaderboard .module-nav a{text-decoration:none}
 .rpent-static-leaderboard [data-benchmark],.rpent-static-leaderboard .cost-group{border-top:4px solid var(--rpent-divider);padding:12px 0 24px}
 .rpent-static-leaderboard [data-benchmark]:last-child,.rpent-static-leaderboard .cost-group:last-child{border-bottom:4px solid var(--rpent-divider)}
 html[data-theme="dark"] .rpent-static-leaderboard{--rpent-divider:#be96e0}
+/* Align the native document title with the isolated renderer's content grid. */
+.bd-article:has(#rpent-interactive-leaderboard){--rpent-content-max:1440px;--rpent-content-gutter:48px}
+.bd-article:has(#rpent-interactive-leaderboard)>section>h1{box-sizing:border-box;max-width:var(--rpent-content-max);margin-inline:auto;padding-inline:var(--rpent-content-gutter)}
+.bd-article .rpent-static-leaderboard{box-sizing:border-box;max-width:var(--rpent-content-max);margin-inline:auto;padding-inline:var(--rpent-content-gutter)}
+@media(min-width:1600px){.bd-article:has(#rpent-interactive-leaderboard){--rpent-content-max:1540px;--rpent-content-gutter:60px}}
+@media(max-width:1000px){.bd-article:has(#rpent-interactive-leaderboard){--rpent-content-gutter:28px}}
+@media(max-width:700px){.bd-article:has(#rpent-interactive-leaderboard){--rpent-content-gutter:24px}}
