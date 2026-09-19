@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "checked_at": "2026-09-17",
+  "checked_at": "2026-09-18",
   "paper_revision": "2607.08448v4",
   "repository_revision": "43f32aa08cba07bd4d49a4bfa5eba4ef633e9b92",
   "configurations": [
@@ -197,6 +197,30 @@
       "model": "ASPIRE",
       "reasoning": null,
       "effort": null
+    },
+    {
+      "id": "qwen3-6-27b-no-reasoning",
+      "kind": "rpent",
+      "backend": null,
+      "model": "Qwen3.6 27B",
+      "reasoning": false,
+      "effort": null
+    },
+    {
+      "id": "gpt-5-6-xhigh",
+      "kind": "rpent",
+      "backend": "Codex",
+      "model": "GPT-5.6 Sol",
+      "reasoning": true,
+      "effort": "xhigh"
+    },
+    {
+      "id": "gpt-5-6-no-reasoning",
+      "kind": "rpent",
+      "backend": "Codex",
+      "model": "GPT-5.6 Sol",
+      "reasoning": false,
+      "effort": null
     }
   ],
   "views": [
@@ -299,7 +323,8 @@
         "spatial-task--rats",
         "spatial-task--pi-rlinf",
         "spatial-task--aspire",
-        "spatial-task--rpent-flash-mode"
+        "spatial-task--rpent-flash-mode",
+        "spatial-task--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -321,7 +346,8 @@
         "spatial-swap--rats",
         "spatial-swap--pi-rlinf",
         "spatial-swap--aspire",
-        "spatial-swap--rpent-flash-mode"
+        "spatial-swap--rpent-flash-mode",
+        "spatial-swap--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -343,7 +369,8 @@
         "object-task--rats",
         "object-task--pi-rlinf",
         "object-task--aspire",
-        "object-task--rpent-flash-mode"
+        "object-task--rpent-flash-mode",
+        "object-task--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -365,7 +392,8 @@
         "object-swap--rats",
         "object-swap--pi-rlinf",
         "object-swap--aspire",
-        "object-swap--rpent-flash-mode"
+        "object-swap--rpent-flash-mode",
+        "object-swap--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -387,7 +415,8 @@
         "goal-task--rats",
         "goal-task--pi-rlinf",
         "goal-task--aspire",
-        "goal-task--rpent-flash-mode"
+        "goal-task--rpent-flash-mode",
+        "goal-task--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -409,7 +438,8 @@
         "goal-swap--rats",
         "goal-swap--pi-rlinf",
         "goal-swap--aspire",
-        "goal-swap--rpent-flash-mode"
+        "goal-swap--rpent-flash-mode",
+        "goal-swap--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -429,7 +459,8 @@
         "long-task--atomvla",
         "long-task--pi-rlinf",
         "long-task--aspire",
-        "long-task--rpent-flash-mode"
+        "long-task--rpent-flash-mode",
+        "long-task--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -449,7 +480,8 @@
         "long-swap--atomvla",
         "long-swap--pi-rlinf",
         "long-swap--aspire",
-        "long-swap--rpent-flash-mode"
+        "long-swap--rpent-flash-mode",
+        "long-swap--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -470,7 +502,8 @@
         "libero-pro--pi-rlinf",
         "libero-pro--opus-4-7-reported",
         "libero-pro--rpent-flash-mode",
-        "libero-pro--aspire"
+        "libero-pro--aspire",
+        "libero-pro--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -2841,6 +2874,123 @@
         "contributor-settings-20260915"
       ],
       "protocol_id": "contributor-target50-astra-five-seed"
+    },
+    {
+      "id": "libero-pro--qwen3-6-27b-no-reasoning",
+      "view_id": "libero-pro",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "70.63",
+      "successes": 565,
+      "episodes": 800,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "spatial-task--qwen3-6-27b-no-reasoning",
+      "view_id": "spatial-task",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "82.00",
+      "successes": 82,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "spatial-swap--qwen3-6-27b-no-reasoning",
+      "view_id": "spatial-swap",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "78.00",
+      "successes": 78,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "object-task--qwen3-6-27b-no-reasoning",
+      "view_id": "object-task",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "83.00",
+      "successes": 83,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "object-swap--qwen3-6-27b-no-reasoning",
+      "view_id": "object-swap",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "84.00",
+      "successes": 84,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "goal-task--qwen3-6-27b-no-reasoning",
+      "view_id": "goal-task",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "68.00",
+      "successes": 68,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "goal-swap--qwen3-6-27b-no-reasoning",
+      "view_id": "goal-swap",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "68.00",
+      "successes": 68,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "long-task--qwen3-6-27b-no-reasoning",
+      "view_id": "long-task",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "61.00",
+      "successes": 61,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "long-swap--qwen3-6-27b-no-reasoning",
+      "view_id": "long-swap",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "41.00",
+      "successes": 41,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
     }
   ],
   "sources": [
@@ -3045,6 +3195,11 @@
         }
       },
       "note": "250 unique contributor result.json outcomes match summary.json and final trace terminated flags. Five seeds per task make task-weighted Overall equal to 148/250. This corrects the previously assumed 340-case denominator; no missing cases are inferred. Model settings retain contributor confirmation."
+    },
+    {
+      "id": "contributor-qwen-costs-20260918",
+      "type": "contributor_report",
+      "note": "Contributor-provided Qwen eight-suite counts and cost table. Mean elapsed time includes all evaluation episodes (success, failure, and timeout); tokens count evaluation-stage output only. No unreported planner, hardware, or token accounting details are inferred."
     }
   ],
   "astra": {
@@ -3257,5 +3412,124 @@
     "ellipsis.svg",
     "download.svg",
     "arrow-down.svg"
+  ],
+  "cost_method_order": [
+    "gpt-6-astra-low",
+    "gpt-5-6-xhigh",
+    "gpt-5-6-no-reasoning",
+    "rpent-flash-mode",
+    "qwen3-6-27b-no-reasoning"
+  ],
+  "cost_results": [
+    {
+      "id": "libero-pro--gpt-5-6-xhigh",
+      "benchmark_id": "libero-pro",
+      "configuration_id": "gpt-5-6-xhigh",
+      "mean_elapsed_seconds": 529.23,
+      "total_output_tokens": 3635426,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "libero-pro--gpt-5-6-no-reasoning",
+      "benchmark_id": "libero-pro",
+      "configuration_id": "gpt-5-6-no-reasoning",
+      "mean_elapsed_seconds": 344.17,
+      "total_output_tokens": 2569676,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "libero-pro--gpt-6-astra-low",
+      "benchmark_id": "libero-pro",
+      "configuration_id": "gpt-6-astra-low",
+      "mean_elapsed_seconds": 412.14,
+      "total_output_tokens": 3364938,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "libero-pro--qwen3-6-27b-no-reasoning",
+      "benchmark_id": "libero-pro",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "mean_elapsed_seconds": 626.3,
+      "total_output_tokens": 3270754,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "libero-pro--rpent-flash-mode",
+      "benchmark_id": "libero-pro",
+      "configuration_id": "rpent-flash-mode",
+      "mean_elapsed_seconds": 60.19,
+      "total_output_tokens": 0,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "robocasa--gpt-5-6-xhigh",
+      "benchmark_id": "robocasa",
+      "configuration_id": "gpt-5-6-xhigh",
+      "mean_elapsed_seconds": 1197.56,
+      "total_output_tokens": 5258391,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "robocasa--gpt-5-6-no-reasoning",
+      "benchmark_id": "robocasa",
+      "configuration_id": "gpt-5-6-no-reasoning",
+      "mean_elapsed_seconds": 1013.21,
+      "total_output_tokens": 4792104,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "robocasa--gpt-6-astra-low",
+      "benchmark_id": "robocasa",
+      "configuration_id": "gpt-6-astra-low",
+      "mean_elapsed_seconds": 1168.95,
+      "total_output_tokens": 5894436,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "robotwin--gpt-5-6-xhigh",
+      "benchmark_id": "robotwin",
+      "configuration_id": "gpt-5-6-xhigh",
+      "mean_elapsed_seconds": 1828.7,
+      "total_output_tokens": 4763915,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "robotwin--gpt-5-6-no-reasoning",
+      "benchmark_id": "robotwin",
+      "configuration_id": "gpt-5-6-no-reasoning",
+      "mean_elapsed_seconds": 957.4,
+      "total_output_tokens": 2456401,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "robotwin--gpt-6-astra-low",
+      "benchmark_id": "robotwin",
+      "configuration_id": "gpt-6-astra-low",
+      "mean_elapsed_seconds": 1078.8,
+      "total_output_tokens": 2763641,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    }
   ]
 }
