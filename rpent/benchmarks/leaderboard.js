@@ -112,7 +112,7 @@
   function color(r, view) {
     const c=configs.get(r.configuration_id);
     if(Number(r.rate)===Number(allRows(view).find(r=>r.rate!==null)?.rate))return 'var(--best)';
-    return (c.model??'').includes('Astra')?'var(--astra)':c.kind==='external'?'var(--baseline)':'var(--blue)';
+    return c.kind==='external'?'var(--baseline)':'var(--blue)';
   }
   const allRows = view => view.record_ids.map(id=>records.get(id)).sort((a,b)=>
     a.rate===null?b.rate===null?a.id.localeCompare(b.id):1:b.rate===null?-1:Number(b.rate)-Number(a.rate)||a.id.localeCompare(b.id));

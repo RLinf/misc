@@ -2508,14 +2508,14 @@
       "configuration_id": "gpt-6-astra-low",
       "status": "reported",
       "rate": "59.20",
-      "successes": 148,
-      "episodes": 250,
+      "successes": null,
+      "episodes": 340,
       "source_ids": [
         "contributor-20260915",
         "contributor-settings-20260915",
-        "robocasa-astra-contributor-250-outcomes"
+        "robocasa-astra-contributor-correction-20260920"
       ],
-      "protocol_id": "contributor-target50-astra-five-seed"
+      "protocol_id": "rpent-robocasa"
     },
     {
       "id": "robotwin--gpt-5-5-xhigh",
@@ -2839,13 +2839,13 @@
       "configuration_id": "gpt-6-astra-low",
       "status": "reported",
       "rate": "87.78",
-      "successes": 79,
-      "episodes": 90,
+      "successes": null,
+      "episodes": 180,
       "source_ids": [
-        "robocasa-astra-contributor-250-outcomes",
+        "robocasa-astra-contributor-correction-20260920",
         "contributor-settings-20260915"
       ],
-      "protocol_id": "contributor-target50-astra-five-seed"
+      "protocol_id": "rpent-robocasa"
     },
     {
       "id": "robocasa-composite-seen--gpt-6-astra-low",
@@ -2853,13 +2853,13 @@
       "configuration_id": "gpt-6-astra-low",
       "status": "reported",
       "rate": "43.75",
-      "successes": 35,
+      "successes": null,
       "episodes": 80,
       "source_ids": [
-        "robocasa-astra-contributor-250-outcomes",
+        "robocasa-astra-contributor-correction-20260920",
         "contributor-settings-20260915"
       ],
-      "protocol_id": "contributor-target50-astra-five-seed"
+      "protocol_id": "rpent-robocasa"
     },
     {
       "id": "robocasa-composite-unseen--gpt-6-astra-low",
@@ -2867,13 +2867,13 @@
       "configuration_id": "gpt-6-astra-low",
       "status": "reported",
       "rate": "42.50",
-      "successes": 34,
+      "successes": null,
       "episodes": 80,
       "source_ids": [
-        "robocasa-astra-contributor-250-outcomes",
+        "robocasa-astra-contributor-correction-20260920",
         "contributor-settings-20260915"
       ],
-      "protocol_id": "contributor-target50-astra-five-seed"
+      "protocol_id": "rpent-robocasa"
     },
     {
       "id": "libero-pro--qwen3-6-27b-no-reasoning",
@@ -3156,45 +3156,28 @@
       }
     },
     {
-      "id": "robocasa-astra-contributor-250-outcomes",
-      "kind": "contributor_archive",
-      "artifact": "robocasa_astra.zip",
-      "sha256": "3ee89135bb69f0e6d29770f6103f4b53429481f9efde619ca6e7360597ce702c",
+      "id": "robocasa-astra-contributor-correction-20260920",
+      "kind": "contributor_correction",
+      "checked_at": "2026-09-20",
+      "protocol_url": "https://github.com/RLinf/RPent/blob/d14afccce78fb1bdbeba564fdd3ce7984c71bf2e/docs/source-en/rst_source/usage/robocasa.rst#harness-vla-target50-reproduction-protocol",
       "environment_split": "target",
       "tasks": 50,
-      "seeds": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "episodes": 250,
-      "successes": 148,
+      "episodes": 340,
       "groups": {
         "atomic": {
           "tasks": 18,
-          "successes": 79,
-          "episodes": 90,
-          "failures": 11,
-          "rate": "87.78"
+          "episodes": 180
         },
         "composite_seen": {
           "tasks": 16,
-          "successes": 35,
-          "episodes": 80,
-          "failures": 45,
-          "rate": "43.75"
+          "episodes": 80
         },
         "composite_unseen": {
           "tasks": 16,
-          "successes": 34,
-          "episodes": 80,
-          "failures": 46,
-          "rate": "42.50"
+          "episodes": 80
         }
       },
-      "note": "250 unique contributor result.json outcomes match summary.json and final trace terminated flags. Five seeds per task make task-weighted Overall equal to 148/250. This corrects the previously assumed 340-case denominator; no missing cases are inferred. Model settings retain contributor confirmation."
+      "note": "The contributor corrected the full evaluation to 340 cells on 2026-09-20. Split denominators follow the existing RPent Target50 matrix (180/80/80). Reported success rates remain unchanged; full-run success counts are not inferred from rounded or task-weighted rates. The earlier archive is retained as historical local evidence, not as verification of the corrected full-run counts."
     },
     {
       "id": "contributor-qwen-costs-20260918",
