@@ -102,6 +102,7 @@
   }
   function detailLabel(r) {
     const c=configs.get(r.configuration_id);
+    if(c.display_detail) return c.display_detail;
     if(c.perception_model) return `${c.perception_model} · ${lang==='en'?'visual localization':'视觉定位'}`;
     if(c.id==='aspire'&&r.status==='derived') return '';
     if(r.evaluation_note) return tr(r.evaluation_note);
@@ -147,7 +148,7 @@
   function renderSection(s) {
     const element=document.getElementById('panel-'+s.id);
     const note=tr(s.notes);
-    element.innerHTML=sectionBody(s)+(note?`<p class="scope-note">${h(note)}</p>`:'')+(s.context?`<p id="${s.id}-astra-memory" class="scope-note memory-context">${h(tr(s.context))}</p>`:'');
+    element.innerHTML=sectionBody(s)+(note?note.split('\n\n').map(paragraph=>`<p class="scope-note">${h(paragraph)}</p>`).join(''):'')+(s.context?`<p id="${s.id}-astra-memory" class="scope-note memory-context">${h(tr(s.context))}</p>`:'');
     setupTables(element,s.id);
   }
   function setupTables(element,key) {

@@ -102,3 +102,5 @@ noscript [data-costs]{display:none}
 noscript:has([data-costs]:target) [data-performance],noscript:has([data-costs] :target) [data-performance]{display:none}
 noscript:has([data-costs]:target) [data-costs],noscript:has([data-costs] :target) [data-costs]{display:block}
 @media(max-width:1000px){noscript .section-layout{display:block}noscript .module-directory{position:static;padding-bottom:16px}noscript .module-directory>summary{display:list-item;list-style-position:inside}}
+
+.benchmark-method small{display:block;font-size:12px;margin-top:4px}

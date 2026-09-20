@@ -29,6 +29,16 @@
       "effort": "low"
     },
     {
+      "id": "gpt-6-astra-low-motor-only",
+      "kind": "rpent",
+      "backend": "Codex",
+      "model": "GPT-6 Astra",
+      "reasoning": true,
+      "effort": "low",
+      "display_name": "RPent/GPT-6 Motor Only",
+      "display_detail": "codex low reasoning"
+    },
+    {
       "id": "openvla",
       "kind": "external",
       "backend": null,
@@ -460,7 +470,8 @@
         "long-task--pi-rlinf",
         "long-task--aspire",
         "long-task--rpent-flash-mode",
-        "long-task--qwen3-6-27b-no-reasoning"
+        "long-task--qwen3-6-27b-no-reasoning",
+        "long-task--gpt-6-astra-low-motor-only"
       ]
     },
     {
@@ -2991,6 +3002,19 @@
         "contributor-qwen-costs-20260918"
       ],
       "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "long-task--gpt-6-astra-low-motor-only",
+      "view_id": "long-task",
+      "configuration_id": "gpt-6-astra-low-motor-only",
+      "status": "reported",
+      "rate": "38.0",
+      "successes": 38,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-motor-only-long-task-20260920"
+      ],
+      "protocol_id": "rpent-pro-motor-only"
     }
   ],
   "sources": [
@@ -3183,6 +3207,11 @@
       "id": "contributor-qwen-costs-20260918",
       "type": "contributor_report",
       "note": "Contributor-provided Qwen eight-suite counts and cost table. Mean elapsed time includes all evaluation episodes (success, failure, and timeout); tokens count evaluation-stage output only. No unreported planner, hardware, or token accounting details are inferred."
+    },
+    {
+      "id": "contributor-motor-only-long-task-20260920",
+      "type": "contributor_report",
+      "note": "Contributor-reported complete Long Task evaluation on another server: 38 successes in 100 episodes. Codex / GPT-6 Astra / low reasoning; execute_action motor-only control without VLA / primitives or memory. This aggregate is independent of the incomplete local motor-only campaign; no unreported suite, runtime, or token measurements are inferred."
     }
   ],
   "astra": {
@@ -3323,8 +3352,8 @@
         "zh": "Astra · low · reasoning：92.63%（741/800）"
       },
       "context": {
-        "en": "GPT-6 Astra: Long Task/Swap and the other six suites use separate memory-file snapshots frozen after their respective exploration phases, with no updates during evaluation. Overall combines two non-overlapping batches: Long 157/200 plus the other suites 584/600, giving 741/800 (92.63%); the 800 episodes do not share a single memory snapshot.",
-        "zh": "GPT-6 Astra：Long Task/Swap 与其余六套件使用各自探索后冻结的 memory 文件快照，评测期间不更新。Overall 合并两个不重叠批次：Long 157/200，加上其余套件 584/600，得到 741/800（92.63%）；并非全部回合共享同一份 memory 快照。"
+        "en": "GPT-6 Astra (memory-enabled configuration): Long Task/Swap and the other six suites use separate memory-file snapshots frozen after their respective exploration phases, with no updates during evaluation. Overall combines two non-overlapping batches: Long 157/200 plus the other suites 584/600, giving 741/800 (92.63%); the 800 episodes do not share a single memory snapshot.",
+        "zh": "GPT-6 Astra（使用 memory 的配置）：Long Task/Swap 与其余六套件使用各自探索后冻结的 memory 文件快照，评测期间不更新。Overall 合并两个不重叠批次：Long 157/200，加上其余套件 584/600，得到 741/800（92.63%）；并非全部回合共享同一份 memory 快照。"
       },
       "default_view": "libero-pro",
       "views": [
@@ -3339,8 +3368,8 @@
         "long-swap"
       ],
       "notes": {
-        "en": "ASPIRE: Long Task and Long Swap use zero-shot transfer from the LIBERO-90 skill library.",
-        "zh": "ASPIRE：Long Task 和 Long Swap 使用 LIBERO-90 技能库进行 zero-shot 迁移。"
+        "en": "ASPIRE: Long Task and Long Swap use zero-shot transfer from the LIBERO-90 skill library.\n\nRPent/GPT-6 Motor Only uses motor-only control: it directly outputs end-effector pose increments and gripper commands through execute_action, without invoking VLA / primitives or loading memory.\n\nLong Task: 38/100.",
+        "zh": "ASPIRE：Long Task 和 Long Swap 使用 LIBERO-90 技能库进行 zero-shot 迁移。\n\nRPent/GPT-6 Motor Only为纯电机控制方法：通过 execute_action 直接输出末端位姿增量与夹爪指令，不调用 VLA / primitive，不加载 memory\n\nLong Task：38/100。"
       }
     },
     {
