@@ -65,12 +65,14 @@ button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible,
 .section-nav{display:flex;flex-wrap:wrap;gap:12px 28px;padding-top:12px;padding-bottom:18px;font-size:22px;font-weight:600}
 .section-nav a{color:var(--muted);text-decoration:none}.section-nav a[aria-current]{color:var(--best);text-decoration:underline}
 :host([data-separate-pages="true"]) .section-nav{display:none}
-.page-header{padding-bottom:20px}.page-header .brand{font-size:36px;font-weight:500}
+.page-header{padding-bottom:24px}.page-header .brand{font-size:24px;font-weight:400;margin:0 0 8px}
+.page-header .masthead{align-items:flex-start;justify-content:space-between;gap:20px}.page-titles{min-width:0}
+.page-section-title,.cost-section .page-section-title{font:700 44px/1.2 var(--serif);margin:0;overflow-wrap:break-word}
 :host([data-embedded="true"]) .page-header .brand{display:none}
-:host([data-embedded="true"]) .masthead{justify-content:flex-end}
+:host([data-embedded="true"]) .page-header{padding-top:0}
 .performance-section,.cost-section{background:var(--band);border:0;padding:0}
 .section-layout{max-width:var(--content-max);margin:auto;padding:24px var(--gutter) 32px;display:grid;grid-template-columns:160px minmax(0,1fr);gap:32px;align-items:start}
-.section-results{min-width:0}.section-title,.cost-section .section-title{font:700 36px/1.25 var(--serif);padding:8px 24px 24px;margin:0}
+.section-results{min-width:0}
 .module-directory{position:sticky;top:calc(var(--module-top) + 12px);align-self:start;z-index:8;background:var(--band);min-width:0;padding-top:12px}
 .module-directory>summary{display:none;cursor:pointer;padding:12px 8px;font-size:16px;font-weight:600}
 .module-nav{display:flex;flex-direction:column;gap:4px;font-size:16px}
@@ -89,11 +91,12 @@ button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible,
 #main[data-compact="true"] .module-directory>summary{display:list-item;list-style-position:inside}
 #main[data-compact="true"] .module-nav{padding:0 8px 8px}
 #main[data-compact="true"] .section-results .benchmark-shell,#main[data-compact="true"] .section-results .cost-group>.section-inner{padding-inline:0}
-#main[data-compact="true"] .section-title{padding-left:0;padding-right:0}
-@media(max-width:700px){.page-header .brand{font-size:28px}.section-nav{font-size:18px}.section-title,.cost-section .section-title{font-size:28px}.benchmark-wordmark,[data-benchmark] .module-header h3,.cost-group h3{font-size:22px}}
+@media(max-width:700px){.page-header .brand{font-size:20px}.page-header .masthead{flex-wrap:wrap;gap:12px}.page-titles{flex-basis:100%}.page-section-title,.cost-section .page-section-title{font-size:32px}.section-nav{font-size:18px}.benchmark-wordmark,[data-benchmark] .module-header h3,.cost-group h3{font-size:22px}}
 @media print{.section-nav,.module-directory{display:none}.section-layout{display:block}.module-header{position:static}}
 footer{padding-inline:max(var(--gutter),calc((100% - var(--content-max))/2 + var(--gutter)))}
 noscript .section-layout{padding-inline:0}noscript .module-header{position:static}
+noscript .brand{font-size:24px;font-weight:400}noscript .page-section-title{padding:12px 0 24px}
+@media(max-width:700px){noscript .brand{font-size:20px}}
 noscript [data-benchmark]{border-top:4px solid var(--best);padding:12px 24px 24px}
 noscript [data-benchmark]:last-child{border-bottom:4px solid var(--best)}
 noscript .cost-group{padding-inline:24px}
@@ -102,5 +105,5 @@ noscript:has([data-costs]:target) [data-performance],noscript:has([data-costs] :
 noscript:has([data-costs]:target) [data-costs],noscript:has([data-costs] :target) [data-costs]{display:block}
 @media(max-width:1000px){noscript .section-layout{display:block}noscript .module-directory{position:static;padding-bottom:16px}noscript .module-directory>summary{display:list-item;list-style-position:inside}}
 
-:host .page-header{padding-top:12px;scroll-margin-top:48px}:host .title-row{display:none}
+:host .page-header{padding-top:0;scroll-margin-top:48px}:host .title-row{display:none}
 @media(max-width:959.98px){:host{--module-top:52px}}

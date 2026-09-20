@@ -153,7 +153,7 @@
     const element=document.getElementById('time-token-costs');
     const groups=costGroups;
     const methodOrder=new Map(d.cost_method_order.map((id,i)=>[id,i]));
-    element.innerHTML=`<div class="section-layout"><details class="module-directory" open><summary>${t('environments')}</summary><nav class="module-nav" aria-label="Time &amp; Token Costs">${groups.map(([id,name])=>`<a href="#costs-${id}">${name}</a>`).join('')}</nav></details><div class="section-results"><h2 id="costs-heading" class="section-title">Time &amp; Token Costs</h2>${groups.map(([id,name])=>{
+    element.innerHTML=`<div class="section-layout"><details class="module-directory" open><summary>${t('environments')}</summary><nav class="module-nav" aria-label="Time &amp; Token Costs">${groups.map(([id,name])=>`<a href="#costs-${id}">${name}</a>`).join('')}</nav></details><div class="section-results">${groups.map(([id,name])=>{
       const rows=d.cost_results.filter(r=>r.benchmark_id===id).sort((a,b)=>(methodOrder.get(a.configuration_id)??Infinity)-(methodOrder.get(b.configuration_id)??Infinity)||a.id.localeCompare(b.id));
       return `<section id="costs-${id}" class="cost-group" data-cost-group="${id}"><div class="section-inner"><details data-module="costs-${id}"${collapsedModules.has('costs-'+id)?'':' open'}><summary class="module-header"><h3>${name}</h3></summary><div class="module-content"><div class="table-wrap" tabindex="0" role="region" aria-label="${name} Time &amp; Token Costs"><table data-sort-key="costs-${id}" data-sortable="false" data-highlight-best="false"><thead><tr><th>${t('method')}</th><th class="rate">${t('meanTime')}</th><th class="rate">${t('outputTokens')}</th></tr></thead><tbody>${rows.map(r=>{
         return `<tr data-cost-record="${r.id}" data-method="${r.configuration_id}"><td><div class="matrix-label"><span>${h(label(r))}<small> ${h(detailLabel(r))}</small></span></div></td><td class="rate" data-value="${r.mean_elapsed_seconds}">${r.mean_elapsed_seconds.toLocaleString('en-US')}</td><td class="rate" data-value="${r.total_output_tokens}">${r.total_output_tokens.toLocaleString('en-US')}</td></tr>`;
@@ -215,6 +215,7 @@
   }
   function updateSection(){
     for(const id of ['performance','time-token-costs'])document.getElementById(id).hidden=id!==activeSection;
+    document.getElementById('page-section-heading').textContent=activeSection==='performance'?'Performance':'Time & Token Costs';
     document.querySelectorAll('.section-nav a').forEach(a=>{
       if(a.hash.slice(1)===activeSection)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
     });
