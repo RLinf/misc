@@ -35,8 +35,7 @@
       "model": "GPT-6 Astra",
       "reasoning": true,
       "effort": "low",
-      "display_name": "RPent / GPT-6 Motor Only",
-      "display_detail": "codex low reasoning"
+      "display_name": "RPent / GPT-6 Motor Only"
     },
     {
       "id": "openvla",

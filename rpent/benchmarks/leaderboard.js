@@ -102,7 +102,6 @@
   }
   function detailLabel(r) {
     const c=configs.get(r.configuration_id);
-    if(c.display_detail) return c.display_detail;
     if(c.perception_model) return `${c.perception_model} · ${lang==='en'?'visual localization':'视觉定位'}`;
     if(c.id==='aspire'&&r.status==='derived') return '';
     if(r.evaluation_note) return tr(r.evaluation_note);
