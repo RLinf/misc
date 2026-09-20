@@ -35,7 +35,7 @@
       "model": "GPT-6 Astra",
       "reasoning": true,
       "effort": "low",
-      "display_name": "RPent/GPT-6 Motor Only",
+      "display_name": "RPent / GPT-6 Motor Only",
       "display_detail": "codex low reasoning"
     },
     {
@@ -3368,8 +3368,8 @@
         "long-swap"
       ],
       "notes": {
-        "en": "ASPIRE: Long Task and Long Swap use zero-shot transfer from the LIBERO-90 skill library.\n\nRPent/GPT-6 Motor Only uses motor-only control: it directly outputs end-effector pose increments and gripper commands through execute_action, without invoking VLA / primitives or loading memory.\n\nLong Task: 38/100.",
-        "zh": "ASPIRE：Long Task 和 Long Swap 使用 LIBERO-90 技能库进行 zero-shot 迁移。\n\nRPent/GPT-6 Motor Only为纯电机控制方法：通过 execute_action 直接输出末端位姿增量与夹爪指令，不调用 VLA / primitive，不加载 memory\n\nLong Task：38/100。"
+        "en": "ASPIRE: Long Task and Long Swap use zero-shot transfer from the LIBERO-90 skill library.\n\nRPent / GPT-6 Motor Only uses motor-only control: it directly outputs end-effector pose increments and gripper commands through execute_action, without invoking VLA / primitives or loading memory.",
+        "zh": "ASPIRE：Long Task 和 Long Swap 使用 LIBERO-90 技能库进行 zero-shot 迁移。\n\nRPent / GPT-6 Motor Only 为纯电机控制方法，通过 execute_action 直接输出末端位姿增量与夹爪指令，不调用 VLA / primitive，不加载 memory"
       }
     },
     {
