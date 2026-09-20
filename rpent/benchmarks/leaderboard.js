@@ -36,6 +36,8 @@
   "en": {
     "paper": "Paper",
     "title": "RPent Leaderboard",
+    "performance": "Performance",
+    "costs": "Time & Token Costs",
     "backTop": "Back to top ↑",
     "view": "Evaluation",
     "rate": "Success rate",
@@ -56,7 +58,9 @@
   },
   "zh": {
     "paper": "论文",
-    "title": "RPent Leaderboard",
+    "title": "RPent 排行榜",
+    "performance": "评测成绩",
+    "costs": "耗时与 Token 开销",
     "backTop": "返回顶部 ↑",
     "view": "评测范围",
     "rate": "成功率",
@@ -153,9 +157,9 @@
     const element=document.getElementById('time-token-costs');
     const groups=costGroups;
     const methodOrder=new Map(d.cost_method_order.map((id,i)=>[id,i]));
-    element.innerHTML=`<div class="section-layout"><details class="module-directory" open><summary>${t('environments')}</summary><nav class="module-nav" aria-label="Time &amp; Token Costs">${groups.map(([id,name])=>`<a href="#costs-${id}">${name}</a>`).join('')}</nav></details><div class="section-results">${groups.map(([id,name])=>{
+    element.innerHTML=`<div class="section-layout"><details class="module-directory" open><summary>${t('environments')}</summary><nav class="module-nav" aria-label="${h(t('costs'))}">${groups.map(([id,name])=>`<a href="#costs-${id}">${name}</a>`).join('')}</nav></details><div class="section-results">${groups.map(([id,name])=>{
       const rows=d.cost_results.filter(r=>r.benchmark_id===id).sort((a,b)=>(methodOrder.get(a.configuration_id)??Infinity)-(methodOrder.get(b.configuration_id)??Infinity)||a.id.localeCompare(b.id));
-      return `<section id="costs-${id}" class="cost-group" data-cost-group="${id}"><div class="section-inner"><details data-module="costs-${id}"${collapsedModules.has('costs-'+id)?'':' open'}><summary class="module-header"><h3>${name}</h3></summary><div class="module-content"><div class="table-wrap" tabindex="0" role="region" aria-label="${name} Time &amp; Token Costs"><table data-sort-key="costs-${id}" data-sortable="false" data-highlight-best="false"><thead><tr><th>${t('method')}</th><th class="rate">${t('meanTime')}</th><th class="rate">${t('outputTokens')}</th></tr></thead><tbody>${rows.map(r=>{
+      return `<section id="costs-${id}" class="cost-group" data-cost-group="${id}"><div class="section-inner"><details data-module="costs-${id}"${collapsedModules.has('costs-'+id)?'':' open'}><summary class="module-header"><h3>${name}</h3></summary><div class="module-content"><div class="table-wrap" tabindex="0" role="region" aria-label="${name} ${h(t('costs'))}"><table data-sort-key="costs-${id}" data-sortable="false" data-highlight-best="false"><thead><tr><th>${t('method')}</th><th class="rate">${t('meanTime')}</th><th class="rate">${t('outputTokens')}</th></tr></thead><tbody>${rows.map(r=>{
         return `<tr data-cost-record="${r.id}" data-method="${r.configuration_id}"><td><div class="matrix-label"><span>${h(label(r))}<small> ${h(detailLabel(r))}</small></span></div></td><td class="rate" data-value="${r.mean_elapsed_seconds}">${r.mean_elapsed_seconds.toLocaleString('en-US')}</td><td class="rate" data-value="${r.total_output_tokens}">${r.total_output_tokens.toLocaleString('en-US')}</td></tr>`;
       }).join('')}</tbody></table></div></div></details></div></section>`;
     }).join('')}</div></div>`;
@@ -166,8 +170,9 @@
       if(el.open)collapsedModules.delete(el.dataset.module);else collapsedModules.add(el.dataset.module);
     });
     (options.embedded?document.host:document.documentElement).lang=lang==='en'?'en':'zh-CN';
-    if(!options.embedded)document.title='RPent Leaderboard';
+    if(!options.embedded)document.title=t('title');
     document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
+    document.querySelectorAll('[data-i18n-label]').forEach(el=>el.setAttribute('aria-label',t(el.dataset.i18nLabel)));
     const language=document.getElementById('language');language.textContent=lang==='en'?'中文':'English';language.lang=lang==='en'?'zh-CN':'en';language.setAttribute('aria-label',lang==='en'?'切换为中文':'Switch to English');
     document.getElementById('leaderboards').innerHTML=d.sections.filter(s=>!s.parent).map(s=>`<section id="${s.id}" class="benchmark-band"><div class="benchmark-shell"><details data-module="${s.id}"${collapsedModules.has(s.id)?'':' open'}><summary class="module-header"><h3 class="benchmark-wordmark">${h(s.name)}</h3></summary><div class="module-content"><div id="panel-${s.id}"></div>${d.sections.filter(c=>c.parent===s.id).map(c=>`<section id="${c.id}" class="benchmark-subsection"><div id="panel-${c.id}"></div></section>`).join('')}</div></details></div></section>`).join('');
     d.sections.forEach(renderSection);renderCosts();updateSection();observeNavigation();hideTooltip();
@@ -215,7 +220,7 @@
   }
   function updateSection(){
     for(const id of ['performance','time-token-costs'])document.getElementById(id).hidden=id!==activeSection;
-    document.getElementById('page-section-heading').textContent=activeSection==='performance'?'Performance':'Time & Token Costs';
+    document.getElementById('page-section-heading').textContent=t(activeSection==='performance'?'performance':'costs');
     document.querySelectorAll('.section-nav a').forEach(a=>{
       if(a.hash.slice(1)===activeSection)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
     });
