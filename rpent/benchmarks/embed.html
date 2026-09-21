@@ -1,16 +1,29 @@
 
-  <a class="skip-link" href="#libero-pro">Skip to results</a>
+  <a class="skip-link" href="#performance">Skip to results</a>
   <header class="page-header" id="top">
     <div class="masthead">
-      <a class="brand" href="#top" aria-label="RPent Leaderboard">RPent Leaderboard</a>
+      <div class="page-titles">
+        <h1 class="brand" data-i18n="title">RPent Leaderboard</h1>
+        <h2 id="page-section-heading" class="page-section-title">Performance</h2>
+      </div>
       <div class="header-links"><a href="https://github.com/RLinf/RPent" target="_blank" rel="noopener">GitHub</a><a href="https://arxiv.org/abs/2607.08448v4" target="_blank" rel="noopener" data-i18n="paper">论文</a><button id="language" type="button" lang="en" aria-label="Switch to English">English</button></div>
     </div>
-    <div class="title-row"><h1 data-i18n="title">RPent Leaderboard</h1></div>
-    <nav class="bench-nav" aria-label="Leaderboards"><a href="#libero-pro">LIBERO-PRO</a><a href="#standard-libero">LIBERO</a><a href="#robocasa">RoboCasa365</a><a href="#robotwin">RoboTwin</a></nav>
   </header>
   <main id="main">
-    <div id="leaderboards"></div>
+    <nav class="section-nav section-inner" aria-label="Sections"><a href="#performance" data-i18n="performance">Performance</a><a href="#time-token-costs" data-i18n="costs">Time &amp; Token Costs</a></nav>
+    <section id="performance" class="performance-section" aria-label="Performance" data-i18n-label="performance">
+      <div class="section-layout">
+        <details class="module-directory" open>
+          <summary data-i18n="environments">环境</summary>
+          <nav class="module-nav" aria-label="Performance" data-i18n-label="performance"><a href="#libero-pro">LIBERO-PRO</a><a href="#standard-libero">LIBERO</a><a href="#robocasa">RoboCasa365</a><a href="#robotwin">RoboTwin</a></nav>
+        </details>
+        <div class="section-results">
+          <div id="leaderboards"></div>
+        </div>
+      </div>
+    </section>
+    <section id="time-token-costs" class="cost-section" aria-label="Time &amp; Token Costs" data-i18n-label="costs"></section>
   </main>
-  <footer><span>RPent Leaderboard</span><a href="#top" data-i18n="backTop">返回顶部</a></footer>
+  <footer><span data-i18n="title">RPent Leaderboard</span><a href="#top" data-i18n="backTop">返回顶部</a></footer>
   <div id="chart-tooltip" class="chart-tooltip" role="tooltip" hidden></div>
   <p id="announcement" class="sr-only" aria-live="polite"></p>

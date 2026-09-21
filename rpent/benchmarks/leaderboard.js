@@ -4,6 +4,7 @@
   function mount(root, d, options={}) {
   const pageDocument=globalThis.document;
   const themeTarget=options.embedded?root.host:root.documentElement;
+  themeTarget.dataset.embedded=Boolean(options.embedded).toString();
   const systemTheme=window.matchMedia('(prefers-color-scheme: dark)');
   const syncTheme=()=>{
     const theme=options.embedded?pageDocument.documentElement.dataset.theme:null;
@@ -21,6 +22,12 @@
   const configs = new Map(d.configurations.map(c => [c.id, c]));
   const records = new Map(d.results.map(r => [r.id, r]));
   const selection = new Map(d.sections.map(s => [s.id, s.default_view]));
+  const costGroups=[['libero-pro','LIBERO-PRO'],['robocasa','RoboCasa365'],['robotwin','RoboTwin']];
+  const collapsedModules = new Set([...d.sections.map(s=>s.id),...costGroups.map(([id])=>'costs-'+id)]);
+  const normalizeAnchor=hash=>hash.replace(/^#/, '').replace(/^native-/, '');
+  const sectionForAnchor=id=>id==='time-token-costs'||id.startsWith('costs-')?'time-token-costs':id&&id!=='top'?'performance':null;
+  let activeSection=options.section??sectionForAnchor(normalizeAnchor(location.hash))??(query.get('section')==='time-token-costs'?'time-token-costs':'performance');
+  const activeModules=new Map();
   if (views.has(query.get('view'))) {
     const s = d.sections.find(s => s.views.includes(query.get('view')));
     if (s) selection.set(s.id, query.get('view'));
@@ -29,38 +36,48 @@
   "en": {
     "paper": "Paper",
     "title": "RPent Leaderboard",
+    "performance": "Performance",
+    "costs": "Time & Token Costs",
     "backTop": "Back to top ↑",
     "view": "Evaluation",
     "rate": "Success rate",
-    "method": "Method / model",
+    "method": "Method",
+    "meanTime": "Mean time / episode (s)",
+    "outputTokens": "Total output tokens",
     "unreported": "Not reported",
     "modelUnknown": "Model not reported",
-    "noReasoning": "no reasoning",
+    "noReasoning": "no-reasoning",
     "table": "Results table",
     "download": "Download CSV",
     "print": "Print page",
     "menu": "Chart options",
     "countsOnly": "Evaluated",
     "saved": "CSV downloaded",
-    "allScores": "All methods & reported scores"
+    "allScores": "All methods & reported scores",
+    "environments": "Environments"
   },
   "zh": {
     "paper": "论文",
-    "title": "RPent Leaderboard",
+    "title": "RPent 排行榜",
+    "performance": "评测成绩",
+    "costs": "耗时与 Token 开销",
     "backTop": "返回顶部 ↑",
     "view": "评测范围",
     "rate": "成功率",
-    "method": "方法 / 模型",
+    "method": "方法",
+    "meanTime": "平均每回合耗时（秒）",
+    "outputTokens": "总输出 token",
     "unreported": "未报告",
     "modelUnknown": "未报告模型",
-    "noReasoning": "无推理",
+    "noReasoning": "no-reasoning",
     "table": "结果明细表",
     "download": "下载 CSV",
     "print": "打印页面",
     "menu": "图表选项",
     "countsOnly": "已评测",
     "saved": "CSV 已下载",
-    "allScores": "完整方法与分项成绩"
+    "allScores": "完整方法与分项成绩",
+    "environments": "环境"
   }
 };
   const t = key => copy[lang][key] ?? key;
@@ -95,7 +112,7 @@
   function color(r, view) {
     const c=configs.get(r.configuration_id);
     if(Number(r.rate)===Number(allRows(view).find(r=>r.rate!==null)?.rate))return 'var(--best)';
-    return (c.model??'').includes('Astra')?'var(--astra)':c.kind==='external'?'var(--baseline)':'var(--blue)';
+    return c.kind==='external'?'var(--baseline)':'var(--blue)';
   }
   const allRows = view => view.record_ids.map(id=>records.get(id)).sort((a,b)=>
     a.rate===null?b.rate===null?a.id.localeCompare(b.id):1:b.rate===null?-1:Number(b.rate)-Number(a.rate)||a.id.localeCompare(b.id));
@@ -117,7 +134,7 @@
     const rows=d.configurations.filter(c=>columns.some(v=>v.record_ids.some(id=>records.get(id).configuration_id===c.id&&records.get(id).rate!==null)));
     return `<details class="comparison-matrix" data-details="${s.id}"><summary>${t('allScores')} <span>${rows.length} ${lang==='en'?'configurations':'配置'}</span></summary><div class="table-wrap" tabindex="0" role="region" aria-label="${h(s.name+' '+t('allScores'))}"><table><thead><tr><th>${t('method')}</th>${columns.map(v=>`<th class="rate">${h(tr(v.label))}</th>`).join('')}</tr></thead><tbody>${rows.map(c=>{
       const sample=columns.flatMap(allRows).find(r=>r.configuration_id===c.id&&r.rate!==null);
-      return `<tr data-method="${c.id}"><th scope="row"><div class="matrix-label"><span>${h(label(sample))}<small>${h(detailLabel(sample))}</small></span></div></th>${columns.map(v=>{
+      return `<tr data-method="${c.id}"><th scope="row"><div class="matrix-label"><span>${h(label(sample))}<small> ${h(detailLabel(sample))}</small></span></div></th>${columns.map(v=>{
         const r=allRows(v).find(r=>r.configuration_id===c.id);
         return `<td class="rate"${r?` data-matrix-record="${r.id}"`:''} title="${h(tr(r?.evaluation_note)||tr(v.label))}">${r?.rate!=null?r.rate+'%':`<span class="not-reported" aria-label="${t('unreported')}">—</span>`}</td>`;
       }).join('')}</tr>`;
@@ -125,24 +142,40 @@
   }
   function sectionBody(s) {
     const view=views.get(selection.get(s.id));
-    return `<div class="subsection-heading"><h3>${h(tr(s.heading))}</h3>${s.summary?`<p>${h(tr(s.summary))}</p>`:''}</div><div class="chart-tools"><div class="view-controls"><label for="view-${s.id}">${t('view')}</label><select id="view-${s.id}" data-section="${s.id}" aria-label="${h(s.name+' '+t('view'))}">${s.views.map(id=>`<option value="${id}"${view.id===id?' selected':''}>${h(tr(views.get(id).label))}</option>`).join('')}</select></div><div class="chart-menu"><button type="button" class="icon-button" data-menu="${s.id}" aria-haspopup="menu" aria-expanded="false" aria-controls="menu-${s.id}" aria-label="${t('menu')}" title="${t('menu')}"><img src="${asset('ellipsis.svg')}" alt=""></button><div class="menu-options" id="menu-${s.id}" role="menu" hidden><button role="menuitem" data-action="csv" data-section="${s.id}">${t('download')}</button><button role="menuitem" data-action="table" data-section="${s.id}">${t('table')}</button><button role="menuitem" data-action="print">${t('print')}</button></div></div></div>${chart(view)}${comparisonMatrix(s)}`;
+    return `<div class="subsection-heading"><h4>${h(tr(s.heading))}</h4>${s.summary?`<p>${h(tr(s.summary))}</p>`:''}</div><div class="chart-tools"><div class="view-controls"><label for="view-${s.id}">${t('view')}</label><select id="view-${s.id}" data-section="${s.id}" aria-label="${h(s.name+' '+t('view'))}">${s.views.map(id=>`<option value="${id}"${view.id===id?' selected':''}>${h(tr(views.get(id).label))}</option>`).join('')}</select></div><div class="chart-menu"><button type="button" class="icon-button" data-menu="${s.id}" aria-haspopup="menu" aria-expanded="false" aria-controls="menu-${s.id}" aria-label="${t('menu')}" title="${t('menu')}"><img src="${asset('ellipsis.svg')}" alt=""></button><div class="menu-options" id="menu-${s.id}" role="menu" hidden><button role="menuitem" data-action="csv" data-section="${s.id}">${t('download')}</button><button role="menuitem" data-action="table" data-section="${s.id}">${t('table')}</button><button role="menuitem" data-action="print">${t('print')}</button></div></div></div>${chart(view)}${comparisonMatrix(s)}`;
   }
   function renderSection(s) {
     const element=document.getElementById('panel-'+s.id);
     const note=tr(s.notes);
-    element.innerHTML=sectionBody(s)+(note?`<p class="scope-note">${h(note)}</p>`:'')+(s.context?`<p id="${s.id}-astra-memory" class="scope-note memory-context">${h(tr(s.context))}</p>`:'');
+    element.innerHTML=sectionBody(s)+(note?note.split('\n\n').map(paragraph=>`<p class="scope-note">${h(paragraph)}</p>`).join(''):'')+(s.context?`<p id="${s.id}-astra-memory" class="scope-note memory-context">${h(tr(s.context))}</p>`:'');
     setupTables(element,s.id);
   }
   function setupTables(element,key) {
     window.RPentTables.setup(element,{key,language:lang,icon:asset('arrow-down.svg'),download:asset('download.svg')});
   }
+  function renderCosts() {
+    const element=document.getElementById('time-token-costs');
+    const groups=costGroups;
+    const methodOrder=new Map(d.cost_method_order.map((id,i)=>[id,i]));
+    element.innerHTML=`<div class="section-layout"><details class="module-directory" open><summary>${t('environments')}</summary><nav class="module-nav" aria-label="${h(t('costs'))}">${groups.map(([id,name])=>`<a href="#costs-${id}">${name}</a>`).join('')}</nav></details><div class="section-results">${groups.map(([id,name])=>{
+      const rows=d.cost_results.filter(r=>r.benchmark_id===id).sort((a,b)=>(methodOrder.get(a.configuration_id)??Infinity)-(methodOrder.get(b.configuration_id)??Infinity)||a.id.localeCompare(b.id));
+      return `<section id="costs-${id}" class="cost-group" data-cost-group="${id}"><div class="section-inner"><details data-module="costs-${id}"${collapsedModules.has('costs-'+id)?'':' open'}><summary class="module-header"><h3>${name}</h3></summary><div class="module-content"><div class="table-wrap" tabindex="0" role="region" aria-label="${name} ${h(t('costs'))}"><table data-sort-key="costs-${id}" data-sortable="false" data-highlight-best="false"><thead><tr><th>${t('method')}</th><th class="rate">${t('meanTime')}</th><th class="rate">${t('outputTokens')}</th></tr></thead><tbody>${rows.map(r=>{
+        return `<tr data-cost-record="${r.id}" data-method="${r.configuration_id}"><td><div class="matrix-label"><span>${h(label(r))}<small> ${h(detailLabel(r))}</small></span></div></td><td class="rate" data-value="${r.mean_elapsed_seconds}">${r.mean_elapsed_seconds.toLocaleString('en-US')}</td><td class="rate" data-value="${r.total_output_tokens}">${r.total_output_tokens.toLocaleString('en-US')}</td></tr>`;
+      }).join('')}</tbody></table></div></div></details></div></section>`;
+    }).join('')}</div></div>`;
+    setupTables(element,'costs');
+  }
   function render() {
+    document.querySelectorAll('details[data-module]').forEach(el=>{
+      if(el.open)collapsedModules.delete(el.dataset.module);else collapsedModules.add(el.dataset.module);
+    });
     (options.embedded?document.host:document.documentElement).lang=lang==='en'?'en':'zh-CN';
-    if(!options.embedded)document.title='RPent Leaderboard';
+    if(!options.embedded)document.title=t('title');
     document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
+    document.querySelectorAll('[data-i18n-label]').forEach(el=>el.setAttribute('aria-label',t(el.dataset.i18nLabel)));
     const language=document.getElementById('language');language.textContent=lang==='en'?'中文':'English';language.lang=lang==='en'?'zh-CN':'en';language.setAttribute('aria-label',lang==='en'?'切换为中文':'Switch to English');
-    document.getElementById('leaderboards').innerHTML=d.sections.filter(s=>!s.parent).map(s=>`<section id="${s.id}" class="benchmark-band"><div class="benchmark-shell"><h2 class="benchmark-wordmark">${h(s.name)}</h2><div id="panel-${s.id}"></div>${d.sections.filter(c=>c.parent===s.id).map(c=>`<section id="${c.id}" class="benchmark-subsection"><div id="panel-${c.id}"></div></section>`).join('')}</div></section>`).join('');
-    d.sections.forEach(renderSection);hideTooltip();
+    document.getElementById('leaderboards').innerHTML=d.sections.filter(s=>!s.parent).map(s=>`<section id="${s.id}" class="benchmark-band"><div class="benchmark-shell"><details data-module="${s.id}"${collapsedModules.has(s.id)?'':' open'}><summary class="module-header"><h3 class="benchmark-wordmark">${h(s.name)}</h3></summary><div class="module-content"><div id="panel-${s.id}"></div>${d.sections.filter(c=>c.parent===s.id).map(c=>`<section id="${c.id}" class="benchmark-subsection"><div id="panel-${c.id}"></div></section>`).join('')}</div></details></div></section>`).join('');
+    d.sections.forEach(renderSection);renderCosts();updateSection();observeNavigation();hideTooltip();
   }
   function downloadCSV(rows, name) {
     const keys=['record_id','benchmark','view','method','model','planner','perception_model','reasoning','effort','success_rate_percent','successes','episodes','status','evaluation_note'];
@@ -159,6 +192,65 @@
     document.querySelectorAll('[data-menu][aria-expanded="true"]').forEach(button=>{document.getElementById('menu-'+button.dataset.menu).hidden=true;button.setAttribute('aria-expanded','false');if(focus)button.focus();});
   }
   const tip=document.getElementById('chart-tooltip');
+  const main=document.getElementById('main');
+  themeTarget.dataset.separatePages=Boolean(options.section).toString();
+  let compact=null;
+  const syncNavHeight=()=>{
+    const next=main.getBoundingClientRect().width<820;
+    main.dataset.compact=String(next);
+    if(compact!==next){
+      document.querySelectorAll('.module-directory').forEach(directory=>directory.open=!next);
+      compact=next;
+    }
+    const directory=document.getElementById(activeSection).querySelector('.module-directory');
+    themeTarget.style.setProperty('--directory-height',next?directory.getBoundingClientRect().height+'px':'0px');
+  };
+  const navObserver=new ResizeObserver(syncNavHeight);
+  function observeNavigation(){
+    navObserver.disconnect();navObserver.observe(main);
+    document.querySelectorAll('.module-directory').forEach(directory=>{directory.open=!compact;navObserver.observe(directory);});
+    syncNavHeight();
+  }
+  function markModule(id){
+    if(id)activeModules.set(activeSection,id);
+    document.querySelectorAll('.module-nav a').forEach(a=>{
+      if(a.hash.slice(1)===activeModules.get(activeSection))a.setAttribute('aria-current','location');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  function updateSection(){
+    for(const id of ['performance','time-token-costs'])document.getElementById(id).hidden=id!==activeSection;
+    document.getElementById('page-section-heading').textContent=t(activeSection==='performance'?'performance':'costs');
+    document.querySelectorAll('.section-nav a').forEach(a=>{
+      if(a.hash.slice(1)===activeSection)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
+    });
+    document.querySelector('.skip-link').href='#'+activeSection;
+    markModule();
+  }
+  function revealTarget(target) {
+    if(target.matches('.benchmark-band,.cost-group')){
+      const module=target.querySelector('details[data-module]');
+      if(module){module.open=true;collapsedModules.delete(module.dataset.module);}
+    }
+    for(let node=target.parentElement;node;node=node.parentElement){
+      if(node.matches('details'))node.open=true;
+    }
+    const group=target.closest('.benchmark-band,.cost-group');
+    if(group)markModule(group.id);
+  }
+  document.addEventListener('toggle',e=>{
+    const module=e.target;
+    if(module.matches('.module-directory')){syncNavHeight();return;}
+    if(!module.matches('details[data-module]')||!module.isConnected)return;
+    if(module.open)collapsedModules.delete(module.dataset.module);else collapsedModules.add(module.dataset.module);
+    closeMenus();hideTooltip();
+    if(!module.open&&module.contains(document.activeElement)){
+      requestAnimationFrame(()=>{
+        const summary=module.querySelector('summary');
+        if(summary.getBoundingClientRect().top<parseFloat(getComputedStyle(summary).top))summary.scrollIntoView({block:'start'});
+      });
+    }
+  },true);
   let dismissedRecord=null;
   function hideTooltip(){tip.hidden=true;document.querySelectorAll('[aria-describedby="chart-tooltip"]').forEach(el=>el.removeAttribute('aria-describedby'));}
   function showTooltip(row,event) {
@@ -180,7 +272,11 @@
   });
   document.addEventListener('click',e=>{
     const anchor=e.target.closest('a[href^="#"]');
-    if(options.embedded&&anchor){const target=document.getElementById(anchor.hash.slice(1));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'});}}
+    if(anchor&&document.getElementById(normalizeAnchor(anchor.hash))){
+      e.preventDefault();navigate(normalizeAnchor(anchor.hash),true);
+    }
+    const summary=e.target.closest('.module-header');
+    if(summary)markModule(summary.parentElement.dataset.module);
     const langButton=e.target.closest('#language');if(langButton){lang=lang==='en'?'zh':'en';render();try{const u=new URL(location.href);u.searchParams.set('lang',lang);history.replaceState(null,'',u);}catch{}return;}
     const menu=e.target.closest('[data-menu]');if(menu){const wasOpen=menu.getAttribute('aria-expanded')==='true';closeMenus();if(!wasOpen){menu.setAttribute('aria-expanded','true');const panel=document.getElementById('menu-'+menu.dataset.menu);panel.hidden=false;panel.querySelector('button').focus();}return;}
     const action=e.target.closest('[data-action]');if(action){
@@ -205,12 +301,34 @@
   document.addEventListener('focusin',e=>{const row=e.target.closest('.chart-row');if(row){dismissedRecord=null;showTooltip(row);}});
   document.addEventListener('focusout',e=>{if(e.target.closest('.chart-row')){dismissedRecord=null;hideTooltip();}});
   window.addEventListener('scroll',hideTooltip,{passive:true});window.addEventListener('resize',hideTooltip);
-  render();
-  if(options.embedded){
-    const scrollToAnchor=()=>document.getElementById(location.hash.slice(1))?.scrollIntoView();
-    window.addEventListener('hashchange',scrollToAnchor);
-    if(location.hash)requestAnimationFrame(scrollToAnchor);
+  function navigate(id,push=false){
+    const target=document.getElementById(id);
+    if(!target)return;
+    const owner=target.closest('#performance,#time-token-costs');
+    if(owner)activeSection=owner.id;
+    updateSection();revealTarget(target);
+    if(compact)document.querySelectorAll('.module-directory').forEach(directory=>directory.open=false);
+    syncNavHeight();closeMenus();hideTooltip();
+    if(push){
+      try{const url=new URL(location.href);url.searchParams.set('section',activeSection);url.searchParams.set('lang',lang);url.hash=id;if(activeSection==='time-token-costs')url.searchParams.delete('view');history.pushState(null,'',url);}catch{/* file previews need no history support */}
+    }
+    requestAnimationFrame(()=>target.scrollIntoView({block:'start',behavior:push&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'instant'}));
   }
+  function restoreLocation(){
+    const params=new URLSearchParams(location.search);
+    const nextLang=params.get('lang');
+    if(nextLang==='en'||nextLang==='zh')lang=nextLang;
+    const view=params.get('view');
+    const owner=d.sections.find(s=>s.views.includes(view));
+    if(owner)selection.set(owner.id,view);
+    const id=normalizeAnchor(location.hash);
+    activeSection=options.section??sectionForAnchor(id)??(params.get('section')==='time-token-costs'?'time-token-costs':'performance');
+    render();
+    if(id)navigate(id);else if(owner&&activeSection==='performance')navigate(owner.id);
+  }
+  restoreLocation();
+  window.addEventListener('hashchange',restoreLocation);
+  window.addEventListener('popstate',restoreLocation);
   }
   window.RPentLeaderboard={mount};
   const data=document.getElementById('results-data');

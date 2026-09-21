@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "checked_at": "2026-09-17",
+  "checked_at": "2026-09-18",
   "paper_revision": "2607.08448v4",
   "repository_revision": "43f32aa08cba07bd4d49a4bfa5eba4ef633e9b92",
   "configurations": [
@@ -27,6 +27,15 @@
       "model": "GPT-6 Astra",
       "reasoning": true,
       "effort": "low"
+    },
+    {
+      "id": "gpt-6-astra-low-motor-only",
+      "kind": "rpent",
+      "backend": "Codex",
+      "model": "GPT-6 Astra",
+      "reasoning": true,
+      "effort": "low",
+      "display_name": "RPent / GPT-6 Motor Only"
     },
     {
       "id": "openvla",
@@ -197,6 +206,30 @@
       "model": "ASPIRE",
       "reasoning": null,
       "effort": null
+    },
+    {
+      "id": "qwen3-6-27b-no-reasoning",
+      "kind": "rpent",
+      "backend": null,
+      "model": "Qwen3.6 27B",
+      "reasoning": false,
+      "effort": null
+    },
+    {
+      "id": "gpt-5-6-xhigh",
+      "kind": "rpent",
+      "backend": "Codex",
+      "model": "GPT-5.6 Sol",
+      "reasoning": true,
+      "effort": "xhigh"
+    },
+    {
+      "id": "gpt-5-6-no-reasoning",
+      "kind": "rpent",
+      "backend": "Codex",
+      "model": "GPT-5.6 Sol",
+      "reasoning": false,
+      "effort": null
     }
   ],
   "views": [
@@ -299,7 +332,8 @@
         "spatial-task--rats",
         "spatial-task--pi-rlinf",
         "spatial-task--aspire",
-        "spatial-task--rpent-flash-mode"
+        "spatial-task--rpent-flash-mode",
+        "spatial-task--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -321,7 +355,8 @@
         "spatial-swap--rats",
         "spatial-swap--pi-rlinf",
         "spatial-swap--aspire",
-        "spatial-swap--rpent-flash-mode"
+        "spatial-swap--rpent-flash-mode",
+        "spatial-swap--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -343,7 +378,8 @@
         "object-task--rats",
         "object-task--pi-rlinf",
         "object-task--aspire",
-        "object-task--rpent-flash-mode"
+        "object-task--rpent-flash-mode",
+        "object-task--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -365,7 +401,8 @@
         "object-swap--rats",
         "object-swap--pi-rlinf",
         "object-swap--aspire",
-        "object-swap--rpent-flash-mode"
+        "object-swap--rpent-flash-mode",
+        "object-swap--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -387,7 +424,8 @@
         "goal-task--rats",
         "goal-task--pi-rlinf",
         "goal-task--aspire",
-        "goal-task--rpent-flash-mode"
+        "goal-task--rpent-flash-mode",
+        "goal-task--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -409,7 +447,8 @@
         "goal-swap--rats",
         "goal-swap--pi-rlinf",
         "goal-swap--aspire",
-        "goal-swap--rpent-flash-mode"
+        "goal-swap--rpent-flash-mode",
+        "goal-swap--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -429,7 +468,9 @@
         "long-task--atomvla",
         "long-task--pi-rlinf",
         "long-task--aspire",
-        "long-task--rpent-flash-mode"
+        "long-task--rpent-flash-mode",
+        "long-task--qwen3-6-27b-no-reasoning",
+        "long-task--gpt-6-astra-low-motor-only"
       ]
     },
     {
@@ -449,7 +490,8 @@
         "long-swap--atomvla",
         "long-swap--pi-rlinf",
         "long-swap--aspire",
-        "long-swap--rpent-flash-mode"
+        "long-swap--rpent-flash-mode",
+        "long-swap--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -470,7 +512,8 @@
         "libero-pro--pi-rlinf",
         "libero-pro--opus-4-7-reported",
         "libero-pro--rpent-flash-mode",
-        "libero-pro--aspire"
+        "libero-pro--aspire",
+        "libero-pro--qwen3-6-27b-no-reasoning"
       ]
     },
     {
@@ -2475,14 +2518,14 @@
       "configuration_id": "gpt-6-astra-low",
       "status": "reported",
       "rate": "59.20",
-      "successes": 148,
-      "episodes": 250,
+      "successes": null,
+      "episodes": 340,
       "source_ids": [
         "contributor-20260915",
         "contributor-settings-20260915",
-        "robocasa-astra-contributor-250-outcomes"
+        "robocasa-astra-contributor-correction-20260920"
       ],
-      "protocol_id": "contributor-target50-astra-five-seed"
+      "protocol_id": "rpent-robocasa"
     },
     {
       "id": "robotwin--gpt-5-5-xhigh",
@@ -2806,13 +2849,13 @@
       "configuration_id": "gpt-6-astra-low",
       "status": "reported",
       "rate": "87.78",
-      "successes": 79,
-      "episodes": 90,
+      "successes": null,
+      "episodes": 180,
       "source_ids": [
-        "robocasa-astra-contributor-250-outcomes",
+        "robocasa-astra-contributor-correction-20260920",
         "contributor-settings-20260915"
       ],
-      "protocol_id": "contributor-target50-astra-five-seed"
+      "protocol_id": "rpent-robocasa"
     },
     {
       "id": "robocasa-composite-seen--gpt-6-astra-low",
@@ -2820,13 +2863,13 @@
       "configuration_id": "gpt-6-astra-low",
       "status": "reported",
       "rate": "43.75",
-      "successes": 35,
+      "successes": null,
       "episodes": 80,
       "source_ids": [
-        "robocasa-astra-contributor-250-outcomes",
+        "robocasa-astra-contributor-correction-20260920",
         "contributor-settings-20260915"
       ],
-      "protocol_id": "contributor-target50-astra-five-seed"
+      "protocol_id": "rpent-robocasa"
     },
     {
       "id": "robocasa-composite-unseen--gpt-6-astra-low",
@@ -2834,13 +2877,143 @@
       "configuration_id": "gpt-6-astra-low",
       "status": "reported",
       "rate": "42.50",
-      "successes": 34,
+      "successes": null,
       "episodes": 80,
       "source_ids": [
-        "robocasa-astra-contributor-250-outcomes",
+        "robocasa-astra-contributor-correction-20260920",
         "contributor-settings-20260915"
       ],
-      "protocol_id": "contributor-target50-astra-five-seed"
+      "protocol_id": "rpent-robocasa"
+    },
+    {
+      "id": "libero-pro--qwen3-6-27b-no-reasoning",
+      "view_id": "libero-pro",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "70.63",
+      "successes": 565,
+      "episodes": 800,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "spatial-task--qwen3-6-27b-no-reasoning",
+      "view_id": "spatial-task",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "82.00",
+      "successes": 82,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "spatial-swap--qwen3-6-27b-no-reasoning",
+      "view_id": "spatial-swap",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "78.00",
+      "successes": 78,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "object-task--qwen3-6-27b-no-reasoning",
+      "view_id": "object-task",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "83.00",
+      "successes": 83,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "object-swap--qwen3-6-27b-no-reasoning",
+      "view_id": "object-swap",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "84.00",
+      "successes": 84,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "goal-task--qwen3-6-27b-no-reasoning",
+      "view_id": "goal-task",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "68.00",
+      "successes": 68,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "goal-swap--qwen3-6-27b-no-reasoning",
+      "view_id": "goal-swap",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "68.00",
+      "successes": 68,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "long-task--qwen3-6-27b-no-reasoning",
+      "view_id": "long-task",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "61.00",
+      "successes": 61,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "long-swap--qwen3-6-27b-no-reasoning",
+      "view_id": "long-swap",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "status": "reported",
+      "rate": "41.00",
+      "successes": 41,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ],
+      "protocol_id": "rpent-pro-qwen-eight-suites"
+    },
+    {
+      "id": "long-task--gpt-6-astra-low-motor-only",
+      "view_id": "long-task",
+      "configuration_id": "gpt-6-astra-low-motor-only",
+      "status": "reported",
+      "rate": "38.0",
+      "successes": 38,
+      "episodes": 100,
+      "source_ids": [
+        "contributor-motor-only-long-task-20260920"
+      ],
+      "protocol_id": "rpent-pro-motor-only"
     }
   ],
   "sources": [
@@ -3006,45 +3179,38 @@
       }
     },
     {
-      "id": "robocasa-astra-contributor-250-outcomes",
-      "kind": "contributor_archive",
-      "artifact": "robocasa_astra.zip",
-      "sha256": "3ee89135bb69f0e6d29770f6103f4b53429481f9efde619ca6e7360597ce702c",
+      "id": "robocasa-astra-contributor-correction-20260920",
+      "kind": "contributor_correction",
+      "checked_at": "2026-09-20",
+      "protocol_url": "https://github.com/RLinf/RPent/blob/d14afccce78fb1bdbeba564fdd3ce7984c71bf2e/docs/source-en/rst_source/usage/robocasa.rst#harness-vla-target50-reproduction-protocol",
       "environment_split": "target",
       "tasks": 50,
-      "seeds": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "episodes": 250,
-      "successes": 148,
+      "episodes": 340,
       "groups": {
         "atomic": {
           "tasks": 18,
-          "successes": 79,
-          "episodes": 90,
-          "failures": 11,
-          "rate": "87.78"
+          "episodes": 180
         },
         "composite_seen": {
           "tasks": 16,
-          "successes": 35,
-          "episodes": 80,
-          "failures": 45,
-          "rate": "43.75"
+          "episodes": 80
         },
         "composite_unseen": {
           "tasks": 16,
-          "successes": 34,
-          "episodes": 80,
-          "failures": 46,
-          "rate": "42.50"
+          "episodes": 80
         }
       },
-      "note": "250 unique contributor result.json outcomes match summary.json and final trace terminated flags. Five seeds per task make task-weighted Overall equal to 148/250. This corrects the previously assumed 340-case denominator; no missing cases are inferred. Model settings retain contributor confirmation."
+      "note": "The contributor corrected the full evaluation to 340 cells on 2026-09-20. Split denominators follow the existing RPent Target50 matrix (180/80/80). Reported success rates remain unchanged; full-run success counts are not inferred from rounded or task-weighted rates. The earlier archive is retained as historical local evidence, not as verification of the corrected full-run counts."
+    },
+    {
+      "id": "contributor-qwen-costs-20260918",
+      "type": "contributor_report",
+      "note": "Contributor-provided Qwen eight-suite counts and cost table. Mean elapsed time includes all evaluation episodes (success, failure, and timeout); tokens count evaluation-stage output only. No unreported planner, hardware, or token accounting details are inferred."
+    },
+    {
+      "id": "contributor-motor-only-long-task-20260920",
+      "type": "contributor_report",
+      "note": "Contributor-reported complete Long Task evaluation on another server: 38 successes in 100 episodes. Codex / GPT-6 Astra / low reasoning; execute_action motor-only control without VLA / primitives or memory. This aggregate is independent of the incomplete local motor-only campaign; no unreported suite, runtime, or token measurements are inferred."
     }
   ],
   "astra": {
@@ -3185,8 +3351,8 @@
         "zh": "Astra · low · reasoning：92.63%（741/800）"
       },
       "context": {
-        "en": "GPT-6 Astra: Long Task/Swap and the other six suites use separate memory-file snapshots frozen after their respective exploration phases, with no updates during evaluation. Overall combines two non-overlapping batches: Long 157/200 plus the other suites 584/600, giving 741/800 (92.63%); the 800 episodes do not share a single memory snapshot.",
-        "zh": "GPT-6 Astra：Long Task/Swap 与其余六套件使用各自探索后冻结的 memory 文件快照，评测期间不更新。Overall 合并两个不重叠批次：Long 157/200，加上其余套件 584/600，得到 741/800（92.63%）；并非全部回合共享同一份 memory 快照。"
+        "en": "GPT-6 Astra (memory-enabled configuration): Long Task/Swap and the other six suites use separate memory-file snapshots frozen after their respective exploration phases, with no updates during evaluation. Overall combines two non-overlapping batches: Long 157/200 plus the other suites 584/600, giving 741/800 (92.63%); the 800 episodes do not share a single memory snapshot.",
+        "zh": "GPT-6 Astra（使用 memory 的配置）：Long Task/Swap 与其余六套件使用各自探索后冻结的 memory 文件快照，评测期间不更新。Overall 合并两个不重叠批次：Long 157/200，加上其余套件 584/600，得到 741/800（92.63%）；并非全部回合共享同一份 memory 快照。"
       },
       "default_view": "libero-pro",
       "views": [
@@ -3201,8 +3367,8 @@
         "long-swap"
       ],
       "notes": {
-        "en": "ASPIRE: Long Task and Long Swap use zero-shot transfer from the LIBERO-90 skill library.",
-        "zh": "ASPIRE：Long Task 和 Long Swap 使用 LIBERO-90 技能库进行 zero-shot 迁移。"
+        "en": "ASPIRE: Long Task and Long Swap use zero-shot transfer from the LIBERO-90 skill library.\n\nRPent / GPT-6 Motor Only uses motor-only control: it directly outputs end-effector pose increments and gripper commands through execute_action, without invoking VLA / primitives or loading memory.",
+        "zh": "ASPIRE：Long Task 和 Long Swap 使用 LIBERO-90 技能库进行 zero-shot 迁移。\n\nRPent / GPT-6 Motor Only 为纯电机控制方法，通过 execute_action 直接输出末端位姿增量与夹爪指令，不调用 VLA / primitive，不加载 memory"
       }
     },
     {
@@ -3257,5 +3423,124 @@
     "ellipsis.svg",
     "download.svg",
     "arrow-down.svg"
+  ],
+  "cost_method_order": [
+    "gpt-6-astra-low",
+    "gpt-5-6-xhigh",
+    "gpt-5-6-no-reasoning",
+    "rpent-flash-mode",
+    "qwen3-6-27b-no-reasoning"
+  ],
+  "cost_results": [
+    {
+      "id": "libero-pro--gpt-5-6-xhigh",
+      "benchmark_id": "libero-pro",
+      "configuration_id": "gpt-5-6-xhigh",
+      "mean_elapsed_seconds": 529.23,
+      "total_output_tokens": 3635426,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "libero-pro--gpt-5-6-no-reasoning",
+      "benchmark_id": "libero-pro",
+      "configuration_id": "gpt-5-6-no-reasoning",
+      "mean_elapsed_seconds": 344.17,
+      "total_output_tokens": 2569676,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "libero-pro--gpt-6-astra-low",
+      "benchmark_id": "libero-pro",
+      "configuration_id": "gpt-6-astra-low",
+      "mean_elapsed_seconds": 412.14,
+      "total_output_tokens": 3364938,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "libero-pro--qwen3-6-27b-no-reasoning",
+      "benchmark_id": "libero-pro",
+      "configuration_id": "qwen3-6-27b-no-reasoning",
+      "mean_elapsed_seconds": 626.3,
+      "total_output_tokens": 3270754,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "libero-pro--rpent-flash-mode",
+      "benchmark_id": "libero-pro",
+      "configuration_id": "rpent-flash-mode",
+      "mean_elapsed_seconds": 60.19,
+      "total_output_tokens": 0,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "robocasa--gpt-5-6-xhigh",
+      "benchmark_id": "robocasa",
+      "configuration_id": "gpt-5-6-xhigh",
+      "mean_elapsed_seconds": 1197.56,
+      "total_output_tokens": 5258391,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "robocasa--gpt-5-6-no-reasoning",
+      "benchmark_id": "robocasa",
+      "configuration_id": "gpt-5-6-no-reasoning",
+      "mean_elapsed_seconds": 1013.21,
+      "total_output_tokens": 4792104,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "robocasa--gpt-6-astra-low",
+      "benchmark_id": "robocasa",
+      "configuration_id": "gpt-6-astra-low",
+      "mean_elapsed_seconds": 1168.95,
+      "total_output_tokens": 5894436,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "robotwin--gpt-5-6-xhigh",
+      "benchmark_id": "robotwin",
+      "configuration_id": "gpt-5-6-xhigh",
+      "mean_elapsed_seconds": 1828.7,
+      "total_output_tokens": 4763915,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "robotwin--gpt-5-6-no-reasoning",
+      "benchmark_id": "robotwin",
+      "configuration_id": "gpt-5-6-no-reasoning",
+      "mean_elapsed_seconds": 957.4,
+      "total_output_tokens": 2456401,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    },
+    {
+      "id": "robotwin--gpt-6-astra-low",
+      "benchmark_id": "robotwin",
+      "configuration_id": "gpt-6-astra-low",
+      "mean_elapsed_seconds": 1078.8,
+      "total_output_tokens": 2763641,
+      "source_ids": [
+        "contributor-qwen-costs-20260918"
+      ]
+    }
   ]
 }

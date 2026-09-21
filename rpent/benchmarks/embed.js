@@ -5,6 +5,20 @@
   async function mount() {
     const host = document.getElementById('rpent-interactive-leaderboard');
     if (!host || host.dataset.loaded) return;
+    const hash=location.hash.replace(/^#(?:native-)?/,'');
+    const params=new URLSearchParams(location.search);
+    const requested=hash==='time-token-costs'||hash.startsWith('costs-')?'time-token-costs':
+      /^(performance|libero-pro|standard-libero|robocasa|robotwin)/.test(hash)?'performance':
+      params.get('section')==='time-token-costs'?'time-token-costs':null;
+    const section=host.dataset.section;
+    if(section==='index'||(section&&requested&&requested!==section)){
+      const target=requested??'performance';
+      const path=target==='performance'?host.dataset.performanceUrl:host.dataset.costsUrl;
+      if(path){
+        const url=new URL(path,location.href);url.search=location.search;url.hash=location.hash;
+        url.searchParams.delete('section');location.replace(url.href);return;
+      }
+    }
     try {
       const response = await fetch(host.dataset.resultsUrl);
       if (!response.ok) throw new Error(`Results HTTP ${response.status}`);
@@ -22,7 +36,7 @@
       root.prepend(style);
       host.append(detached);
       await loaded;
-      window.RPentLeaderboard.mount(root, data, {language:host.dataset.language??'en',assetBase:scriptBase.href,embedded:true});
+      window.RPentLeaderboard.mount(root, data, {language:host.dataset.language??'en',assetBase:scriptBase.href,embedded:true,section});
       host.querySelector('.rpent-static-leaderboard')?.remove();
       host.dataset.loaded = 'true';
     } catch (error) {

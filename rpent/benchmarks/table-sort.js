@@ -15,21 +15,22 @@
   function sort(table, column) {
     const state=table._rpentSort;
     state.column=column;saved.set(state.key,column);
+    const ascending=column===state.idColumn||state.direction==='ascending';
     const rows=[...table.tBodies[0].rows].filter(row=>!row.dataset.total);
     rows.sort((a,b)=>{
       const av=valueOf(a.cells[column]),bv=valueOf(b.cells[column]);
       return av===null ? bv===null?collator.compare(a.dataset.sortId,b.dataset.sortId):1
-        : bv===null?-1:(column===state.idColumn?av-bv:bv-av)||collator.compare(a.dataset.sortId,b.dataset.sortId);
+        : bv===null?-1:(ascending?av-bv:bv-av)||collator.compare(a.dataset.sortId,b.dataset.sortId);
     });
     const total=table.tBodies[0].querySelector('[data-total]');
     rows.forEach(row=>table.tBodies[0].insertBefore(row,total));
     state.headers.forEach((th,i)=>{
-      if(state.columns.includes(i))th.setAttribute('aria-sort',i===column?(column===state.idColumn?'ascending':'descending'):'none');
+      if(state.columns.includes(i))th.setAttribute('aria-sort',i===column?(ascending?'ascending':'descending'):'none');
     });
     const maximum=rows.length?valueOf(rows[0].cells[column]):null;
     for(const row of rows){
       for(const cell of row.cells)cell.classList.remove('metric-best');
-      if(column!==state.idColumn&&maximum!==null&&valueOf(row.cells[column])===maximum)row.cells[column].classList.add('metric-best');
+      if(state.highlightBest&&column!==state.idColumn&&maximum!==null&&valueOf(row.cells[column])===maximum)row.cells[column].classList.add('metric-best');
     }
   }
   function exportTable(table) {
@@ -56,16 +57,18 @@
         row.dataset.sortId??=row.dataset.method??row.dataset.tableRecord??row.dataset.astraTask??row.dataset.roboTask??row.dataset.paperTasks??row.cells[0].textContent.trim()+'-'+i;
         if(/^(Total|合计)$/i.test(row.cells[0].textContent.trim()))row.dataset.total='true';
       });
-      table._rpentSort={key,columns,headers,idColumn,column:preferred.i};
+      const direction=table.dataset.sortDirection??'descending';
+      const sortable=table.dataset.sortable!=='false';
+      table._rpentSort={key,columns,headers,idColumn,column:preferred.i,direction,highlightBest:table.dataset.highlightBest!=='false'};
       headers.forEach((th,i)=>{
         th.dataset.label=th.textContent.trim();
-        if(!columns.includes(i))return;
+        if(!sortable||!columns.includes(i))return;
         const button=document.createElement('button');button.type='button';button.className='sort-heading';
-        button.textContent=th.dataset.label;button.title=(i===idColumn?(zh?'按任务 ID 升序：':'Sort task ID ascending: '):(zh?'按此列降序：':'Sort descending: '))+th.dataset.label;
+        button.textContent=th.dataset.label;button.title=(i===idColumn?(zh?'按任务 ID 升序：':'Sort task ID ascending: '):direction==='ascending'?(zh?'按此列升序：':'Sort ascending: '):(zh?'按此列降序：':'Sort descending: '))+th.dataset.label;
         const img=document.createElement('img');img.src=options.icon;img.alt='';img.width=12;img.height=12;
         button.append(img);button.addEventListener('click',()=>sort(table,i));th.replaceChildren(button);
       });
-      const savedColumn=saved.get(key);sort(table,columns.includes(savedColumn)?savedColumn:preferred.i);
+      if(sortable){const savedColumn=saved.get(key);sort(table,columns.includes(savedColumn)?savedColumn:preferred.i);}
       if(options.download){
         const button=document.createElement('button');button.type='button';button.className='table-download icon-button';
         button.title=zh?'下载当前排序 CSV':'Download sorted CSV';button.setAttribute('aria-label',button.title);
