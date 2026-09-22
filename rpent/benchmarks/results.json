@@ -3232,7 +3232,7 @@
       "id": "flash-memory-confirmation-20260922",
       "kind": "contributor-confirmed",
       "url": "https://huggingface.co/datasets/RLinf/RPent-memory",
-      "note": "The contributor confirms that the displayed Flash Mode evaluation uses directly downloaded, officially released GPT-5.5 exploration memory. Molmo2-8B is used for visual localization. No memory snapshot revision is inferred."
+      "note": "The contributor confirms that the displayed Flash Mode evaluation uses directly downloaded, officially released GPT-5.5 exploration memory and the best-performing seed from s0-s9. Molmo2-8B is used for visual localization. No memory snapshot revision is inferred."
     }
   ],
   "astra": {
@@ -3389,8 +3389,8 @@
         "long-swap"
       ],
       "notes": {
-        "en": "* ASPIRE: Long Task and Long Swap use zero-shot transfer from the LIBERO-90 skill library.\n\n* RPent Flash Mode uses directly downloaded, officially released GPT-5.5 exploration memory; Molmo2-8B is used for visual localization.\n\n* RPent / GPT-6 Motor Only uses motor-only control: it directly outputs end-effector pose increments and gripper commands through execute_action, without invoking VLA / primitives or loading memory.",
-        "zh": "* ASPIRE：Long Task 和 Long Swap 使用 LIBERO-90 技能库进行 zero-shot 迁移。\n\n* RPent Flash Mode 使用直接下载的、官方公开的 GPT-5.5 explore memory；Molmo2-8B 用于视觉定位。\n\n* RPent / GPT-6 Motor Only 为纯电机控制方法，通过 execute_action 直接输出末端位姿增量与夹爪指令，不调用 VLA / primitive，不加载 memory。"
+        "en": "* ASPIRE: Long Task and Long Swap use zero-shot transfer from the LIBERO-90 skill library.\n\n* RPent Flash Mode uses directly downloaded, officially released GPT-5.5 exploration memory; Molmo2-8B is used for visual localization. These results use the best-performing seed from s0-s9.\n\n* RPent / GPT-6 Motor Only uses motor-only control: it directly outputs end-effector pose increments and gripper commands through execute_action, without invoking VLA / primitives or loading memory.",
+        "zh": "* ASPIRE：Long Task 和 Long Swap 使用 LIBERO-90 技能库进行 zero-shot 迁移。\n\n* RPent Flash Mode 使用直接下载的、官方公开的 GPT-5.5 explore memory；Molmo2-8B 用于视觉定位。该测试结果使用了 s0-s9 中表现最好的 seed。\n\n* RPent / GPT-6 Motor Only 为纯电机控制方法，通过 execute_action 直接输出末端位姿增量与夹爪指令，不调用 VLA / primitive，不加载 memory。"
       }
     },
     {
