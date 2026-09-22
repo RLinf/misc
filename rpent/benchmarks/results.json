@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "checked_at": "2026-09-18",
+  "checked_at": "2026-09-22",
   "paper_revision": "2607.08448v4",
   "repository_revision": "43f32aa08cba07bd4d49a4bfa5eba4ef633e9b92",
   "configurations": [
@@ -843,13 +843,13 @@
       "view_id": "long-task",
       "configuration_id": "gpt-5-5-xhigh",
       "status": "reported",
-      "rate": "52.0",
-      "successes": null,
+      "rate": "70.00",
+      "successes": 70,
       "episodes": 100,
       "source_ids": [
-        "paper-table-3"
+        "repo-libero-long-reproduction-20260922"
       ],
-      "protocol_id": "rpent-pro"
+      "protocol_id": "rpent-pro-long-reproduction"
     },
     {
       "id": "long-task--gpt-6-astra-low",
@@ -870,13 +870,13 @@
       "view_id": "long-swap",
       "configuration_id": "gpt-5-5-xhigh",
       "status": "reported",
-      "rate": "49.0",
-      "successes": null,
+      "rate": "55.00",
+      "successes": 55,
       "episodes": 100,
       "source_ids": [
-        "paper-table-3"
+        "repo-libero-long-reproduction-20260922"
       ],
-      "protocol_id": "rpent-pro"
+      "protocol_id": "rpent-pro-long-reproduction"
     },
     {
       "id": "long-swap--gpt-6-astra-low",
@@ -896,14 +896,25 @@
       "id": "libero-pro--gpt-5-5-xhigh",
       "view_id": "libero-pro",
       "configuration_id": "gpt-5-5-xhigh",
-      "status": "reported",
-      "rate": "72.1",
+      "status": "derived",
+      "rate": "75.13",
       "successes": null,
       "episodes": 800,
       "source_ids": [
-        "paper-table-3"
+        "paper-table-3",
+        "repo-libero-long-reproduction-20260922"
       ],
-      "protocol_id": "rpent-pro"
+      "protocol_id": "rpent-pro-updated-long",
+      "derived_from": [
+        "spatial-task--gpt-5-5-xhigh",
+        "spatial-swap--gpt-5-5-xhigh",
+        "object-task--gpt-5-5-xhigh",
+        "object-swap--gpt-5-5-xhigh",
+        "goal-task--gpt-5-5-xhigh",
+        "goal-swap--gpt-5-5-xhigh",
+        "long-task--gpt-5-5-xhigh",
+        "long-swap--gpt-5-5-xhigh"
+      ]
     },
     {
       "id": "libero-pro--gpt-6-astra-low",
@@ -3211,6 +3222,17 @@
       "id": "contributor-motor-only-long-task-20260920",
       "type": "contributor_report",
       "note": "Contributor-reported complete Long Task evaluation on another server: 38 successes in 100 episodes. Codex / GPT-6 Astra / low reasoning; execute_action motor-only control without VLA / primitives or memory. This aggregate is independent of the incomplete local motor-only campaign; no unreported suite, runtime, or token measurements are inferred."
+    },
+    {
+      "id": "repo-libero-long-reproduction-20260922",
+      "url": "https://github.com/RLinf/RPent/blob/15420b438e3adbf82e6640799a0668a2609e3bb7/docs/source-en/rst_source/usage/libero.rst#reproducing-results",
+      "note": "Codex / GPT-5.5 / xhigh reproduction on reproduce/libero reports Long Task 70/100 and Long Swap 55/100. The updated leaderboard combines these two results with the six unchanged Table 3 suites: (81+69+94+91+75+66+70+55)/8 = 75.125%, displayed as 75.13%. This derived Overall is not the paper's original aggregate."
+    },
+    {
+      "id": "flash-memory-confirmation-20260922",
+      "kind": "contributor-confirmed",
+      "url": "https://huggingface.co/datasets/RLinf/RPent-memory",
+      "note": "The contributor confirms that the displayed Flash Mode evaluation uses directly downloaded, officially released GPT-5.5 exploration memory. Molmo2-8B is used for visual localization. No memory snapshot revision is inferred."
     }
   ],
   "astra": {
@@ -3351,8 +3373,8 @@
         "zh": "Astra · low · reasoning：92.63%（741/800）"
       },
       "context": {
-        "en": "GPT-6 Astra (memory-enabled configuration): Long Task/Swap and the other six suites use separate memory-file snapshots frozen after their respective exploration phases, with no updates during evaluation. Overall combines two non-overlapping batches: Long 157/200 plus the other suites 584/600, giving 741/800 (92.63%); the 800 episodes do not share a single memory snapshot.",
-        "zh": "GPT-6 Astra（使用 memory 的配置）：Long Task/Swap 与其余六套件使用各自探索后冻结的 memory 文件快照，评测期间不更新。Overall 合并两个不重叠批次：Long 157/200，加上其余套件 584/600，得到 741/800（92.63%）；并非全部回合共享同一份 memory 快照。"
+        "en": "* GPT-6 Astra (memory-enabled configuration): Long Task/Swap and the other six suites use separate memory-file snapshots frozen after their respective exploration phases, with no updates during evaluation. Overall combines two non-overlapping batches: Long 157/200 plus the other suites 584/600, giving 741/800 (92.63%); the 800 episodes do not share a single memory snapshot.",
+        "zh": "* GPT-6 Astra（使用 memory 的配置）：Long Task/Swap 与其余六套件使用各自探索后冻结的 memory 文件快照，评测期间不更新。Overall 合并两个不重叠批次：Long 157/200，加上其余套件 584/600，得到 741/800（92.63%）；并非全部回合共享同一份 memory 快照。"
       },
       "default_view": "libero-pro",
       "views": [
@@ -3367,8 +3389,8 @@
         "long-swap"
       ],
       "notes": {
-        "en": "ASPIRE: Long Task and Long Swap use zero-shot transfer from the LIBERO-90 skill library.\n\nRPent / GPT-6 Motor Only uses motor-only control: it directly outputs end-effector pose increments and gripper commands through execute_action, without invoking VLA / primitives or loading memory.",
-        "zh": "ASPIRE：Long Task 和 Long Swap 使用 LIBERO-90 技能库进行 zero-shot 迁移。\n\nRPent / GPT-6 Motor Only 为纯电机控制方法，通过 execute_action 直接输出末端位姿增量与夹爪指令，不调用 VLA / primitive，不加载 memory"
+        "en": "* ASPIRE: Long Task and Long Swap use zero-shot transfer from the LIBERO-90 skill library.\n\n* RPent Flash Mode uses directly downloaded, officially released GPT-5.5 exploration memory; Molmo2-8B is used for visual localization.\n\n* RPent / GPT-6 Motor Only uses motor-only control: it directly outputs end-effector pose increments and gripper commands through execute_action, without invoking VLA / primitives or loading memory.",
+        "zh": "* ASPIRE：Long Task 和 Long Swap 使用 LIBERO-90 技能库进行 zero-shot 迁移。\n\n* RPent Flash Mode 使用直接下载的、官方公开的 GPT-5.5 explore memory；Molmo2-8B 用于视觉定位。\n\n* RPent / GPT-6 Motor Only 为纯电机控制方法，通过 execute_action 直接输出末端位姿增量与夹爪指令，不调用 VLA / primitive，不加载 memory。"
       }
     },
     {
