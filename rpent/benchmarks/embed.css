@@ -106,3 +106,8 @@ noscript:has([data-costs]:target) [data-costs],noscript:has([data-costs] :target
 
 :host .page-header{padding-top:0;scroll-margin-top:48px}:host .title-row{display:none}
 @media(max-width:959.98px){:host{--module-top:52px}}
+
+.note-reference{font-size:.75em;margin-inline-start:.2em;white-space:nowrap}
+.note-reference a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.note-reference a:focus-visible,.scope-note:focus-visible{outline:2px solid var(--best);outline-offset:3px}
+.scope-note[tabindex]{scroll-margin-top:calc(var(--module-top) + var(--directory-height) + 88px)}

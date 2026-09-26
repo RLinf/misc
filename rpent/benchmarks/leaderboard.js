@@ -124,17 +124,33 @@
     if(id==='robotwin') return lang==='en'?'Clean-to-Randomized Success':'Clean-to-Randomized 成功率';
     return tr(views.get(id).label)+' · '+t('rate');
   }
+  const evaluationNotes = new Map([
+    ['aspire', 1], ['rpent-flash-mode', 2],
+    ['gpt-6-astra-low-motor-only', 3], ['gpt-6-astra-low', 4]
+  ]);
+  const noteId = number => number===4?'libero-pro-astra-memory':`libero-pro-note-${number}`;
+  function noteReference(record) {
+    const section=d.sections.find(s=>s.id==='libero-pro');
+    const number=section.views.includes(record.view_id)?evaluationNotes.get(record.configuration_id):null;
+    if(!number)return '';
+    const description=lang==='en'?`Evaluation note ${number} for ${label(record)}`:`${label(record)}的评测说明 ${number}`;
+    return `<sup class="note-reference"><a href="#${noteId(number)}" role="doc-noteref" aria-label="${h(description)}">[${number}]</a></sup>`;
+  }
+  function noteParagraph(paragraph, number) {
+    const marked=paragraph.startsWith('* ')?`* <span class="note-number">[${number}]</span> ${h(paragraph.slice(2))}`:h(paragraph);
+    return `<p id="${noteId(number)}" class="scope-note${number===4?' memory-context':''}" tabindex="-1" role="note">${marked}</p>`;
+  }
   function chart(view, kind='primary') {
     const rows=allRows(view).filter(r=>r.rate!==null);
     return `<div class="chart ${kind}" aria-label="${h(headline(view.id))}"><div class="chart-grid" aria-hidden="true">${Array.from({length:6},()=>'<i></i>').join('')}</div><div class="chart-rows">${rows.map(r=>
-      `<div class="chart-row" tabindex="0" data-record="${r.id}" aria-label="${h(label(r)+', '+detailLabel(r)+', '+r.rate+'%, '+count(r))}"><div class="method-label"><span class="method-text"><span class="method-name">${h(label(r))}</span><span class="method-description">${h(detailLabel(r))}</span></span></div><div class="bar-track"><div class="bar${Number(r.rate)===0?' zero':''}" style="--value:${Number(r.rate)}%;--bar-color:${color(r,view)}"><span class="bar-value">${r.rate}%</span></div></div></div>`).join('')}</div><div class="axis" aria-hidden="true">${[0,20,40,60,80,100].map(x=>`<span>${x}</span>`).join('')}</div></div>`;
+      `<div class="chart-row" tabindex="0" data-record="${r.id}" aria-label="${h(label(r)+', '+detailLabel(r)+', '+r.rate+'%, '+count(r))}"><div class="method-label"><span class="method-text"><span class="method-name">${h(label(r))}${noteReference(r)}</span><span class="method-description">${h(detailLabel(r))}</span></span></div><div class="bar-track"><div class="bar${Number(r.rate)===0?' zero':''}" style="--value:${Number(r.rate)}%;--bar-color:${color(r,view)}"><span class="bar-value">${r.rate}%</span></div></div></div>`).join('')}</div><div class="axis" aria-hidden="true">${[0,20,40,60,80,100].map(x=>`<span>${x}</span>`).join('')}</div></div>`;
   }
   function comparisonMatrix(s) {
     const columns=s.views.map(id=>views.get(id));
     const rows=d.configurations.filter(c=>columns.some(v=>v.record_ids.some(id=>records.get(id).configuration_id===c.id&&records.get(id).rate!==null)));
     return `<details class="comparison-matrix" data-details="${s.id}"><summary>${t('allScores')} <span>${rows.length} ${lang==='en'?'configurations':'配置'}</span></summary><div class="table-wrap" tabindex="0" role="region" aria-label="${h(s.name+' '+t('allScores'))}"><table><thead><tr><th>${t('method')}</th>${columns.map(v=>`<th class="rate">${h(tr(v.label))}</th>`).join('')}</tr></thead><tbody>${rows.map(c=>{
       const sample=columns.flatMap(allRows).find(r=>r.configuration_id===c.id&&r.rate!==null);
-      return `<tr data-method="${c.id}"><th scope="row"><div class="matrix-label"><span>${h(label(sample))}<small> ${h(detailLabel(sample))}</small></span></div></th>${columns.map(v=>{
+      return `<tr data-method="${c.id}"><th scope="row"><div class="matrix-label"><span>${h(label(sample))}${noteReference(sample)}<small> ${h(detailLabel(sample))}</small></span></div></th>${columns.map(v=>{
         const r=allRows(v).find(r=>r.configuration_id===c.id);
         return `<td class="rate"${r?` data-matrix-record="${r.id}"`:''} title="${h(tr(r?.evaluation_note)||tr(v.label))}">${r?.rate!=null?r.rate+'%':`<span class="not-reported" aria-label="${t('unreported')}">—</span>`}</td>`;
       }).join('')}</tr>`;
@@ -147,7 +163,7 @@
   function renderSection(s) {
     const element=document.getElementById('panel-'+s.id);
     const note=tr(s.notes);
-    element.innerHTML=sectionBody(s)+(note?note.split('\n\n').map(paragraph=>`<p class="scope-note">${h(paragraph)}</p>`).join(''):'')+(s.context?`<p id="${s.id}-astra-memory" class="scope-note memory-context">${h(tr(s.context))}</p>`:'');
+    element.innerHTML=sectionBody(s)+(note?note.split('\n\n').map((paragraph,index)=>noteParagraph(paragraph,index+1)).join(''):'')+(s.context?noteParagraph(tr(s.context),4):'');
     setupTables(element,s.id);
   }
   function setupTables(element,key) {
@@ -274,6 +290,7 @@
     const anchor=e.target.closest('a[href^="#"]');
     if(anchor&&document.getElementById(normalizeAnchor(anchor.hash))){
       e.preventDefault();navigate(normalizeAnchor(anchor.hash),true);
+      if(anchor.closest('.note-reference'))document.getElementById(normalizeAnchor(anchor.hash)).focus({preventScroll:true});
     }
     const summary=e.target.closest('.module-header');
     if(summary)markModule(summary.parentElement.dataset.module);
