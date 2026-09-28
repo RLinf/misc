@@ -33,10 +33,16 @@
       if(state.highlightBest&&column!==state.idColumn&&maximum!==null&&valueOf(row.cells[column])===maximum)row.cells[column].classList.add('metric-best');
     }
   }
+  function exportText(cell) {
+    const copy=cell.cloneNode(true);
+    copy.querySelectorAll('.note-reference').forEach(marker=>marker.remove());
+    const text=copy.textContent.trim();
+    return text==='—'?'':text;
+  }
   function exportTable(table) {
     const quote=v=>'"'+String(v??'').replaceAll('"','""')+'"';
     const state=table._rpentSort;
-    const rows=[state.headers.map(th=>th.dataset.label),...[...table.tBodies[0].rows].map(row=>[...row.cells].map(cell=>cell.textContent.trim()==='—'?'':cell.textContent.trim()))];
+    const rows=[state.headers.map(th=>th.dataset.label),...[...table.tBodies[0].rows].map(row=>[...row.cells].map(exportText))];
     const url=URL.createObjectURL(new Blob(['\uFEFF'+rows.map(row=>row.map(quote).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'}));
     const a=document.createElement('a');a.href=url;a.download=state.key.replaceAll(/[^a-zA-Z0-9-]/g,'-')+'.csv';a.click();
     setTimeout(()=>URL.revokeObjectURL(url),3000);

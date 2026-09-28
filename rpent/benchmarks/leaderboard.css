@@ -103,4 +103,8 @@ noscript:has([data-costs]:target) [data-performance],noscript:has([data-costs] :
 noscript:has([data-costs]:target) [data-costs],noscript:has([data-costs] :target) [data-costs]{display:block}
 @media(max-width:1000px){noscript .section-layout{display:block}noscript .module-directory{position:static;padding-bottom:16px}noscript .module-directory>summary{display:list-item;list-style-position:inside}}
 
-.benchmark-method small{display:block;font-size:12px;margin-top:4px}
+
+.note-reference{font-size:.75em;margin-inline-start:.2em;white-space:nowrap}
+.note-reference a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.note-reference a:focus-visible,.scope-note:focus-visible{outline:2px solid var(--best);outline-offset:3px}
+.scope-note[tabindex]{scroll-margin-top:calc(var(--module-top) + var(--directory-height) + 88px)}
