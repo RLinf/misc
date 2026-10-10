@@ -92,6 +92,9 @@ button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible,
 @media(max-width:700px){.page-header .brand{font-size:20px}.page-header .masthead{flex-wrap:wrap;gap:12px}.page-titles{flex-basis:100%}.page-section-title,.cost-section .page-section-title{font-size:32px}.section-nav{font-size:18px}.benchmark-wordmark,[data-benchmark] .module-header h3,.cost-group h3{font-size:22px}}
 @media print{.section-nav,.module-directory{display:none}.section-layout{display:block}.module-header{position:static}}
 footer{padding-inline:max(var(--gutter),calc((100% - var(--content-max))/2 + var(--gutter)))}
+footer{align-items:flex-end}.footer-context{flex:1;min-width:0}.footer-context>[data-i18n="title"]{display:block;font-size:17px}footer .evaluation-notice{margin:0 0 12px}
+.leaderboard-footer{margin-top:28px;padding-bottom:24px;color:var(--muted)}.leaderboard-footer>span{display:block;font-size:17px}.leaderboard-footer .evaluation-notice{margin:0 0 12px}
+@media print{footer{display:block!important}footer .footer-context>[data-i18n="title"],footer>a{display:none!important}}
 noscript .section-layout{padding-inline:0}noscript .module-header{position:static}
 noscript .brand{font-size:24px;font-weight:400}noscript .page-section-title{padding:12px 0 24px}
 @media(max-width:700px){noscript .brand{font-size:20px}}
