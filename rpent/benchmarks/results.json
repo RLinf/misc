@@ -1,6 +1,10 @@
 {
   "schema_version": 2,
   "checked_at": "2026-09-22",
+  "evaluation_notice": {
+    "en": "* All RPent method results shown in this leaderboard are from September 2026 evaluations.",
+    "zh": "* Leaderboard 中所有 RPent 方法均展示 2026.09 测试结果。"
+  },
   "paper_revision": "2607.08448v4",
   "repository_revision": "43f32aa08cba07bd4d49a4bfa5eba4ef633e9b92",
   "configurations": [
