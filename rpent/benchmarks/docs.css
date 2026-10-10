@@ -43,6 +43,9 @@ html[data-theme="dark"] .rpent-static-leaderboard{--rpent-divider:#be96e0}
 @media(max-width:700px){.rpent-static-leaderboard .page-section-title{font-size:32px}.rpent-static-leaderboard [data-benchmark],.rpent-static-leaderboard .cost-group{padding-inline:0}}
 
 .rpent-static-leaderboard .scope-note{font-size:14px;line-height:1.6;color:var(--pst-color-text-muted,inherit);margin:14px 0;scroll-margin-top:5rem}
+.rpent-static-leaderboard .leaderboard-footer{margin-top:28px;padding-bottom:24px;color:var(--pst-color-text-muted,inherit)}
+.rpent-static-leaderboard .leaderboard-footer>span{display:block;font-size:17px}
+.rpent-static-leaderboard .leaderboard-footer .evaluation-notice{margin:0 0 12px}
 .rpent-static-leaderboard .note-reference{font-size:.75em;margin-inline-start:.2em;white-space:nowrap}
 .rpent-static-leaderboard .note-reference a{text-decoration:underline;text-underline-offset:2px}
 .rpent-static-leaderboard .note-reference a:focus-visible,.rpent-static-leaderboard .scope-note:focus-visible{outline:2px solid var(--rpent-divider);outline-offset:3px}
