@@ -107,6 +107,8 @@ noscript:has([data-costs]:target) [data-costs],noscript:has([data-costs] :target
 @media(max-width:1000px){noscript .section-layout{display:block}noscript .module-directory{position:static;padding-bottom:16px}noscript .module-directory>summary{display:list-item;list-style-position:inside}}
 
 
+.footer-context .scope-note,.leaderboard-footer .scope-note{overflow-wrap:anywhere}
+@media(max-width:700px){footer{flex-direction:column;align-items:stretch}footer>a{align-self:flex-end}}
 .note-reference{font-size:.75em;margin-inline-start:.2em;white-space:nowrap}
 .note-reference a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .note-reference a:focus-visible,.scope-note:focus-visible{outline:2px solid var(--best);outline-offset:3px}
