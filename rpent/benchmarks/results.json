@@ -1,6 +1,37 @@
 {
   "schema_version": 2,
   "checked_at": "2026-09-22",
+  "footer_notes": [
+    {
+      "id": "vla-libero",
+      "en": "* LIBERO / LIBERO-PRO: all VLA-based RPent methods use the same RLinf-Pi05-LIBERO-130-fullshot-SFT checkpoint as the pi_RLinf baseline. This checkpoint was supervised-fine-tuned on LIBERO-130; RPent does not further fine-tune it for LIBERO-PRO, and its weights remain frozen during evaluation. Motor Only does not use a VLA.",
+      "zh": "* LIBERO / LIBERO-PRO：所有使用 VLA 的 RPent 方法均采用与 π_RLinf 基线相同的 RLinf-Pi05-LIBERO-130-fullshot-SFT checkpoint。该模型由 RLinf 发布，已经过 LIBERO-130 监督微调；RPent 未针对 LIBERO-PRO 额外微调，评测期间权重冻结。Motor Only 不使用 VLA。"
+    },
+    {
+      "id": "vla-robocasa",
+      "en": "* RoboCasa365: RPent uses RLDX-1-FT-RC365 released by RLWRLD, not an RLinf checkpoint. It was fine-tuned on RoboCasa365; RPent does not further fine-tune its weights and keeps them frozen during evaluation.",
+      "zh": "* RoboCasa365：RPent 使用 RLWRLD 官方发布的 RLDX-1-FT-RC365，而非 RLinf checkpoint。该模型已针对 RoboCasa365 微调；RPent 未额外微调其权重，评测期间保持冻结。"
+    },
+    {
+      "id": "vla-robotwin",
+      "en": "* RoboTwin: RPent uses LingBot-VLA-RoboTwin-EEF-ckpt1500 released by RLinf, a LingBot-VLA checkpoint supervised-fine-tuned on RoboTwin data. RPent and the direct LingBot-VLA baseline use the same checkpoint with frozen weights during evaluation.",
+      "zh": "* RoboTwin：RPent 使用 RLinf 发布的 LingBot-VLA-RoboTwin-EEF-ckpt1500，该 LingBot-VLA checkpoint 已经过 RoboTwin 数据监督微调。RPent 与直接 LingBot-VLA 基线使用相同 checkpoint，评测期间均冻结权重。"
+    },
+    {
+      "id": "memory-experience",
+      "en": "* RPent memory is built through task exploration before evaluation and constitutes additional task experience. Building memory does not update VLA weights.",
+      "zh": "* RPent 的 memory 来自评测前的任务探索，属于额外任务经验；memory 构建不涉及 VLA 权重更新。"
+    },
+    {
+      "id": "comparison-scope",
+      "en": "* Methods may differ in training data, exploration / memory, inference budgets, and result selection. External results follow their original sources; the environment-specific VLA notes identify same-checkpoint comparisons.",
+      "zh": "* 各方法的训练数据、探索 / memory、推理预算及结果选择方式可能不同；外部方法按原来源报告，同 checkpoint 对照见各环境的 VLA 说明。"
+    }
+  ],
+  "evaluation_notice": {
+    "en": "* All RPent method results shown in this leaderboard are from September 2026 evaluations.",
+    "zh": "* Leaderboard 中所有 RPent 方法均展示 2026.09 测试结果。"
+  },
   "paper_revision": "2607.08448v4",
   "repository_revision": "43f32aa08cba07bd4d49a4bfa5eba4ef633e9b92",
   "configurations": [
@@ -3389,8 +3420,8 @@
         "long-swap"
       ],
       "notes": {
-        "en": "* ASPIRE: Long Task and Long Swap use zero-shot transfer from the LIBERO-90 skill library.\n\n* RPent Flash Mode uses directly downloaded, officially released GPT-5.5 exploration memory; Molmo2-8B is used for visual localization. These results use the best-performing seed from s0-s9.\n\n* RPent / GPT-6 Motor Only uses motor-only control: it directly outputs end-effector pose increments and gripper commands through execute_action, without invoking VLA / primitives or loading memory.",
-        "zh": "* ASPIRE：Long Task 和 Long Swap 使用 LIBERO-90 技能库进行 zero-shot 迁移。\n\n* RPent Flash Mode 使用直接下载的、官方公开的 GPT-5.5 explore memory；Molmo2-8B 用于视觉定位。该测试结果使用了 s0-s9 中表现最好的 seed。\n\n* RPent / GPT-6 Motor Only 为纯电机控制方法，通过 execute_action 直接输出末端位姿增量与夹爪指令，不调用 VLA / primitive，不加载 memory。"
+        "en": "* ASPIRE: Long Task and Long Swap use zero-shot transfer from the LIBERO-90 skill library.\n\n* RPent Flash Mode uses directly downloaded, officially released GPT-5.5 exploration memory, Molmo2-8B for visual localization, and the same VLA as pi_RLinf for action execution. The displayed scores are the best evaluation results from s0-s9.\n\n* RPent / GPT-6 Motor Only uses motor-only control: it directly outputs end-effector pose increments and gripper commands through execute_action, without invoking VLA / primitives or loading memory.",
+        "zh": "* ASPIRE：Long Task 和 Long Swap 使用 LIBERO-90 技能库进行 zero-shot 迁移。\n\n* RPent Flash Mode 使用直接下载的、官方公开的 GPT-5.5 explore memory，Molmo2-8B 用于视觉定位，动作执行使用与 π_RLinf 相同的 VLA。展示成绩采用 s0-s9 中的最佳评测结果。\n\n* RPent / GPT-6 Motor Only 为纯电机控制方法，通过 execute_action 直接输出末端位姿增量与夹爪指令，不调用 VLA / primitive，不加载 memory。"
       }
     },
     {
