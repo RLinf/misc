@@ -163,7 +163,7 @@
   function renderSection(s) {
     const element=document.getElementById('panel-'+s.id);
     const note=tr(s.notes);
-    element.innerHTML=sectionBody(s)+(note?note.split('\n\n').map((paragraph,index)=>noteParagraph(paragraph,index+1)).join(''):'')+(s.context?noteParagraph(tr(s.context),4):'');
+    element.innerHTML=sectionBody(s)+(note?note.split('\n\n').map((paragraph,index)=>s.id==='libero-pro'&&index===1?'':noteParagraph(paragraph,index+1)).join(''):'')+(s.context?noteParagraph(tr(s.context),4):'');
     setupTables(element,s.id);
   }
   function setupTables(element,key) {
@@ -188,6 +188,11 @@
     (options.embedded?document.host:document.documentElement).lang=lang==='en'?'en':'zh-CN';
     if(!options.embedded)document.title=t('title');
     document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
+    document.querySelectorAll('[data-evaluation-notice]').forEach(el=>el.textContent=tr(d.evaluation_notice));
+    const flashNote=tr(d.sections.find(s=>s.id==='libero-pro').notes).split('\n\n')[1];
+    document.querySelectorAll('[data-footer-notes]').forEach(el=>{
+      el.innerHTML=(d.footer_notes??[]).map(note=>`<p id="${h(note.id)}" class="scope-note" role="note">${h(tr(note))}</p>`).join('')+noteParagraph(flashNote,2);
+    });
     document.querySelectorAll('[data-i18n-label]').forEach(el=>el.setAttribute('aria-label',t(el.dataset.i18nLabel)));
     const language=document.getElementById('language');language.textContent=lang==='en'?'中文':'English';language.lang=lang==='en'?'zh-CN':'en';language.setAttribute('aria-label',lang==='en'?'切换为中文':'Switch to English');
     document.getElementById('leaderboards').innerHTML=d.sections.filter(s=>!s.parent).map(s=>`<section id="${s.id}" class="benchmark-band"><div class="benchmark-shell"><details data-module="${s.id}"${collapsedModules.has(s.id)?'':' open'}><summary class="module-header"><h3 class="benchmark-wordmark">${h(s.name)}</h3></summary><div class="module-content"><div id="panel-${s.id}"></div>${d.sections.filter(c=>c.parent===s.id).map(c=>`<section id="${c.id}" class="benchmark-subsection"><div id="panel-${c.id}"></div></section>`).join('')}</div></details></div></section>`).join('');
