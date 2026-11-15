@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="1104" viewBox="0 0 1200 1104" role="img" aria-labelledby="title description">
   <title id="title">RPent industry and academic community</title>
-  <desc id="description">10 companies, 22 universities, and 8 research and educational organizations. Includes Z-Trans AI with the Zetta project name and ROBAM.</desc>
+  <desc id="description">10 companies, 22 universities, and 8 research institutions. Includes Z-Trans AI with the Zetta project name and ROBAM.</desc>
   <rect width="1200" height="1104" fill="#fff"/>
   <text x="30" y="28" font-family="Arial, sans-serif" font-size="15" fill="#59636e">Companies</text>
   <g id="org-01" data-category="company" aria-label="NVIDIA">
@@ -214,7 +214,7 @@
     </svg>
   </g>
   <line x1="30" y1="834" x2="1170" y2="834" stroke="#d8d8d8" stroke-width="1"/>
-  <text x="30" y="862" font-family="Arial, sans-serif" font-size="15" fill="#59636e">Research and Education</text>
+  <text x="30" y="862" font-family="Arial, sans-serif" font-size="15" fill="#59636e">Research Institutions</text>
   <g id="org-55" data-category="research" aria-label="法国国家科学研究中心 CNRS">
     <title>法国国家科学研究中心 CNRS</title>
     <svg x="137.15" y="881.00" width="70.70" height="70.00" viewBox="548 0 505 500">
