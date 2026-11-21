@@ -21,7 +21,7 @@
     </style>
   </defs>
 
-  <rect x="2" y="2" width="956" height="232" rx="14" fill="url(#df-bg)" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect x="2" y="2" width="956" height="232" rx="14" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
 
   <!-- 1. Env / Agent -->
   <rect x="20" y="24" width="204" height="136" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
