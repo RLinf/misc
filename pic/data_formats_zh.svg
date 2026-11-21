@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 242" width="960" height="242" role="img" aria-label="RLinf 数据格式流转图：采集来源、三种存储格式与下游消费阶段">
+  <defs>
+    <linearGradient id="fm-bg-zh" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <marker id="fm-arrow-zh" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .t { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; }
+      .col { font-size: 11px; font-weight: 700; fill: #64748b; letter-spacing: 0.05em; }
+      .title { font-size: 13.5px; font-weight: 700; fill: #0f172a; }
+      .sub { font-size: 11px; fill: #475569; }
+      .code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10.5px; fill: #1d4ed8; }
+    </style>
+  </defs>
+
+  <rect x="2" y="2" width="956" height="238" rx="14" fill="url(#fm-bg-zh)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <text x="128" y="26" text-anchor="middle" class="t col">数据来源</text>
+  <text x="478" y="26" text-anchor="middle" class="t col">落盘格式与目录</text>
+  <text x="816" y="26" text-anchor="middle" class="t col">下游训练阶段</text>
+
+  <!-- Sources -->
+  <rect x="20" y="42" width="216" height="82" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="34" y="66" class="t title">真机遥操作数据采集</text>
+  <text x="34" y="85" class="t sub">SpaceMouse · GELLO · PICO VR</text>
+  <text x="34" y="106" class="code">collect_data.sh</text>
+
+  <rect x="20" y="138" width="216" height="82" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="34" y="162" class="t title">仿真训练 / 评测导出</text>
+  <text x="34" y="181" class="t sub">Env Worker 按轨迹落盘</text>
+  <text x="34" y="202" class="code">env.*.data_collection</text>
+
+  <!-- Formats -->
+  <rect x="318" y="38" width="320" height="56" rx="10" fill="#ffffff" stroke="#93c5fd" stroke-width="1.4"/>
+  <rect x="318" y="38" width="6" height="56" rx="3" fill="#2563eb"/>
+  <text x="336" y="61" class="t title">lerobot_dataset</text>
+  <text x="336" y="80" class="code">{save_dir}/lerobot_dataset/</text>
+
+  <rect x="318" y="106" width="320" height="56" rx="10" fill="#ffffff" stroke="#a5f3fc" stroke-width="1.4"/>
+  <rect x="318" y="106" width="6" height="56" rx="3" fill="#0891b2"/>
+  <text x="336" y="129" class="t title">replay_buffer</text>
+  <text x="336" y="148" class="code" style="fill:#0e7490;">{save_dir}/demo_buffer/</text>
+
+  <rect x="318" y="174" width="320" height="56" rx="10" fill="#ffffff" stroke="#c4b5fd" stroke-width="1.4"/>
+  <rect x="318" y="174" width="6" height="56" rx="3" fill="#7c3aed"/>
+  <text x="336" y="197" class="t title">pickle_episode</text>
+  <text x="336" y="216" class="code" style="fill:#6d28d9;">{save_dir}/pickle_episode/</text>
+
+  <!-- Consumers -->
+  <rect x="692" y="38" width="248" height="56" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.2"/>
+  <text x="708" y="61" class="t title" style="fill:#1e3a8a;">SFT · HG-DAgger · 离线 RL</text>
+  <text x="708" y="79" class="t sub">OpenPI / VLA SFT、RECAP、STEAM</text>
+
+  <rect x="692" y="106" width="248" height="56" rx="10" fill="#ecfeff" stroke="#a5f3fc" stroke-width="1.2"/>
+  <text x="708" y="129" class="t title" style="fill:#155e75;">在线 RLPD / SAC</text>
+  <text x="708" y="147" class="t sub">algorithm.demo_buffer.load_path</text>
+
+  <rect x="692" y="174" width="248" height="56" rx="10" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1.2"/>
+  <text x="708" y="197" class="t title" style="fill:#5b21b6;">奖励模型训练</text>
+  <text x="708" y="215" class="t sub">ResNet 分类器 · VLM 趋势奖励 LoRA</text>
+
+  <!-- Arrows Source -> Format -->
+  <path d="M 238 74 C 276 74, 276 64, 314 64" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#fm-arrow-zh)"/>
+  <path d="M 238 86 C 276 86, 276 130, 314 130" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#fm-arrow-zh)"/>
+  <path d="M 238 98 C 274 98, 274 196, 314 196" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#fm-arrow-zh)"/>
+  <path d="M 238 172 C 278 172, 278 74, 314 74" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#fm-arrow-zh)"/>
+  <path d="M 238 188 C 276 188, 276 206, 314 206" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#fm-arrow-zh)"/>
+
+  <!-- Arrows Format -> Consumer -->
+  <line x1="640" y1="66" x2="688" y2="66" stroke="#64748b" stroke-width="2" marker-end="url(#fm-arrow-zh)"/>
+  <line x1="640" y1="134" x2="688" y2="134" stroke="#64748b" stroke-width="2" marker-end="url(#fm-arrow-zh)"/>
+  <line x1="640" y1="202" x2="688" y2="202" stroke="#64748b" stroke-width="2" marker-end="url(#fm-arrow-zh)"/>
+</svg>
