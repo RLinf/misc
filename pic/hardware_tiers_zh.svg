@@ -5,7 +5,7 @@
     </filter>
   </defs>
 
-  <rect x="2" y="2" width="956" height="216" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect x="2" y="2" width="956" height="216" rx="16" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
 
   <!-- Tier 1 -->
   <g filter="url(#shadow)">
