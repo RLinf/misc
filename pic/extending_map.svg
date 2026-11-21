@@ -14,7 +14,7 @@
     </style>
   </defs>
 
-  <rect x="2" y="2" width="956" height="244" rx="14" fill="url(#ext-bg)" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect x="2" y="2" width="956" height="244" rx="14" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
 
   <!-- Top Core Bar -->
   <rect x="24" y="18" width="912" height="46" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
