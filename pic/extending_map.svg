@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 248" width="960" height="248" role="img" aria-label="RLinf extension points architecture map">
+  <defs>
+    <linearGradient id="ext-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <style>
+      .t { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+      .hdr { font-size: 13px; font-weight: 700; fill: #ffffff; }
+      .core-t { font-size: 13px; font-weight: 700; fill: #0f172a; }
+      .core-s { font-size: 11.5px; fill: #475569; }
+      .item { font-size: 12px; font-weight: 600; fill: #1e293b; }
+      .hint { font-size: 11px; fill: #64748b; }
+    </style>
+  </defs>
+
+  <rect x="2" y="2" width="956" height="244" rx="14" fill="url(#ext-bg)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Top Core Bar -->
+  <rect x="24" y="18" width="912" height="46" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="480" y="37" text-anchor="middle" class="t core-t">RLinf Distributed Runtime  (Cluster · WorkerGroup · Channel · Hydra Config · RLINF_EXT_MODULE)</text>
+  <text x="480" y="54" text-anchor="middle" class="t core-s">Plug in only the layer you need — placement, rollout-to-actor sync, and logging work out of the box</text>
+
+  <!-- Connector lines -->
+  <line x1="130" y1="64" x2="130" y2="84" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="364" y1="64" x2="364" y2="84" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="596" y1="64" x2="596" y2="84" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="830" y1="64" x2="830" y2="84" stroke="#94a3b8" stroke-width="1.5"/>
+
+  <!-- Card 1: Models -->
+  <rect x="24" y="84" width="212" height="146" rx="11" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <rect x="24" y="84" width="212" height="32" rx="11" fill="#2563eb"/>
+  <rect x="24" y="104" width="212" height="12" fill="#2563eb"/>
+  <text x="130" y="105" text-anchor="middle" class="t hdr">1. Models</text>
+  <text x="38" y="138" class="t item">• FSDP Model</text>
+  <text x="38" y="159" class="t item">• Megatron Model</text>
+  <text x="38" y="180" class="t item">• SGLang Embodied</text>
+  <text x="38" y="201" class="t item">• SFT Model</text>
+  <text x="38" y="220" class="t hint">register_model · BasePolicy</text>
+
+  <!-- Card 2: Envs & Robots -->
+  <rect x="258" y="84" width="212" height="146" rx="11" fill="#ffffff" stroke="#a5f3fc" stroke-width="1.5"/>
+  <rect x="258" y="84" width="212" height="32" rx="11" fill="#0891b2"/>
+  <rect x="258" y="104" width="212" height="12" fill="#0891b2"/>
+  <text x="364" y="105" text-anchor="middle" class="t hdr">2. Envs &amp; Robots</text>
+  <text x="272" y="138" class="t item">• New Simulator Env</text>
+  <text x="272" y="159" class="t item">• New Real-World Task</text>
+  <text x="272" y="180" class="t item">• New Robot / Part</text>
+  <text x="272" y="201" class="t hint">local part → compose → remote</text>
+  <text x="272" y="220" class="t hint">SupportedEnvType · robotics</text>
+
+  <!-- Card 3: Rewards & Algorithms -->
+  <rect x="490" y="84" width="212" height="146" rx="11" fill="#ffffff" stroke="#ddd6fe" stroke-width="1.5"/>
+  <rect x="490" y="84" width="212" height="32" rx="11" fill="#7c3aed"/>
+  <rect x="490" y="104" width="212" height="12" fill="#7c3aed"/>
+  <text x="596" y="105" text-anchor="middle" class="t hdr">3. Rewards &amp; Algos</text>
+  <text x="504" y="138" class="t item">• Learned Reward Model</text>
+  <text x="504" y="159" class="t item">• Rule-Based Reward</text>
+  <text x="504" y="180" class="t item">• Advantage Estimator</text>
+  <text x="504" y="201" class="t item">• Policy Loss</text>
+  <text x="504" y="220" class="t hint">@register_advantage / _loss</text>
+
+  <!-- Card 4: Backends -->
+  <rect x="724" y="84" width="212" height="146" rx="11" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.5"/>
+  <rect x="724" y="84" width="212" height="32" rx="11" fill="#059669"/>
+  <rect x="724" y="104" width="212" height="12" fill="#059669"/>
+  <text x="830" y="105" text-anchor="middle" class="t hdr">4. Backends &amp; Sync</text>
+  <text x="738" y="138" class="t item">• Megatron-Bridge</text>
+  <text x="738" y="159" class="t item">• Weight Syncer</text>
+  <text x="738" y="180" class="t item">• Custom Accelerator</text>
+  <text x="738" y="201" class="t hint">zero changes to recipes</text>
+  <text x="738" y="220" class="t hint">hybrid_engines · hardware</text>
+</svg>

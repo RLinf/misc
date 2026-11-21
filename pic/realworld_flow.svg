@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 176" width="960" height="176" role="img" aria-label="Five-step real-world robot workflow in RLinf">
+  <defs>
+    <linearGradient id="rw-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <marker id="rw-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .t { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+      .num { font-size: 11px; font-weight: 700; fill: #ffffff; }
+      .title { font-size: 13.5px; font-weight: 700; fill: #0f172a; }
+      .sub { font-size: 11.5px; fill: #475569; }
+      .pill { font-size: 10.5px; font-weight: 600; fill: #1d4ed8; }
+    </style>
+  </defs>
+
+  <rect x="2" y="2" width="956" height="172" rx="14" fill="url(#rw-bg)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Step 1 -->
+  <rect x="18" y="24" width="164" height="128" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <circle cx="40" cy="48" r="12" fill="#2563eb"/>
+  <text x="40" y="52" text-anchor="middle" class="t num">1</text>
+  <text x="58" y="52" class="t title">Hardware</text>
+  <text x="30" y="78" class="t sub">Connect arms, CAN,</text>
+  <text x="30" y="95" class="t sub">cameras &amp; safety stop</text>
+  <rect x="30" y="116" width="106" height="22" rx="11" fill="#eff6ff"/>
+  <text x="83" y="131" text-anchor="middle" class="t pill">install.sh + check</text>
+
+  <line x1="184" y1="88" x2="206" y2="88" stroke="#64748b" stroke-width="2" marker-end="url(#rw-arrow)"/>
+
+  <!-- Step 2 -->
+  <rect x="208" y="24" width="164" height="128" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <circle cx="230" cy="48" r="12" fill="#2563eb"/>
+  <text x="230" y="52" text-anchor="middle" class="t num">2</text>
+  <text x="248" y="52" class="t title">Teleoperate</text>
+  <text x="220" y="78" class="t sub">Drive with GELLO,</text>
+  <text x="220" y="95" class="t sub">PICO VR, or SpaceMouse</text>
+  <rect x="220" y="116" width="112" height="22" rx="11" fill="#eff6ff"/>
+  <text x="276" y="131" text-anchor="middle" class="t pill">verify kinematics</text>
+
+  <line x1="374" y1="88" x2="396" y2="88" stroke="#64748b" stroke-width="2" marker-end="url(#rw-arrow)"/>
+
+  <!-- Step 3 -->
+  <rect x="398" y="24" width="164" height="128" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <circle cx="420" cy="48" r="12" fill="#0891b2"/>
+  <text x="420" y="52" text-anchor="middle" class="t num">3</text>
+  <text x="438" y="52" class="t title">Collect Data</text>
+  <text x="410" y="78" class="t sub">Record demos into</text>
+  <text x="410" y="95" class="t sub">LeRobot dataset format</text>
+  <rect x="410" y="116" width="112" height="22" rx="11" fill="#ecfeff"/>
+  <text x="466" y="131" text-anchor="middle" class="t pill" style="fill:#0e7490;">norm_stats.json</text>
+
+  <line x1="564" y1="88" x2="586" y2="88" stroke="#64748b" stroke-width="2" marker-end="url(#rw-arrow)"/>
+
+  <!-- Step 4 -->
+  <rect x="588" y="24" width="164" height="128" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <circle cx="610" cy="48" r="12" fill="#7c3aed"/>
+  <text x="610" y="52" text-anchor="middle" class="t num">4</text>
+  <text x="628" y="52" class="t title">Train Policy</text>
+  <text x="600" y="78" class="t sub">SFT warm-up, then</text>
+  <text x="600" y="95" class="t sub">online RL / HG-DAgger</text>
+  <rect x="600" y="116" width="118" height="22" rx="11" fill="#f5f3ff"/>
+  <text x="659" y="131" text-anchor="middle" class="t pill" style="fill:#6d28d9;">SFT · SAC · DAgger</text>
+
+  <line x1="754" y1="88" x2="776" y2="88" stroke="#64748b" stroke-width="2" marker-end="url(#rw-arrow)"/>
+
+  <!-- Step 5 -->
+  <rect x="778" y="24" width="164" height="128" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <circle cx="800" cy="48" r="12" fill="#059669"/>
+  <text x="800" y="52" text-anchor="middle" class="t num">5</text>
+  <text x="818" y="52" class="t title">Deploy &amp; Eval</text>
+  <text x="790" y="78" class="t sub">Run closed-loop policy</text>
+  <text x="790" y="95" class="t sub">with unified run_eval.sh</text>
+  <rect x="790" y="116" width="106" height="22" rx="11" fill="#ecfdf5"/>
+  <text x="843" y="131" text-anchor="middle" class="t pill" style="fill:#047857;">autonomous run</text>
+</svg>

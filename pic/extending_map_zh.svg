@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 248" width="960" height="248" role="img" aria-label="RLinf 扩展开发插件架构图">
+  <defs>
+    <linearGradient id="ext-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <style>
+      .t { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; }
+      .hdr { font-size: 13px; font-weight: 700; fill: #ffffff; }
+      .core-t { font-size: 13px; font-weight: 700; fill: #0f172a; }
+      .core-s { font-size: 11.5px; fill: #475569; }
+      .item { font-size: 12px; font-weight: 600; fill: #1e293b; }
+      .hint { font-size: 11px; fill: #64748b; }
+    </style>
+  </defs>
+
+  <rect x="2" y="2" width="956" height="244" rx="14" fill="url(#ext-bg)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Top Core Bar -->
+  <rect x="24" y="18" width="912" height="46" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="480" y="37" text-anchor="middle" class="t core-t">RLinf 分布式运行时（Cluster · WorkerGroup · Channel · Hydra 配置 · RLINF_EXT_MODULE）</text>
+  <text x="480" y="54" text-anchor="middle" class="t core-s">按需接入单个扩展层——硬件放置、权重同步与训练监控均自动复用</text>
+
+  <!-- Connector lines -->
+  <line x1="130" y1="64" x2="130" y2="84" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="364" y1="64" x2="364" y2="84" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="596" y1="64" x2="596" y2="84" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="830" y1="64" x2="830" y2="84" stroke="#94a3b8" stroke-width="1.5"/>
+
+  <!-- Card 1: Models -->
+  <rect x="24" y="84" width="212" height="146" rx="11" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <rect x="24" y="84" width="212" height="32" rx="11" fill="#2563eb"/>
+  <rect x="24" y="104" width="212" height="12" fill="#2563eb"/>
+  <text x="130" y="105" text-anchor="middle" class="t hdr">1. 接入模型</text>
+  <text x="38" y="138" class="t item">• FSDP 新模型</text>
+  <text x="38" y="159" class="t item">• Megatron 新模型</text>
+  <text x="38" y="180" class="t item">• SGLang 具身模型</text>
+  <text x="38" y="201" class="t item">• SFT 新模型</text>
+  <text x="38" y="220" class="t hint">register_model · BasePolicy</text>
+
+  <!-- Card 2: Envs & Robots -->
+  <rect x="258" y="84" width="212" height="146" rx="11" fill="#ffffff" stroke="#a5f3fc" stroke-width="1.5"/>
+  <rect x="258" y="84" width="212" height="32" rx="11" fill="#0891b2"/>
+  <rect x="258" y="104" width="212" height="12" fill="#0891b2"/>
+  <text x="364" y="105" text-anchor="middle" class="t hdr">2. 环境与真机</text>
+  <text x="272" y="138" class="t item">• 新仿真环境</text>
+  <text x="272" y="159" class="t item">• 新增真机任务</text>
+  <text x="272" y="180" class="t item">• 接入新机器人 / 部件</text>
+  <text x="272" y="201" class="t hint">单部件 → 组合 → 远程部署</text>
+  <text x="272" y="220" class="t hint">SupportedEnvType · robotics</text>
+
+  <!-- Card 3: Rewards & Algorithms -->
+  <rect x="490" y="84" width="212" height="146" rx="11" fill="#ffffff" stroke="#ddd6fe" stroke-width="1.5"/>
+  <rect x="490" y="84" width="212" height="32" rx="11" fill="#7c3aed"/>
+  <rect x="490" y="104" width="212" height="12" fill="#7c3aed"/>
+  <text x="596" y="105" text-anchor="middle" class="t hdr">3. 奖励与算法</text>
+  <text x="504" y="138" class="t item">• 学习型奖励模型</text>
+  <text x="504" y="159" class="t item">• 规则奖励</text>
+  <text x="504" y="180" class="t item">• 优势估计（Advantage）</text>
+  <text x="504" y="201" class="t item">• 策略损失（Loss）</text>
+  <text x="504" y="220" class="t hint">@register_advantage / _loss</text>
+
+  <!-- Card 4: Backends -->
+  <rect x="724" y="84" width="212" height="146" rx="11" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.5"/>
+  <rect x="724" y="84" width="212" height="32" rx="11" fill="#059669"/>
+  <rect x="724" y="104" width="212" height="12" fill="#059669"/>
+  <text x="830" y="105" text-anchor="middle" class="t hdr">4. 底层集成</text>
+  <text x="738" y="138" class="t item">• Megatron-Bridge</text>
+  <text x="738" y="159" class="t item">• 权重同步（Weight Syncer）</text>
+  <text x="738" y="180" class="t item">• 自定义硬件加速器</text>
+  <text x="738" y="201" class="t hint">无需改动上层示例配置</text>
+  <text x="738" y="220" class="t hint">hybrid_engines · hardware</text>
+</svg>
