@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 236" width="960" height="236" role="img" aria-label="RLinf 核心训练闭环：环境、Rollout、奖励与缓冲区、Actor 训练及权重同步">
+  <defs>
+    <linearGradient id="df-bg-zh" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <marker id="df-arrow-zh" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#64748b"/>
+    </marker>
+    <marker id="df-arrow-sync-zh" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#7c3aed"/>
+    </marker>
+    <style>
+      .t { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; }
+      .num { font-size: 11px; font-weight: 700; fill: #ffffff; }
+      .title { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .sub { font-size: 11.5px; fill: #475569; }
+      .pill { font-size: 10.5px; font-weight: 600; }
+      .edge { font-size: 11px; font-weight: 600; fill: #475569; }
+      .sync { font-size: 11.5px; font-weight: 600; fill: #6d28d9; }
+    </style>
+  </defs>
+
+  <rect x="2" y="2" width="956" height="232" rx="14" fill="url(#df-bg-zh)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- 1. Env / Agent -->
+  <rect x="20" y="24" width="204" height="136" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <circle cx="42" cy="48" r="12" fill="#2563eb"/>
+  <text x="42" y="52" text-anchor="middle" class="t num">1</text>
+  <text x="62" y="52" class="t title">环境 / Agent</text>
+  <text x="32" y="78" class="t sub">仿真器、真机机器人，</text>
+  <text x="32" y="96" class="t sub">或工具调用沙箱</text>
+  <text x="32" y="114" class="t sub">输出观测、奖励与结束信号</text>
+  <rect x="32" y="126" width="152" height="22" rx="11" fill="#eff6ff"/>
+  <text x="108" y="141" text-anchor="middle" class="t pill" fill="#1d4ed8">env.* · agentloop.*</text>
+
+  <line x1="226" y1="84" x2="254" y2="84" stroke="#64748b" stroke-width="2" marker-end="url(#df-arrow-zh)"/>
+  <text x="240" y="74" text-anchor="middle" class="t edge">观测</text>
+  <line x1="254" y1="102" x2="226" y2="102" stroke="#64748b" stroke-width="2" marker-end="url(#df-arrow-zh)"/>
+  <text x="240" y="118" text-anchor="middle" class="t edge">动作</text>
+
+  <!-- 2. Rollout -->
+  <rect x="258" y="24" width="204" height="136" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <circle cx="280" cy="48" r="12" fill="#0891b2"/>
+  <text x="280" y="52" text-anchor="middle" class="t num">2</text>
+  <text x="300" y="52" class="t title">Rollout 采样</text>
+  <text x="270" y="78" class="t sub">通过 HF、SGLang 或 vLLM</text>
+  <text x="270" y="96" class="t sub">执行策略推理</text>
+  <text x="270" y="114" class="t sub">产出动作序列与 logprobs</text>
+  <rect x="270" y="126" width="152" height="22" rx="11" fill="#ecfeff"/>
+  <text x="346" y="141" text-anchor="middle" class="t pill" fill="#0e7490">rollout.* · WorkerGroup</text>
+
+  <line x1="464" y1="92" x2="494" y2="92" stroke="#64748b" stroke-width="2" marker-end="url(#df-arrow-zh)"/>
+  <text x="479" y="82" text-anchor="middle" class="t edge">轨迹</text>
+
+  <!-- 3. Reward & Buffer -->
+  <rect x="498" y="24" width="204" height="136" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <circle cx="520" cy="48" r="12" fill="#059669"/>
+  <text x="520" y="52" text-anchor="middle" class="t num">3</text>
+  <text x="540" y="52" class="t title">奖励与缓冲区</text>
+  <text x="510" y="78" class="t sub">可选奖励模型打分、</text>
+  <text x="510" y="96" class="t sub">GAE / GRPO 优势计算，</text>
+  <text x="510" y="114" class="t sub">或离策略 Replay Buffer</text>
+  <rect x="510" y="126" width="152" height="22" rx="11" fill="#ecfdf5"/>
+  <text x="586" y="141" text-anchor="middle" class="t pill" fill="#047857">algorithm.* · reward.*</text>
+
+  <line x1="704" y1="92" x2="734" y2="92" stroke="#64748b" stroke-width="2" marker-end="url(#df-arrow-zh)"/>
+  <text x="719" y="82" text-anchor="middle" class="t edge">批次</text>
+
+  <!-- 4. Actor -->
+  <rect x="738" y="24" width="202" height="136" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <circle cx="760" cy="48" r="12" fill="#7c3aed"/>
+  <text x="760" y="52" text-anchor="middle" class="t num">4</text>
+  <text x="780" y="52" class="t title">Actor 训练</text>
+  <text x="750" y="78" class="t sub">基于 FSDP / Megatron</text>
+  <text x="750" y="96" class="t sub">更新策略与价值网络</text>
+  <text x="750" y="114" class="t sub">记录训练指标与 Checkpoint</text>
+  <rect x="750" y="126" width="152" height="22" rx="11" fill="#f5f3ff"/>
+  <text x="826" y="141" text-anchor="middle" class="t pill" fill="#6d28d9">actor.* · FSDP / Megatron</text>
+
+  <!-- Weight Sync Return Arc -->
+  <path d="M 839 162 L 839 196 Q 839 208 827 208 L 372 208 Q 360 208 360 196 L 360 166" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#df-arrow-sync-zh)"/>
+  <rect x="506" y="195" width="188" height="24" rx="12" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1"/>
+  <text x="600" y="211" text-anchor="middle" class="t sync">权重同步（Actor → Rollout）</text>
+
+  <!-- Runner caption pill -->
+  <rect x="20" y="195" width="290" height="24" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="165" y="211" text-anchor="middle" class="t sub">由 Runner 基于 Ray Cluster 与 Channel 统一调度</text>
+</svg>
