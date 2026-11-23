@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "source_commit": "461104f2e5a106f38add2c794c19b7aa269e31a3",
+    "hardware": "NVIDIA A800-SXM4-80GB, one GPU per run",
+    "python": "3.11.18",
+    "torch": "2.11.0+cu128",
+    "mujoco": "3.17.0",
+    "mujoco_warp": "3.17.0",
+    "warp_lang": "1.16.0",
+    "algorithm": "PPO with MLP policy",
+    "training_iterations": 50,
+    "training_worlds": 512,
+    "evaluation_worlds": 16,
+    "control_steps_per_world_per_rollout": 1000,
+    "max_episode_steps": 1000,
+    "evaluation_and_checkpoint_interval": 10,
+    "actor_seed": 1234,
+    "environment_seeds": [
+      42,
+      43
+    ],
+    "seed_scope": "Only humanoid uses both environment reset seeds. Actor initialization and sampling seeds are unchanged."
+  },
+  "runs": [
+    {
+      "run": "half_cheetah_seed42",
+      "task": "half_cheetah",
+      "environment_seed": 42,
+      "actor_seed": 1234,
+      "last_train_iteration": 50,
+      "train_return_first": -276.82061767578125,
+      "train_return": 2650.853271484375,
+      "train_episode_len": 1000.0,
+      "first_eval_iteration": 10,
+      "eval_return_first": 602.7164916992188,
+      "eval_return": 3496.310791015625,
+      "eval_episode_len_first": 1000.0,
+      "eval_episode_len": 1000.0,
+      "eval_num_trajectories": 16.0,
+      "training_elapsed_seconds": 32239,
+      "training_elapsed_hours": 8.955277777777777
+    },
+    {
+      "run": "hopper_seed42",
+      "task": "hopper",
+      "environment_seed": 42,
+      "actor_seed": 1234,
+      "last_train_iteration": 50,
+      "train_return_first": 19.03636360168457,
+      "train_return": 357.3745422363281,
+      "train_episode_len": 129.06805419921875,
+      "first_eval_iteration": 10,
+      "eval_return_first": 267.0561828613281,
+      "eval_return": 374.6572570800781,
+      "eval_episode_len_first": 107.46527862548828,
+      "eval_episode_len": 132.95535278320312,
+      "eval_num_trajectories": 112.0,
+      "training_elapsed_seconds": 47846,
+      "training_elapsed_hours": 13.290555555555555
+    },
+    {
+      "run": "walker2d_seed42",
+      "task": "walker2d",
+      "environment_seed": 42,
+      "actor_seed": 1234,
+      "last_train_iteration": 50,
+      "train_return_first": 3.1660408973693848,
+      "train_return": 386.72979736328125,
+      "train_episode_len": 144.79139709472656,
+      "first_eval_iteration": 10,
+      "eval_return_first": 263.7257995605469,
+      "eval_return": 454.0862731933594,
+      "eval_episode_len_first": 144.5416717529297,
+      "eval_episode_len": 144.41236877441406,
+      "eval_num_trajectories": 97.0,
+      "training_elapsed_seconds": 32314,
+      "training_elapsed_hours": 8.976111111111111
+    },
+    {
+      "run": "ant_seed42",
+      "task": "ant",
+      "environment_seed": 42,
+      "actor_seed": 1234,
+      "last_train_iteration": 50,
+      "train_return_first": 98.98602294921875,
+      "train_return": 593.4734497070312,
+      "train_episode_len": 511.4719543457031,
+      "first_eval_iteration": 10,
+      "eval_return_first": 1002.27490234375,
+      "eval_return": 1191.575439453125,
+      "eval_episode_len_first": 1000.0,
+      "eval_episode_len": 1000.0,
+      "eval_num_trajectories": 16.0,
+      "training_elapsed_seconds": 43537,
+      "training_elapsed_hours": 12.09361111111111
+    },
+    {
+      "run": "humanoid_seed42",
+      "task": "humanoid",
+      "environment_seed": 42,
+      "actor_seed": 1234,
+      "last_train_iteration": 50,
+      "train_return_first": 22.007999420166016,
+      "train_return": 155.7077178955078,
+      "train_episode_len": 81.470703125,
+      "first_eval_iteration": 10,
+      "eval_return_first": 114.55236053466797,
+      "eval_return": 235.87933349609375,
+      "eval_episode_len_first": 62.13600158691406,
+      "eval_episode_len": 110.18704986572266,
+      "eval_num_trajectories": 139.0,
+      "training_elapsed_seconds": 77539,
+      "training_elapsed_hours": 21.538611111111113
+    },
+    {
+      "run": "humanoid_seed43",
+      "task": "humanoid",
+      "environment_seed": 43,
+      "actor_seed": 1234,
+      "last_train_iteration": 50,
+      "train_return_first": 21.94944190979004,
+      "train_return": 145.5460662841797,
+      "train_episode_len": 79.69610595703125,
+      "first_eval_iteration": 10,
+      "eval_return_first": 156.77084350585938,
+      "eval_return": 215.50076293945312,
+      "eval_episode_len_first": 97.51592254638672,
+      "eval_episode_len": 111.9259262084961,
+      "eval_num_trajectories": 135.0,
+      "training_elapsed_seconds": 79314,
+      "training_elapsed_hours": 22.031666666666666
+    }
+  ],
+  "media": {
+    "half_cheetah_seed42": {
+      "curves": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/half_cheetah_seed42_curves.png",
+      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/half_cheetah_seed42_iterations_10_50.mp4"
+    },
+    "hopper_seed42": {
+      "curves": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/hopper_seed42_curves.png",
+      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/hopper_seed42_iterations_10_50.mp4"
+    },
+    "walker2d_seed42": {
+      "curves": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/walker2d_seed42_curves.png",
+      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/walker2d_seed42_iterations_10_50.mp4"
+    },
+    "ant_seed42": {
+      "curves": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/ant_seed42_curves.png",
+      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/ant_seed42_iterations_10_50.mp4"
+    },
+    "humanoid_seed42": {
+      "curves": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/humanoid_seed42_curves.png",
+      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/humanoid_seed42_iterations_10_50.mp4"
+    },
+    "humanoid_seed43": {
+      "curves": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/humanoid_seed43_curves.png",
+      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/humanoid_seed43_iterations_10_50.mp4"
+    }
+  }
+}
