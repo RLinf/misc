@@ -14,7 +14,7 @@
     <rect x="24" y="48" width="202" height="12" fill="#4f46e5"/>
     <text x="125" y="48" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#ffffff">1. Install</text>
     <text x="125" y="92" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="600" fill="#1e1b4b">requirements/install.sh</text>
-    <text x="125" y="120" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#475569">One command for uv venv</text>
+    <text x="125" y="120" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#475569">Create a uv virtual env</text>
     <rect x="52" y="140" width="146" height="28" rx="14" fill="#eef2ff" stroke="#c7d2fe"/>
     <text x="125" y="158" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11.5" font-weight="600" fill="#4338ca">or Docker Hub image</text>
   </g>
@@ -28,7 +28,7 @@
     <rect x="262" y="48" width="202" height="12" fill="#0284c7"/>
     <text x="363" y="48" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#ffffff">2. Pick a Path</text>
     <rect x="278" y="72" width="170" height="24" rx="6" fill="#e0f2fe"/>
-    <text x="363" y="88" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11.5" font-weight="600" fill="#0369a1">Evaluate VLA (~5 min)</text>
+    <text x="363" y="88" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11.5" font-weight="600" fill="#0369a1">Evaluate VLA</text>
     <rect x="278" y="102" width="170" height="24" rx="6" fill="#e0f2fe"/>
     <text x="363" y="118" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11.5" font-weight="600" fill="#0369a1">Embodied Sim RL / SFT</text>
     <rect x="278" y="132" width="170" height="24" rx="6" fill="#e0f2fe"/>
