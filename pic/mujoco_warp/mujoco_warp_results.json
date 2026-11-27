@@ -1,6 +1,5 @@
 {
   "metadata": {
-    "source_commit": "461104f2e5a106f38add2c794c19b7aa269e31a3",
     "hardware": "NVIDIA A800-SXM4-80GB, one GPU per run",
     "python": "3.11.18",
     "torch": "2.11.0+cu128",
@@ -8,7 +7,6 @@
     "mujoco_warp": "3.17.0",
     "warp_lang": "1.16.0",
     "algorithm": "PPO with MLP policy",
-    "training_iterations": 50,
     "training_worlds": 512,
     "evaluation_worlds": 16,
     "control_steps_per_world_per_rollout": 1000,
@@ -19,142 +17,177 @@
       42,
       43
     ],
-    "seed_scope": "Only humanoid uses both environment reset seeds. Actor initialization and sampling seeds are unchanged."
+    "notes": "walker2d is reported at iteration 570 before a late-training value-loss instability; the hopper_seed42_stable run uses learning rate 3e-5 because 3e-4 collapses late in training."
   },
   "runs": [
     {
       "run": "half_cheetah_seed42",
-      "task": "half_cheetah",
-      "environment_seed": 42,
-      "actor_seed": 1234,
-      "last_train_iteration": 50,
-      "train_return_first": -276.82061767578125,
-      "train_return": 2650.853271484375,
-      "train_episode_len": 1000.0,
-      "first_eval_iteration": 10,
-      "eval_return_first": 602.7164916992188,
-      "eval_return": 3496.310791015625,
-      "eval_episode_len_first": 1000.0,
-      "eval_episode_len": 1000.0,
+      "last_iteration": 400,
+      "train_return_last": 8831.7509765625,
+      "eval_return_last": 9194.9541015625,
+      "eval_return_tail5_mean": 8951.510546875,
+      "eval_return_peak": 9194.9541015625,
+      "eval_return_peak_iteration": 400,
+      "eval_len_last": 1000.0,
+      "eval_len_tail5_mean": 1000.0,
       "eval_num_trajectories": 16.0,
-      "training_elapsed_seconds": 32239,
-      "training_elapsed_hours": 8.955277777777777
+      "task": "half_cheetah",
+      "seed": 42,
+      "lr": 0.0003,
+      "batch": 32000,
+      "segments": [
+        "half_cheetah_seed42",
+        "half_cheetah_seed42_from200_to400",
+        "half_cheetah_seed42_from400_to500"
+      ]
     },
     {
       "run": "hopper_seed42",
+      "last_iteration": 700,
+      "train_return_last": 2115.95166015625,
+      "eval_return_last": 2054.830322265625,
+      "eval_return_tail5_mean": 2336.488916015625,
+      "eval_return_peak": 3286.434326171875,
+      "eval_return_peak_iteration": 440,
+      "eval_len_last": 490.9583435058594,
+      "eval_len_tail5_mean": 562.7089660644531,
+      "eval_num_trajectories": 24.0,
       "task": "hopper",
-      "environment_seed": 42,
-      "actor_seed": 1234,
-      "last_train_iteration": 50,
-      "train_return_first": 19.03636360168457,
-      "train_return": 357.3745422363281,
-      "train_episode_len": 129.06805419921875,
-      "first_eval_iteration": 10,
-      "eval_return_first": 267.0561828613281,
-      "eval_return": 374.6572570800781,
-      "eval_episode_len_first": 107.46527862548828,
-      "eval_episode_len": 132.95535278320312,
-      "eval_num_trajectories": 112.0,
-      "training_elapsed_seconds": 47846,
-      "training_elapsed_hours": 13.290555555555555
+      "seed": 42,
+      "lr": 3e-05,
+      "batch": 2048,
+      "segments": [
+        "hopper_seed42_stable_lr3e-5",
+        "hopper_seed42_stable_from500_to700"
+      ]
     },
     {
       "run": "walker2d_seed42",
+      "last_iteration": 570,
+      "train_return_last": 4695.458984375,
+      "eval_return_last": 7029.6064453125,
+      "eval_return_tail5_mean": 4904.806146240235,
+      "eval_return_peak": 7029.6064453125,
+      "eval_return_peak_iteration": 570,
+      "eval_len_last": 1000.0,
+      "eval_len_tail5_mean": 712.1898330688476,
+      "eval_num_trajectories": 16.0,
       "task": "walker2d",
-      "environment_seed": 42,
-      "actor_seed": 1234,
-      "last_train_iteration": 50,
-      "train_return_first": 3.1660408973693848,
-      "train_return": 386.72979736328125,
-      "train_episode_len": 144.79139709472656,
-      "first_eval_iteration": 10,
-      "eval_return_first": 263.7257995605469,
-      "eval_return": 454.0862731933594,
-      "eval_episode_len_first": 144.5416717529297,
-      "eval_episode_len": 144.41236877441406,
-      "eval_num_trajectories": 97.0,
-      "training_elapsed_seconds": 32314,
-      "training_elapsed_hours": 8.976111111111111
+      "seed": 42,
+      "lr": 3e-05,
+      "batch": 2048,
+      "segments": [
+        "walker2d_seed42",
+        "walker2d_seed42_from400_to800",
+        "walker2d_seed42_from560_lr1e-5"
+      ]
     },
     {
       "run": "ant_seed42",
-      "task": "ant",
-      "environment_seed": 42,
-      "actor_seed": 1234,
-      "last_train_iteration": 50,
-      "train_return_first": 98.98602294921875,
-      "train_return": 593.4734497070312,
-      "train_episode_len": 511.4719543457031,
-      "first_eval_iteration": 10,
-      "eval_return_first": 1002.27490234375,
-      "eval_return": 1191.575439453125,
-      "eval_episode_len_first": 1000.0,
-      "eval_episode_len": 1000.0,
+      "last_iteration": 500,
+      "train_return_last": 5985.12744140625,
+      "eval_return_last": 6458.92431640625,
+      "eval_return_tail5_mean": 5769.53857421875,
+      "eval_return_peak": 7062.28759765625,
+      "eval_return_peak_iteration": 460,
+      "eval_len_last": 1000.0,
+      "eval_len_tail5_mean": 1000.0,
       "eval_num_trajectories": 16.0,
-      "training_elapsed_seconds": 43537,
-      "training_elapsed_hours": 12.09361111111111
+      "task": "ant",
+      "seed": 42,
+      "lr": 0.0003,
+      "batch": 32000,
+      "segments": [
+        "ant_seed42",
+        "ant_seed42_from200_to500"
+      ]
     },
     {
       "run": "humanoid_seed42",
+      "last_iteration": 750,
+      "train_return_last": 4897.68115234375,
+      "eval_return_last": 5533.1669921875,
+      "eval_return_tail5_mean": 4752.411865234375,
+      "eval_return_peak": 5893.02880859375,
+      "eval_return_peak_iteration": 710,
+      "eval_len_last": 1000.0,
+      "eval_len_tail5_mean": 902.6458374023438,
+      "eval_num_trajectories": 16.0,
       "task": "humanoid",
-      "environment_seed": 42,
-      "actor_seed": 1234,
-      "last_train_iteration": 50,
-      "train_return_first": 22.007999420166016,
-      "train_return": 155.7077178955078,
-      "train_episode_len": 81.470703125,
-      "first_eval_iteration": 10,
-      "eval_return_first": 114.55236053466797,
-      "eval_return": 235.87933349609375,
-      "eval_episode_len_first": 62.13600158691406,
-      "eval_episode_len": 110.18704986572266,
-      "eval_num_trajectories": 139.0,
-      "training_elapsed_seconds": 77539,
-      "training_elapsed_hours": 21.538611111111113
+      "seed": 42,
+      "lr": 3e-05,
+      "batch": 2048,
+      "segments": [
+        "humanoid_seed42",
+        "humanoid_seed42_from200_to500",
+        "humanoid_seed42_from500_to800"
+      ]
     },
     {
       "run": "humanoid_seed43",
-      "task": "humanoid",
-      "environment_seed": 43,
-      "actor_seed": 1234,
-      "last_train_iteration": 50,
-      "train_return_first": 21.94944190979004,
-      "train_return": 145.5460662841797,
-      "train_episode_len": 79.69610595703125,
-      "first_eval_iteration": 10,
-      "eval_return_first": 156.77084350585938,
-      "eval_return": 215.50076293945312,
-      "eval_episode_len_first": 97.51592254638672,
-      "eval_episode_len": 111.9259262084961,
-      "eval_num_trajectories": 135.0,
-      "training_elapsed_seconds": 79314,
-      "training_elapsed_hours": 22.031666666666666
+      "last_iteration": 440,
+      "train_return_last": 4712.98486328125,
+      "eval_return_last": 5048.28125,
+      "eval_return_tail5_mean": 4755.76357421875,
+      "eval_return_peak": 5048.28125,
+      "eval_return_peak_iteration": 440,
+      "eval_len_last": 1000.0,
+      "eval_len_tail5_mean": 1000.0,
+      "eval_num_trajectories": 16.0,
+      "task": "humanoid_seed43",
+      "seed": 43,
+      "lr": 3e-05,
+      "batch": 2048,
+      "segments": [
+        "humanoid_seed43",
+        "humanoid_seed43_from200_to500"
+      ]
+    },
+    {
+      "run": "hopper_seed42_default_lr3e-4",
+      "last_iteration": 500,
+      "train_return_last": 66.6329574584961,
+      "eval_return_last": 66.46173858642578,
+      "eval_return_tail5_mean": 65.51736145019531,
+      "eval_return_peak": 3648.01220703125,
+      "eval_return_peak_iteration": 380,
+      "eval_len_last": 41.11458206176758,
+      "eval_len_tail5_mean": 40.55009994506836,
+      "eval_num_trajectories": 384.0,
+      "task": "hopper",
+      "seed": 42,
+      "lr": 0.0003,
+      "batch": 32000,
+      "segments": [
+        "hopper_seed42",
+        "hopper_seed42_from200_to500"
+      ]
     }
   ],
   "media": {
     "half_cheetah_seed42": {
       "curves": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/half_cheetah_seed42_curves.png",
-      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/half_cheetah_seed42_iterations_10_50.mp4"
+      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/half_cheetah_seed42_iterations_10_400.mp4"
     },
-    "hopper_seed42": {
-      "curves": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/hopper_seed42_curves.png",
-      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/hopper_seed42_iterations_10_50.mp4"
+    "hopper_seed42_stable": {
+      "curves": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/hopper_seed42_stable_curves.png",
+      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/hopper_seed42_stable_iterations_10_700.mp4"
     },
     "walker2d_seed42": {
       "curves": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/walker2d_seed42_curves.png",
-      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/walker2d_seed42_iterations_10_50.mp4"
+      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/walker2d_seed42_iterations_10_570.mp4"
     },
     "ant_seed42": {
       "curves": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/ant_seed42_curves.png",
-      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/ant_seed42_iterations_10_50.mp4"
+      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/ant_seed42_iterations_10_500.mp4"
     },
     "humanoid_seed42": {
       "curves": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/humanoid_seed42_curves.png",
-      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/humanoid_seed42_iterations_10_50.mp4"
+      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/humanoid_seed42_iterations_10_750.mp4"
     },
     "humanoid_seed43": {
       "curves": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/humanoid_seed43_curves.png",
-      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/humanoid_seed43_iterations_10_50.mp4"
+      "video": "https://raw.githubusercontent.com/RLinf/misc/main/pic/mujoco_warp/humanoid_seed43_iterations_10_440.mp4"
     }
   }
 }
